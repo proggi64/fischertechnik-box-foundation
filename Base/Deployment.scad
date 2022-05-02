@@ -32,14 +32,14 @@ function getX(spaces, rotations, distance, i) =
         0 :
         (getRotatedSpace(spaces[i-1], rotations[i-1]).x + distance + getX(spaces, rotations, distance, i-1));
 
-// DeployRow(width, spaces, rotations)
+// DeployHorizontal(width, spaces, rotations)
 // Deploys the elements in the specified width with equal distances.
 // rowWidth = The width of the row in mm.
 // spaces = The spaces of all elements to deploy.
 // rotations = The rotations of each element: 0 Rotate0 0 degrees, 1 Rotate90 90 degrees, 
 // 2 Rotate180 180 degrees, 3 Rotate270 270 degrees (equivalent to -90).
 
-module DeployRow(rowWidth, spaces, rotations) {
+module DeployHorizontal(rowWidth, spaces, rotations) {
     distance = (rowWidth - getWidth(spaces, rotations, len(spaces))) / (len(spaces)-1);
     
     for (i = [0:1:$children-1]) {
@@ -47,6 +47,47 @@ module DeployRow(rowWidth, spaces, rotations) {
         translate([x, 0])
             RotateFix(spaces[i], rotations[i])
                 children(i);
+    }
+}
+
+// getDepth(spaces)
+// Gets the sum of the depth of count specified spaces.
+// spaces = List of spaces from which the width should be added. Used internally for DeployRow.
+// rotations = specify rotations for each space to get its correct width
+// count = The count of spaces from the specified spaces that should be included in the sum
+// i = The space index offset used to start to add
+
+function getDepthSum(spaces, i=0) = 
+    (i < len(spaces)) ? 
+        spaces[i].y + getDepthSum(spaces, i+1) : 
+        0;
+
+// getY(spaces, distance, i)
+// Gets the Y-distance the spaces plus constant distance 
+// between each space needs.
+// spaces = Spaces of each element to deploy vertically. Only
+// the depth (y) is used.
+// distance = distance between each space when deployed.
+// i = The highest index of the spaces used
+
+function getY(spaces, distance, i) = 
+    (i == 0) ? 
+        0 :
+        spaces[i].y + distance + getY(spaces, distance, i-1);
+
+// DeployVertical(depth, spaces)
+// Deploys the child elements in the specified depth vertically.
+// depth = Depth of the space where the elements should be deployed.
+// spaces = Spaces of all elements. Only the depth (y) will be used.
+
+module DeployVertical(depth, spaces) {
+    distance = (depth - getDepthSum(spaces)) / (len(spaces)-1);
+    count = $children - 1;
+    
+    for (i = [0:1:$children-1]) {
+        y = getY(spaces, distance, count-i);
+        translate([0, y, -getExcess()])
+            children(i);
     }
 }
 
