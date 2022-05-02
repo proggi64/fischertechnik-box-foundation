@@ -1,6 +1,6 @@
 // Fischertechnik Box Library
 // Axis for Coupling
-// 31024
+// 31024, 31047
 
 use <../Base/Constants.scad>
 use <../ModelBase/Simple.scad>
