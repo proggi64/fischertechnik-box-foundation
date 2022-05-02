@@ -12,6 +12,7 @@ box130Depth = 95;
 boxUsageHeight = 33.9;
 boxWallThickness = 2.4;
 boxBaseThickness = 1.0;
+boxWebWidth = 3.0;
 
 // getBoxWallThickness()
 // Gets the wall thickness of a Fischertechnik Box
@@ -23,6 +24,9 @@ function getBoxUsageHeight() = boxUsageHeight;
 
 // Gets the thickness of the Fischertechnik box base.
 function getBoxBaseThickness() = boxBaseThickness;
+
+// Gets the width of a box web
+function getBoxWebWidth() = boxWebWidth;
 
 // Gets the usable inner space of a Box 190 as an x/y-list
 function getBox190Space() = [
@@ -62,7 +66,7 @@ module Box130() {
 // webWidth = length of the web (default is 3 mms)
 // webThickness = thickness of the web (default is 1 mm)
 
-module BoxWeb(corner, side, distance, box=getBox190Space(), webWidth=3, webThickness=1.0) {
+module BoxWeb(corner, side, distance, box=getBox190Space(), webWidth=getBoxWebWidth(), webThickness=1.0) {
     sink = getBoxWallThickness()/2;
 
     width = (corner % 2 == 0) ? 
