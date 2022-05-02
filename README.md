@@ -1,5 +1,5 @@
 # Fischertechnik Sorting Box Construction Foundation For OpenSCAD
-The foundation library provides a continuously expanding collection of parametric sorting elements, deployment and placement modules, as well as base sorting boxes for the Fischertechnik building blocks system.
+The foundation library provides a continuously expanding collection of parametric sorting elements, deployment and placement modules, as well as base sorting boxes for the Fischertechnik building blocks system. The results are intended to be printed with 3D printers.
 
 This library is based on the 1970's high-grade plastic sorting boxes used by the Fischertechnik building kits. Some sample boxes that are almost identical to the original ones are included.
 
