@@ -31,7 +31,7 @@ BoxWeb(LowerRight, LeftOfCorner, 15.2);
 BoxWeb(UpperRight, RightOfCorner, 5);
 BoxWeb(UpperLeft, LeftOfCorner, 5);
 
-CenterHorizontal(0, 90)  
+CenterHorizontal(0, 90)
     Text("ec 1");
 
 Place(7.5, 2.5, lightCapGroupSpace, alignY=AlignTop)
@@ -46,7 +46,7 @@ Place(elementSpace=getFrameCassetteSpace(alignY=AlignTop), alignX=AlignCenter, a
 centeredWidth = getFrameCassetteSpace(DockTop).x;
 
 Place(y=36, elementSpace=getFrameCassetteSpace(DockTop), alignX=AlignCenter) {
-DeployRow(
+DeployHorizontal(
     centeredWidth,
     [getFrameBlockWithPinSpace(),
      getFramePhotoResistor30Space(),
@@ -61,7 +61,7 @@ DeployRow(
 elementWidth = 53 + 2*getDividerThickness();
 rightShift = centeredWidth - elementWidth;
 CenterHorizontal(centeredWidth, 13.0, rightShift) {
-    DeployRow(
+    DeployHorizontal(
         53 + 2*getDividerThickness(),
         [getFrameLightTubeSpace(),
          getFrameBlockWithPinSpace()],
