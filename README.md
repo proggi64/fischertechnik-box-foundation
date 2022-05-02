@@ -3,6 +3,10 @@ The foundation library provides a continuously expanding collection of parametri
 
 This library is based on the 1970's high-grade plastic sorting boxes used by the Fischertechnik building kits. Some sample boxes that are almost identical to the original ones are included.
 
+<img width="429" alt="ec2" src="https://user-images.githubusercontent.com/48654609/166326370-d41d503e-4cff-4b6c-8358-93feec0d171e.png">
+
+The goals of this library is to simplify the contruction of sorting boxes and provide an alternative to using CAD software. However, the elements and element groups may be exported as STLs and used in CAD software, as well.
+
 The library modules are divided in these groups:
 - Base
 - ModelBase
@@ -21,7 +25,7 @@ Contains the base functionality of the library:
 - PlacementOptions.scad
 - Rotation.scad
 
-Additionally, here are the STL files of the empty 190x130 and 130x95 boxes that are used to place the building block elements.
+Additionally, in the base folder are the STL files of the empty 190x130 and 130x95 boxes that are used to place the building block elements.
 
 ## ModelBase
 Contains simple and complex parametrized base objects that are used with different aparameters by concrete elements.
