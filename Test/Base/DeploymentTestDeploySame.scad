@@ -1,6 +1,6 @@
 // Fischertechnik Box Foundation
 // Base
-// Test Deploy
+// Test DeploySame
 
 use <../../Base/Deployment.scad>
 
@@ -30,14 +30,5 @@ DeploySame(getPlacementBaseSpace(), getCubeSpace(), columns=4, rows=2)
 translate([120, 0]) {
 PlacementBase();
 DeploySame(getPlacementBaseSpace(), getCubeSpace(), columns=2, rows=3, rotation=Rotate90)
-    Cube();
-}
-
-translate([180, 0]) {
-PlacementBase();
-DeploySame(getPlacementBaseSpace(), getCubeSpace(), columns=1, rows=3, rotation=Rotate180)
-    Cube();
-translate([20,0])
-DeploySame(getPlacementBaseSpace(), getCubeSpace(), columns=1, rows=3, rotation=Rotate270)
     Cube();
 }
