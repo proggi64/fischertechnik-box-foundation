@@ -28,7 +28,7 @@ Contains the base functionality of the library:
 Additionally, in the base folder are the STL files of the empty 190x130 and 130x95 boxes that are used to place the building block elements.
 
 ## ModelBase
-Contains simple and complex parametrized base objects that are used with different aparameters by concrete elements.
+Contains simple and complex parametrized base objects that are used with different parameters by concrete elements.
 
 ## Elements
 Contains concrete elements for specific building parts, some of them with parameters. All of them are linked to one or more Fischertechnik part numbers.
@@ -37,7 +37,7 @@ Contains concrete elements for specific building parts, some of them with parame
 Contains sample code for each module that demonstrate the parameters und functionality.
 
 ## Original Building Kits
-Contains boxes that are almost identical to boxes from the 1970's and 1980's that demonstrate how to build boxes with the library.
+Contains boxes that are almost identical to existing boxes from the 1970's and 1980's that demonstrate how to build boxes with the library.
 
 ## Building Kits
-Contains boxes for newer building kits from the last 20 years or so, that never had there own sorting box. These boxes are completely new designs.
+Contains boxes for newer building kits from the last 20 years or so, that never had there own sorting box. These boxes are completely new designs. Each bulding kit series has its own subfolder (i.e. "ec", "em").
