@@ -37,7 +37,7 @@ Contains concrete elements for specific building parts, some of them with parame
 Contains sample code for each module that demonstrate the parameters und functionality.
 
 ## Original Building Kits
-Contains boxes that are almost identical to existing boxes from the 1970's and 1980's that demonstrate how to build boxes with the library.
+Contains boxes that are almost identical to existing boxes from the 1970's and 1980's that demonstrate how to build boxes with the library. Each bulding kit series has its own subfolder (i.e. "ec", "em").
 
 ## Building Kits
-Contains boxes for newer building kits from the last 20 years or so, that never had there own sorting box. These boxes are completely new designs. Each bulding kit series has its own subfolder (i.e. "ec", "em").
+Contains boxes for newer building kits from the last 20 years or so, that never had there own sorting box. These boxes are completely new designs. Each bulding kit series has its own subfolder (i.e. "Profi", "Computing").
