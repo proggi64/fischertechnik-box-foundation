@@ -10,12 +10,13 @@ include <../../Base/PlacementOptions.scad>
 
 use <../../Elements/HolderBatterySet.scad>
 use <../../Elements/FrameJointBlock.scad>
+use <../../Elements/FrameUniversalJointCardan.scad>
 use <../../Elements/FrameAxis60Open.scad>
 use <../../Elements/FrameMotor6V.scad>
 use <../../Elements/AxisCoupling.scad>
+use <../../Elements/FrameBracketWithAxle80.scad>
 use <../../Elements/AxisFlatHub.scad>
 use <../../Elements/CylinderGear.scad>
-use <../../Elements/FrameUniversalJointCardan.scad>
 
 
 color("lightgray") {
@@ -26,7 +27,7 @@ difference() {
 }
 HolderBatterySet();
 
-upperWebDistance = 15;
+upperWebDistance = 12;
 BoxWeb(UpperLeft, RightOfCorner, upperWebDistance + getDividerThickness(), webThickness=getDividerThickness());
 BoxWeb(UpperRight, LeftOfCorner, upperWebDistance + getDividerThickness(), webThickness=getDividerThickness());
 wallVolume = [getBox190Space().x, getDividerThickness(), 15];
@@ -71,6 +72,13 @@ Place(
     alignY=AlignTop,
     rotation=Rotate90)
     FrameMotor6V();
+
+Place(
+    x=leftElementOffset+jointsGroupSpace.x+getFrameMotor6VSpace().x+16,
+    y=getHolderBatterySetSpace().y - getDividerThickness(),
+    elementSpace=getFrameBracketWithAxle80Space(),
+    rotation=Rotate90)
+    FrameBracketWithAxle80();
 
 Place(x=95, y=bottomElementOffset)
     AxisCoupling();
