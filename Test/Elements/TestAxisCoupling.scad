@@ -11,7 +11,7 @@ include <../../Base/PlacementOptions.scad>
 AxisCoupling();
 
 Place(20, 0)
-    DeployRow(getAxisCouplingSpace().x*2, 
+    DeployHorizontal(getAxisCouplingSpace().x*2, 
         [getAxisCouplingSpace(), getAxisCouplingSpace()],
         [Rotate0, Rotate0]) {
         AxisCoupling();

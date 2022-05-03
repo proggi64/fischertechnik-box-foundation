@@ -12,8 +12,8 @@ FrameMotor6V();
 Place(60, 0, getFrameMotor6VSpace(), rotation=Rotate90)
     FrameMotor6V();
 
-Place(80, 0, getFrameMotor6VSpace(), rotation=Rotate270)
+Place(120, 0, getFrameMotor6VSpace(), rotation=Rotate270)
     FrameMotor6V();
 
-Place(100, 0, getFrameMotor6VSpace(), rotation=Rotate180)
+Place(180, 0, getFrameMotor6VSpace(), rotation=Rotate180)
     FrameMotor6V();
