@@ -65,6 +65,11 @@ module ElevatedFramesWithCutoff(volume, depth, height, bearingLength, cutThrough
 }
 
 frameAxisDepth = 4.4;
+frameAxisHeight = 14.8;
+
+function getFrameAxisDepth() = frameAxisDepth;
+
+function getFrameAxisHeight() = frameAxisHeight;
 
 // getFrameAxisSpace
 // Gets the width and depth of the space a frame axis for the given axis length needs
@@ -78,10 +83,10 @@ function getFrameAxisSpace(length) = [length + getTolerance() + 2 * getDividerTh
 // default is false
 
 module FrameAxis(length, cutThrough=false) {
-    height = 14.8;
+    height = getFrameAxisHeight();
     bearingLength = 9.4;
     loadDepth = getAxisDiameter();
-    loadHeight = getAxisDiameter();;
+    loadHeight = getAxisDiameter();
     
     ElevatedFramesWithCutoff([length, loadDepth, loadHeight], frameAxisDepth, height, bearingLength, cutThrough);
 }
