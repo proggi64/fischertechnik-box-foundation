@@ -160,8 +160,8 @@ module AngledFrame(width1, depth1, width2, depth2, height, tolerance=getToleranc
     innerSpace2 = getFrameInnerVolume([width2, depth2, height], tolerance);
     
     module Frames() {
-        Frame([innerSpace1.x, depth1, height], tolerance);
-        Frame([depth2, innerSpace2.x, height], tolerance);
+        Frame([width1, depth1, height], tolerance);
+        Frame([depth2, width2, height], tolerance);
     }
     
     difference() {
