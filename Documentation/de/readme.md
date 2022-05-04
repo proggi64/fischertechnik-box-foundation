@@ -17,18 +17,18 @@ Die Bibliothek teil sich in folgende Gruppen:
 
 ## Base
 Enthält die Basisfunktionalität der Bibliothek:
-- Alignment.scad
-- Boxes.scad
-- Constants.scad
-- Deployment.scad
-- Placement.scad
-- PlacementOptions.scad
-- Rotation.scad
+- Alignment.scad<br/>Funktionen für die Berechnung von Koordinaten für die Ausrichtung (Links/Oben/Rechts/Unten/Zentriert)
+- Boxes.scad<br/>Module für den Import leerer Sortierboxen als Grundlage für jede Box
+- Constants.scad<br/>Funktionen, die konstante Werte liefern, z.B. die Wandstärke und die Toleranz
+- Deployment.scad<br/>Module, die Elemente gleichmäßig verteilen
+- Placement.scad<br/>Module, die Elemente platzieren und ausrichten
+- PlacementOptions.scad<br/>Optionswerte für die Ausrichtung und Drehung, die per include eingebunden werden
+- Rotation.scad<br/>Module, die Elemente drehen
 
 Im Base-Verzeichnis finden sich auch die STL-Dateien mit den Leerboxen 190x130 und 130x95, die als Basis zur Konstruktion verwendet werden.
 
 ## ModelBase
-Enthält einfache und komplexere parametrisierbare Basiselemente, mit denen die Elemente für spezifische Bauteile erstellt werden.
+Enthält einfache (Simple.scad) und komplexere (Complex.scad) parametrisierbare Basiselemente, mit denen die Elemente für spezifische Bauteile erstellt werden.
 
 ## Elements
 Enthält Elemente für spezifische Fischertechnik-Bauteile, einige von ihnen parametrisierbar. Alle sind auch Fischertechnik-Teilenummern zugeordnet, die in den Quelldateien als Kommentare vermerkt sind.
