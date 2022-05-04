@@ -6,7 +6,7 @@ Platziert ein oder mehrere Elemente an der angegebenen Position.
 - Optional __zentriert__ in der Box oder einer angegebenen Fläche mit relativen x/y-Koordinaten
 - Optional mit __Drehung__ des oder der Elemente
 
-__Place__ ist ein *module* und platziert ein oder mehrere *children*. Falls mehr als ein *children* angegeben ist, werden diese an derselben Position platziert. Damit können z.B. abgestufte Trennwände erzeugt werden.
+__Place__ ist ein *module* und platziert ein oder mehrere *children*. Falls mehr als ein *children* angegeben ist, werden diese an derselben Position platziert. Damit können z.B. abgestufte Trennwände durch überlagert Wände unterschiedlicher Höhe platziert werden.
 
 Alle Parameter sind optional. Wie üblich in OpenSCAD sind die Werte in mm angegeben. Ohne Angabe von Parameterwerten wird das Element an Position 0,0 in der linken unteren Ecke der Sortierbox platziert. Als Standardfläche für die Ausrichtung wird die Sortierbox 190 x 130 angenommen, dies kann durch Angabe des Parameters *boxSpace* geändert werden.
 
