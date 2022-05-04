@@ -15,6 +15,7 @@ use <../../Elements/FrameAxis60Open.scad>
 use <../../Elements/FrameMotor6V.scad>
 use <../../Elements/AxisCoupling.scad>
 use <../../Elements/FrameBracketWithAxle80.scad>
+use <../../Elements/FrameBracketCombo.scad>
 use <../../Elements/AxisFlatHub.scad>
 use <../../Elements/CylinderGear.scad>
 
@@ -27,7 +28,7 @@ difference() {
 }
 HolderBatterySet();
 
-upperWebDistance = 12;
+upperWebDistance = 13;
 BoxWeb(UpperLeft, RightOfCorner, upperWebDistance + getDividerThickness(), webThickness=getDividerThickness());
 BoxWeb(UpperRight, LeftOfCorner, upperWebDistance + getDividerThickness(), webThickness=getDividerThickness());
 wallVolume = [getBox190Space().x, getDividerThickness(), 15];
@@ -89,10 +90,18 @@ Place(
     elementSpace=getAxisFlatHubSpace(),
     alignX=AlignRight)
     AxisFlatHub();
+
 Place(
-    y =35,
+    y=35,
     elementSpace=getCylinderGearSpace(),
     alignX=AlignRight)
     CylinderGear();
 
+Place(
+    y=25,
+    x=4, 
+    elementSpace=getFrameBracketComboSpace(),
+    alignX=AlignRight,
+    alignY=AlignTop)
+    FrameBracketCombo();
 }
