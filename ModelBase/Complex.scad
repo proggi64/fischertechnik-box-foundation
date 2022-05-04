@@ -450,3 +450,37 @@ module FrameRack(factor=1, count=1) {
         }
     }
 }
+
+frameBracketWidth = 27;
+axisExtensionWidth = 23;
+frameBracketDepth = 7.5;
+frameBracketHeight = 8;
+
+// getFrameBracketWidth()
+// Gets the width of an single bracket frame
+
+function getFrameBracketWidth() = frameBracketWidth;
+
+// getFrameBracketSpace()
+// Gets the space for a frame for a bracket with worm.
+
+function getFrameBracketSpace() = getFrameOuterVolume([
+    frameBracketWidth + axisExtensionWidth - getDividerThickness(), 
+    frameBracketDepth, 
+    frameBracketHeight]);
+
+// FrameBracket(webVolume)
+// Frame for brackets with or without worm (mot1), including a web
+// webVolume = Volume of the web right of the frame that supports the axis or worm
+
+module FrameBracket(webVolume) {
+    Space(getFrameBracketSpace());
+    Frame([frameBracketWidth, frameBracketDepth, frameBracketHeight]);
+    webOffset = 34.5;
+    Place(
+        x = webOffset,
+        boxSpace = getFrameBracketSpace(),
+        elementSpace = webVolume,
+        alignY = AlignCenter)
+        Wall(webVolume);
+}
