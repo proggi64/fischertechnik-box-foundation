@@ -31,13 +31,13 @@ Im Base-Verzeichnis finden sich auch die STL-Dateien mit den Leerboxen 190x130 u
 Enthält einfache (Simple.scad) und komplexere (Complex.scad) parametrisierbare Basiselemente, mit denen die Elemente für spezifische Bauteile erstellt werden.
 
 ## Elements
-Enthält Elemente für spezifische Fischertechnik-Bauteile, einige von ihnen parametrisierbar. Alle sind auch Fischertechnik-Teilenummern zugeordnet, die in den Quelldateien als Kommentare vermerkt sind.
+Enthält Elemente für spezifische Fischertechnik-Bauteile, einige von ihnen parametrisierbar. Alle sind auch Fischertechnik-Teilenummern zugeordnet, die in den Quelldateien als Kommentare vermerkt sind. Diese Elemente sind sofort für die Konstruktion von Sortierboxen verwendbar. Diese Sammlung wird kontinuierlich erweitert.
 
 ## Test
 Enthält Testdateien für alle Module, die Funktionalität und Elemente demonstrieren.
 
 ## Original Building Kits
-Enthält Beispiele von nachgebauten Original-Sortierkästen aus den 1970er Jahren zur Demonstration, wie Kästen konstruiert werden können.
+Enthält Beispiele von nachgebauten Original-Sortierkästen aus den 1970er Jahren zur Demonstration, wie Kästen konstruiert werden können. Beispielweise sind die drei Elektronikkästen ec1 bis ec3 im Unterverzeichnis ec enthalten.
 
 ## Building Kits
 Enthält selbskonstruierte Sortierkästen für Baukästen ab den 1980er Jahren. Diese sind komplette Neuentwürfe.
