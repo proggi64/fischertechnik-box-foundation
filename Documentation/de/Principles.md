@@ -42,6 +42,10 @@ Die Elemente werden, wie schon erwähnt, um den Betrag von __getExcess()__ in de
 
 Die Bibliothek stell eine Reihe von Platzierungs- und Ausrichtungsfunktionen zur Verfügung, die bei der Konstruktion von Sortierboxen nützlich sind.
 
+## Tests als Beispiel
+
+Im Verzeichnis *Test* befinden sich in entsprechenden Unterverzeichnissen jeweils Quellcodes mit Demonstrationen der Module, Funktionen und aller Elemente. Jedes Element und jedes Modul hat einen separate Testdatei. Dies sind so aufgebaut, dass sie gleichzeitig als manueller Test und Beispiel dienen.
+
 ## Weniger ist mehr
 
 Redundanzen sollten bei der Codierung vermieden werden. Sie führen bei Varianten und Parametrisierung oft zur größeren Umbauarbeiten oder Fehlern und Inkonsistenzen. Das erste Refactoring hat die Bibliothek bereits hinter sich, um mehr Konsistenz zu erreichen.
