@@ -3,6 +3,8 @@
 | Begriff | Bedeutung |
 | ------ | ------  |
 | __Alignment__ | Fasst alle Ausrichtungsmodule und -funktionen zusammen, mit denen *Elemente* an Rändern ausgerichtet oder zentriert werden können. |
+| __Axis__ | Stehende Achse als Aufnahmeelement für Naben, Achskupplungen oder andere Bauteile, die mit Achsen verbunden werden. Alle *Elemente*, die als Basis eine Achse haben, bekommen im Modulnamen das Präfix *Axis*.
+| __Cylinder__ | Stehende Zylinder als Aufnahmeelement für Reifen oder andere Bauteile, die mit Naben oder anderen rundenBauelementen verbunden werden. Alle *Elemente*, die als Basis einen Zylinder haben, bekommen im Modulnamen das Präfix *Cylinder*.
 | __Deployment__ | Fasst alle Module und Funktionen zusammen, mit denen mehrere Elemente gleichmäßig über Strecken oder Flächen verteilt werden können. |
 | __Element__ | 3D-Konstrukt, welches den Platz für einzelne oder mehrere Bauteile innerhalb der Sortierbox definiert. Einige können über Parameter modifiziert werden, z.B. um die Anzahl der Teile anzugeben. |
 | __Frame__ | Rahmen für Bauteile, die im einfachen Fall *Element* sein können. Alle *Elemente*, die als Basis einen Rahmen haben, bekommen im Modulnamen das Präfix *Frame*. Die Rahmen bestehen aus Wänden, deren Standardstärke über die in *Constants.scad* definierte Funktion *getDividerThickness()* abgerufen werden kann. Das gleichname __Frame__-Modul bekommt als Parameter die Raumgröße des Fischertechnik-Teils und addiert für diesen noch die Standard-Toleranz in x- und y-Richtung (aus *Constants.scad* die Funktion *getTolerance()*). |
