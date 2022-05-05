@@ -10,9 +10,10 @@ Der gesamte Code ist darauf ausgerichtet, dass die 3D-Druck-Ergebnisse verwendba
 - Saubere Verschmelzung von 3D-Elementen und Box (Constants.scad - getExcess()), um ungewollte Luftspalte zu vermeiden
 - Druckbare Wandstärken, die hinreichend stabil bleiben sollten
 
-Die Bibliothek geht davon aus, dass ein 3D-Drucker mit einer 0,4 mm-Extruderdüse und einer Genauigkeit von 0,2 mm eingesetzt wird.
+Die Bibliothek geht davon aus, dass ein 3D-Drucker mit einer 0,4 mm-Extruderdüse und einer Genauigkeit von 0,2 mm eingesetzt wird. Das Bauvolumen muss für die Sortierbox 190 x 130 ca. 20 x 14 x 4 cm groß sein.
 
 ## Elemente
+Elemente sind die Konstrukte, die in der Sortierbox zur Aufnahme von ein oder mehreren Bauelementen platziert werden. Sie sind i.d.R. speziell für bestimmte Bauteile zugeschnitten. Für Kleinteile gibt es auch einfache parametrisierbare Kastenformen. Die passenden Elemente können über ihre Artikelnummer gefunden werden.
 
 - Jedes Element hat eine eigene SCAD-Datei, deren Dateiname dem Namen des *module* entspricht.
 - Jedes Element hat ein *module*, was das Element darstellt
