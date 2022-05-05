@@ -26,7 +26,7 @@ module Place(x=0, y=0, elementSpace=[0,0],
     module Position(x, y, space, rotation=Rotate0) {
         translate([x, y, 0])
             RotateFix(space, rotation)
-                children(0);
+                children();
     }
 
     space = getRotatedSpace(elementSpace, rotation);
