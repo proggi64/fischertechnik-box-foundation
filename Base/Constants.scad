@@ -28,7 +28,7 @@ axisBottomDiameter = axisDiameter + 1;
 standardEdgeDistance = 2.5;
 standardWebDistance = 11.5;
 standardCornerLength = 15;
-tubeWallFactor = 1.6;
+tubeWallFactor = 0.8;
 
 // Gets axis diameter
 function getAxisDiameter() = axisDiameter;
