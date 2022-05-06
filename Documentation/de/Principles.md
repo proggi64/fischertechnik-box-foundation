@@ -35,13 +35,17 @@ Einige Elemente sind so entworfen, dass sie an eine oder zwei Wände der Box ang
 
 ## Sortierboxen
 
-Die Sortierboxen werden als STL-Dateien eingebunden. Sie wurden mit einem CAD-Programm entworfen und können mit den Original-Boxen von Fischertechnik gestapelt werden. Bei der Platzierung der Elemente ist die z-Nullinie exakt der obere Rand des Bodens der Box. Die Position 0,0 ist exakt die Ecke der nutzbaren Innenfläche der Box.
+Die Sortierkästen werden als STL-Dateien eingebunden. Sie wurden mit einem CAD-Programm entworfen und können mit den Original-Kästen von Fischertechnik gestapelt werden. Bei der Platzierung der Elemente ist die z-Nullinie exakt der obere Rand des Bodens des Sortierkastens. Die Position 0,0 ist exakt die Ecke der nutzbaren Innenfläche der Box.
 
 Die Elemente werden, wie schon erwähnt, um den Betrag von __getExcess()__ in den Boden versenkt.
 
 ## Ausrichtung
 
 Die Bibliothek stell eine Reihe von Platzierungs- und Ausrichtungsfunktionen zur Verfügung, die bei der Konstruktion von Sortierboxen nützlich sind.
+
+## Baukastenprinzip kombinierbar mit individuellen Elementen
+
+Vorgefertigte Elemente und das individuelle Programmieren mit OpenSCAD-Code sollen beliebig kombinierbar sein. Die Funktionen und Module aus dem Base-Verzeichnis sollen auch bei der individuellen Gestaltung der Sortierkästen helfen. Beispiele für solche Kombinationen sind die Nachbauten der Originalkästen, z.B. der mot2.
 
 ## Tests als Beispiel
 
