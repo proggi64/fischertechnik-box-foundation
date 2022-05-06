@@ -6,9 +6,9 @@ Für die Konstruktion der Bibliothek wurden einige Prinzipien festgelegt, die be
 
 Der gesamte Code ist darauf ausgerichtet, dass die 3D-Druck-Ergebnisse verwendbare Sortierboxen produzieren.
 
-- Sinnvolle Toleranzen für alle Elemente (Constants.scad - getTolerance()), damit die Teile in die Elemente passen
-- Saubere Verschmelzung von 3D-Elementen und Box (Constants.scad - getExcess()), um ungewollte Luftspalte zu vermeiden
-- Druckbare Wandstärken, die hinreichend stabil bleiben sollten
+- Sinnvolle Toleranzen für alle Elemente (Constants.scad - __getTolerance()__), damit die Teile in die Elemente passen
+- Saubere Verschmelzung von 3D-Elementen und Box (Constants.scad - __getExcess()__), um ungewollte Luftspalte zu vermeiden
+- Druckbare Wandstärken, die hinreichend stabil bleiben sollten (Constants.scad - __getDividerThickness()__)
 
 Die Bibliothek geht davon aus, dass ein 3D-Drucker mit einer 0,4 mm-Extruderdüse und einer Genauigkeit von 0,2 mm eingesetzt wird. Das Bauvolumen muss für die Sortierbox 190 x 130 ca. 20 x 14 x 4 cm groß sein.
 
@@ -55,6 +55,8 @@ Im Verzeichnis *Test* befinden sich in entsprechenden Unterverzeichnissen jeweil
 - Test/ModelBase: SimpleTest*Module*.scad oder ComplexTest*Module*.scad
 - Test/Elements: Test*Elementname*.scad
 
-## Weniger ist mehr
+## Weitere Prinzipien
 
-Redundanzen sollten bei der Codierung vermieden werden. Sie führen bei Varianten und Parametrisierung oft zur größeren Umbauarbeiten oder Fehlern und Inkonsistenzen. Das erste Refactoring hat die Bibliothek bereits hinter sich, um mehr Konsistenz zu erreichen.
+- Redundanzen bei Code und Konstanten werden vermieden, um an zentralen Stellen Anpassungen zu ermöglichen
+- Namen sind über alle Quellcodes konsistent
+
