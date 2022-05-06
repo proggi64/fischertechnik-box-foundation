@@ -400,8 +400,13 @@ module FrameSpecialFlat(volume) {
 
 
 frameRackWidth = 30;
-frameRackDepth = 15;
+frameRackDepth = 16.5;
 frameRackHeight = 12.8;
+
+rackInnerHeight = 10.9;
+rackInnerDiff = 4.0;
+
+function getRackInnerHeight() = rackInnerHeight;
 
 // getFrameRack(factor=1, count=1)
 // Gets the space for a frame for count racks in one row.
@@ -410,18 +415,14 @@ frameRackHeight = 12.8;
 
 function getFrameRackSpace(factor=1, count=1) = getFrameOuterVolume([frameRackWidth * factor, frameRackDepth * count, frameRackHeight]);
 
-// FrameRack(count)
-// Frame for rack 30. The racks 30 are ordered in line.
+// RackBase(factor=1, count=1)
+// Inner frames for racks.
+// factor 1 for rack 30, 2 for rack 60
 // count = Count of racks
 
-module FrameRack(factor=1, count=1) {
-    innerHeight = 10.9;
-    innerDiff = 4.0;
+module RackBase(factor=1, count=1) {
     
-    // Outer frame
-    Frame([frameRackWidth * factor, frameRackDepth * count, frameRackHeight]);
-
-    yOffset = (frameRackDepth - innerDiff) / 2;
+    yOffset = (frameRackDepth - rackInnerDiff) / 2;
     
     module InnerWebs() {        
         wayDepth = yOffset + 2*getExcess() - getDividerThickness();
@@ -432,9 +433,9 @@ module FrameRack(factor=1, count=1) {
         
         translate([wayXOffset, 0]) {
             translate([0, way0YOffset])
-                Wall([getDividerThickness(), wayDepth, innerHeight]);
+                Wall([getDividerThickness(), wayDepth, rackInnerHeight]);
             translate([0, way1YOffset])    
-                Wall([getDividerThickness(), wayDepth, innerHeight]);
+                Wall([getDividerThickness(), wayDepth, rackInnerHeight]);
         }
     }
     
@@ -443,12 +444,23 @@ module FrameRack(factor=1, count=1) {
     for (yLoopOffset = [0:frameRackDepth:endy]) {
         // Inner frame
         translate([0, yOffset + yLoopOffset, 0])
-            Frame([frameRackWidth * factor, innerDiff, innerHeight]);
+            Frame([frameRackWidth * factor, rackInnerDiff, rackInnerHeight]);
         for (xOffset = [0:frameRackWidth:endx]) {
             translate ([xOffset, yLoopOffset])
                 InnerWebs();
         }
     }
+}
+
+// FrameRack(factor=1, count=1)
+// Frame for rack 30. The racks 30 are ordered in line.
+// factor 1 for rack 30, 2 for rack 60
+// count = Count of racks
+
+module FrameRack(factor=1, count=1) {
+    // Outer frame
+    Frame([frameRackWidth * factor, frameRackDepth * count, frameRackHeight]);
+    RackBase(factor, count);
 }
 
 frameBracketWidth = 27;

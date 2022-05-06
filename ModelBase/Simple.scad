@@ -38,19 +38,21 @@ module Wall(volume) {
         cube([volume.x, volume.y, volume.z + getExcess()]);
 }
 
-// Tube(height, innerDiameter)
+// Tube(height, innerDiameter, outerDiameter=innerDiameter+2*getTubeWallThickness())
 // Standing tube, with it's center at 0,0. Use Center without elementSpace to center in a space.
 // height = Height of the tube's wall
-// diameter = Diameter of the outer tube
+// innerDiameter = Diameter of the inner tube
+// outerDiameter = Diameter of the outer tube
 
-module Tube(height, diameter) {
+module Tube(height, innerDiameter=0, outerDiameter=0) {
     difference() {
         heightOfTube = height + getExcess();
-        cutoffDiameter = diameter - getTubeWallThickness();
+        innerDiameter = (innerDiameter != 0.0) ? innerDiameter : (outerDiameter-2*getTubeWallThickness());
+        outerDiameter = (outerDiameter != 0.0) ? outerDiameter : (innerDiameter+2*getTubeWallThickness());
         
-        cylinder(h = heightOfTube, d = diameter, $fn = getFragments());
+        cylinder(h = heightOfTube, d = outerDiameter, $fn = getFragments());
         translate([0, 0, getExcess()])
-            cylinder(h = heightOfTube, d = cutoffDiameter, $fn = getFragments());
+            cylinder(h = heightOfTube, d = innerDiameter, $fn = getFragments());
     }        
 }
 
