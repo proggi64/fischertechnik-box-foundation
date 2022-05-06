@@ -27,7 +27,7 @@ Beispiel Getriebeschnecke 31045 für den 6V-Motor:
 - Module: __FrameBracketWithWorm()__
 - Function: __getFrameBracketWithWormSpace()__
 
-Alle Elemente sind so konstruiert, dass sie bei der Platzierung in die Sortierbox mit deren Boden verschmelzen. Der Betrag dieser Verschmelzung wird durch die in *Constants.scad* festgelegte Funktion __getExcess()__ bestimmt. Jedes Element hat eine automatisch addierte Basis in dieser Stärke, so dass (trotz des geringen Betrags) die Höhe exakt den Vorgaben entspricht.
+Alle Elemente sind so konstruiert, dass sie bei der Platzierung in den Sortierkasten mit deren Boden verschmelzen. Der Betrag dieser Verschmelzung wird durch die in *Constants.scad* festgelegte Funktion __getExcess()__ bestimmt. Jedes Element hat eine Basisfläche der __get*ElementName*Space()__-Größe in dieser dünnen Stärke, die beim Platzieren im Boden des Sortierkastens verschwindet.
 
 ## Andockbare Elemente
 
