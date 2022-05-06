@@ -45,7 +45,7 @@ Die Bibliothek stell eine Reihe von Platzierungs- und Ausrichtungsfunktionen zur
 
 ## Baukastenprinzip kombinierbar mit individuellen Elementen
 
-Vorgefertigte Elemente und das individuelle Programmieren mit OpenSCAD-Code sollen beliebig kombinierbar sein. Die Funktionen und Module aus dem Base-Verzeichnis sollen auch bei der individuellen Gestaltung der Sortierkästen helfen. Beispiele für solche Kombinationen sind die Nachbauten der Originalkästen, z.B. der mot2.
+Vorgefertigte Elemente und das individuelle Programmieren mit OpenSCAD-Code sollen beliebig kombinierbar sein. Die Funktionen und Module aus dem *Base*-Verzeichnis sollen auch bei der individuellen Gestaltung der Sortierkästen helfen. Beispiele für solche Kombinationen sind die Nachbauten der Originalkästen, z.B. der mot2.
 
 ## Tests als Beispiel
 
