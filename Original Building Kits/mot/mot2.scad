@@ -9,6 +9,8 @@ use <../../ModelBase/Complex.scad>
 
 include <../../Base/PlacementOptions.scad>
 
+use <../../Elements/CylinderHubWithZ30.scad>
+
 module RackFrames() {
     Place(0.5, -getDividerThickness()-0.2, elementSpace=getFrameRackSpace(2, 4), rotation=Rotate270, alignY=AlignTop) {
         RackBase(1, 2);    
@@ -42,15 +44,26 @@ module LeftFrames() {
         Wall(wallCSpace);
 }
 
-color("lightgray") {
-#Box190();
+module Z30Hubs() {
+    Place (getFrameRackSpace(2, 4).y)
+    DeploySame(space=[100, 52], elementSpace=getCylinderHubWithZ30Space()) {
+        CylinderHubWithZ30();
+    }
+}
 
-webDistance = 18;
+color("lightgray") {
+Box190();
+
+webDistance = 16;
 BoxWeb(UpperLeft, LeftOfCorner, webDistance, webThickness=getDividerThickness());
 BoxWeb(UpperRight, RightOfCorner, webDistance, webThickness=getDividerThickness());
 BoxWeb(LowerRight, LeftOfCorner, webDistance, webThickness=getDividerThickness());
 BoxWeb(LowerLeft, LeftOfCorner, 7);
+Place(x=webDistance + getDividerThickness(), alignX=AlignRight)
+    Wall([getDividerThickness(), getBox190Space().y, 28]);
 
 RackFrames();
 LeftFrames();
+    
+Z30Hubs();
 }
