@@ -27,7 +27,7 @@ module AxisHub() {
     LeveledAxisWithSpace(axisHeight, tubeHeight, getAxisHubSpace());
     
     Center(getAxisHubSpace())
-        Tube(tubeHeight, tubeDiameter);
+        Tube(tubeHeight, outerDiameter=tubeDiameter);
 }
 
 // Tests

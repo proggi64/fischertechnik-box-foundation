@@ -21,12 +21,11 @@ function getCylinderWheel23Space() = [width, depth];
 module CylinderWheel23() {
     diameter = 15.8;
     height = 19.9;
-    outerDiameter = diameter + getTubeWallThickness();
 
     Space(getCylinderWheel23Space());
     
     Center(getCylinderWheel23Space())
-        Tube(height, outerDiameter);
+        Tube(height, innerDiameter=diameter);
 }
 
 // Tests

@@ -32,4 +32,4 @@ module FrameAngleBlock10x15x15(count=1) {
 
 // Test
 color("lightgray")
-FrameAngleBlock10x15x15(3);
+FrameAngleBlock10x15x15();

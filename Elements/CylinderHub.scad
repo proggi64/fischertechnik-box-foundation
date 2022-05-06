@@ -22,13 +22,12 @@ module CylinderHub() {
     diameter = 23;
     height = 4;
     axisHeight = 17;
-    outerDiameter = diameter + getTubeWallThickness();
 
     Space(getCylinderHubSpace());
         
     Center(getCylinderHubSpace()) {
         LeveledAxis(axisHeight, height);
-        Tube(height, outerDiameter);
+        Tube(height, outerDiameter=diameter);
     }
 }
 
