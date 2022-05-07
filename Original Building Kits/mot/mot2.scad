@@ -10,6 +10,11 @@ use <../../ModelBase/Complex.scad>
 include <../../Base/PlacementOptions.scad>
 
 use <../../Elements/CylinderHubWithZ30.scad>
+use <../../Elements/CylinderAxis30.scad>
+use <../../Elements/CylinderStepUpDownCog.scad>
+use <../../Elements/FrameGearBox.scad>
+use <../../Elements/AxisClip10.scad>
+use <../../Elements/AxisIdlerGearZ15.scad>
 
 module RackFrames() {
     Place(0.5, -getDividerThickness()-0.2, elementSpace=getFrameRackSpace(2, 4), rotation=Rotate270, alignY=AlignTop) {
@@ -44,17 +49,59 @@ module LeftFrames() {
         Wall(wallCSpace);
 }
 
+groupX = 100;
+
 module Z30Hubs() {
     Place (getFrameRackSpace(2, 4).y)
-    DeploySame(space=[100, 52], elementSpace=getCylinderHubWithZ30Space()) {
+    DeploySame(space=[groupX, 52], elementSpace=getCylinderHubWithZ30Space()) {
         CylinderHubWithZ30();
+    }
+}
+
+webDistance = 16;
+
+module Axis30Group() {
+    axis30GroupSpace = [getCylinderAxis30Space().x, getCylinderAxis30Space().y*2];
+    Place(
+        x = webDistance + 2*getDividerThickness(), 
+        y = 4,
+        elementSpace = axis30GroupSpace,
+        alignX=AlignRight, 
+        alignY=AlignTop)
+        DeploySame(columns=1, rows=2, elementSpace=getCylinderAxis30Space(), space=axis30GroupSpace)
+            CylinderAxis30();
+}
+
+module GearBox() {
+    Place(
+        x = getFrameRackSpace(2, 4).y,
+        y = getCylinderHubWithZ30Space().y + 2 * getDividerThickness()
+        )
+        Center(
+            space=[100, getFrameGearBoxSpace().y],
+            elementSpace=getFrameGearBoxSpace()
+            )
+            FrameGearBox();
+}
+
+module ClipGroups() {
+    module ClipGroup() {
+        AxisClip10();
+        translate([getAxisClip10Space().x, 0])
+            AxisClip10();
+    }
+    Place(
+        x = getFrameRackSpace(2, 4).y + getDividerThickness(), 
+        y = getCylinderHubWithZ30Space().y) {
+        ClipGroup();
+        translate([getFrameGearBoxSpace().x + 2*getAxisClip10Space().x + getDividerThickness(), 0])
+            ClipGroup();
     }
 }
 
 color("lightgray") {
 Box190();
 
-webDistance = 16;
 BoxWeb(UpperLeft, LeftOfCorner, webDistance, webThickness=getDividerThickness());
 BoxWeb(UpperRight, RightOfCorner, webDistance, webThickness=getDividerThickness());
 BoxWeb(LowerRight, LeftOfCorner, webDistance, webThickness=getDividerThickness());
@@ -65,5 +112,19 @@ Place(x=webDistance + getDividerThickness(), alignX=AlignRight)
 RackFrames();
 LeftFrames();
     
+Axis30Group();
+
+GearBox();
+ClipGroups();
+
 Z30Hubs();
+
+Place(
+    x = getFrameRackSpace(2, 4).y, 
+    y = getCylinderHubWithZ30Space().y + getAxisClip10Space().y + 4) {
+    AxisIdlerGearZ15();
+    translate([getFrameGearBoxSpace().x + 2*getAxisClip10Space().x + getDividerThickness() + 4, 5])
+        CylinderStepUpDownCog();
+    }
+
 }
