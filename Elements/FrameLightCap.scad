@@ -2,7 +2,6 @@
 // Frame for Light Cap
 // 31316,31317,31318,31319,31320,31321,31362,36478,36531,36532
 
-use <../Base/Constants.scad>
 use <../Base/Placement.scad>
 use <../ModelBase/Simple.scad>
 

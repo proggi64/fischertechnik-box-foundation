@@ -2,7 +2,6 @@
 // Frame for single 50 mm Axis
 // 31033
 
-use <../Base/Constants.scad>
 use <../ModelBase/Complex.scad>
 
 length = 50;

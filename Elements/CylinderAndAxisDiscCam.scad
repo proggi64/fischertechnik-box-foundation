@@ -5,7 +5,7 @@ use <../Base/Constants.scad>
 use <../ModelBase/Simple.scad>
 use <../ModelBase/Complex.scad>
 
-use <CylinderGear.scad>
+use <CylinderGearZ20.scad>
 
 width = 57;
 depth = 42;
@@ -24,16 +24,16 @@ module CylinderAndAxisDiscCam() {
         cube([getCylinderAndAxisDiscCamSpace().x, getCylinderAndAxisDiscCamSpace().y, getExcess()]);
     }
 
-    xOffset = (getCylinderAndAxisDiscCamSpace().y - getCylinderGearSpace().x)/2;
-    yOffset = (getCylinderAndAxisDiscCamSpace().y - getCylinderGearSpace().y)/2;
+    xOffset = (getCylinderAndAxisDiscCamSpace().y - getCylinderGearZ20Space().x)/2;
+    yOffset = (getCylinderAndAxisDiscCamSpace().y - getCylinderGearZ20Space().y)/2;
 
     translate([xOffset, yOffset, 0])
-        CylinderGear();
+        CylinderGearZ20();
     
     xAxisOffset = 43;
     yAxisOffset = getCylinderAndAxisDiscCamSpace().y / 2;
     translate([xAxisOffset, yAxisOffset])
-        LeveledAxis(getCylinderGearHeight(), getCylinderGearLevelHeight());
+        LeveledAxis(getCylinderGearZ20Height(), getCylinderGearZ20LevelHeight());
 }
 
 // Tests

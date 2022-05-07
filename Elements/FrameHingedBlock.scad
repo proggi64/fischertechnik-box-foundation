@@ -15,7 +15,7 @@ height = 5;
 function getFrameHingedBlockSpace() = getFrameOuterVolume([width, depth, height]);
 
 // FrameHingedBlock()
-// Frame for hinged block
+// Frame for hinged block (strait)
 // 31008
 
 module FrameHingedBlock() {

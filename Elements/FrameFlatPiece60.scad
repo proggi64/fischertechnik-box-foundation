@@ -2,7 +2,6 @@
 // Frame for Flat Pieces 60
 // 31555
 
-use <../Base/Constants.scad>
 use <../ModelBase/Complex.scad>
 
 size = 60;
@@ -22,5 +21,5 @@ module FrameFlatPiece60(count=1) {
 
 // Tests
 color("lightgray") {
-FrameFlatPiece60(2);
+FrameFlatPiece60();
 }

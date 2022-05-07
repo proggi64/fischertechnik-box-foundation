@@ -1,8 +1,7 @@
 // Fischertechnik Box Library
-// Frame for single 50 mm Axis
+// Frame for single 60 mm Axis
 // 31032
 
-use <../Base/Constants.scad>
 use <../ModelBase/Complex.scad>
 
 length = 60;

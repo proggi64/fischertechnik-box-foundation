@@ -14,9 +14,6 @@ height = 9;
 // count = Count of equilateral angle blocks
 
 function getFrameAngleEquilateralSpace(count=1) = getFrameOuterVolume([width * count, depth, height]);
-/*[
-    frameGridWidth * count + 2 * getWallThickness() + getTolerance(), 
-    frameGridDepth + 2 * getWallThickness() + getFrameInnerGap()];*/
 
 // FrameAngleEquilateral(count)
 // count = Count of angle blocks in x direction
@@ -30,4 +27,4 @@ module FrameAngleEquilateral(count=1) {
 
 // Tests
 color ("lightgray")
-FrameAngleEquilateral(2);
+FrameAngleEquilateral();

@@ -2,7 +2,6 @@
 // Frame for Rack 60
 // 31053
 
-use <../Base/Constants.scad>
 use <../ModelBase/Complex.scad>
 
 width = 30;

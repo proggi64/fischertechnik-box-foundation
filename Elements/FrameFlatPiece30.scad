@@ -22,5 +22,5 @@ module FrameFlatPiece30(count=1) {
 
 // Tests
 color("lightgray") {
-FrameFlatPiece30(2);
+FrameFlatPiece30();
 }

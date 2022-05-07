@@ -2,7 +2,6 @@
 // Frame for single 125 mm Axis
 // 31036
 
-use <../Base/Constants.scad>
 use <../ModelBase/Complex.scad>
 
 length = 125;

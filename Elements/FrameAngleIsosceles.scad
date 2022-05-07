@@ -30,4 +30,4 @@ module FrameAngleIsosceles(count=1) {
 
 // Tests
 color ("lightgray")
-FrameAngleIsosceles(2);
+FrameAngleIsosceles();

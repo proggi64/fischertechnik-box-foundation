@@ -52,4 +52,5 @@ module HolderBatterySetCutoffs() {
 // Test
 color("lightgray")
 HolderBatterySet();
+// Difference to Box190:
 HolderBatterySetCutoffs();

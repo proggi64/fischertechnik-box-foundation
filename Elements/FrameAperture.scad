@@ -2,7 +2,6 @@
 // Frame for Pinhole, Slit Aperture, and Cross Aperture
 // 31371, 31372, 31373 
 
-use <../Base/Constants.scad>
 use <../ModelBase/Simple.scad>
 use <../ModelBase/Complex.scad>
 

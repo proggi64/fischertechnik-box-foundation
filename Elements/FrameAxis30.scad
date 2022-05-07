@@ -3,7 +3,6 @@
 // 31034
 // For standing axis see CylinderAxis30
 
-use <../Base/Constants.scad>
 use <../ModelBase/Complex.scad>
 
 length = 30;

@@ -22,4 +22,4 @@ module HolderBuildingPlate90x30(count = 1, dock = false) {
 
 // Test
 color("lightgray")
-HolderBuildingPlate90x30(4);
+HolderBuildingPlate90x30();
