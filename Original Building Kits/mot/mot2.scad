@@ -63,7 +63,7 @@ webDistance = 16;
 module Axis30Group() {
     axis30GroupSpace = [getCylinderAxis30Space().x, getCylinderAxis30Space().y*2];
     Place(
-        x = webDistance + 2*getDividerThickness(), 
+        x = webDistance + getDividerThickness(), 
         y = 4,
         elementSpace = axis30GroupSpace,
         alignX=AlignRight, 
@@ -75,13 +75,17 @@ module Axis30Group() {
 module GearBox() {
     Place(
         x = getFrameRackSpace(2, 4).y,
-        y = getCylinderHubWithZ30Space().y + 2 * getDividerThickness()
-        )
+        y = getCylinderHubWithZ30Space().y + 2 * getDividerThickness() + 0.4
+        ) {
         Center(
             space=[100, getFrameGearBoxSpace().y],
             elementSpace=getFrameGearBoxSpace()
-            )
+            ) {
             FrameGearBox();
+            Center(space=getFrameGearBoxSpace())
+                Text("mot2");
+        }
+    }
 }
 
 module ClipGroups() {
@@ -99,24 +103,75 @@ module ClipGroups() {
     }
 }
 
+axisLength = 110;
+comboDepth = 25;
+comboWidth = getFrameAxisSpace(axisLength).x;
+comboHeight = getFrameAxisHeight();
+diff = getFrameAxisDepth() + 3.8;
+
+function getAxisComboSpace() = [comboWidth, comboDepth, comboHeight];
+
+// Individual combined axis holders at the upper edge for three different axis
+module AxisCombo() {    
+    Space(getAxisComboSpace());
+    
+    innerWidth = 7;
+    innerDepth = 20;
+    frameSpace = [innerWidth, innerDepth, comboHeight];
+    cutoffVolume60 = [60, getFrameAxisDepth(), getFrameAxisDepth() + getExcess()];
+    cutoffVolume110 = [axisLength, getFrameAxisDepth(), getFrameAxisDepth() + getExcess()];
+    cutoffHeight = comboHeight - getFrameAxisDepth();
+    clamp = 0.2;
+    
+    module AxisFrames() {
+        // Left and right frames (default columns value of DeploySame is 2)
+        DeploySame(space=getAxisComboSpace(), elementSpace=frameSpace)
+            DockableFrame(frameSpace, wallTop=false);
+        // Middle frame
+        translate([50-getTolerance(), diff])
+            Frame([frameSpace.x, getFrameAxisDepth(), getFrameAxisHeight()]);
+    }
+    
+    difference() {
+        AxisFrames();
+        // cutoffs for the three axis
+        translate([
+            getDividerThickness()+getTolerance()/2, 
+            getDividerThickness() + clamp, 
+            cutoffHeight]) {
+            cube(cutoffVolume110);
+            translate([50, diff])
+                cube(cutoffVolume60);
+            translate([0, 2*diff])
+                cube(cutoffVolume110);
+        }
+    }
+}
+
 color("lightgray") {
 Box190();
 
-BoxWeb(UpperLeft, LeftOfCorner, webDistance, webThickness=getDividerThickness());
+// Box webs and right wall
+BoxWeb(UpperLeft, LeftOfCorner, webDistance+2, webThickness=getDividerThickness());
 BoxWeb(UpperRight, RightOfCorner, webDistance, webThickness=getDividerThickness());
 BoxWeb(LowerRight, LeftOfCorner, webDistance, webThickness=getDividerThickness());
 BoxWeb(LowerLeft, LeftOfCorner, 7);
 Place(x=webDistance + getDividerThickness(), alignX=AlignRight)
     Wall([getDividerThickness(), getBox190Space().y, 28]);
 
+// Frames and holders for the four racks and the cassette
 RackFrames();
 LeftFrames();
-    
+
+// Two standing axis 30
 Axis30Group();
 
+// Frame for the gear box
 GearBox();
+// Four clip axis left and right of the gear box
 ClipGroups();
 
+// Two axis for the Z30 with hubs
 Z30Hubs();
 
 Place(
@@ -127,4 +182,10 @@ Place(
         CylinderStepUpDownCog();
     }
 
+// Individual docked combination of holders for three axis at the upper wall
+Place(
+    x=getFrameRackSpace(1, 2).x + 2*getDividerThickness() + 4,
+    y = -getDividerThickness(),
+    elementSpace=getAxisComboSpace(), alignY=AlignTop)
+    AxisCombo();
 }
