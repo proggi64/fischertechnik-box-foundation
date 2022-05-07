@@ -9,9 +9,3 @@ __31026__ Achse und Halterung für Handkurbel
 
 ## Syntax
 <pre><code>AxisHandCrank();</pre></code>
-© 2022 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
