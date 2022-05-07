@@ -13,6 +13,3 @@ jeweils mit Feststellschraube
 ## Syntax
 <pre><code>AxisCogWheel();
 </pre></code>
-
-
-
