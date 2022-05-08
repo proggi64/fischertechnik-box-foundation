@@ -20,3 +20,6 @@ include &lt;../Base/PlacementOptions.scad&gt;</pre></code>
 | spaceWidth | Breite der Fläche, in der das Element ausgerichtet platziert werden soll. |
 | align | Mögliche Werte aus der Datei *PlacementOptions.scad*: __AlignRight__ (Standard), __AlignCenter__ und __AlignLeft__. |
 | offset | __AlignLeft__: Position vom linken Rand<br/>__AlignCenter__: Relative Position vom Zentrum aus (positiv nach rechts, negativ nach links)<br/>__AlignRight__: Relative Position vom rechten Rand (positive Werte nach links). Dabei wird der Abstand des rechten Rands des Elements zum rechten Rand des Bereichs (space) gemessen. |
+
+## Rückgabewert
+X-Position, die sich aus der Breite des Elements *elementWidth*, der Breite der Strecke *spaceWidth*, der Ausrichtung *align* und dem optionalen *offset* ergibt. Diese Position bezieht sich auf den linken Rand des Elements und kann direkt für __Place__ oder __translate__ verwendet werden.
