@@ -12,3 +12,6 @@ Wenn eine Seite über die Align-Parameter an eine Wand angedockt sein soll, ist 
 ## Syntax
 <pre><code>getStandardEdgeDistance();
 </pre></code>
+
+## Rückgabewert
+Länge der Stege in mm, die beim Andocken eines __DockableEdgedFrame__ generiert werden. Dies entspricht dem Abstand der Nutzfläche des Rahmens von der Wand des Sortierkastens.
