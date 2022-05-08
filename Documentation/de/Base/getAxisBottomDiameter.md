@@ -12,3 +12,6 @@ Achsen, die als Sortierkasten-Element eingesetzt werden, haben häufig eine dick
 ## Syntax
 <pre><code>getAxisBottomDiameter();
 </pre></code>
+
+## Rückgabewert
+Konstanter Wert für den unteren Durchmesser des Absatzes in mm.
