@@ -10,3 +10,6 @@ Die Funktion wird durchgängig in der gesamten Bibliothek eingesetzt. Der Betrag
 ## Syntax
 <pre><code>getFragments();
 </pre></code>
+
+## Rückgabewert
+Anzahl der Fragmente, die bei Zylindern intern verwendet werden. Die Funktion wird intern durchgängig eingesetzt.
