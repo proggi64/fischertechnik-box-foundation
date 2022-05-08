@@ -8,3 +8,6 @@ Funktion: Liefert den Durchmesser einer Fischertechnik Achse (4mm).
 ## Syntax
 <pre><code>getAxisDiameter();
 </pre></code>
+
+## Rückgabewert
+Konstanter Wert 4 für den Durchmesser einer Achse in mm.
