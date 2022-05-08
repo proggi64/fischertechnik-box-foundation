@@ -12,3 +12,6 @@ Im Bild ist dies der Abstand der beiden gelben Stege an der linken Ecke zur Ecke
 ## Syntax
 <pre><code>getStandardWebDistance();
 </pre></code>
+
+## Rückgabewert
+Abstand eines generierten Stegs bei __DockableEdgedFrame__ zur Ecke der Nutzfläche des Elements. Dieser Abstand wird von der Ecke zum Rand des Stegs gemessen, der zur Ecke zugewandt ist. In ec1 bis ec3 ist dieser Abstand z.B. 15 mm, was auch hier als Standardwert definiert wurde.
