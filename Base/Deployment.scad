@@ -21,7 +21,7 @@ function getWidth(spaces, rotations, count, i=0) =
 
 // getX(spaces, rotations, distance, i)
 // Calculates the X position of the space with the index i, when the spaces are placed with the given
-// equal distances. Used internally for DeployRow.
+// equal distances. Used internally for DeployHorizontal.
 // spaces = List of spaces from which the width should be added
 // rotations = specify rotations for each space to get its correct width
 // distance = Equal distance between each space
