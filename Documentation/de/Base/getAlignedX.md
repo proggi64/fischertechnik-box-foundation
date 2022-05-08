@@ -16,7 +16,7 @@ include &lt;../Base/PlacementOptions.scad&gt;</pre></code>
 
 | Parameter | Beschreibung |
 | ------ | ------ |
-| elementWidth | Breite des Elements, welches horizontal ausgerichtet platziert werdn soll. |
+| elementWidth | Breite des Elements, welches horizontal ausgerichtet platziert werden soll. |
 | spaceWidth | Breite der Fläche, in der das Element ausgerichtet platziert werden soll. |
 | align | Mögliche Werte aus der Datei *PlacementOptions.scad*: __AlignRight__ (Standard), __AlignCenter__ und __AlignLeft__. |
 | offset | __AlignLeft__: Position vom linken Rand<br/>__AlignCenter__: Relative Position vom Zentrum aus (positiv nach rechts, negativ nach links)<br/>__AlignRight__: Relative Position vom rechten Rand (positive Werte nach links). Dabei wird der Abstand des rechten Rands des Elements zum rechten Rand des Bereichs (space) gemessen. |
