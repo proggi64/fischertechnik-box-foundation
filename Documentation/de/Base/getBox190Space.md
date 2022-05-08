@@ -9,4 +9,5 @@ Funktion: Liefert die nutzbare Fläche eines fischertechnik Sortierkastens 190 x
 <pre><code>getBox190Space();
 </pre></code>
 
-Das Ergebnis ist eine Liste aus x/y-Wert, welche die Breite und Tiefe der Innenfläche enthält. Die Fläche ist etwas kleiner als 190 x 130 mm.
+## Rückgabewert
+x/y-Wertpaar (\[x, y\]), welche die Breite und Tiefe der Innenfläche enthält. Die Fläche ist etwas kleiner als 190 x 130 mm.
