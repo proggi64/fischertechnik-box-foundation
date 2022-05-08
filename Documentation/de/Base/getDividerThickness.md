@@ -10,3 +10,6 @@ Diesen Wert verwenden alle Elemente für die Angabe der Wandstärken, aber auch 
 ## Syntax
 <pre><code>getDividerThickness();
 </pre></code>
+
+## Rückgabewert
+Stärke der geraden Trennwände der Elemente und Rahmen in mm. Zylinderwände sind um einen festen Faktor schmäler. Siehe __getTubeWallThickness()__.
