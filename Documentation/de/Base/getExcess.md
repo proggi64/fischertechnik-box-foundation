@@ -10,3 +10,6 @@ Dieser Betrag wird verwendet, um Trennwände ineinander zu verschmelzen oder Ele
 ## Syntax
 <pre><code>getExcess();
 </pre></code>
+
+## Rückgabewert
+Betrag in mm (kleine Bruchteile von mm), die Objekte ineinander hineinragen, um Luftspalte zu vermeiden. Die Funktion wird intern durchgängig verwendet.
