@@ -12,4 +12,4 @@ Funktion: Liefert die Standardlänge eines Stegs eines fischertechnik Sortierkas
 </pre></code>
 
 ## Rückgabewert
-Betrag in mm, um den ein Steg von der Seitnwand in den nutzbaren BEreich des Sortierkastens hineinragt. Der Wert wird als Standardwert verwendet, wenn bei __BoxWeb__ kein abweichender Betrag angegeben wird.
+Betrag in mm, um den ein Steg von der oberen Seitenwand in den nutzbaren Bereich des Sortierkastens hineinragt. Der Wert wird als Standardwert verwendet, wenn bei __BoxWeb__ kein abweichender Betrag angegeben wird. Durch die schräge Seitenwand verringert sich dieser Betrag nach unten zum Boden hin.
