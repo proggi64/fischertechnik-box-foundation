@@ -10,3 +10,6 @@ __getTolerance()__ wird durchgängig als Toleranzbetrag in der Bibliothek einges
 ## Syntax
 <pre><code>getTolerance();
 </pre></code>
+
+## Rückgabewert
+Toleranzwert, um den Nutzflächen vergrößert werden, damit Drucktoleranzen nicht dazu führen, dass Bauteil nicht in die Element passen. Der Betrag is weniger als 1 mm und gilt für die gesamte Nutzfläche, auch wenn diese für mehrere Bauteile gedacht ist.
