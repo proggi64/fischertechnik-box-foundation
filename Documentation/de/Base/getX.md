@@ -21,7 +21,7 @@ include &lt;../Base/PlacementOptions.scad&gt;</pre></code>
 | spaces | Liste der Flächen, die über *distance* verteilt werden sollen. |
 | rotations | Liste der Rotationen zu jeder Fläche, die bei der VErteilung berücksichtigt werden soll. Die Anzahl der Rotationen muss gleich der Anzahl der Flächen in *spaces* sein. |
 | distance | Die Breite der Strecke, über welche die Flächen verteilt werden sollen. Ist die Summe der Breiten größer als diese Fläche, sind die Abstände negativ und die Elemente werden ineinander geschoben. |
-| i | Aktueller Index, zu welchem die X-Position ermittelt werden soll. Für i=0 wird stets die Position 0 geliefert.
+| i | Aktueller Index, zu welchem die X-Position ermittelt werden soll.
 
 ## Rückgabewert
-X-Position der Fläche mit Index *i*, so dass alle Flächen mit gelichmäßigen Abständen über *distance* verteilt sind. Die jeweilige Rotation jeder Fläche wird berücksichtigt.
+X-Position der Fläche mit Index *i*, so dass alle Flächen mit gelichmäßigen Abständen über *distance* verteilt sind. Die jeweilige Rotation jeder Fläche wird berücksichtigt. Für i=0 wird stets die Position 0 geliefert.
