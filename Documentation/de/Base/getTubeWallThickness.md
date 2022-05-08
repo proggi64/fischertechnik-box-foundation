@@ -14,4 +14,4 @@ Die Wände von Zylindern sind etwas schmäler als die normaler Trennwände. Das 
 </pre></code>
 
 ## Rückgabewert
-Stndardwert für die Stärke der Zylinderwände. Dies ist ein um einen kleinen Faktor verringerter Wert von __getDividerThickness()__.
+Standardwert für die Stärke der Zylinderwände. Dies ist ein um einen kleinen Faktor verringerter Wert von __getDividerThickness()__.
