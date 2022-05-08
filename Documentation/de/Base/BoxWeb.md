@@ -22,7 +22,7 @@ include &lt;../Base/PlacementOptions.scad&gt;</pre></code>
 | ------ | ------ |
 | corner | Ecke, in welcher der Steg platziert werden soll. Die numerischen Werte sind als Konstanten in *PlacementOptions.scad* definiert: __LowerLeft__, __UpperLeft__, __UpperRight__ oder __LowerRight__, |
 | side | Seite der Ecke (*corner*) von außen betrachtet, wo der Steg platziert werden soll. Die numerischen Werte sind als Konstanten in *PlacementOptions.scad* definiert: __LeftOfCorner__ oder __RightOfCorner__. Von oben auf die Sortierbox gesehen, ist __LeftOfCorner__ immer im Uhrzeigersinn neben der Ecke. |
-| distance | Abstand des Stegs von der Ecke. Es wird immer der Abstand zum Rand der Wand gerechnet, welcher der Ecke näher ist. |
+| distance | Abstand des Stegs von der Ecke. Es wird immer der Abstand des zur Ecke gewandten Rands des Stegs zum Rand der Wand gerechnet, also der tatsächlich freie Bereich. |
 | box | Fläche, auf der die Stege platziert werden. Standard ist der nutzbare Raum der Box 190 x 130. |
 | webWidth | Länge der Oberseite des Stegs. So weit ragt der Steg von der Wand in den Innenraum der Box. Der Standardwert ist in *Constants.scad* als Funktion __getBoxWebWidth()__ definiert. |
 | webThickness | Stärke des Stegs. Dies entspricht im Standard nicht der normalen Wandstärke der Rahmen und Trenner, sondern ist etwas dünner. Bei mit Trennern verschmolzenen Stegen sollte hier __getDividerThickness()__ als Wert übergeben werden (aus *Constants.scad*). |
