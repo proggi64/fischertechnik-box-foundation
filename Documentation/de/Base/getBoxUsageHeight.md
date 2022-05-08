@@ -8,3 +8,6 @@ Funktion: Liefert die Höhe des nutzbaren Innenraums der fischertechnik Sortierb
 ## Syntax
 <pre><code>getBoxUsageHeight();
 </pre></code>
+
+## Rückgabewert
+Höhe des benutzbaren Bereichs im Fischertechnik-Sortierkasten in mm.
