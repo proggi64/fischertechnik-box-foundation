@@ -1,5 +1,5 @@
 // Fischertechnik Box Library
-// Axis for hub
+// Axis and cylinder for hub
 // 31014
 
 use <../Base/Constants.scad>
