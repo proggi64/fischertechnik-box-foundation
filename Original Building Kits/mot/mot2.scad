@@ -9,7 +9,7 @@ use <../../ModelBase/Complex.scad>
 
 include <../../Base/PlacementOptions.scad>
 
-use <../../Elements/CylinderHubWithZ30.scad>
+use <../../Elements/AxisHubWithZ30.scad>
 use <../../Elements/CylinderAxis30.scad>
 use <../../Elements/CylinderStepUpDownCog.scad>
 use <../../Elements/FrameGearBox.scad>
@@ -53,8 +53,8 @@ groupX = 100;
 
 module Z30Hubs() {
     Place (getFrameRackSpace(2, 4).y)
-    DeploySame(space=[groupX, 52], elementSpace=getCylinderHubWithZ30Space()) {
-        CylinderHubWithZ30();
+    DeploySame(space=[groupX, 52], elementSpace=getAxisHubWithZ30Space()) {
+        AxisHubWithZ30();
     }
 }
 
@@ -75,7 +75,7 @@ module Axis30Group() {
 module GearBox() {
     Place(
         x = getFrameRackSpace(2, 4).y,
-        y = getCylinderHubWithZ30Space().y + 2 * getDividerThickness() + 0.4
+        y = getAxisHubWithZ30Space().y + 2 * getDividerThickness() + 0.4
         ) {
         Center(
             space=[100, getFrameGearBoxSpace().y],
@@ -96,7 +96,7 @@ module ClipGroups() {
     }
     Place(
         x = getFrameRackSpace(2, 4).y + getDividerThickness(), 
-        y = getCylinderHubWithZ30Space().y) {
+        y = getAxisHubWithZ30Space().y) {
         ClipGroup();
         translate([getFrameGearBoxSpace().x + 2*getAxisClip10Space().x + getDividerThickness(), 0])
             ClipGroup();
@@ -176,7 +176,7 @@ Z30Hubs();
 
 Place(
     x = getFrameRackSpace(2, 4).y, 
-    y = getCylinderHubWithZ30Space().y + getAxisClip10Space().y + 4) {
+    y = getAxisHubWithZ30Space().y + getAxisClip10Space().y + 4) {
     AxisIdlerGearZ15();
     translate([getFrameGearBoxSpace().x + 2*getAxisClip10Space().x + getDividerThickness() + 4, 5])
         CylinderStepUpDownCog();
