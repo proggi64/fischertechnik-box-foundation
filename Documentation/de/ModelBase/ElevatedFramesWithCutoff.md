@@ -4,7 +4,7 @@ Erzeugt eine Halterung, die im Normalfall für einzelne Achsen verwendet wird.
 
 <img width="344" alt="TestFrameAxis50" src="https://user-images.githubusercontent.com/48654609/168169890-a92315c3-b7fe-403c-9321-2d452dd33042.png">
 
-Die Halterung besteht aus zwei Rahmen an den Enden, jeweils mit einer Aussparung für das jeweilige Ende des Bauteils. Die Aussparung ist in der Standardeinstellung durch eine Wand abgeschlossen. Über Parameter können diese Abschlusswände auch weggelassen werden. Das Modul __ElevatedFramesWithCutoff__ wird vom ModelBase-Modul __FrameAxis__ verwendet.
+Die Halterung besteht aus zwei Rahmen an den Enden, jeweils mit einer Aussparung für das jeweilige Ende des Bauteils. Die Aussparung ist in der Standardeinstellung durch eine Wand abgeschlossen. Über Parameter können diese Abschlusswände auch weggelassen werden. Das Modul __ElevatedFramesWithCutoff__ wird vom ModelBase-Modul __FrameAxis__ verwendet. __FrameAxis__ verwendet für einige der hier aufgeführten Parameter Standardwerte, u.a. die Achsdurchmesser und eine konstante Höhe der Halterungen.
 
 ## Use
 <pre><code>use &lt;../ModelBase/Complex.scad&gt;</pre></code>
