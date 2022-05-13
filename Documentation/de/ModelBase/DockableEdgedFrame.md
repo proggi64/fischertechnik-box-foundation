@@ -4,6 +4,10 @@ Erzeugt einen Rahmen für Bauteile, der optional an bis zu zwei Wänden angedock
 
 <img width="344" alt="DockableEdgedFrame" src="https://user-images.githubusercontent.com/48654609/168328989-99e95105-f7ee-47cc-b4fc-d1087c189df0.png">
 
+Die Teile, die an die Außenwand gedockt werden, sind so entworfen, dass sie mit der Wand sauber verschmelzen. Die Abbildung unten ist ein Ausschnitt aus dem Kasten ec1, bei dem ein __DockableEdgedFrame__ (indirekt über __FrameElectronicBlock__) an der linken und unteren Wand angedockt ist.
+
+<img width="344" alt="DockableEdgedFrame_ec1" src="https://user-images.githubusercontent.com/48654609/168336326-70de2ded-efe8-4b70-a7f2-545644f17865.png">
+
 ## Use
 <pre><code>use &lt;../ModelBase/Complex.scad&gt;
 include <../Base/PlacementOptions.scad></pre></code>
