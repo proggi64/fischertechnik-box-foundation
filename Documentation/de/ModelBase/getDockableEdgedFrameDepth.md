@@ -16,7 +16,7 @@ include <../Base/PlacementOptions.scad></pre></code>
 
 | Parameter | Beschreibung |
 | ------ | ------ |
-| edgeDistance | Zusätzliche Distanz des Rahmens zur Wand, falls an die linke oder rechte Wand angedckt werden soll. |
+| edgeDistance | Zusätzliche Distanz des Rahmens zur Wand, falls an die linke oder rechte Wand angedockt werden soll. |
 | alignY | __NoAlign__, falls nicht angedockt werden soll. Dann wird 0 zurückgeliefert. Sonst __AlignBottom__ oder __AlignTop__. |
 
 ## Rückgabewert
