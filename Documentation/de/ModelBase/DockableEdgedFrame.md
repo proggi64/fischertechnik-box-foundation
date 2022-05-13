@@ -35,7 +35,7 @@ Standardrahmen für Silberling (75 x 45 mm) mit 5 mm Wandhöhe, der an keine Wan
 
 <img width="344" alt="DockableEdgedFrame_1" src="https://user-images.githubusercontent.com/48654609/168334867-6615a321-eea0-4325-9640-6d25a1f51989.png">
 
-An die linke Wand angedockter Rahmen für Silberling. Der Abstand zur linken Wand wird durch zwei Stege gehalten, die in den negativen X-Koordinatenbereich ragen. Diese Teile verschmelzen mit der Wand der Sortierbox, wenn der Rahmen dort platziert wird.
+An die linke Wand angedockter Rahmen für Silberling. Der Abstand zur linken Wand wird durch zwei Stege gehalten, die in den negativen X-Koordinatenbereich ragen. Diese Teile, sowie die beiden Rahmenwände verschmelzen mit der Wand der Sortierbox, wenn der Rahmen dort platziert wird.
 
 <pre><code>DockableEdgedFrame([45, 75, 5], alignX=AlignLeft);</pre></code>
 
