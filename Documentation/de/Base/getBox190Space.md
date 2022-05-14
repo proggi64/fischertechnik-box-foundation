@@ -1,6 +1,6 @@
 # getBox190Space
 
-Funktion: Liefert die nutzbare Fläche eines fischertechnik Sortierkastens 190 x 130.
+Funktion: Liefert die nutzbare Fläche eines Fischertechnik Sortierkastens 190 x 130.
 
 ## Use
 <pre><code>use &lt;../Base/Boxes.scad&gt;</pre></code>
