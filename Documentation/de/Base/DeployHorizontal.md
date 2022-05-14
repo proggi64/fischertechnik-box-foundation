@@ -18,7 +18,7 @@ include &lt;../Base/PlacementOptions.scad&gt;</pre></code>
 | width | Strecke, über die die angegebenen Elemente verteilt werden. Wird hier Null angegeben, werden die Elemente direkt ohne Abstand aneinander gesetzt. |
 | spaces| Liste von Wertpaaren (Liste mit x- und y-Wert) mit den Flächen der Children-Elemente. Hier sollten die jeweiligen __get*ElementName*Space()__-Funktionen angegeben werden, und zwar in der Reihenfolge, die der der Children-Elemente entspricht. |
 | rotations | Gibt für jedes Children-Element an, wie es vor dem Vertielne gedreht werden soll. Mögliche Werte sind __Rotate0__, __Rotate90__, __Rotate180__ und __Rotate270__. Die Reihenfolge entspricht der der Children-Elemente. |
-| alignY | Vertikale Ausrichtung der Children-Elemente zueinander. Grundlage sind die in *spaces* angegebenen Flächen, sowie id e in *rotations* angegebenen Drehungen der einzelnen Elemente. |
+| alignY | Vertikale Ausrichtung der Children-Elemente zueinander. Grundlage sind die in *spaces* angegebenen Flächen, sowie die in *rotations* angegebenen Drehungen der einzelnen Elemente. __AlignBottom__ richtet auf der unteren Linie aus (wie __NoAlign__), __AlignTop__ am höchsten Y-Wert der Elemente, __AlignCenter__ zentriert alle Elemente um das Zentrum des tiefsten Elements. |
 
 ## Beispiele
 
