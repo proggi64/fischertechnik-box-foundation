@@ -59,4 +59,5 @@ Im Verzeichnis *Test* befinden sich in entsprechenden Unterverzeichnissen jeweil
 
 - Redundanzen bei Code und Konstanten werden vermieden, um an zentralen Stellen Anpassungen zu ermöglichen
 - Namen sind über alle Quellcodes konsistent
+- Sinnvolle Standardwerte für Parameter sollen den Einsatz vereinfachen 
 
