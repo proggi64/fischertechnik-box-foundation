@@ -93,6 +93,6 @@ DeployHorizontal(
     Cube();
 }</pre></code>
 
-Die Elemente werden direkt aneinander platziert.
+Die Elemente werden direkt aneinander platziert. Bei __Frame__-Elementen werden die Zwischenwände doppelt so dick wie eine einzelne Wand. Um in solchen Fällen die  Zwischenwände auf die Einzelstärke zu reduzieren, muss stattdessen __MergeRow__ verwendet werden.
 
 <img width="355" alt="DeployHorizontal_Zero" src="https://user-images.githubusercontent.com/48654609/168445294-81a83274-f977-46a3-b1d0-7d9dd05166fb.png">
