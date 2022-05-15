@@ -12,7 +12,7 @@ include &lt;../Base/PlacementOptions.scad&gt;</pre></code>
   columns=2, 
   rows=1, 
   rotation=Rotate0)
-  <i>children<i>
+  <i>children</i>
 </pre></code>
 
 | Parameter | Beschreibung |
