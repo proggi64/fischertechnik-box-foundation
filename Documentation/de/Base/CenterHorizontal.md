@@ -28,3 +28,31 @@ Die Breite des zu platzierenden Elements (*width*), sowie die Fläche, in welche
 ## Beispiele
 
 ### Element zentriert
+
+<pre><code>use <../../Base/Placement.scad>
+
+use <../TestHelper.scad>
+
+PlacementBase();
+
+CenterHorizontal(width=getCubeSpace().x, space=getPlacementBaseSpace())
+    Cube();</pre></code>
+    
+Platziert das Element mittig auf der Null-Linie der Fläche.
+
+<img width="355" alt="CenterHorizontal_1" src="https://user-images.githubusercontent.com/48654609/168496354-43fb5478-c9b2-49ab-bc7d-86e8853d47c7.png">
+
+### Element zentriert mit Y-Position und X-Offset
+
+<pre><code>use <../../Base/Placement.scad>
+
+use <../TestHelper.scad>
+
+PlacementBase();
+
+CenterHorizontal(width=getCubeSpace().x, space=getPlacementBaseSpace(), y=10, offset=-5)
+    Cube();</pre></code>
+    
+Platziert das Element auf Y-Position 10 und verschiebt von der Mitte um 5 mm nach links.
+
+<img width="355" alt="CenterHorizontal_2" src="https://user-images.githubusercontent.com/48654609/168496447-a969bb19-19b4-4b92-a3f1-9aebba675616.png">
