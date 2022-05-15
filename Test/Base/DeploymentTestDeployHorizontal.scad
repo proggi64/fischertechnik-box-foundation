@@ -12,9 +12,10 @@ use <../TestHelper.scad>
 PlacementBase();
 
 DeployHorizontal(
-    getPlacementBaseSpace().x, 
+    0, 
     [getCubeSpace(), getCubeSpace(), getCubeSpace()],
-    [NoRotation, Rotate90, Rotate180]) {
+    [NoRotation, Rotate90, Rotate180],
+    alignY=AlignTop) {
     Cube();
     Cube();
     Cube();
@@ -24,8 +25,22 @@ translate([0, 30, 0])
 DeployHorizontal(
     getPlacementBaseSpace().x, 
     [getCubeSpace(), getCubeSpace(), getCubeSpace()],
-    [Rotate90, Rotate180, Rotate0]) {
+    [Rotate90, Rotate270, Rotate0],
+    alignY=AlignCenter) {
     Cube();
     Cube();
     Cube();
+}
+
+translate([60,0]) {
+    PlacementBase();
+    
+DeployHorizontal(
+    getPlacementBaseSpace().x, 
+    [getCubeSpace(), getCubeSpace()],
+    [Rotate90, Rotate270],
+    alignY=AlignTop) {
+    Cube();
+    Cube();
+    }   
 }
