@@ -8,19 +8,21 @@ use <../../ModelBase/Simple.scad>
 
 include <../../Base/PlacementOptions.scad>
 
-Text("Hello Default");
+color("blue") {
+Text("Default");
 
 Place(0, 20)
-Text("Hello xAlign Center", xAlign=AlignCenter);
+Text("xAlign Center", xAlign=AlignCenter);
 
 Place(0, 40)
-Text("Hello xAlign Right", xAlign=AlignRight);
+Text("xAlign Right", xAlign=AlignRight);
 
 Place(0, 60)
-Text("Hello xAlign Left", xAlign=AlignLeft);
+Text("xAlign Left", xAlign=AlignLeft);
 
-Place(0, -20)
-Text("Hello 20 yAlign Top", yAlign=AlignTop);
+Place(40, 0)
+Text("yAlign Top", yAlign=AlignTop);
 
-Place(0, -40)
-Text("Hello 40 yAlign Bottom", yAlign=AlignBottom);
+Place(-40, 0)
+Text("yAlign Bottom", yAlign=AlignBottom);
+}
