@@ -1,5 +1,5 @@
 # DeploySame
-Verteilt das angegebene Children-Element in den angegebenen Spalten und Zeilen mit gleichem Abstand auf die angegebene Fläche. Dabei werden auch die Drehungen der einzelnen Elemente angegeben und berücksichtigt. Es wird nur das erste angegebene children-Element verarbeitet.
+Verteilt das angegebene Children-Element in den angegebenen Spalten und Zeilen mit gleichem Abstand auf die angegebene Fläche. Dabei werden auch die Drehungen der einzelnen Elemente berücksichtigt. Es wird nur das erste children-Element verarbeitet.
 
 ## Use
 <pre><code>use &lt;../Base/Deployment.scad&gt;
