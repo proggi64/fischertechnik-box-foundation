@@ -24,4 +24,4 @@ include &lt;../Base/PlacementOptions.scad&gt;</pre></code>
 | i | Aktueller Index, zu welchem die X-Position ermittelt werden soll.
 
 ## Rückgabewert
-X-Position der Fläche mit Index *i*, so dass alle Flächen mit gelichmäßigen Abständen über *distance* verteilt sind. Die jeweilige Rotation jeder Fläche wird berücksichtigt. Für i=0 wird stets die Position 0 geliefert.
+X-Position der Fläche mit Index *i*, so dass alle Flächen mit gelichmäßigen Abständen über *distance* horizontal verteilt sind. Die jeweilige Rotation jeder Fläche wird berücksichtigt. Für i=0 wird stets die Position 0 geliefert.
