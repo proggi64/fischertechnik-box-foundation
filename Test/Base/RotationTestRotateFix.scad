@@ -6,7 +6,7 @@ use <../../Base/Rotation.scad>
 
 include <../../Base/PlacementOptions.scad>
 
-use <TestHelper.scad>
+use <../TestHelper.scad>
 
 Deploy(30) {
     RotateFix(getCubeSpace(), Rotate0)

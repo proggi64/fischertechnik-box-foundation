@@ -12,7 +12,7 @@ volume = getFrameOuterVolume(space);
 
 Merge(3, volume, Rotate0)
     Frame(space);
-    
+
 translate([0, 30])
 Merge(3, volume, Rotate90)
     Frame(space);

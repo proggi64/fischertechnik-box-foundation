@@ -8,7 +8,7 @@ include <../../Base/PlacementOptions.scad>
 
 use <../TestHelper.scad>
 
-PlacementBase();
+/*PlacementBase();
 
 DeploySame(getPlacementBaseSpace(), getCubeSpace())
     Cube();
@@ -32,3 +32,15 @@ PlacementBase();
 DeploySame(getPlacementBaseSpace(), getCubeSpace(), columns=2, rows=3, rotation=Rotate90)
     Cube();
 }
+
+translate([180, 0]) {
+PlacementBase();
+DeploySame([0,0], getCubeSpace(), columns=2, rows=3, rotation=Rotate90)
+    Cube();
+}
+
+translate([240, 0]) {*/
+PlacementBase();
+DeploySame([0,0], getCubeSpace(), columns=4, rows=3)
+    Cube();
+//}
