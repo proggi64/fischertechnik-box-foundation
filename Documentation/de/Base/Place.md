@@ -21,6 +21,16 @@ include &lt;../Base/PlacementOptions.scad&gt;</pre></code>
   <i>children</i>
 </pre></code>
 
+| Parameter | Beschreibung |
+| ------ | ------ |
+| x | Ohne Ausrichtung: Absolute X-Position auf der angegebenen Fläche *boxSpace*<br/>Mit horizontaler Ausrichtung: Relativer Offset von der Mitte, negative Werte verschieben nach links. |
+| y | Ohne Ausrichtung: Absolute Y-Position auf der angegebenen Fläche *boxSpace*<br/>Mit vertikaler Ausrichtung: Relativer Offset von der Mitte, negative Werte verschieben nach unten. |
+| elementSpace | Fläche des zu platzierenden Elements. Hier wird normalerweise __get*ElementName*Space()__ verwendet. Ohne Angabe wird er Ursprungspunkt des Elements platziert. |
+| alignX | Horizontale Ausrichtung der Children-Elemente zueinander. Grundlage ist die in *elementSpace* angegebenen Fläche, sowie die in *rotation* angegebene Drehung. __AlignLeft__ richtet am linken Rand von *boxSpace* aus (wie __NoAlign__), __AlignRight__ am rechten Rand, __AlignCenter__ zentriert das Element. |
+| alignY | Vertikale Ausrichtung der Children-Elemente zueinander. Grundlage ist die in *elementSpace* angegebenen Fläche, sowie die in *rotation* angegebene Drehung. __AlignBottom__ richtet am unteren Rand von *boxSpace* aus (wie __NoAlign__), __AlignTop__ am oberen Rand, __AlignCenter__ zentriert das Element. |
+| rotation | Gibt an, wie das Element rotiert werden soll. Mögliche Werte sind die in *PlacementOptions.scad* definierten Konstanten __Rotate0__, __Rotate90__, __Rotate180__ und __Rotate270__. |
+| boxSpace | Fläche, auf der die Elemente platziert werden. Standard ist die Fläche des Sortierkastens 190x130. |
+
 ## Beispiele
 
 ### Ohne Parameter
