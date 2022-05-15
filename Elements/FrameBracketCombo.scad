@@ -24,7 +24,7 @@ function getFrameBracketComboSpace() = [getFrameBracketSpace().x, outerDepth];
 module FrameBracketCombo() {
     Space(getFrameBracketComboSpace());
     Frame([getFrameBracketWidth(), outerDepth - 2*getDividerThickness() - getTolerance(), getFrameBracketSpace().z]);
-    DeployVertical(outerDepth, [getFrameBracketWithWormSpace(), getFrameBracketWithoutWormSpace()]) {
+    DeployVertical(outerDepth, [getFrameBracketWithWormSpace(), getFrameBracketWithoutWormSpace()], [Rotate0, Rotate0]) {
         FrameBracketWithWorm();
         FrameBracketWithoutWorm();
     }
