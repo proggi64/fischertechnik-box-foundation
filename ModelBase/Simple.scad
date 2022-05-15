@@ -16,6 +16,7 @@
 
 use <../Base/Constants.scad>
 use <../Base/Placement.scad>
+use <../Base/Boxes.scad>
 
 include <../Base/PlacementOptions.scad>
 
@@ -119,20 +120,32 @@ function getFrameInnerVolume(volume, tolerance=getTolerance()) =
 // Frame(volume, tolerance=default)
 // Frame or inner box with the given sizes in mm
 // volume = [width, depth, height] Inner volume (without tolerance)
-// width = Inner width in mm
-// depth = Inner depth in mm
-// height = Height of the walls in mm
+//   width = Inner width in mm
+//   depth = Inner depth in mm
+//   height = Height of the walls in mm
 // tolerance = additional space for the building block (default is reasonable)
+// openLeft = true for no wall left
+// openRight = true for no wall right
+// openTop = true for no wall at top
+// openBottom = true for no wall at bottom
 
-module Frame(volume, tolerance=getTolerance()) {
+module Frame(volume, tolerance=getTolerance(), openLeft=false, openRight=false, openTop=false, openBottom=false) {
     outerVolume = getFrameOuterVolume(volume, tolerance);
-    innerOffset = getDividerThickness();
+    
+    cutoffAdd = getDividerThickness() + getExcess();
+
+    cutoffVolume = [
+        volume.x + (openLeft ? cutoffAdd : 0) + (openRight ? cutoffAdd : 0),
+        volume.y + (openBottom ? cutoffAdd : 0) + (openTop ? cutoffAdd : 0),
+        volume.z];
+    innerXOffset = openLeft ? 0 : getDividerThickness();
+    innerYOffset = openBottom ? 0 : getDividerThickness();
 
     translate([0,0,-getExcess()]) {
         difference() {
             cube(outerVolume);
-            translate([innerOffset, innerOffset, getExcess()])
-                cube(getFrameInnerVolume(volume, tolerance));
+            translate([innerXOffset, innerYOffset, getExcess()])
+                cube(getFrameInnerVolume(cutoffVolume, tolerance));
         }
     }
 }
@@ -246,27 +259,29 @@ module AxisWithSpace(height, space, diameter=getAxisDiameter()) {
         Axis(height, diameter);
 }
 
-// LeveledAxis(height, bottomHeight)
+// LeveledAxis(height, bottomHeight, diameter=getAxisDiameter())
 // Standing axis with a leveled thicker base
 // at the top.
 // height = height of the complete axis from the ground
 // levelHeight = height of the axis leveled base
+// diameter = diameter of the upper axis (standard is 4 mm)
 
-module LeveledAxis(height, levelHeight) {
+module LeveledAxis(height, levelHeight, diameter=getAxisDiameter()) {
     Axis(levelHeight, getAxisBottomDiameter());
-    Axis(height, getAxisDiameter());
+    Axis(height, diameter);
 }
 
-// LeveledAxisWithSpace(height, outerHeight, space)
+// LeveledAxisWithSpace(height, outerHeight, space, diameter=getAxisDiameter())
 // Standing axis with a leveled thicker base and a space plate sunk into the bottom
 // height = height of the axis
 // levelHeight = height of the leveled axis base
 // space = space (x,y) of the space around the axis
+// diameter = diameter of the upper axis (standard is 4 mm)
 
-module LeveledAxisWithSpace(height, levelHeight, space) {
+module LeveledAxisWithSpace(height, levelHeight, space, diameter=getAxisDiameter()) {
     Space(space);
     Center(space)
-        LeveledAxis(height, levelHeight);
+        LeveledAxis(height, levelHeight, diameter);
 }
 
 // Text(text, xAlign=AlignCenter, yAlign=AlignCenter)
@@ -290,4 +305,27 @@ module Text(text, xAlign=AlignCenter, yAlign=AlignCenter) {
             text(text = text, font = font, size = 6, valign = vAlign, halign = hAlign);
        }
     }
+}
+
+// Divider(distance, align=AlignLeft, height=getSmallPartsFrameHeight(), boxSpace=getBox190Space())
+// Creates a divider with the specified distance to the specified wall
+// distance = Distance to the wall of the box
+// align =  Specifies the wall where the divider is created: AlignLeft, AlignRight, AlignTop or AlignBottom
+// height = Height of the divider (standard is 10 mms)
+// boxSpace = The space of the box where the divider is placed (standard is box 190x130)
+
+module Divider(distance, align=AlignLeft, height=getSmallPartsFrameHeight(), boxSpace=getBox190Space()) {
+    volume = [
+        getIsHorizontal(align) ? (boxSpace.x + 2*getDividerThickness()) : getDividerThickness(),
+        getIsVertical(align) ? (boxSpace.y + 2*getDividerThickness()) : getDividerThickness(),
+        height
+    ];
+    
+    xOffset = (align == AlignRight) ? distance :
+              ((align == AlignLeft) ? boxSpace.x - distance - getDividerThickness() : -getDividerThickness());
+    yOffset = (align == AlignBottom) ? distance :
+              ((align == AlignTop) ? boxSpace.y - distance - getDividerThickness() : -getDividerThickness());
+    
+    Place(xOffset, yOffset)
+        Wall(volume);
 }

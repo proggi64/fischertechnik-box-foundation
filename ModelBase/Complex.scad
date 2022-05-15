@@ -67,12 +67,19 @@ module ElevatedFramesWithCutoff(volume, depth, height, bearingLength, cutThrough
 frameAxisDepth = 4.4;
 frameAxisHeight = 14.8;
 
+// getFrameAxisDepth()
+// Gets the depth of an axis holder (inner depth without the walls, see FrameAxis)
+
 function getFrameAxisDepth() = frameAxisDepth;
+
+// getFrameAxisHeight()
+// Gets the height of an axis holder (see FrameAxis)
 
 function getFrameAxisHeight() = frameAxisHeight;
 
-// getFrameAxisSpace
+// getFrameAxisSpace(length)
 // Gets the width and depth of the space a frame axis for the given axis length needs
+// length = Length of axis
 
 function getFrameAxisSpace(length) = [length + getTolerance() + 2 * getDividerThickness(), frameAxisDepth + 2 * getDividerThickness()];
 
@@ -88,14 +95,28 @@ module FrameAxis(length, cutThrough=false) {
     loadDepth = getAxisDiameter();
     loadHeight = getAxisDiameter();
     
-    ElevatedFramesWithCutoff([length, loadDepth, loadHeight], frameAxisDepth, height, bearingLength, cutThrough);
+    ElevatedFramesWithCutoff([length, loadDepth, loadHeight], getFrameAxisDepth(), height, bearingLength, cutThrough);
 }
 
-function getDockableEdgedFrameWidthEdgeSpace(edgeDistance, alignX=NoAlign) = 
+// getDockableEdgedFrameWidth(edgeDistance, alignX=NoAlign)
+// Gets the additional width distance at the docked side of a dockable frame
+// edgeDistance = The value returned if alignX is a different value than NoAlign
+
+function getDockableEdgedFrameWidth(edgeDistance, alignX=NoAlign) = 
     (alignX == AlignLeft || alignX == AlignRight) ? edgeDistance : 0;
 
-function getDockableEdgedFrameDepthEdgeSpace(edgeDistance, alignY=NoAlign) = 
+// getDockableEdgedFrameDepth(edgeDistance, alignX=NoAlign)
+// Gets the additional depth distance at the docked side of a dockable frame
+// edgeDistance = The value returned if alignY is a different value than NoAlign
+
+function getDockableEdgedFrameDepth(edgeDistance, alignY=NoAlign) = 
     (alignY == AlignTop || alignY == AlignBottom) ? edgeDistance : 0;
+
+// getDockableEdgedFrameSpace(volume, alignX=NoAlign, alignY=NoAlign, edgeDistance=getStandardEdgeDistance())
+// volume = The volume of the building block which should be placed inton the frame
+// alignX = NoAlign when the frame is not docked to the left or right wall, AlignLeft or AlignRight
+// alignY = NoAlign when the frame is not docked to the top or bottom wall, AlignTop or AlignBottom
+// edgeDistance = The additional distance to the wall where the frame is docked
 
 function getDockableEdgedFrameSpace(
     volume, 
@@ -103,14 +124,14 @@ function getDockableEdgedFrameSpace(
     alignY=NoAlign,
     edgeDistance=getStandardEdgeDistance()) = 
         getFrameOuterVolume([
-            volume.x + getDockableEdgedFrameWidthEdgeSpace(edgeDistance, alignX), 
-            volume.y + getDockableEdgedFrameDepthEdgeSpace(edgeDistance, alignY), 
+            volume.x + getDockableEdgedFrameWidth(edgeDistance, alignX), 
+            volume.y + getDockableEdgedFrameDepth(edgeDistance, alignY), 
             0]);
 
 // DockableEdgedFrame(height, frameEdge=15, webDistance=11.5, edge=NoDock, align=NoAlign)
 // volume = [width, depth, height] volume of the element
-// alignX 0=NoAlign, 2=AlignBottom, 5=AlignTop
-// alignY 0=NoAlign, 1=AlignLeft, 4=AlignRight
+// alignX 0=NoAlign, 1=AlignLeft, 4=AlignRight
+// alignY 0=NoAlign, 2=AlignBottom, 5=AlignTop
 // edgeDistance = Distance of the block to the wall of the box
 // frameEdge = Frame length from the corner to the cutoff
 // webDistance = Distance of the webs to the corner of the box
@@ -127,8 +148,8 @@ module DockableEdgedFrame(
     width = getFrameInnerVolume(volume).x;
     depth = getFrameInnerVolume(volume).y;
     height = getFrameInnerVolume(volume).z;
-    completeWidth = width + getDockableEdgedFrameWidthEdgeSpace(edgeDistance, alignX);
-    completeDepth = depth + getDockableEdgedFrameDepthEdgeSpace(edgeDistance, alignY);
+    completeWidth = width + getDockableEdgedFrameWidth(edgeDistance, alignX);
+    completeDepth = depth + getDockableEdgedFrameDepth(edgeDistance, alignY);
     
     completeEdgeDistance = edgeDistance + getDividerThickness();
     
@@ -419,37 +440,54 @@ function getFrameRackSpace(factor=1, count=1) = getFrameOuterVolume([frameRackWi
 // Inner frames for racks.
 // factor 1 for rack 30, 2 for rack 60
 // count = Count of racks
+// alignX 0=NoAlign, 1=AlignLeft, 4=AlignRight
+// alignY 0=NoAlign, 2=AlignBottom, 5=AlignTop
 
-module RackBase(factor=1, count=1) {
+module RackBase(factor=1, count=1, alignX=NoAlign, alignY=NoAlign) {
     
     yOffset = (frameRackDepth - rackInnerDiff) / 2;
     
-    module InnerWebs() {        
-        wayDepth = yOffset + 2*getExcess() - getDividerThickness();
+    wayDepth = yOffset + 2*getExcess() - getDividerThickness();
+    wayXOffset = (frameRackWidth + getDividerThickness()) / 2;
+    
+    module UpperWeb (dock = false) {
+        wayYOffset = getDividerThickness() - getExcess();
+        translate([wayXOffset, wayYOffset])
+            Wall([getDividerThickness(), wayDepth, rackInnerHeight]);
+    }
 
-        wayXOffset = (frameRackWidth + getDividerThickness()) / 2;
-        way0YOffset = getDividerThickness() - getExcess();
-        way1YOffset = getFrameRackSpace(count).y - getDividerThickness() - wayDepth + getExcess();
-        
-        translate([wayXOffset, 0]) {
-            translate([0, way0YOffset])
-                Wall([getDividerThickness(), wayDepth, rackInnerHeight]);
-            translate([0, way1YOffset])    
-                Wall([getDividerThickness(), wayDepth, rackInnerHeight]);
-        }
+    module LowerWeb (dock = false) {
+        wayYOffset = getFrameRackSpace(count).y - getDividerThickness() - wayDepth + getExcess();
+        translate([wayXOffset, wayYOffset])    
+            Wall([getDividerThickness(), wayDepth, rackInnerHeight]);
+    }
+    
+    module InnerWebs() {
+        UpperWeb();
+        LowerWeb();
     }
     
     endx = (factor-1) * frameRackWidth;
     endy = (count-1) * frameRackDepth;
+    
+    dock = (alignX == AlignLeft || alignX == AlignRight) ? getDividerThickness() : 0;    
+    
     for (yLoopOffset = [0:frameRackDepth:endy]) {
         // Inner frame
         translate([0, yOffset + yLoopOffset, 0])
-            Frame([frameRackWidth * factor, rackInnerDiff, rackInnerHeight]);
+            Frame([frameRackWidth * factor + dock, rackInnerDiff, rackInnerHeight],
+                openLeft = (alignX == AlignLeft),
+                openRight = (alignX == AlignRight));
         for (xOffset = [0:frameRackWidth:endx]) {
             translate ([xOffset, yLoopOffset])
                 InnerWebs();
         }
     }
+    
+    if (alignY == AlignBottom)
+        #LowerWeb();
+    if (alignY == AlignTop)
+        #UpperWeb();
 }
 
 // FrameRack(factor=1, count=1)
