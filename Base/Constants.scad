@@ -29,6 +29,7 @@ standardEdgeDistance = 2.5;
 standardWebDistance = 11.5;
 standardCornerLength = 15;
 tubeWallFactor = 0.8;
+smallPartsFrameHeight = 20;
 
 // Gets axis diameter
 function getAxisDiameter() = axisDiameter;
@@ -47,3 +48,6 @@ function getStandardCornerLength() = standardCornerLength;
 
 // gets the wall thickness of a tube.
 function getTubeWallThickness() = tubeWallFactor * getDividerThickness();
+
+// gets the frame height for docked small parts boxes.
+function getSmallPartsFrameHeight() = smallPartsFrameHeight;

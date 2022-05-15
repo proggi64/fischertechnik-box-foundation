@@ -7,16 +7,27 @@ use <Rotation.scad>
 
 include <PlacementOptions.scad>
 
-// getWidth(spaces, rotations, count, i=0)
+// getWidthSum(spaces, rotations, count, i=0)
 // Gets the sum of the width of count specified spaces, including rotations for each space.
 // spaces = List of spaces from which the width should be added. Used internally for DeployRow.
 // rotations = specify rotations for each space to get its correct width
-// count = The count of spaces from the specified spaces that should be included in the sum (for recursive call)
 // i = The space index offset used to start to add (for recursive call)
 
-function getWidth(spaces, rotations, count, i=0) = 
-    (i < count) ? 
-        getRotatedSpace(spaces[i], rotations[i]).x + getWidth(spaces, rotations, count, i+1) : 
+function getWidthSum(spaces, rotations, i=0) = 
+    (i < len(spaces)) ? 
+        getRotatedSpace(spaces[i], rotations[i]).x + getWidthSum(spaces, rotations, i+1) : 
+        0;
+
+// getDepthSum(spaces, rotations, i=0)
+// Gets the sum of the depth of count specified spaces.
+// spaces = List of spaces from which the width should be added. Used internally for DeployRow.
+// rotations = specify rotations for each space to get its correct width
+// count = The count of spaces from the specified spaces that should be included in the sum
+// i = The space index offset used to start to add
+
+function getDepthSum(spaces, rotations, i=0) = 
+    (i < len(spaces)) ? 
+        getRotatedSpace(spaces[i], rotations[i]).y + getDepthSum(spaces, rotations, i+1) : 
         0;
 
 // getX(spaces, rotations, distance, i)
@@ -32,62 +43,99 @@ function getX(spaces, rotations, distance, i) =
         0 :
         (getRotatedSpace(spaces[i-1], rotations[i-1]).x + distance + getX(spaces, rotations, distance, i-1));
 
+// getY(spaces, distance, i)
+// Gets the Y-distance of the spaces plus constant distance 
+// between each space needs.
+// spaces = Spaces of each element to deploy vertically. Only
+// the depth (y) is used.
+// rotations = specify rotations for each space to get its correct width
+// distance = distance between each space when deployed.
+// i = The highest index of the spaces used
+
+function getY(spaces, rotations, distance, i) = 
+    (i == 0) ? 
+        0 :
+        (getRotatedSpace(spaces[i-1], rotations[i-1]).y + distance + getY(spaces, rotations, distance, i-1));
+
+// getMaxDepth(spaces, i=0)
+// Gets the maximum depth of the specified spaces and takes the rotations in count.
+// spaces = List of spaces from which the width should be added. Used internally for DeployRow.
+// rotations = specify rotations for each space to get its correct depth
+
+function getMaxDepth(spaces, rotations, i=0) =
+    max(getRotatedSpace(spaces[i], rotations[i]).y, (i < len(spaces)-1) ? getMaxDepth(spaces, rotations, i+1) : 0);
+
+// getMaxWidh(spaces, i=0)
+// Gets the maximum width of the specified spaces and takes the rotations in count.
+// spaces = List of spaces from which the width should be added. Used internally for DeployRow.
+// rotations = specify rotations for each space to get its correct width
+
+function getMaxWidth(spaces, rotations, i=0) =
+    max(getRotatedSpace(spaces[i], rotations[i]).x, (i < len(spaces)-1) ? getMaxWidth(spaces, rotations, i+1) : 0);
+
 // DeployHorizontal(width, spaces, rotations)
 // Deploys the elements in the specified width with equal distances.
-// rowWidth = The width of the row in mm.
+// width = The width of the row in mm.
 // spaces = The spaces of all elements to deploy.
 // rotations = The rotations of each element: 0 Rotate0 0 degrees, 1 Rotate90 90 degrees, 
 // 2 Rotate180 180 degrees, 3 Rotate270 270 degrees (equivalent to -90).
+// alignY = NoAlign, AlignBottom (all elements on the same baseline), AlignCenter (all elements at the center
+// of the deepest element), AlignTop (all elements at the top of the deepest element)
 
-module DeployHorizontal(rowWidth, spaces, rotations) {
-    distance = (rowWidth - getWidth(spaces, rotations, len(spaces))) / (len(spaces)-1);
+module DeployHorizontal(width, spaces, rotations, alignY=NoAlign) {
+    distance = (width == 0) ? 0 : (width - getWidthSum(spaces, rotations)) / (len(spaces)-1);
+    
+    alignmentY = 
+        (alignY == AlignTop) ?
+        getMaxDepth(spaces, rotations) :
+        ((alignY == AlignCenter) ? 
+            (getMaxDepth(spaces, rotations) / 2) :
+            0);
     
     for (i = [0:1:$children-1]) {
         x = getX(spaces, rotations, distance, i);
-        translate([x, 0])
+        y = (alignY == AlignTop) ?
+            (alignmentY - getRotatedSpace(spaces[i], rotations[i]).y) :
+            ((alignY == AlignCenter) ? 
+            (alignmentY - getRotatedSpace(spaces[i], rotations[i]).y/2) : 
+            0);
+            
+        translate([x, y])
             RotateFix(spaces[i], rotations[i])
                 children(i);
     }
 }
 
-// getDepth(spaces)
-// Gets the sum of the depth of count specified spaces.
-// spaces = List of spaces from which the width should be added. Used internally for DeployRow.
-// rotations = specify rotations for each space to get its correct width
-// count = The count of spaces from the specified spaces that should be included in the sum
-// i = The space index offset used to start to add
-
-function getDepthSum(spaces, i=0) = 
-    (i < len(spaces)) ? 
-        spaces[i].y + getDepthSum(spaces, i+1) : 
-        0;
-
-// getY(spaces, distance, i)
-// Gets the Y-distance the spaces plus constant distance 
-// between each space needs.
-// spaces = Spaces of each element to deploy vertically. Only
-// the depth (y) is used.
-// distance = distance between each space when deployed.
-// i = The highest index of the spaces used
-
-function getY(spaces, distance, i) = 
-    (i == 0) ? 
-        0 :
-        spaces[i].y + distance + getY(spaces, distance, i-1);
-
-// DeployVertical(depth, spaces)
+// DeployVertical(depth, spaces, rotations, alignX=NoAlign)
 // Deploys the child elements in the specified depth vertically.
 // depth = Depth of the space where the elements should be deployed.
 // spaces = Spaces of all elements. Only the depth (y) will be used.
+// rotations = The rotations of each element: 0 Rotate0 0 degrees, 1 Rotate90 90 degrees, 
+// 2 Rotate180 180 degrees, 3 Rotate270 270 degrees (equivalent to -90).
+// alignX = NoAlign, AlignLeft, AlignCenter (all elements at the center
+// of the widest element), AlignRight (all elements at the right edge of the widest element)
 
-module DeployVertical(depth, spaces) {
-    distance = (depth - getDepthSum(spaces)) / (len(spaces)-1);
-    count = $children - 1;
-    
+module DeployVertical(depth, spaces, rotations, alignX=NoAlign) {
+    distance = (depth == 0) ? 0 : (depth - getDepthSum(spaces, rotations)) / (len(spaces)-1);
+
+    alignmentX = 
+    (alignX == AlignRight) ?
+    getMaxWidth(spaces, rotations) :
+    ((alignX == AlignCenter) ? 
+        (getMaxWidth(spaces, rotations) / 2) :
+        0);
+
     for (i = [0:1:$children-1]) {
-        y = getY(spaces, distance, count-i);
-        translate([0, y, -getExcess()])
-            children(i);
+        x = (alignX == AlignRight) ?
+            (alignmentX - getRotatedSpace(spaces[i], rotations[i]).x) :
+            ((alignX == AlignCenter) ? 
+            (alignmentX - getRotatedSpace(spaces[i], rotations[i]).x/2) : 
+            0);
+        y = getY(spaces, rotations, distance, i);
+        
+        translate([x, y])
+            RotateFix(spaces[i], rotations[i])
+                children(i);
     }
 }
 
@@ -123,7 +171,7 @@ module DeploySame(space, elementSpace, columns=2, rows=1, rotation=Rotate0) {
 
 // getMergedRowWidth(spaces, rotations, count, i=0)
 // Gets the width of the merged spaces with the specified rotations.
-// Merging works all elements with two frame walls. 
+// Merging works with all elements with two frame walls. 
 // The right and left walls are merged into one single wall.
 // spaces = List of spaces from which the width should be added.
 // rotations = specify rotations for each space to get its correct width
@@ -132,7 +180,7 @@ module DeploySame(space, elementSpace, columns=2, rows=1, rotation=Rotate0) {
 
 function getMergedRowWidth(spaces, rotations, count, i=0) =
     (i < count) ? 
-        getRotatedSpace(spaces[i], rotations[i]).x + getWidth(spaces, rotations, count, i+1) - (i > 0 ? getDividerThickness() : 0) : 
+        getRotatedSpace(spaces[i], rotations[i]).x + getWidthSum(spaces, rotations, i+1) - (i > 0 ? getDividerThickness() : 0) : 
         0;
 
 // MergeRow(spaces, rotations, dividerThickness=0.8)

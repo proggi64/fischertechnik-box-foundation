@@ -42,7 +42,7 @@ module Place(x=0, y=0, elementSpace=[0,0],
 
 module Center(space=getBox190Space(), elementSpace=[0,0]) {
     translate([(space.x - elementSpace.x) / 2, (space.y - elementSpace.y) / 2])
-        children(0);
+        children();
 }
 
 // CenterHorizontal(width=0, y=0, offset=0, space=getBox130Space())
@@ -62,3 +62,13 @@ module CenterVertical(depth=0, x=0, offset=0, space=getBox190Space()) {
     translate([x, (space.y - depth) / 2 + offset])
         children(0);
 }
+
+// getIsVertical(align)
+// True if the specified alignment needs a vertical orientation for a divider (AlignRight, AlignLeft)
+
+function getIsVertical(align) = (align == AlignRight || align == AlignLeft);
+
+// getIsHorizontal(align)
+// True if the specified alignment needs a horizontal orientation for a divider (AlignTop, AlignBottom)
+
+function getIsHorizontal(align) = (align == AlignTop || align == AlignBottom);
