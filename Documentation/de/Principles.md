@@ -9,6 +9,7 @@ Der gesamte Code ist darauf ausgerichtet, dass die 3D-Druck-Ergebnisse verwendba
 - Sinnvolle Toleranzen für alle Elemente (Constants.scad - __getTolerance()__), damit die Teile in die Elemente passen
 - Saubere Verschmelzung von 3D-Elementen und Box (Constants.scad - __getExcess()__), um ungewollte Luftspalte zu vermeiden
 - Druckbare Wandstärken, die hinreichend stabil bleiben sollten (Constants.scad - __getDividerThickness()__)
+- Elemente benötigen keine Stützstrukturen
 
 Die Bibliothek geht davon aus, dass ein 3D-Drucker mit einer 0,4 mm-Extruderdüse und einer Genauigkeit von 0,2 mm eingesetzt wird. Das Bauvolumen muss für die Sortierbox 190 x 130 ca. 20 x 14 x 4 cm groß sein.
 
@@ -37,7 +38,7 @@ Einige Elemente sind so entworfen, dass sie an eine oder zwei Wände der Box ang
 
 Die Sortierkästen werden als STL-Dateien eingebunden. Sie wurden mit einem CAD-Programm entworfen und können mit den Original-Kästen von Fischertechnik gestapelt werden. Bei der Platzierung der Elemente ist die z-Nullinie exakt der obere Rand des Bodens des Sortierkastens. Die Position 0,0 ist exakt die Ecke der nutzbaren Innenfläche der Box.
 
-Die Elemente werden, wie schon erwähnt, um den Betrag von __getExcess()__ in den Boden versenkt.
+Die Elemente werden, wie schon erwähnt, um den Betrag von __getExcess()__ in den Boden versenkt. Dies erledigen die Unterstützungs- und Platzierungsfunktionen.
 
 ## Ausrichtung
 
