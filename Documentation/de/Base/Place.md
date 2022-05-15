@@ -68,3 +68,4 @@ PlacementBase();
         boxSpace=getPlacementBaseSpace())
         Cube();</pre></code>
 
+<img width="355" alt="Place_3" src="https://user-images.githubusercontent.com/48654609/168484762-89dfee54-a96f-46fa-a005-556fd4f39577.png">
