@@ -7,7 +7,7 @@ Die Breite des zu platzierenden Elements (*width*), sowie die Fläche, in welche
 *space* hat als Standardwert die Fläche des Sortierkastens 190x130, so dass Elemente mittig in der Box zentriert werden. Die Fläche *space* kann aber abweichend davon auch explizit angegeben werden, so dass Elemente auf beliebigen Flächen zentriert werden können. __Center__ verwendet das __Place__-Modul mit den entsprechenden Standardwerten für dessen Parameter.
 
 ## Use
-<pre><code>use &lt;../Base/Placement.scad&gt;</pre></code>
+<pre><code>use <../Base/Placement.scad></pre></code>
 
 ## Syntax
 <pre><code>CenterHorizontal(
