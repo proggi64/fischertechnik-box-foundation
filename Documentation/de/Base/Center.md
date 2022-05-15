@@ -16,6 +16,11 @@ Die Fläche des zu platzierenden Elements (*elementSpace*), sowie die Fläche, i
   <i>children</i>
 </pre></code>
 
+| Parameter | Beschreibung |
+| ------ | ------ |
+| space | Fläche, auf der die Elemente platziert werden. Standard ist die Fläche des Sortierkastens 190x130. |
+| elementSpace | Fläche des zu platzierenden Elements. Hier wird normalerweise __get*ElementName*Space()__ verwendet. Ohne Angabe wird der Ursprungspunkt des Elements platziert. |
+
 ## Beispiele
 
 ### Element zentriert
