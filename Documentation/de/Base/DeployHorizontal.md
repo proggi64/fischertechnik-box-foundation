@@ -10,7 +10,8 @@ include &lt;../Base/PlacementOptions.scad&gt;</pre></code>
   width, 
   spaces, 
   rotations,
-  alignY=NoAlign);
+  alignY=NoAlign)
+  <i>children</i>
 </pre></code>
 
 | Parameter | Beschreibung |
