@@ -41,25 +41,29 @@ module Place(x=0, y=0, elementSpace=[0,0],
 // elementSpace = space of the element to be centered [x,y]
 
 module Center(space=getBox190Space(), elementSpace=[0,0]) {
-    translate([(space.x - elementSpace.x) / 2, (space.y - elementSpace.y) / 2])
+    Place(elementSpace=elementSpace, boxSpace=space, alignX=AlignCenter, alignY=AlignCenter)
         children();
 }
 
 // CenterHorizontal(width=0, y=0, offset=0, space=getBox130Space())
-// space = Space where the children is centered. For cylinder use centered=true and no elementSpace.
-// elementSpace = space of the element to be centered [x,y]
+// width = Width of the element to be placed.
+// y = Y position of the element
+// offset = Offset from the center position (negative will be left of the center)
+// space = Space where the element is placed
 
 module CenterHorizontal(width=0, y=0, offset=0, space=getBox190Space()) {
-    translate([(space.x - width) / 2 + offset, y])
+    Place(x=offset, y=y, elementSpace=[width, 0], boxSpace=space, alignX=AlignCenter)
         children(0);
 }
 
 // CenterVertical(depth=0, x=0, offset=0, space=getBox130Space())
-// space = Space where the children is centered. For cylinder use centered=true and no elementSpace.
-// elementSpace = space of the element to be centered [x,y]
+// depth = Depth of the element to be placed.
+// x = X position of the element
+// offset = Offset from the center position (negative will be down of the center)
+// space = Space where the element is placed
 
 module CenterVertical(depth=0, x=0, offset=0, space=getBox190Space()) {
-    translate([x, (space.y - depth) / 2 + offset])
+    Place(x=x, y=offset, elementSpace=[0, depth], boxSpace=space, alignY=AlignCenter)
         children(0);
 }
 

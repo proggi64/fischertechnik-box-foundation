@@ -151,13 +151,13 @@ module DeployVertical(depth, spaces, rotations, alignX=NoAlign) {
 module DeploySame(space, elementSpace, columns=2, rows=1, rotation=Rotate0) {
     
     elementWidth = getRotatedSpace(elementSpace, rotation).x;
-    columnDistance = (space.x - columns * elementWidth) / (columns > 1 ? columns - 1 : 1);
-    endColumnOffset = space.x - elementWidth;
+    columnDistance = (space.x > 0) ? (space.x - columns * elementWidth) / (columns > 1 ? columns - 1 : 1) : 0;
+    endColumnOffset = (space.x > 0) ? (space.x - elementWidth) : (elementWidth * (columns-1));
     columnOffsetStep = elementWidth + columnDistance;
     
     elementDepth = getRotatedSpace(elementSpace, rotation).y;
-    rowDistance = (space.y - rows * elementDepth) / (rows > 1 ? rows - 1 : 1);
-    endRowOffset = space.y - elementDepth;
+    rowDistance = (space.y > 0) ? (space.y - rows * elementDepth) / (rows > 1 ? rows - 1 : 1) : 0;
+    endRowOffset = (space.y > 0) ? (space.y - elementDepth) : (elementDepth * (rows - 1));
     rowOffsetStep = elementDepth + rowDistance;
     
     for (rowOffset = [0:rowOffsetStep:endRowOffset]) {
@@ -175,12 +175,11 @@ module DeploySame(space, elementSpace, columns=2, rows=1, rotation=Rotate0) {
 // The right and left walls are merged into one single wall.
 // spaces = List of spaces from which the width should be added.
 // rotations = specify rotations for each space to get its correct width
-// count = The count of spaces from the specified spaces that should be included in the sum (for recursive call)
 // i = The space index offset used to start to add (for recursive call)
 
-function getMergedRowWidth(spaces, rotations, count, i=0) =
-    (i < count) ? 
-        getRotatedSpace(spaces[i], rotations[i]).x + getWidthSum(spaces, rotations, i+1) - (i > 0 ? getDividerThickness() : 0) : 
+function getMergedRowWidth(spaces, rotations, i=0) =
+    (i < len(spaces)) ? 
+        getRotatedSpace(spaces[i], rotations[i]).x + getMergedRowWidth(spaces, rotations, i+1) - (i > 0 ? getDividerThickness() : 0) : 
         0;
 
 // MergeRow(spaces, rotations, dividerThickness=0.8)
