@@ -19,7 +19,7 @@ include &lt;../Base/PlacementOptions.scad&gt;</pre></code>
 | Parameter | Beschreibung |
 | ------ | ------ |
 | spaces | Liste der Flächen, die über *distance* verteilt werden sollen. |
-| rotations | Liste der Rotationen zu jeder Fläche, die bei der VErteilung berücksichtigt werden soll. Die Anzahl der Rotationen muss gleich der Anzahl der Flächen in *spaces* sein. |
+| rotations | Liste der Rotationen zu jeder Fläche, die bei der Verteilung berücksichtigt werden soll. Die Anzahl der Rotationen muss gleich der Anzahl der Flächen in *spaces* sein. |
 | distance | Die Breite der Strecke, über welche die Flächen verteilt werden sollen. Ist die Summe der Breiten größer als diese Fläche, sind die Abstände negativ und die Elemente werden ineinander geschoben. |
 | i | Aktueller Index, zu welchem die X-Position ermittelt werden soll.
 
