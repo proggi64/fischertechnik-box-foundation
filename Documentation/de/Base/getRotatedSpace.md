@@ -3,8 +3,8 @@
 Liefert eine Fläche so transformiert, dass die angegebene Drehung angewandt wird. Dadurch werden bei Drehungen um 90° oder 270° die x- und y-Koordinaten vertauscht.
 
 ## Use
-<pre><code>use &lt;../Base/Rotation.scad&gt
-include <PlacementOptions.scad></pre></code>
+<pre><code>use <../Base/Rotation.scad>
+include <../Base/PlacementOptions.scad></pre></code>
 
 ## Syntax
 <pre><code>getAxisBottomDiameter(
