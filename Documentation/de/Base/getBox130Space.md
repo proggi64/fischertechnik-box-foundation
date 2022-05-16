@@ -1,6 +1,6 @@
 # getBox130Space
 
-Funktion: Liefert die nutzbare Fläche eines Fischertechnik Sortierkastens 130 x 95.
+Funktion: Liefert die nutzbare Fläche eines Fischertechnik Sortierkastens 130 x 95. Die Box wird mit dem Modul [__Box130__](Box130.md) importiert.
 
 ## Use
 <pre><code>use &lt;../Base/Boxes.scad&gt;</pre></code>
