@@ -5,11 +5,14 @@ Funktion: Liefert die Anzahl der Fragemente für __cylinder__-Objekte ($fn).
 Die Funktion wird durchgängig in der gesamten Bibliothek eingesetzt. Der Betrag ist so bemessen, dass runde Oberflächen entstehen.
 
 ## Use
-<pre><code>use &lt;../Base/Constants.scad&gt;</pre></code>
+```
+use <../Base/Constants.scad>
+```
 
 ## Syntax
-<pre><code>getFragments();
-</pre></code>
+```
+getFragments();
+```
 
 ## Rückgabewert
 Anzahl der Fragmente, die bei Zylindern intern verwendet werden. Die Funktion wird intern durchgängig eingesetzt.
