@@ -15,6 +15,11 @@ The library modules are divided in these groups:
 - Original Building Kits
 - Building Kits
 
+## Documentation
+
+- [English](Documentation/en/Contents.md) - No available, yet
+- [German](Documentation/de/Contents.md)
+
 ## Base
 Contains the base functionality of the library:
 - Alignment.scad
