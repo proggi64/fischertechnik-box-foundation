@@ -13,7 +13,7 @@ include &lt;../Base/PlacementOptions.scad&gt;</pre></code>
   corner, 
   side, 
   distance, 
-  box=getBox190Space(), 
+  boxSpace=getBox190Space(), 
   webWidth=getBoxWebWidth(), 
   webThickness=1.0);
 </pre></code>
