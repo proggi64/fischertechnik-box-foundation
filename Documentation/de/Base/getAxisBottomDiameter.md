@@ -7,11 +7,14 @@ Achsen, die als Sortierkasten-Element eingesetzt werden, haben häufig eine dick
 <img width="213" alt="SimpleTestLeveledAxis" src="https://user-images.githubusercontent.com/48654609/167309022-4e0061e3-c5ea-4066-83e5-d7966df9e523.png">
 
 ## Use
-<pre><code>use &lt;../Base/Boxes.scad&gt</pre></code>
+```
+use <../Base/Boxes.scad>
+```
 
 ## Syntax
-<pre><code>getAxisBottomDiameter();
-</pre></code>
+```
+getAxisBottomDiameter();
+```
 
 ## Rückgabewert
 Konstanter Wert für den unteren Durchmesser des Absatzes in mm.
