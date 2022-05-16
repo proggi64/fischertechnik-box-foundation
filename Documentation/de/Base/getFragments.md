@@ -1,6 +1,6 @@
 # getFragments
 
-Funktion: Liefert die Anzahl der Fragemente für __cylinder__-Objekte ($fn). 
+Funktion: Liefert die Anzahl der Fragmente für __cylinder__-Objekte ($fn). 
 
 Die Funktion wird durchgängig in der gesamten Bibliothek eingesetzt. Der Betrag ist so bemessen, dass runde Oberflächen entstehen.
 
