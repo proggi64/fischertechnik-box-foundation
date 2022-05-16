@@ -3,16 +3,19 @@
 Funktion: Liefert die Y-Koordinate (vertikale Ausrichtung), um ein Objekt einer Ausrichtung entsprechend zu platzieren. Die Funktion wird u.a. vom [__Place__](Place.md)-Modul verwendet.
 
 ## Use
-<pre><code>use &lt;../Base/Alignment.scad&gt;
-include &lt;../Base/PlacementOptions.scad&gt;</pre></code>
+```
+use <../Base/Alignment.scad>
+include <../Base/PlacementOptions.scad>
+```
 
 ## Syntax
-<pre><code>getAlignedY(
+```
+getAlignedY(
   elementDepth, 
   spaceDepth, 
   align=AlignTop, 
   offset=0);
-</pre></code>
+```
 
 | Parameter | Typ | Beschreibung |
 | ------ | ------ | ------ |
