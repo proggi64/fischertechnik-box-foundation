@@ -19,3 +19,7 @@
 - [__getBoxWallThickness__](Base/getBoxWallThickness.md): Liefert die Stärke der Wände eines Sortierkastens
 - [__getBoxWebWidth__](Base/getBoxWebWidth.md): Liefert die Standardlänge eines Stegs für Sortierkästen
 - [__getDividerThickness__](Base/getDividerThickness.md): Liefert die Standardbreite einer Trennwand
+- [__getExcess__](Base/getExcess.md): Liefert den Betrag, um den ein Objekt mit einem verbundenen Objekt verschmilzt
+- [__getFragments__](Base/getFragments.md): Liefert die Anzahl der Fragmente für cylinder-Objekte ($fn)
+- [__getIsHorizontal__](Base/getIsHorizontal.md): Liefert true, wenn die angegebene Ausrichtung eine horizontale Trennwand erfordert
+- [__getIsVertical__](Base/getIsVertical.md): Liefert true, wenn die angegebene Ausrichtung eine vertikale Trennwand erfordert
