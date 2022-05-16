@@ -1,6 +1,6 @@
 # getAlignedY
 
-Funktion: Liefert die Y-Koordinate (vertikale Ausrichtung), um ein Objekt einer Ausrichtung entsprechend zu platzieren. Die Funktion wird u.a. vom __Place__-Modul verwendet.
+Funktion: Liefert die Y-Koordinate (vertikale Ausrichtung), um ein Objekt einer Ausrichtung entsprechend zu platzieren. Die Funktion wird u.a. vom [__Place__](Place.md)-Modul verwendet.
 
 ## Use
 <pre><code>use &lt;../Base/Alignment.scad&gt;
@@ -22,4 +22,4 @@ include &lt;../Base/PlacementOptions.scad&gt;</pre></code>
 | offset | Decimal | Bei __AlignBottom__: Position vom unteren Rand<br/>Bei __AlignCenter__: Relative Position vom Zentrum aus (positiv nach oben, negativ nach unten)<br/>Bei __AlignTop__: Relative Position vom oberen Rand (positive Werte nach unten). Dabei wird der Abstand des oberen Rands des Elements zum oberen Rand des Bereichs (space) gemessen. |
 
 ## Rückgabewert
-Y-Position, die sich aus der Tiefe des Elements *elementDepth*, der vertikalen Strecke *spaceDepth*, der Ausrichtung *align* und dem optionalen *offset* ergibt. Diese Position bezieht sich auf den unteren Rand des Elements und kann direkt für __Place__ oder __translate__ verwendet werden.
+Y-Position, die sich aus der Tiefe des Elements *elementDepth*, der vertikalen Strecke *spaceDepth*, der Ausrichtung *align* und dem optionalen *offset* ergibt. Diese Position bezieht sich auf den unteren Rand des Elements und kann direkt für [__Place__](Place.md) oder __translate__ verwendet werden.
