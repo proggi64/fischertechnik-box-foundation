@@ -17,7 +17,7 @@ The library modules are divided in these groups:
 
 ## Documentation
 
-- [English](Documentation/en/Contents.md) - No available, yet
+- [English](Documentation/en/Contents.md) - Not available, yet
 - [German](Documentation/de/Contents.md)
 
 ## Base
