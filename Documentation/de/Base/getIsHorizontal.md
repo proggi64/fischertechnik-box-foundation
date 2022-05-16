@@ -14,9 +14,9 @@ getIsHorizontal(
   align);
 ```
 
-| Parameter | Beschreibung |
-| ------ | ------ |
-| align | Wenn __AlignBottom__ oder __AlignTop__ wird __true__ geliefert; sonst __false__. |
+| Parameter | Typ | Beschreibung |
+| ------ | ------ | ------ |
+| align | Integer (Enum) | Wenn __AlignBottom__ oder __AlignTop__ wird __true__ geliefert; sonst __false__. |
 
 ## Rückgabewert
 __true__ wenn die Ausrichtung in *align* eine horizontale Trennwand erfordert; sonst __false__.
