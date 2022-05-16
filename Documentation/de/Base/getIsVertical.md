@@ -1,15 +1,18 @@
 # getIsVertical
 
-Liefert __true__, wenn die angegebene Ausrichtung eine vertikale Trennwand erfordert. __getIsVertical__ wird vom Modul __Divider__ verwendet.
+Liefert __true__, wenn die angegebene Ausrichtung eine vertikale Trennwand erfordert. __getIsVertical__ wird vom Modul [__Divider__](../ModelBase/Divider.md) verwendet um festzustellen, ob die Trennwand auf der X- oder Y-Achse verläuft..
 
 ## Use
-<pre><code>use &lt;../Base/Placement.scad&gt
-include <../Base/PlacementOptions.scad></pre></code>
+```
+use <../Base/Placement.scad>
+include <../Base/PlacementOptions.scad>
+```
 
 ## Syntax
-<pre><code>getIsVertical(
+```
+getIsVertical(
   align);
-</pre></code>
+```
 
 | Parameter | Beschreibung |
 | ------ | ------ |
