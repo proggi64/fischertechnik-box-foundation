@@ -70,10 +70,10 @@ ACHTUNG: Diese Doku ist in Arbeit. Bis ca. 22. Mai 2022 sind alle Module und Fun
 - [__LeveledAxis__](ModelBase/LeveledAxis.md):
 - [__LeveledAxisWithSpace__](ModelBase/LeveledAxisWithSpace.md):
 - [__LeveledTube__](ModelBase/LeveledTube.md):
-- [__Space__](ModelBase/Space.md):
+- [__Space__](ModelBase/Space.md): Erzeugt eine dünne Fläche als Basis für ein Element.
 - [__Text__](ModelBase/Text.md): Erzeugt einen reliefartigen Text im Boden des Sortierkastens.
 - [__Tube__](ModelBase/Tube.md):
-- [__Wall__](ModelBase/Wall.md):
+- [__Wall__](ModelBase/Wall.md): Erzeugt eine Wand.
 
 ### Funktionen zur Ermittlung der Größe einfacher Module
 - [__getAngeledFrameOuterVolume__](ModelBase/getAngeledFrameOuterVolume.md):
