@@ -1,8 +1,8 @@
-# getWidth
+# getWidthSum
 
 Funktion: Liefert die Summe der Breiten alle angegebenen Flächen und berücksichtigt die angegebenen Drehungen dieser Flächen.
 
-__getWidth__ ist für interne Zwecke gedacht, kann aber auch für eigene Berechnungen verwendet werden.
+__getWidthSum__ ist für interne Zwecke gedacht, kann aber auch für eigene Berechnungen verwendet werden.
 
 ## Use
 ```
@@ -12,7 +12,7 @@ include <../Base/PlacementOptions.scad>
 
 ## Syntax
 ```
-getWidth(
+getWidthSum(
   spaces, 
   rotations, 
   count, 
