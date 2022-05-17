@@ -58,7 +58,7 @@
 
 ## Funktionen und Module für das Konstruieren von Elementen
 
-## Einfache Module
+### Einfache Module
 - [__AngeledFrame__](ModelBase/AngeledFrame.md):
 - [__Axis__](ModelBase/Axis.md):
 - [__AxisWithSpace__](ModelBase/AxisWithSpace.md):
@@ -73,7 +73,13 @@
 - [__Tube__](ModelBase/Tube.md):
 - [__Wall__](ModelBase/Wall.md):
 
-## Funktionen zur Ermittlung der Größe einfacher Module
+### Funktionen zur Ermittlung der Größe einfacher Module
 - [__getAngeledFrameOuterVolume__](ModelBase/getAngeledFrameOuterVolume.md):
 - [__getFrameInnerVolume__](ModelBase/getFrameInnerVolume.md):
 - [__getFrameOuterVolume__](ModelBase/getFrameOuterVolume.md):
+
+### Komplexe Module
+- [__ElevatedFramesWithCutoff__](ModelBase/ElevatedFramesWithCutoff.md):
+
+### Funktionen zur Ermittlung von Werten zu komplexen Modulen
+- [__getFrameAxisDepth__](ModelBase/getFrameAxisDepth.md)
