@@ -16,6 +16,7 @@
 - [__Center__](Base/Center.md): Platziert Children-Elemente horizontal und/oder vertikal zentriert.
 - [__CenterHorizontal__](Base/CenterHorizontal.md): Platziert Children-Elemente horizontal zentriert.
 - [__CenterVertical__](Base/CenterVertical.md): Platziert Children-Elemente vertikal zentriert.
+- [__Place__](Base/Place.md): Platziert die Children-Elemente auf die angegebene Position (absolut oder ausgerichtet).
 
 ### Funktionen zur Koordinatenberechnung
 - [__getAlignedX__](Base/getAlignedX.md): Berechnet X-Position für horizontal ausgerichtetes Element
