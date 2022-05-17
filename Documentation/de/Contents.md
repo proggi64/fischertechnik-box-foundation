@@ -17,8 +17,12 @@
 - [__CenterHorizontal__](Base/CenterHorizontal.md): Platziert Children-Elemente horizontal zentriert.
 - [__CenterVertical__](Base/CenterVertical.md): Platziert Children-Elemente vertikal zentriert.
 - [__DeployHorizontal__](Base/DeployHorizontal.md): Verteilt Children-Elemente mit gleichem Abstand horizontal.
+- [__DeploySame__](Base/DeploySame.md): Verteilt mehrere Kopien des Children-Elements auf die angegebenen Spalten und Zeilen.
 - [__DeployVertical__](Base/DeployVertical.md): Verteilt Children-Elemente mit gleichem Abstand vertikal.
+- [__Merge__](Base/Merge.md): Fügt Kopien des Children-Elements so aneinander, dass dessen Trennwände zu jeweils einer verschmelzen.
+- [__MergeRow__](Base/MergeRow.md): Fügt die Children-Elemente so aneinander, dass dessen Trennwände zu jeweils einer verschmelzen.
 - [__Place__](Base/Place.md): Platziert die Children-Elemente auf die angegebene Position (absolut oder ausgerichtet).
+- [__RotateFix__](Base/RotateFix.md): Rotiert das Children-Element um 0, 90, 180 oder 270 Grad im Uhrzeigersinn.
 
 ### Funktionen zur Koordinatenberechnung
 - [__getAlignedX__](Base/getAlignedX.md): Berechnet X-Position für horizontal ausgerichtetes Element
