@@ -2,7 +2,7 @@
 
 Funktion: Liefert das äußere Volumen ("bounding box") eine Rahmens.
 
-Angegeben muss dafür das Volumen des Bauteils.
+Angegeben muss dafür das Volumen des Bauteils. Die zurückgelieferten X- und Y-Werte enthalten die Toleranz und die Wandstärken.
 
 ## Use
 ```
