@@ -98,12 +98,12 @@ ACHTUNG: Diese Doku ist in Arbeit. Bis ca. 22. Mai 2022 sind alle Module und Fun
 - [__getDockableEdgedFrameSpace__](ModelBase/getDockableEdgedFrameSpace.md): Liefert die Fläche für einen mit [__DockableEdgedFrame__](ModelBase/DockableEdgedFrame.md) erzeugten Rahmen.
 - [__getDepthPerPlate__](ModelBase/getDepthPerPlate.md)
 - [__getElevatedFramesWithCutoffSpace__](ModelBase/getElevatedFramesWithCutoffSpace.md): Liefert die Fläche des Elements, das mit dem Modul [__ElevatedFramesWithCutoff__](ElevatedFramesWithCutoff.md) erzeugt wird.
-- [__getFrameAxisDepth__](ModelBase/getFrameAxisDepth.md)
-- [__getFrameAxisHeight__](ModelBase/getFrameAxisHeight.md)
-- [__getFrameAxisSpace__](ModelBase/getFrameAxisSpace.md)
+- [__getFrameAxisDepth__](ModelBase/getFrameAxisDepth.md): Liefert die Tiefe der Achshalterungen für [__FrameAxis__](ModelBase/FrameAxis.md).
+- [__getFrameAxisHeight__](ModelBase/getFrameAxisHeight.md): Liefert die Höhe der Achshalterungen für [__FrameAxis__](ModelBase/FrameAxis.md).
+- [__getFrameAxisSpace__](ModelBase/getFrameAxisSpace.md): Liefert die Fläche einer mit [__FrameAxis__](ModelBase/FrameAxis.md) erzeugte Achshalterung.
 - [__getFrameBracketSpace__](ModelBase/getFrameBracketSpace.md)
 - [__getFrameBracketWidth__](ModelBase/getFrameBracketWidth.md)
-- [__getFrameFlatPieceVolume__](ModelBase/getFrameFlatPieceVolume.md)
+- [__getFrameFlatPieceVolume__](ModelBase/getFrameFlatPieceVolume.md): Liefert das Volumen eines mit [__FrameFlatPiece__](Modelbase/FrameFlatPiece.md) erzeugt wird.
 - [__getFrameRackSpace__](ModelBase/getFrameRackSpace.md)
 - [__getHolderBuildingPlateSpace__](ModelBase/getHolderBuildingPlateSpace.md)
 - [__getRackInnerHeight__](ModelBase/getRackInnerHeight.md)
