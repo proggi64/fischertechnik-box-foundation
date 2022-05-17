@@ -1,13 +1,16 @@
 # getFrameAxisHeight
 
-Funktion: Liefert die Höhe der Halterungen, die vom Modul __FrameAxis__ verwendet wird.
+Funktion: Liefert die Höhe der Halterungen, die vom Modul [__FrameAxis__](ModelBase/FrameAxis.md) verwendet wird.
 
 ## Use
-<pre><code>use &lt;../ModelBase/Complex.scad&gt;</pre></code>
+```
+use <../ModelBase/Complex.scad>
+```
 
 ## Syntax
-<pre><code>getFrameAxisHeight();
-</pre></code>
+```
+getFrameAxisHeight();
+```
 
 ## Rückgabewert
-Höhe der Halterungen des Moduls __FrameAxis__ in mm.
+Höhe der Halterungen des Moduls [__FrameAxis__](ModelBase/FrameAxis.md) in mm.
