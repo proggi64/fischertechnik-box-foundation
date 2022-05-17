@@ -77,8 +77,8 @@ ACHTUNG: Diese Doku ist in Arbeit. Bis ca. 22. Mai 2022 sind alle Module und Fun
 
 ### Funktionen zur Ermittlung der Größe einfacher Module
 - [__getAngeledFrameOuterVolume__](ModelBase/getAngeledFrameOuterVolume.md):
-- [__getFrameInnerVolume__](ModelBase/getFrameInnerVolume.md):
-- [__getFrameOuterVolume__](ModelBase/getFrameOuterVolume.md):
+- [__getFrameInnerVolume__](ModelBase/getFrameInnerVolume.md): Liefert das innere Volumen eines Rahmens.
+- [__getFrameOuterVolume__](ModelBase/getFrameOuterVolume.md): Liefert das äußere Volumen ("bounding box") eines Rahmens.
 
 ### Komplexe Module
 - [__ElevatedFramesWithCutoff__](ModelBase/ElevatedFramesWithCutoff.md): Erzeugt eine Halterung, die im Normalfall für einzelne Achsen verwendet wird.
