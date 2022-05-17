@@ -6,7 +6,7 @@ Funktion: Liefert den zusätzlichen Abstand eines links oder rechts angedockten 
 
 ## Use
 ```
-<pre><code>use <../ModelBase/Complex.scad>
+use <../ModelBase/Complex.scad>
 include <../Base/PlacementOptions.scad>
 ```
 
