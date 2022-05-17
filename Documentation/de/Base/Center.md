@@ -39,7 +39,7 @@ Center(getPlacementBaseSpace(), getCubeSpace())
   Cube();
 ```
  
-Hier wird als Fläche, auf der zentriert wird, die Fläche von __PlacementBase__ angegeben. __PlacementBase__ ist in *TestHelper.scad* definiert und soll als grüne Untergrundfläche die relative Positionierung von Elementen auf einer Fläche verdeutlichen.
+Hier wird als Fläche, auf der zentriert wird, die Fläche von __PlacementBase__ angegeben. __PlacementBase__ ist in *TestHelper.scad* definiert und soll als grüne Untergrundfläche die relative Positionierung von Elementen auf einer Fläche verdeutlichen. Die Abstände des Elements sind nach allen Seiten zum Rand der Fläche gleich.
 
 <img width="355" alt="Center_1" src="https://user-images.githubusercontent.com/48654609/168495022-b54f6bd1-becf-4340-abf5-879ec1dc89b0.png">
 
