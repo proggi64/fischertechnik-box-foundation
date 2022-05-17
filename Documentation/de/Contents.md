@@ -62,7 +62,7 @@
 - [__AngeledFrame__](ModelBase/AngeledFrame.md):
 - [__Axis__](ModelBase/Axis.md):
 - [__AxisWithSpace__](ModelBase/AxisWithSpace.md):
-- [__Divider__](ModelBase/Divider.md):
+- [__Divider__](ModelBase/Divider.md): Erzeugt einen Trenner innerhalb eines Sortierkastens.
 - [__DockableFrame__](ModelBase/DockableFrame.md):
 - [__Frame__](ModelBase/Frame.md):
 - [__LeveledAxis__](ModelBase/LeveledAxis.md):
@@ -79,9 +79,9 @@
 - [__getFrameOuterVolume__](ModelBase/getFrameOuterVolume.md):
 
 ### Komplexe Module
-- [__ElevatedFramesWithCutoff__](ModelBase/ElevatedFramesWithCutoff.md):
-- [__DockableEdgedFrame__](ModelBase/DockableEdgedFrame.md):
-- [__FrameAxis__](ModelBase/FrameAxis.md):
+- [__ElevatedFramesWithCutoff__](ModelBase/ElevatedFramesWithCutoff.md): Erzeugt eine Halterung, die im Normalfall für einzelne Achsen verwendet wird.
+- [__DockableEdgedFrame__](ModelBase/DockableEdgedFrame.md): Erzeugt einen Rahmen für Bauteile, der optional an bis zu zwei Wänden angedockt werden kann.
+- [__FrameAxis__](ModelBase/FrameAxis.md): Erzeugt eine Achshalterung für eine Achse.
 - [__FrameBracket__](ModelBase/FrameBracket.md):
 - [__FrameFlatPiece__](ModelBase/FrameFlatPiece.md):
 - [__FrameRack__](ModelBase/FrameRack.md):
