@@ -1,6 +1,6 @@
 # Center
 
-Platziert Children-Elemente horizontal und/oder vertikal zentriert.
+Platziert ein Children-Element horizontal und/oder vertikal zentriert.
 
 Die Fläche des zu platzierenden Elements (*elementSpace*), sowie die Fläche, in welcher zentriert platziert werden soll (*space*), können als optionale Parameter angegeben werden. Normalerweise muss *elementSpace* für alle Elemente angegeben werden. Ausnahme sind Elemente, deren Ursprungspunkt selbst mittig ist, z.B. __cylinder__ mit *center* = __true__.
 
@@ -16,7 +16,7 @@ use <../Base/Placement.scad>
 Center(
   space=getBox190Space(), 
   elementSpace=[0,0])
-  <i>children</i>
+  {children}
 ```
 
 | Parameter | Typ | Beschreibung |
