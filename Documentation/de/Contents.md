@@ -16,6 +16,8 @@
 - [__Center__](Base/Center.md): Platziert Children-Elemente horizontal und/oder vertikal zentriert.
 - [__CenterHorizontal__](Base/CenterHorizontal.md): Platziert Children-Elemente horizontal zentriert.
 - [__CenterVertical__](Base/CenterVertical.md): Platziert Children-Elemente vertikal zentriert.
+- [__DeployHorizontal__](Base/DeployHorizontal.md): Verteilt Children-Elemente mit gleichem Abstand horizontal.
+- [__DeployVertical__](Base/DeployVertical.md): Verteilt Children-Elemente mit gleichem Abstand vertikal.
 - [__Place__](Base/Place.md): Platziert die Children-Elemente auf die angegebene Position (absolut oder ausgerichtet).
 
 ### Funktionen zur Koordinatenberechnung
