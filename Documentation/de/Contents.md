@@ -93,8 +93,8 @@ ACHTUNG: Diese Doku ist in Arbeit. Bis ca. 22. Mai 2022 sind alle Module und Fun
 - [__RailsBasePlate__](ModelBase/RailsBasePlate.md):
 
 ### Funktionen zur Ermittlung von Werten zu komplexen Modulen
-- [__getDockableEdgedFrameDepth__](ModelBase/getDockableEdgedFrameDepth.md): Liefert den zusätzlichen vertikalen Abstand angedockten Rahmens, wenn dieser über [__DockableEdgedFrame__](ModelBase/DockableEdgedFrame.md) erzeugt wird.
-- [__getDockableEdgedFrameWidth__](ModelBase/getDockableEdgedFrameWidth.md): Liefert den zusätzlichen horizontalen angedockten Rahmens, wenn dieser über [__DockableEdgedFrame__](ModelBase/DockableEdgedFrame.md) erzeugt wird.
+- [__getDockableEdgedFrameDepth__](ModelBase/getDockableEdgedFrameDepth.md): Liefert den vertikalen Abstand des angedockten Rahmens für [__DockableEdgedFrame__](ModelBase/DockableEdgedFrame.md).
+- [__getDockableEdgedFrameWidth__](ModelBase/getDockableEdgedFrameWidth.md): Liefert den horizontalen Abstand des angedockten Rahmens für [__DockableEdgedFrame__](ModelBase/DockableEdgedFrame.md).
 - [__getDockableEdgedFrameSpace__](ModelBase/getDockableEdgedFrameSpace.md): Liefert die Fläche für einen mit [__DockableEdgedFrame__](ModelBase/DockableEdgedFrame.md) erzeugten Rahmen.
 - [__getDepthPerPlate__](ModelBase/getDepthPerPlate.md)
 - [__getElevatedFramesWithCutoffSpace__](ModelBase/getElevatedFramesWithCutoffSpace.md): Liefert die Fläche des Elements, das mit dem Modul [__ElevatedFramesWithCutoff__](ElevatedFramesWithCutoff.md) erzeugt wird.
