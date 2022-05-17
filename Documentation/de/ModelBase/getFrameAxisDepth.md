@@ -1,13 +1,16 @@
 # getFrameAxisDepth
 
-Funktion: Liefert die Tiefe der Halterungen, die vom Modul __FrameAxis__ an das Modul __ElevatedFramesWithCutoff__ als *depth* übergeben wird. Der Wert ist so bemessen, dass der Rahmen 0,4 mm breiter als die Achse selbst ist. So enstehen an den offenen Wänden der Halterungen je 0,2 mm tiefe Stege, welche die Achse quasi einklemmen.
+Funktion: Liefert die Tiefe der Halterungen, die vom Modul [__FrameAxis__](FrameAxis.md) an das Modul [__ElevatedFramesWithCutoff__](ElevatedFramesWithCutoff.md) als *depth* übergeben wird. Der Wert ist so bemessen, dass der Rahmen 0,4 mm breiter als die Achse selbst ist. So enstehen an den offenen Wänden der Halterungen je 0,2 mm tiefe Stege, welche die Achse quasi einklemmen.
 
 ## Use
-<pre><code>use &lt;../ModelBase/Complex.scad&gt;</pre></code>
+```
+use <../ModelBase/Complex.scad>
+```
 
 ## Syntax
-<pre><code>getFrameAxisDepth();
-</pre></code>
+```
+getFrameAxisDepth();
+```
 
 ## Rückgabewert
-Tiefe der Halterungen des Moduls __FrameAxis__ in mm.
+Tiefe der Halterungen des Moduls [__FrameAxis__](FrameAxis.md) in mm.
