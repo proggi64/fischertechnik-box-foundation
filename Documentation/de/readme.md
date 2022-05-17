@@ -1,13 +1,18 @@
 # Fischertechnik Konstruktionsbibliothek für Sortierkästen mit OpenSCAD
-Die Bibliothek bietet eine sich kontinuierlich erweiternde Sammlung an parametrisierten Sortierlementen, Verteilungs- und Platzierfunktionen, sowie Basis-Sortierkästen für das Fischertechnik-Baukastensystem. The Kästen sind so entworfen, dass sie sich mit 3D-Druckern selbst herstellen lassen.
+Die Bibliothek bietet eine sich kontinuierlich erweiternde Sammlung an parametrisierten Sortierlementen, Verteilungs- und Platzierfunktionen, sowie Basis-Sortierkästen für das Fischertechnik-Baukastensystem. Die Kästen sind so entworfen, dass sie sich mit 3D-Druckern selbst herstellen lassen.
 
 Die Bibliothek wurde inspiriert durch die Kunstoff-Sortierkästen der Fischertechnik-Baukästen der 1970er bis Anfang 1980er Jahre. Einige Beispielkästen im Verzeichnis *Original Building Kits* sind annähernd identisch mit den Originalkästen.
 
 <img width="429" alt="ec2" src="https://user-images.githubusercontent.com/48654609/166326370-d41d503e-4cff-4b6c-8358-93feec0d171e.png">
 
-Das Ziele dieser Bibliothek sind es die Konstruktion der Sortierkästen zu vereinfachen und eine Alternative zur CAD-Programmen zu bieten. Dennoch die Elemente auch in CAD-Programmen verwendet werden, wenn man sie einzeln als STL-Dateien exportiert.
+Das Ziele dieser Bibliothek sind es die Konstruktion der Sortierkästen zu vereinfachen und eine Alternative zur CAD-Programmen zu bieten. Dennoch können die Elemente auch in CAD-Programmen verwendet werden, wenn man sie einzeln als STL-Dateien exportiert.
 
-Die Bibliothek teil sich in folgende Gruppen:
+Um die Bibliothek sinnvoll einsetzen zu können, sollte man zumindest die Grundlagen von [OpenSCAD](https://openscad.org/documentation.html) beherrschen:
+- Koordinatensystem auf den X/Y/Z-Achse
+- Module und Funktionen
+- Einfache Geometrie
+
+Die Bibliothek teilt sich in folgende Gruppen:
 - Base
 - ModelBase
 - Elements
@@ -28,7 +33,7 @@ Enthält die Basisfunktionalität der Bibliothek:
 Im Base-Verzeichnis finden sich auch die STL-Dateien mit den Leerboxen 190x130 und 130x95, die als Basis zur Konstruktion verwendet werden.
 
 ## ModelBase
-Enthält einfache (Simple.scad) und komplexere (Complex.scad) parametrisierbare Basiselemente, mit denen die Elemente für spezifische Bauteile erstellt werden.
+Enthält einfache (Simple.scad) und komplexere (Complex.scad) parametrisierbare Basiselemente, mit denen die Elemente für spezifische Bauteile erstellt werden. Diese können aber auch für individuelle Elemente für spezifische Sortierkästen verwendet werden.
 
 ## Elements
 Enthält Elemente für spezifische Fischertechnik-Bauteile, einige von ihnen parametrisierbar. Alle sind auch Fischertechnik-Teilenummern zugeordnet, die in den Quelldateien als Kommentare vermerkt sind. Diese Elemente sind sofort für die Konstruktion von Sortierboxen verwendbar. Diese Sammlung wird kontinuierlich erweitert.
