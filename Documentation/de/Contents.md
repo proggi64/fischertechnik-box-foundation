@@ -1,5 +1,7 @@
 # Inhalt
 
+ACHTUNG: Diese Doku ist in Arbeit. bis ca. 22. Mai wind alle Module und Funktionen aus Base und ModelBase dokumentiert. Anschließend folgen die schon erstellten Elemente (Elements).
+
 ## Allgemeines
 - [Über die Bibliothek](readme.md)
 - [Konstruktionsprinzipien](principles.md)
