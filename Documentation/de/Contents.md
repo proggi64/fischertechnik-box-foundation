@@ -71,7 +71,7 @@ ACHTUNG: Diese Doku ist in Arbeit. Bis ca. 22. Mai 2022 sind alle Module und Fun
 - [__LeveledAxisWithSpace__](ModelBase/LeveledAxisWithSpace.md):
 - [__LeveledTube__](ModelBase/LeveledTube.md):
 - [__Space__](ModelBase/Space.md):
-- [__Text__](ModelBase/Text.md):
+- [__Text__](ModelBase/Text.md): Erzeugt einen reliefartigen Text im Boden des Sortierkastens.
 - [__Tube__](ModelBase/Tube.md):
 - [__Wall__](ModelBase/Wall.md):
 
@@ -85,7 +85,7 @@ ACHTUNG: Diese Doku ist in Arbeit. Bis ca. 22. Mai 2022 sind alle Module und Fun
 - [__DockableEdgedFrame__](ModelBase/DockableEdgedFrame.md): Erzeugt einen Rahmen für Bauteile, der optional an bis zu zwei Wänden angedockt werden kann.
 - [__FrameAxis__](ModelBase/FrameAxis.md): Erzeugt eine Achshalterung für eine Achse.
 - [__FrameBracket__](ModelBase/FrameBracket.md):
-- [__FrameFlatPiece__](ModelBase/FrameFlatPiece.md):
+- [__FrameFlatPiece__](ModelBase/FrameFlatPiece.md): Erzeugt einen Rahmen für Flachstücke.
 - [__FrameRack__](ModelBase/FrameRack.md):
 - [__FrameSpecialFlat__](ModelBase/FrameSpecialFlat.md):
 - [__HolderBuildingPlate__](ModelBase/HolderBuildingPlate.md):
