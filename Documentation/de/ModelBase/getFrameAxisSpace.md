@@ -1,6 +1,6 @@
 # getFrameAxisSpace
 
-Funktion: Liefert die Fläche, eine mit __FrameAxis__ erzeugte Achshalterung für die angegebene Achslänge benötigt.
+Funktion: Liefert die Fläche einer mit __FrameAxis__ erzeugten Achshalterung.
 
 <img width="344" alt="TestFrameAxis50" src="https://user-images.githubusercontent.com/48654609/168169350-8ad37a91-c90a-4ef4-9721-c32ca065ae90.png">
 
