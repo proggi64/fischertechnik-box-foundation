@@ -24,7 +24,8 @@ Divider(
 | Parameter | Typ | Beschreibung |
 | ------ | ------ | ------ |
 | distance | Decimal | Innerer Abstand zwischen Außenwand und Trennwand, gerechnet von der durch *align* festgelegten Wand. |
-| align | Integer (Enum) |  Legt die Ausrichtung fest und von welcher Wand aus *distance* gerechnet wird. Mögliche Werte: __AlignLeft__, __AlignRight__, __AlignBottom__ oder __AlignTop__. | height | Höhe der Trennwand. Standard ist 10 mm (__getSmallPartsFrameHeight()__). |
+| align | Integer (Enum) |  Legt die Ausrichtung fest und von welcher Wand aus *distance* gerechnet wird. Mögliche Werte: __AlignLeft__, __AlignRight__, __AlignBottom__ oder __AlignTop__. |
+| height | Höhe der Trennwand. Standard ist 10 mm ([__getSmallPartsFrameHeight__](getSmallPartsFrameHeight.md). |
 | boxSpace | \[x,y] | Fläche des Sortierkastens, in dem der Trenner gesetzt werden soll. Standard ist die Box 190x130. |
 
 ## Beispiele
