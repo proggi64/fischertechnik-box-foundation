@@ -80,6 +80,28 @@
 
 ### Komplexe Module
 - [__ElevatedFramesWithCutoff__](ModelBase/ElevatedFramesWithCutoff.md):
+- [__DockableEdgedFrame__](ModelBase/DockableEdgedFrame.md):
+- [__FrameAxis__](ModelBase/FrameAxis.md):
+- [__FrameBracket__](ModelBase/FrameBracket.md):
+- [__FrameFlatPiece__](ModelBase/FrameFlatPiece.md):
+- [__FrameRack__](ModelBase/FrameRack.md):
+- [__FrameSpecialFlat__](ModelBase/FrameSpecialFlat.md):
+- [__HolderBuildingPlate__](ModelBase/HolderBuildingPlate.md):
+- [__RackBase__](ModelBase/RackBase.md):
+- [__RailsBasePlate__](ModelBase/RailsBasePlate.md):
 
 ### Funktionen zur Ermittlung von Werten zu komplexen Modulen
+- [__getDockableEdgedFrameDepth__](ModelBase/getDockableEdgedFrameDepth.md)
+- [__getDockableEdgedFrameWidth__](ModelBase/getDockableEdgedFrameWidth.md)
+- [__getDockableEdgedFrameSpace__](ModelBase/getDockableEdgedFrameSpace.md)
+- [__getDepthPerPlate__](ModelBase/getDepthPerPlate.md)
 - [__getFrameAxisDepth__](ModelBase/getFrameAxisDepth.md)
+- [__getFrameAxisHeight__](ModelBase/getFrameAxisHeight.md)
+- [__getFrameAxisSpace__](ModelBase/getFrameAxisSpace.md)
+- [__getFrameBracketSpace__](ModelBase/getFrameBracketSpace.md)
+- [__getFrameBracketWidth__](ModelBase/getFrameBracketWidth.md)
+- [__getFrameFlatPieceVolume__](ModelBase/getFrameFlatPieceVolume.md)
+- [__getFrameRackSpace__](ModelBase/getFrameRackSpace.md)
+- [__getHolderBuildingPlateSpace__](ModelBase/getHolderBuildingPlateSpace.md)
+- [__getRackInnerHeight__](ModelBase/getRackInnerHeight.md)
+- [__getRailsBasePlateVolume__](ModelBase/getRailsBasePlateVolume.md)
