@@ -2,31 +2,35 @@
 Verteilt die angegebenen Children-Elemente mit gleichem Abstand auf die angegebene Strecke auf der Y-Position Null. Dabei werden auch die Drehungen der einzelnen Elemente angegeben und berücksichtigt. Optional kann eine vertikale Ausrichtung der Elemente relativ zueinander angegeben werden.
 
 ## Use
-<pre><code>use &lt;../Base/Deployment.scad&gt;
-include &lt;../Base/PlacementOptions.scad&gt;</pre></code>
+```
+use <../Base/Deployment.scad>
+include <../Base/PlacementOptions.scad>
+```
 
 ## Syntax
-<pre><code>DeployHorizontal(
+```
+DeployHorizontal(
   width, 
   spaces, 
   rotations,
   alignY=NoAlign)
-  <i>children</i>
-</pre></code>
+  {children}
+```
 
-| Parameter | Beschreibung |
-| ------ | ------ |
-| width | Strecke, über die die angegebenen Elemente verteilt werden. Wird hier Null angegeben, werden die Elemente direkt ohne Abstand aneinander gesetzt. |
-| spaces| Liste von Wertpaaren (Liste mit x- und y-Wert) mit den Flächen der Children-Elemente. Hier sollten die jeweiligen __get*ElementName*Space()__-Funktionen angegeben werden, und zwar in der Reihenfolge, die der der Children-Elemente entspricht. |
-| rotations | Gibt für jedes Children-Element an, wie es vor dem Verteilen gedreht werden soll. Mögliche Werte sind __Rotate0__, __Rotate90__, __Rotate180__ und __Rotate270__. Die Reihenfolge entspricht der der Children-Elemente. |
-| alignY | Vertikale Ausrichtung der Children-Elemente zueinander. Grundlage sind die in *spaces* angegebenen Flächen, sowie die in *rotations* angegebenen Drehungen der einzelnen Elemente. __AlignBottom__ richtet auf der unteren Linie aus (wie __NoAlign__), __AlignTop__ am höchsten Y-Wert der Elemente, __AlignCenter__ zentriert alle Elemente um das Zentrum des tiefsten Elements. |
+| Parameter | Typ | Beschreibung |
+| ------ | ------ | ------ |
+| width | Decimal | Strecke, über die die angegebenen Elemente verteilt werden. Wird hier Null angegeben, werden die Elemente direkt ohne Abstand aneinander gesetzt. |
+| spaces| \[\[x,y],\[x,y],...] | Liste von Wertpaaren (Liste mit x- und y-Wert) mit den Flächen der Children-Elemente. Hier sollten die jeweiligen __get*ElementName*Space()__-Funktionen angegeben werden, und zwar in der Reihenfolge, die der der Children-Elemente entspricht. |
+| rotations | \[RotateX, RotyteX, ...] | Gibt für jedes Children-Element an, wie es vor dem Verteilen gedreht werden soll. Mögliche Werte sind __Rotate0__, __Rotate90__, __Rotate180__ und __Rotate270__. Die Reihenfolge entspricht der der Children-Elemente. |
+| alignY | Integer (Enum) | Vertikale Ausrichtung der Children-Elemente zueinander. Grundlage sind die in *spaces* angegebenen Flächen, sowie die in *rotations* angegebenen Drehungen der einzelnen Elemente. __AlignBottom__ richtet auf der unteren Linie aus (wie __NoAlign__), __AlignTop__ am höchsten Y-Wert der Elemente, __AlignCenter__ zentriert alle Elemente um das Zentrum des tiefsten Elements. |
 
 ## Beispiele
 
 ## Ohne Ausrichtung
 Das Beispiel ist ein Ausschnitt aus der Testdatei *Test/Base/DeploymentTestDeployHorizontal.scad*:
 
-<pre><code>use <../../Base/Deployment.scad>
+```
+use <../../Base/Deployment.scad>
 use <../../Base/Placement.scad>
 
 include <../../Base/PlacementOptions.scad>
@@ -42,7 +46,8 @@ DeployHorizontal(
     Cube();
     Cube();
     Cube();
-}</pre></code>
+}<
+```
 
 Das Beispiel verteilt drei gelbe Elemente __Cube__ auf der grünen __PlacementBase__, die hier zur Veranschaulichung unter die Elemente gelegt wird. Die Rotationen zeigen, dass die richtige Breite nach der jeweiligen Rotation berücksichtigt wird. Die Abstände sind identisch.
 
@@ -50,7 +55,8 @@ Das Beispiel verteilt drei gelbe Elemente __Cube__ auf der grünen __PlacementBa
 
 ## Zentriert ausgerichtet
 
-<pre><code>use <../../Base/Deployment.scad>
+```
+use <../../Base/Deployment.scad>
 use <../../Base/Placement.scad>
 
 include <../../Base/PlacementOptions.scad>
@@ -67,7 +73,8 @@ DeployHorizontal(
     Cube();
     Cube();
     Cube();
-}</pre></code>
+}
+```
 
 Wie das vorige Beispiel, aber der optionale Parameter *alignY* wird auf __AlignCenter__ gesetzt.
 
@@ -75,7 +82,8 @@ Wie das vorige Beispiel, aber der optionale Parameter *alignY* wird auf __AlignC
 
 ## Ohne Abstand mit Ausrichtung oben
 
-<pre><code>use <../../Base/Deployment.scad>
+```
+use <../../Base/Deployment.scad>
 use <../../Base/Placement.scad>
 
 include <../../Base/PlacementOptions.scad>
@@ -92,8 +100,9 @@ DeployHorizontal(
     Cube();
     Cube();
     Cube();
-}</pre></code>
+}
+```
 
-Die Elemente werden direkt aneinander platziert. Bei __Frame__-Elementen werden die Zwischenwände doppelt so dick wie eine einzelne Wand. Um in solchen Fällen die  Zwischenwände auf die Einzelstärke zu reduzieren, muss stattdessen __MergeRow__ verwendet werden.
+Die Elemente werden direkt aneinander platziert. Bei __Frame__-Elementen werden die Zwischenwände doppelt so dick wie eine einzelne Wand. Um in solchen Fällen die  Zwischenwände auf die Einzelstärke zu reduzieren, muss stattdessen [__MergeRow__}(MergeRow.md) verwendet werden.
 
 <img width="355" alt="DeployHorizontal_Zero" src="https://user-images.githubusercontent.com/48654609/168445294-81a83274-f977-46a3-b1d0-7d9dd05166fb.png">
