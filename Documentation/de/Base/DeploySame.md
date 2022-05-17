@@ -1,5 +1,5 @@
 # DeploySame
-Verteilt das angegebene Children-Element in den angegebenen Spalten und Zeilen mit gleichem Abstand auf die angegebene Fläche. Dabei werden auch die Drehungen der einzelnen Elemente berücksichtigt. Es wird nur das erste Children-Element verarbeitet.
+Verteilt Kopien des Children-Elements auf die angegebenen Spalten und Zeilen mit gleichem Abstand auf der angegebenen Fläche. Dabei werden auch die Drehungen der einzelnen Elemente berücksichtigt. Es wird nur das erste Children-Element verarbeitet.
 
 ## Use
 ```
