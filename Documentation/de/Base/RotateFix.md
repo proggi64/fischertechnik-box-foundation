@@ -3,24 +3,27 @@
 Rotiert das Children-Element um 0, 90, 180 oder 270 Grad im Uhrzeigersinn. Dabei verbleibt der Ursprung des Elements immer links unten, so dass sich dessen Position auf der Fläche nicht ändert.
 
 ## Use
-<pre><code>use <../Base/Rotation.scad>
-include <PlacementOptions.scad></pre></code>
+```
+use <../Base/Rotation.scad>
+include <PlacementOptions.scad>
+```
 
 ## Syntax
-<pre><code>RotateFix(
+```RotateFix(
   space,
   rotation=Rotate0))
-  <i>children</i>
-</pre></code>
+  {children}
+```
 
-| Parameter | Beschreibung |
-| ------ | ------ |
-| space | Fläche des Elements, das rotiert werden soll. Dies kann z.B. durch __get*ElementName*Space()__ angegeben werden. |
-| rotation | Gibt an, wie das Element rotiert werden soll. Mögliche Werte sind die in *PlacementOptions.scad* definierten Konstanten __Rotate0__, __Rotate90__, __Rotate180__ und __Rotate270__. |
+| Parameter | Typ | Beschreibung |
+| ------ | ------ |  ------ |
+| space | \[x,y] | Fläche des Elements, das rotiert werden soll. Dies kann z.B. durch __get*ElementName*Space()__ angegeben werden. |
+| rotation | Integer (Enum) | Gibt an, wie das Element rotiert werden soll. Mögliche Werte sind die in *PlacementOptions.scad* definierten Konstanten __Rotate0__, __Rotate90__, __Rotate180__ und __Rotate270__. |
 
 ## Beispiel
 
-<pre><code>use <../../Base/Rotation.scad>
+```
+use <../../Base/Rotation.scad>
 
 include <../../Base/PlacementOptions.scad>
 
@@ -35,7 +38,8 @@ Deploy(30) {
         Cube();
     RotateFix(getCubeSpace(), Rotate270)
         Cube();
-}</code></pre>
+}
+```
 
 Die vier __Cube__-Elemente werden im Abstand von jeweils 30 mm horizontal verteilt. Jedes wird dabei um 90° mehr gedreht, als der linke Nachbar. Der Ursprung des Elements bleibt aber trotz Drehung immer links unten.
 
