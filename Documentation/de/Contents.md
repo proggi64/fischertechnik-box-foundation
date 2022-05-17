@@ -12,8 +12,10 @@
 - [__Box190__](Base/Box190.md): Importiert einen leeren Sortierkasten 190 x 130 mm als Basis für eigene Entwürfe
 - [__BoxWeb__](Base/BoxWeb.md): Erzeugt einen kurzen Steg an der Innenwand einer Sortierbox
 
-### Module zur PLatzierung von Elementen
+### Module zur Platzierung von Elementen
 - [__Center__](Base/Center.md): Platziert Children-Elemente horizontal und/oder vertikal zentriert.
+- [__CenterHorizontal__](Base/CenterHorizontal.md): Platziert Children-Elemente horizontal zentriert.
+- [__CenterVertical__](Base/CenterVertical.md): Platziert Children-Elemente vertikal zentriert.
 
 ### Funktionen zur Koordinatenberechnung
 - [__getAlignedX__](Base/getAlignedX.md): Berechnet X-Position für horizontal ausgerichtetes Element
