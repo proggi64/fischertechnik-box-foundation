@@ -5,18 +5,21 @@ Erzeugt einen kurzen Steg an der Innenwand einer Sortierbox. Ein solcher Steg is
 Solche Stege befinden sich an verschiedenen Positionen der Original-Sortierboxen und verhindern, dass die gestapelten Boxen zu tief in die untere Box versinken. Viele der Stege sind auch Teil einer Trennwand, die meistens abgestuft niedriger als der Steg selbst verläuft. Dazu muss lediglich das Modul [__Wall__](../ModelBase/Wall.md) (aus *ModelBase/Simple.scad*) mit den Stegen kombiniert werden.
 
 ## Use
-<pre><code>use &lt;../Base/Boxes.scad&gt;
-include &lt;../Base/PlacementOptions.scad&gt;</pre></code>
+```
+use <../Base/Boxes.scad>
+include <../Base/PlacementOptions.scad>
+```
 
 ## Syntax
-<pre><code>BoxWeb(
+```
+BoxWeb(
   corner, 
   side, 
   distance, 
   boxSpace=getBox190Space(), 
   webWidth=getBoxWebWidth(), 
   webThickness=1.0);
-</pre></code>
+```
 
 | Parameter | Typ | Beschreibung |
 | ------ | ------ | ------ |
@@ -28,26 +31,28 @@ include &lt;../Base/PlacementOptions.scad&gt;</pre></code>
 | webThickness | Decimal | Stärke des Stegs. Dies entspricht im Standard nicht der normalen Wandstärke der Rahmen und Trenner, sondern ist etwas dünner. Bei mit Trennern verschmolzenen Stegen sollte hier [__getDividerThickness()__](../Base/getDividerThickness.md) als Wert übergeben werden (aus *Constants.scad*). |
 
 ## Beispiele
-<pre><code>Test/Base/BoxesTestBoxWeb.scad</code></pre>
+Siehe *Test/Base/BoxesTestBoxWeb.scad*
 
 ### Linke untere Ecke
-<pre><code>use <../../Base/Boxes.scad>
+```
+use <../../Base/Boxes.scad>
 include <../../Base/PlacementOptions.scad>
 
 #Box190();
 
 BoxWeb(LowerLeft, LeftOfCorner, 7.5);
-</pre></code>
+```
 
 <img width="435" alt="BoxesTestBoxWeb01" src="https://user-images.githubusercontent.com/48654609/166932487-8b8f3b92-9774-442c-9c05-6fb0642ec34e.png">
 
 ### Rechte obere Ecke
-<pre><code>use <../../Base/Boxes.scad>
+```
+use <../../Base/Boxes.scad>
 include <../../Base/PlacementOptions.scad>
 
 #Box190();
 
 BoxWeb(UpperRight, RightOfCorner, 15);
-</pre></code>
+```
 
 <img width="435" alt="BoxesTestBoxWeb02" src="https://user-images.githubusercontent.com/48654609/166933860-3688e296-0f26-47b1-b465-35a509529417.png">
