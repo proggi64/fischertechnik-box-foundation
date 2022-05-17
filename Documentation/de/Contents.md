@@ -18,8 +18,17 @@
 - [__getBoxUsageHeight__](Base/getBoxUsageHeight.md): Liefert die nutzbare innere Höhe eines Sortierkastens
 - [__getBoxWallThickness__](Base/getBoxWallThickness.md): Liefert die Stärke der Wände eines Sortierkastens
 - [__getBoxWebWidth__](Base/getBoxWebWidth.md): Liefert die Standardlänge eines Stegs für Sortierkästen
+- [__getDepthSum__](Base/getDepthSum.md): Liefert Summe aller Tiefen der angegebenen Flächen
 - [__getDividerThickness__](Base/getDividerThickness.md): Liefert die Standardbreite einer Trennwand
 - [__getExcess__](Base/getExcess.md): Liefert den Betrag, um den ein Objekt mit einem verbundenen Objekt verschmilzt
 - [__getFragments__](Base/getFragments.md): Liefert die Anzahl der Fragmente für cylinder-Objekte ($fn)
 - [__getIsHorizontal__](Base/getIsHorizontal.md): Liefert true, wenn die angegebene Ausrichtung eine horizontale Trennwand erfordert
 - [__getIsVertical__](Base/getIsVertical.md): Liefert true, wenn die angegebene Ausrichtung eine vertikale Trennwand erfordert
+- [__getMergedRowWidth__](Base/getMergedRowWidth.md): Liefert die Gesamtbeite einer zusammengefügten Reihe von Frame-basierten Elementen
+- [__getRotatedSpace__](Base/getRotatedSpace.md): Liefert eine Fläche so transformiert, dass die angegebene Drehung angewandt wird
+- [__getSmallPartsFrameHeight__](Base/getSmallPartsFrameHeight.md): Liefert die Höhe für Rahmen, die für in Sortierkästen Kleinteile vorgesehen sind
+- [__getStandardEdgeDistance__](Base/getStandardEdgeDistance.md): Liefert den Standard-Abstand für andockbare Rahmen mit Stegen
+- [__getStandardWebDistance__](Base/getStandardWebDistance.md): Liefert den Abstand eines Stegs zur jeweiligen Ecke eines andockbaren Elements
+- [__getTolerance__](Base/getTolerance.md): Liefert den Betrag für die Toleranz bei Elementen, damit die Bauteile nach dem Druck in die Elemente passen
+- [__getTubeWallThickness__](Base/getTubeWallThickness.md): Liefert Stärke der Wände eines Element-Zylinders
+- [__getWidthSum__](Base/getWidthSum.md): Liefert Summe aller Breiten der angegebenen Flächen
