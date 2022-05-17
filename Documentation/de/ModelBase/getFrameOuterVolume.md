@@ -1,12 +1,12 @@
 # getFrameOuterVolume
 
-Funktion: Liefert das äußere Volumen ("bounding box") eine Rahmens.
+Funktion: Liefert das äußere Volumen ("bounding box") eines Rahmens.
 
 Angegeben muss dafür das Volumen des Bauteils. Die zurückgelieferten X- und Y-Werte enthalten die Toleranz und die Wandstärken.
 
 ## Use
 ```
-<pre><code>use <../ModelBase/Complex.scad>
+use <../ModelBase/Complex.scad>
 include <../Base/PlacementOptions.scad>
 ```
 
