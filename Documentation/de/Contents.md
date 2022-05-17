@@ -93,7 +93,7 @@ ACHTUNG: Diese Doku ist in Arbeit. Bis ca. 22. Mai 2022 sind alle Module und Fun
 - [__RailsBasePlate__](ModelBase/RailsBasePlate.md):
 
 ### Funktionen zur Ermittlung von Werten zu komplexen Modulen
-- [__getDockableEdgedFrameDepth__](ModelBase/getDockableEdgedFrameDepth.md)
+- [__getDockableEdgedFrameDepth__](ModelBase/getDockableEdgedFrameDepth.md): Funktion: Liefert den zusätzlichen Abstand eines oben oder unten angedockten Rahmens, wenn dieser über [__DockableEdgedFrame__](ModelBase/DockableEdgedFrame.md) erzeugt wird.
 - [__getDockableEdgedFrameWidth__](ModelBase/getDockableEdgedFrameWidth.md)
 - [__getDockableEdgedFrameSpace__](ModelBase/getDockableEdgedFrameSpace.md)
 - [__getDepthPerPlate__](ModelBase/getDepthPerPlate.md)
