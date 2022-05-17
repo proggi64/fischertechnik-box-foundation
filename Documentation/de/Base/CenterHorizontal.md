@@ -1,6 +1,6 @@
 # CenterHorizontal
 
-Platziert Children-Elemente horizontal zentriert.
+Platziert ein Children-Element horizontal zentriert.
 
 Die Breite des zu platzierenden Elements (*width*), sowie die Fläche, in welcher zentriert platziert werden soll (*space*), können als optionale Parameter angegeben werden. Normalerweise muss *elementSpace* für alle Elemente angegeben werden. Ausnahme sind Elemente, deren Ursprungspunkt selbst mittig ist, z.B. __cylinder__ mit *center* = __true__.
 
@@ -18,7 +18,7 @@ CenterHorizontal(
   y=0, 
   offset=0, 
   space=getBox190Space())
-  <i>children</i>
+  {children}
 ```
 
 | Parameter | Typ | Beschreibung |
