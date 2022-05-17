@@ -9,15 +9,18 @@ Die Halterung besteht aus zwei Rahmen an den Enden, jeweils mit einer Aussparung
 __FrameAxis__ verwendet as Modul __ElevatedFramesWithCutoff__ mit einer Reihe von Konstanten Parametern, die für die 4 mm Achsen passen.
 
 ## Use
-<pre><code>use &lt;../ModelBase/Complex.scad&gt;</pre></code>
+```
+use <../ModelBase/Complex.scad>
+```
 
 ## Syntax
-<pre><code>FrameAxis(
+```
+FrameAxis(
   length, 
   cutThrough=false);
-</pre></code>
+```
 
-| Parameter | Beschreibung |
+| Parameter | Typ | Beschreibung |
 | ------ | ------ |
-| length | Länge der Achse. |
-| cutThrough | __true__, wenn die Wand am Ende der beiden Halterungen weggelassen werden soll. |
+| length | Decimal | Länge der Achse. |
+| cutThrough | Boolean | __true__, wenn die Wand am Ende der beiden Halterungen weggelassen werden soll. |
