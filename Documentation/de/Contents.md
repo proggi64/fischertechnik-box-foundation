@@ -97,6 +97,7 @@ ACHTUNG: Diese Doku ist in Arbeit. Bis ca. 22. Mai 2022 sind alle Module und Fun
 - [__getDockableEdgedFrameWidth__](ModelBase/getDockableEdgedFrameWidth.md): Liefert den zusätzlichen horizontalen angedockten Rahmens, wenn dieser über [__DockableEdgedFrame__](ModelBase/DockableEdgedFrame.md) erzeugt wird.
 - [__getDockableEdgedFrameSpace__](ModelBase/getDockableEdgedFrameSpace.md): Liefert die Fläche für einen mit [__DockableEdgedFrame__](ModelBase/DockableEdgedFrame.md) erzeugten Rahmen.
 - [__getDepthPerPlate__](ModelBase/getDepthPerPlate.md)
+- [__getElevatedFramesWithCutoffSpace__](ModelBase/getElevatedFramesWithCutoffSpace.md): Liefert die Fläche des Elements, das mit dem Modul [__ElevatedFramesWithCutoff__](ElevatedFramesWithCutoff.md) erzeugt wird.
 - [__getFrameAxisDepth__](ModelBase/getFrameAxisDepth.md)
 - [__getFrameAxisHeight__](ModelBase/getFrameAxisHeight.md)
 - [__getFrameAxisSpace__](ModelBase/getFrameAxisSpace.md)
