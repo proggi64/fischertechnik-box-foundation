@@ -6,7 +6,7 @@ Erzeugt eine Achshalterung für eine Achse mit der angegebenen Länge.
 
 Die Halterung besteht aus zwei Rahmen an den Enden, jeweils mit einer Aussparung für das jeweilige Ende des Bauteils. Die Aussparung ist in der Standardeinstellung durch eine Wand abgeschlossen. Über den Parameter *cutThrough* können diese Abschlusswände auch weggelassen werden.
 
-__FrameAxis__ verwendet as Modul __ElevatedFramesWithCutoff__ mit einer Reihe von Konstanten Parametern, die für die 4 mm Achsen passen.
+__FrameAxis__ verwendet as Modul __ElevatedFramesWithCutoff__ mit einer Reihe von konstanten Parametern, die für die 4 mm Achsen passen.
 
 ## Use
 ```
