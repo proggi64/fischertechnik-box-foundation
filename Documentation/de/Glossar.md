@@ -4,8 +4,10 @@
 | ------ | ------  |
 | __Alignment__ | Fasst alle Ausrichtungsmodule und -funktionen zusammen, mit denen *Elemente* an Rändern ausgerichtet oder zentriert werden können. |
 | __Axis__ | Stehende Achse als Aufnahmeelement für Naben, Achskupplungen oder andere Bauteile, die mit Achsen verbunden werden. Alle *Elemente*, die als Basis eine Achse haben, bekommen im Modulnamen das Präfix *Axis*. |
+| __Center__ | Zentrieren von Elementen auf Strecken oder Flächen. |
 | __Combo__  | Namens-Präfix für Kombinationen von gruppierten Elementen, die ein größeres Element bilden. |
-| __Cylinder__ | Stehende Zylinder als Aufnahmeelement für Reifen oder andere Bauteile, die mit Naben oder anderen rundenBauelementen verbunden werden. Alle *Elemente*, die als Basis einen Zylinder haben, bekommen im Modulnamen das Präfix *Cylinder*.
+| __Cylinder__ | Stehende Zylinder als Aufnahmeelement für Reifen oder andere Bauteile, die mit Naben oder anderen rundenBauelementen verbunden werden. Alle *Elemente*, die als Basis einen Zylinder haben, bekommen im Modulnamen das Präfix *Cylinder*. |
+| __Deploy__ | Automatisches Verteilen gleicher oder verschiedener Elemente auf Strecken oder Flächen. |
 | __Deployment__ | Fasst alle Module und Funktionen zusammen, mit denen mehrere Elemente gleichmäßig über Strecken oder Flächen verteilt werden können. |
 | __Depth__ | Strecken auf der Y-Achse ("Tiefe"). |
 | __Divider__ | Bezeichner für Trennwand. |
