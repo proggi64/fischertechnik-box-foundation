@@ -62,11 +62,11 @@ module Box130() {
 // corner 0 = LowerLeft, 1 = UpperLeft, 2 = UpperRight, 3 = LowerRight
 // side 0 = LeftOfCorner, 1 = RightOfCorner
 // distance = Distance in mm from the corner
-// box = inner width and depth of the box (default: Box 190)
+// boxSpace = inner width and depth of the box (default: Box 190)
 // webWidth = length of the web (default is 3 mms)
 // webThickness = thickness of the web (default is 1 mm)
 
-module BoxWeb(corner, side, distance, box=getBox190Space(), webWidth=getBoxWebWidth(), webThickness=1.0) {
+module BoxWeb(corner, side, distance, boxSpace=getBox190Space(), webWidth=getBoxWebWidth(), webThickness=1.0) {
     sink = getBoxWallThickness()/2;
 
     width = (corner % 2 == 0) ? 
@@ -82,15 +82,15 @@ module BoxWeb(corner, side, distance, box=getBox190Space(), webWidth=getBoxWebWi
             (corner == UpperLeft ?                
                 (side == LeftOfCorner ? distance : -sink) :
             (corner == UpperRight ?
-                (side == LeftOfCorner ? box.x-webWidth+sink : box.x-distance-webThickness) :
-                (side == LeftOfCorner ? box.x-distance-webThickness: box.x-webWidth+sink)));
+                (side == LeftOfCorner ? boxSpace.x-webWidth+sink : boxSpace.x-distance-webThickness) :
+                (side == LeftOfCorner ? boxSpace.x-distance-webThickness: boxSpace.x-webWidth+sink)));
 
     yDiff = corner == LowerLeft ? 
                 (side == RightOfCorner ? -sink : distance) :
             (corner == UpperLeft ?
-                (side == RightOfCorner ? box.y-distance : box.y-webWidth+sink) :
+                (side == RightOfCorner ? boxSpace.y-distance : boxSpace.y-webWidth+sink) :
             (corner == UpperRight ?
-                (side == RightOfCorner ? box.y-webWidth+sink : box.y-distance) :
+                (side == RightOfCorner ? boxSpace.y-webWidth+sink : boxSpace.y-distance) :
                 (side == RightOfCorner ? distance : -sink)));
     
     translate([xDiff, yDiff, -getExcess()])
