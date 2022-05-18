@@ -62,7 +62,7 @@ ACHTUNG: Diese Doku ist in Arbeit. Bis ca. 22. Mai 2022 sind alle Module und Fun
 
 ### Module für einfache Grundformen
 - [__AngeledFrame__](ModelBase/AngeledFrame.md): Erzeugt einen um 90° gewinkelten Rahmen.
-- [__Axis__](ModelBase/Axis.md):
+- [__Axis__](ModelBase/Axis.md): Erzeugt eine stehende Achse.
 - [__AxisWithSpace__](ModelBase/AxisWithSpace.md):
 - [__Divider__](ModelBase/Divider.md): Erzeugt einen Trenner innerhalb eines Sortierkastens.
 - [__DockableFrame__](ModelBase/DockableFrame.md): Erzeugt einen Rahmen, der an eine Wand angedockt werden kann.
