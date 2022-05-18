@@ -61,7 +61,7 @@ ACHTUNG: Diese Doku ist in Arbeit. Bis ca. 22. Mai 2022 sind alle Module und Fun
 ## Funktionen und Module für das Konstruieren von Elementen
 
 ### Einfache Module
-- [__AngeledFrame__](ModelBase/AngeledFrame.md):
+- [__AngeledFrame__](ModelBase/AngeledFrame.md): Erzeugt einen um 90° gewinkelten Rahmen.
 - [__Axis__](ModelBase/Axis.md):
 - [__AxisWithSpace__](ModelBase/AxisWithSpace.md):
 - [__Divider__](ModelBase/Divider.md): Erzeugt einen Trenner innerhalb eines Sortierkastens.
