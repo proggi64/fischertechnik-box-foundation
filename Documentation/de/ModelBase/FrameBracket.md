@@ -31,3 +31,4 @@ translate([70,0])
     FrameBracket([15, getDividerThickness(), 10]);
 ```
 
+<img width="178" alt="FrameBracket" src="https://user-images.githubusercontent.com/48654609/169099296-e197378b-5bed-494b-89df-3cd6010bd839.png">
