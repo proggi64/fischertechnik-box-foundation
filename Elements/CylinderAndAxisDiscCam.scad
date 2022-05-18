@@ -30,10 +30,13 @@ module CylinderAndAxisDiscCam() {
     translate([xOffset, yOffset, 0])
         CylinderGearZ20();
     
+    // For 3D printing:
+    correctedDiameter = getAxisDiameter() - 0.2;
+    
     xAxisOffset = 43;
     yAxisOffset = getCylinderAndAxisDiscCamSpace().y / 2;
     translate([xAxisOffset, yAxisOffset])
-        LeveledAxis(getCylinderGearZ20Height(), getCylinderGearZ20LevelHeight());
+        LeveledAxis(getCylinderGearZ20Height(), getCylinderGearZ20LevelHeight(), diameter = correctedDiameter);    
 }
 
 // Tests

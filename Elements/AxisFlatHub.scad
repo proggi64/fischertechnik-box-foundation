@@ -19,7 +19,8 @@ function getAxisFlatHubSpace() = [width, depth];
 module AxisFlatHub() {
     height = 11.7;
     levelHeight = 1.9;
-    LeveledAxisWithSpace(height, levelHeight, getAxisFlatHubSpace());
+    correctedDiameter = getAxisDiameter() - 0.2;    // 3D print correction
+    LeveledAxisWithSpace(height, levelHeight, getAxisFlatHubSpace(), diameter = correctedDiameter);
 }
 
 // Tests

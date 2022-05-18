@@ -3,6 +3,7 @@
 // 31023
 
 use <../ModelBase/Simple.scad>
+use <../Base/Constants.scad>
 
 width = 12;
 depth = 12;
@@ -17,7 +18,8 @@ function getAxisClip10Space() = [width, depth, height];
 // Axis for clip 10 with spring ring (mot2)
 
 module AxisClip10() {
-    LeveledAxisWithSpace(height, height-10, getAxisClip10Space());
+    correctedDiameter = getAxisDiameter() - 0.2;   // 3D printing correction for this specifix element
+    LeveledAxisWithSpace(height, height-10, getAxisClip10Space(), diameter=correctedDiameter);
 }
 
 // Tests
