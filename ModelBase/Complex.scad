@@ -308,7 +308,7 @@ module FrameFlatPiece(count, size) {
 plateThickness = 2.1;
 holderPinDepth = 4;
 
-function getSpacePerPlate() = plateThickness + getTolerance() + holderPinDepth;
+function getDepthPerPlate() = plateThickness + getTolerance() + holderPinDepth;
 
 // getHolderBuildingPlateSpace(width, count)
 // width = Width of the building plate (90, 75, 60, 45, 30)
@@ -317,7 +317,7 @@ function getSpacePerPlate() = plateThickness + getTolerance() + holderPinDepth;
 
 function getHolderBuildingPlateSpace(width, count) = [
     width + getTolerance(),
-    holderPinDepth + getSpacePerPlate() * count];
+    holderPinDepth + getDepthPerPlate() * count];
 
 // HolderBuildingPlate(width, count, firstGapHigher)
 // Holders for Building Plates
@@ -333,7 +333,7 @@ module HolderBuildingPlate(width, count = 1, firstGapHigher = false) {
     
     gapHeight = 10 + getExcess();
     spaceWidth = width + getTolerance();
-    spaceDepth = holderPinDepth + getSpacePerPlate() * count;
+    spaceDepth = holderPinDepth + getDepthPerPlate() * count;
     pinXRightOffset = spaceWidth - getDividerThickness() - pinXOffset;
     
     // Space
@@ -352,9 +352,9 @@ module HolderBuildingPlate(width, count = 1, firstGapHigher = false) {
     }
     
     HolderPins(firstGapHigher);
-    firstYOffset = getSpacePerPlate();
-    lastYOffset = firstYOffset + getSpacePerPlate() * (count-1);
-    for (yOffset = [firstYOffset:getSpacePerPlate():lastYOffset]) {
+    firstYOffset = getDepthPerPlate();
+    lastYOffset = firstYOffset + getDepthPerPlate() * (count-1);
+    for (yOffset = [firstYOffset:getDepthPerPlate():lastYOffset]) {
         translate([0, yOffset, 0])
             HolderPins();
     }

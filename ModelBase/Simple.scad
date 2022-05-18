@@ -87,9 +87,6 @@ module LeveledTube(height, diameter, levelHeight, levelDiameter) {
 // The height will be expanded by the excess to be sunk into the underlying 
 // space to avoid gaps between the bottom and the element.
 // volume = [width, depth, height] Inner volume (without tolerance)
-// width = Inner width in mm
-// depth = Inner depth in mm
-// height = Height of the walls in mm
 // tolerance = tolerance in mm to ensure that the building blocks will fit.
 
 function getFrameOuterVolume(volume, tolerance=getTolerance()) =
@@ -105,9 +102,6 @@ function getFrameOuterVolume(volume, tolerance=getTolerance()) =
 // The height will be expanded by the excess 
 // to avoid a thin film at the top of the cube.
 // volume = [width, depth, height] Inner volume (without tolerance)
-// width = Inner width in mm
-// depth = Inner depth in mm
-// height = Height of the walls in mm
 // tolerance = tolerance in mm to ensure that the building blocks will fit.
 
 function getFrameInnerVolume(volume, tolerance=getTolerance()) =
@@ -138,12 +132,13 @@ module Frame(volume, tolerance=getTolerance(), openLeft=false, openRight=false, 
         volume.x + (openLeft ? cutoffAdd : 0) + (openRight ? cutoffAdd : 0),
         volume.y + (openBottom ? cutoffAdd : 0) + (openTop ? cutoffAdd : 0),
         volume.z];
-    innerXOffset = openLeft ? 0 : getDividerThickness();
-    innerYOffset = openBottom ? 0 : getDividerThickness();
+    innerXOffset = openLeft ? 0-getExcess() : getDividerThickness()+getExcess();
+    innerYOffset = openBottom ? 0-getExcess() : getDividerThickness()+getExcess();
 
     translate([0,0,-getExcess()]) {
         difference() {
             cube(outerVolume);
+            // Remove inner and optional each specified wall
             translate([innerXOffset, innerYOffset, getExcess()])
                 cube(getFrameInnerVolume(cutoffVolume, tolerance));
         }
@@ -265,9 +260,10 @@ module AxisWithSpace(height, space, diameter=getAxisDiameter()) {
 // height = height of the complete axis from the ground
 // levelHeight = height of the axis leveled base
 // diameter = diameter of the upper axis (standard is 4 mm)
+// baseDiameter = diameter of the base axis (standard is 5 mm)
 
-module LeveledAxis(height, levelHeight, diameter=getAxisDiameter()) {
-    Axis(levelHeight, getAxisBottomDiameter());
+module LeveledAxis(height, levelHeight, diameter=getAxisDiameter(), baseDiameter=getAxisBottomDiameter()) {
+    Axis(levelHeight, baseDiameter);
     Axis(height, diameter);
 }
 
@@ -277,11 +273,12 @@ module LeveledAxis(height, levelHeight, diameter=getAxisDiameter()) {
 // levelHeight = height of the leveled axis base
 // space = space (x,y) of the space around the axis
 // diameter = diameter of the upper axis (standard is 4 mm)
+// baseDiameter = diameter of the base axis (standard is 5 mm)
 
-module LeveledAxisWithSpace(height, levelHeight, space, diameter=getAxisDiameter()) {
+module LeveledAxisWithSpace(height, levelHeight, space, diameter=getAxisDiameter(), baseDiameter=getAxisBottomDiameter()) {
     Space(space);
     Center(space)
-        LeveledAxis(height, levelHeight, diameter);
+        LeveledAxis(height, levelHeight, diameter, baseDiameter);
 }
 
 // Text(text, xAlign=AlignCenter, yAlign=AlignCenter)
@@ -321,8 +318,8 @@ module Divider(distance, align=AlignLeft, height=getSmallPartsFrameHeight(), box
         height
     ];
     
-    xOffset = (align == AlignRight) ? distance :
-              ((align == AlignLeft) ? boxSpace.x - distance - getDividerThickness() : -getDividerThickness());
+    xOffset = (align == AlignLeft) ? distance :
+              ((align == AlignRight) ? boxSpace.x - distance - getDividerThickness() : -getDividerThickness());
     yOffset = (align == AlignBottom) ? distance :
               ((align == AlignTop) ? boxSpace.y - distance - getDividerThickness() : -getDividerThickness());
     
