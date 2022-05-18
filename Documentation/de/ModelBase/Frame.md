@@ -24,7 +24,7 @@ Frame(
 
 | Parameter | Typ | Beschreibung |
 | ------ | ------ | ------ |
-| volume | \[x,y,z] | Länge x Breite x Höhe des Inneraums. Auf Lämge und Breite wird noch der Wert von *tolerance* für das tatsächliche innere Volumen gerechnet. |
+| volume | \[x,y,z] | Länge x Breite x Höhe des Inneraums. Auf Länge und Breite wird noch der Wert von *tolerance* für das tatsächliche innere Volumen gerechnet. |
 | tolerance | Decimal | Toleranzwert, der zu Länge und Breite gerechnet wird, damit in das gedruckte Element das Bauteil hineinpasst. Standard ist [__getTolerance()__](../Base/getTolerance.md). Wenn der Rahmen exakt den Angaben in *volume* entsprechen soll, muss hier 0 angegeben werden. |
 | openLeft | Boolean | Wenn __true__, dann wird die linke Wand weggelassen. Die Fläche wird dadurch nicht verkleinert, d.h. die Breite der Wand wird weiterhin von der Grundfläche benötigt. |
 | openRight | Boolean | Wenn __true__, dann wird die rechte Wand weggelassen. Die Fläche wird dadurch nicht verkleinert, d.h. die Breite der Wand wird weiterhin von der Grundfläche benötigt. |
