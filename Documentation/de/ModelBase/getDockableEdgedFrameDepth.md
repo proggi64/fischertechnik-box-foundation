@@ -19,8 +19,8 @@ getDockableEdgedFrameDepth(
 
 | Parameter | Typ | Beschreibung |
 | ------ | ------ | ------ |
-| edgeDistance | Decimal < Zusätzliche Distanz des Rahmens zur Wand, falls an die linke oder rechte Wand angedockt werden soll. |
-| alignY | integer (Enum) | __NoAlign__, falls nicht angedockt werden soll. Dann wird 0 zurückgeliefert. Sonst __AlignBottom__ oder __AlignTop__. |
+| edgeDistance | Decimal | Zusätzliche Distanz des Rahmens zur Wand, falls an die linke oder rechte Wand angedockt werden soll. |
+| alignY | Integer (Enum) | __NoAlign__, falls nicht angedockt werden soll. Dann wird 0 zurückgeliefert. Sonst __AlignBottom__ oder __AlignTop__. |
 
 ## Rückgabewert
 Zusätzliche Distanz des Rahmens zur Wand, an die gedckt wird. Der Wert ist 0, wenn für *alignX* __NoAlign__ übergeben wird.
