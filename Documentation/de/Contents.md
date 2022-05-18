@@ -66,7 +66,7 @@ ACHTUNG: Diese Doku ist in Arbeit. Bis ca. 22. Mai 2022 sind alle Module und Fun
 - [__AxisWithSpace__](ModelBase/AxisWithSpace.md):
 - [__Divider__](ModelBase/Divider.md): Erzeugt einen Trenner innerhalb eines Sortierkastens.
 - [__DockableFrame__](ModelBase/DockableFrame.md):
-- [__Frame__](ModelBase/Frame.md):
+- [__Frame__](ModelBase/Frame.md): Erzeugt einen Rahmen mit optional einzeln offenen Wänden.
 - [__LeveledAxis__](ModelBase/LeveledAxis.md):
 - [__LeveledAxisWithSpace__](ModelBase/LeveledAxisWithSpace.md):
 - [__LeveledTube__](ModelBase/LeveledTube.md): Erzeugt eine stehenden hohlen Zylinder mit einer stärkeren Basis.
@@ -76,7 +76,7 @@ ACHTUNG: Diese Doku ist in Arbeit. Bis ca. 22. Mai 2022 sind alle Module und Fun
 - [__Wall__](ModelBase/Wall.md): Erzeugt eine Wand.
 
 ### Funktionen zur Ermittlung der Größe einfacher Module
-- [__getAngeledFrameOuterVolume__](ModelBase/getAngeledFrameOuterVolume.md):
+- [__getAngeledFrameOuterVolume__](ModelBase/getAngeledFrameOuterVolume.md): Liefert das äußere Gesamtvolumen ("bounding box") eines gewinkelten Rahmens.
 - [__getFrameInnerVolume__](ModelBase/getFrameInnerVolume.md): Liefert das innere Volumen eines Rahmens.
 - [__getFrameOuterVolume__](ModelBase/getFrameOuterVolume.md): Liefert das äußere Volumen ("bounding box") eines Rahmens.
 
