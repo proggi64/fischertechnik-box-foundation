@@ -65,7 +65,7 @@ ACHTUNG: Diese Doku ist in Arbeit. Bis ca. 22. Mai 2022 sind alle Module und Fun
 - [__Axis__](ModelBase/Axis.md):
 - [__AxisWithSpace__](ModelBase/AxisWithSpace.md):
 - [__Divider__](ModelBase/Divider.md): Erzeugt einen Trenner innerhalb eines Sortierkastens.
-- [__DockableFrame__](ModelBase/DockableFrame.md):
+- [__DockableFrame__](ModelBase/DockableFrame.md): Erzeugt einen Rahmen, der an eine Wand angedockt werden kann.
 - [__Frame__](ModelBase/Frame.md): Erzeugt einen Rahmen mit optional einzeln offenen Wänden.
 - [__LeveledAxis__](ModelBase/LeveledAxis.md):
 - [__LeveledAxisWithSpace__](ModelBase/LeveledAxisWithSpace.md):
