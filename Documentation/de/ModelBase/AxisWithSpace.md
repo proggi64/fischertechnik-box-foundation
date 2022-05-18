@@ -1,6 +1,6 @@
 # AxisWithSpace
 
-Erzeugt eine stehende Achse mit einer Grundplatte..
+Erzeugt eine stehende Achse mit einer Grundplatte.
 
 Diese Art Achsen werden verwendet, um z.B. Achsverbinder darauf zu stecken. Der Koordinatenursprung ist die linke untere Ecke der Grundplatte. Diese Grundplatte wird unsichtbar in die Bodenplatte des Sortierkastens versenkt.
 
