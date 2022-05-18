@@ -2,7 +2,7 @@
 
 Erzeugt eine stehende Achse.
 
-Diese Art Achsen werden verwendet, um z.B. Achsverbinder darauf zu stecken. Der Koordinatenursprung von stehenden Achsen ist das Zentrum der Achse.
+Diese Art Achsen werden verwendet, um z.B. Achsverbinder darauf zu stecken. Der Koordinatenursprung von stehenden Achsen ist das Zentrum der Achse. Die angegebene Höhe wird um [__getExcess__](../Base/getExcess.md) erhöht und die Achse wird um diesen Betrag in den Boden gesenkt, um ungewollte Luftspalte zu verhindern.
 
 ## Use
 ```
@@ -19,7 +19,7 @@ Axis(
 | Parameter | Typ | Beschreibung |
 | ------ | ------ | ------ |
 | height | Decimal | Höhe der Achse. Mehr als 30 mm sind nicht zu empfehlen, da die nutzbare Höhe des Sortierkastens nur etwa 40 mm beträgt und solche Achsen mit zunehmender Höhe leichter abbrechen können. |
-| diameter | Decimal | Durchmesser der Achse. Standardwert ist [__getAxisDiameter_ ](../Base/getAxisDiameter.md). |
+| diameter | Decimal | Durchmesser der Achse. Standardwert ist [__getAxisDiameter__](../Base/getAxisDiameter.md). |
 
 ## Beispiel
 
