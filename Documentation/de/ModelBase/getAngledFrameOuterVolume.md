@@ -27,7 +27,7 @@ getAngledFrameOuterVolume(
 | width2 | Decimal | Breite des zweiten Arms des gewinkelten Rahmens. |
 | depth2 | Decimal | Tiefe des zweiten Arms des gewinkelten Rahmens. |
 | height | Decimal | Höhe der Wände des Rahmens. |
-| tolerance | Toleranzwert, der zu Länge und Breite gerechnet wird, damit in das gedruckte Element das Bauteil hineinpasst. Standard ist [__getTolerance()__](../Base/getTolerance.md). Wenn der Rahmen exakt den Angaben in *volume* entsprechen soll, muss hier 0 angegeben werden. |
+| tolerance | Decimal | Toleranzwert, der zu Länge und Breite gerechnet wird, damit in das gedruckte Element das Bauteil hineinpasst. Standard ist [__getTolerance()__](../Base/getTolerance.md). Wenn der Rahmen exakt den Angaben in *volume* entsprechen soll, muss hier 0 angegeben werden. |
 
 ## Rückgabewert
 Das Volumen des gesamten äußeren gewinkelten Rahmens als \[x,y,z]-Liste.
