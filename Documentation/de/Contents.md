@@ -60,7 +60,7 @@ ACHTUNG: Diese Doku ist in Arbeit. Bis ca. 22. Mai 2022 sind alle Module und Fun
 
 ## Funktionen und Module für das Konstruieren von Elementen
 
-### Einfache Module
+### Module für einfache Grundformen
 - [__AngeledFrame__](ModelBase/AngeledFrame.md): Erzeugt einen um 90° gewinkelten Rahmen.
 - [__Axis__](ModelBase/Axis.md):
 - [__AxisWithSpace__](ModelBase/AxisWithSpace.md):
@@ -75,12 +75,12 @@ ACHTUNG: Diese Doku ist in Arbeit. Bis ca. 22. Mai 2022 sind alle Module und Fun
 - [__Tube__](ModelBase/Tube.md): Erzeugt eine stehenden hohlen Zylinder.
 - [__Wall__](ModelBase/Wall.md): Erzeugt eine Wand.
 
-### Funktionen zur Ermittlung der Größe einfacher Module
+### Funktionen zur Ermittlung der Größe einfacher Grundformen
 - [__getAngeledFrameOuterVolume__](ModelBase/getAngeledFrameOuterVolume.md): Liefert das äußere Gesamtvolumen ("bounding box") eines gewinkelten Rahmens.
 - [__getFrameInnerVolume__](ModelBase/getFrameInnerVolume.md): Liefert das innere Volumen eines Rahmens.
 - [__getFrameOuterVolume__](ModelBase/getFrameOuterVolume.md): Liefert das äußere Volumen ("bounding box") eines Rahmens.
 
-### Komplexe Module
+### Module für komplexe Grundformen
 - [__ElevatedFramesWithCutoff__](ModelBase/ElevatedFramesWithCutoff.md): Erzeugt eine Halterung, die im Normalfall für einzelne Achsen verwendet wird.
 - [__DockableEdgedFrame__](ModelBase/DockableEdgedFrame.md): Erzeugt einen Rahmen für Bauteile, der optional an bis zu zwei Wänden angedockt werden kann.
 - [__FrameAxis__](ModelBase/FrameAxis.md): Erzeugt eine Achshalterung für eine Achse.
@@ -92,7 +92,7 @@ ACHTUNG: Diese Doku ist in Arbeit. Bis ca. 22. Mai 2022 sind alle Module und Fun
 - [__RackBase__](ModelBase/RackBase.md):
 - [__RailsBasePlate__](ModelBase/RailsBasePlate.md):
 
-### Funktionen zur Ermittlung von Werten zu komplexen Modulen
+### Funktionen zur Ermittlung von Werten zu komplexen Grundformen
 - [__getDockableEdgedFrameDepth__](ModelBase/getDockableEdgedFrameDepth.md): Liefert den vertikalen Abstand des angedockten Rahmens für [__DockableEdgedFrame__](ModelBase/DockableEdgedFrame.md).
 - [__getDockableEdgedFrameWidth__](ModelBase/getDockableEdgedFrameWidth.md): Liefert den horizontalen Abstand des angedockten Rahmens für [__DockableEdgedFrame__](ModelBase/DockableEdgedFrame.md).
 - [__getDockableEdgedFrameSpace__](ModelBase/getDockableEdgedFrameSpace.md): Liefert die Fläche für einen mit [__DockableEdgedFrame__](ModelBase/DockableEdgedFrame.md) erzeugten Rahmen.
