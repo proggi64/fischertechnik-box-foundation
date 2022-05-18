@@ -2,7 +2,6 @@
 // ModelBase
 // Test LeveledAxisWithSpace
 
-use <../../Base/Constants.scad>
 use <../../ModelBase/Simple.scad>
 
 LeveledAxisWithSpace(10, 5, [15,15]);

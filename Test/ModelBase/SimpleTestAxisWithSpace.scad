@@ -2,7 +2,6 @@
 // ModelBase
 // Test Axis with Space
 
-use <../../Base/Constants.scad>
 use <../../ModelBase/Simple.scad>
 
 AxisWithSpace(10, [10, 10]);

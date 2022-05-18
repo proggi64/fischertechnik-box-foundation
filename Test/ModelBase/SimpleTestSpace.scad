@@ -2,7 +2,6 @@
 // ModelBase
 // Test Space
 
-use <../../Base/Constants.scad>
 use <../../ModelBase/Simple.scad>
 
 Space([10,10]);

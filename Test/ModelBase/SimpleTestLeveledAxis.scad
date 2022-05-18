@@ -2,7 +2,6 @@
 // ModelBase
 // Test LeveledAxis
 
-use <../../Base/Constants.scad>
 use <../../ModelBase/Simple.scad>
 
 LeveledAxis(10, 5);

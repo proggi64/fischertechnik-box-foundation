@@ -2,7 +2,6 @@
 // ModelBase
 // Test Text
 
-use <../../Base/Constants.scad>
 use <../../Base/Placement.scad>
 use <../../ModelBase/Simple.scad>
 

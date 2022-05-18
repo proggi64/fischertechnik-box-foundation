@@ -2,7 +2,6 @@
 // ModelBase
 // Test Axis
 
-use <../../Base/Constants.scad>
 use <../../ModelBase/Simple.scad>
 
 Axis(10);
