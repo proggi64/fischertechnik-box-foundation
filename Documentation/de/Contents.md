@@ -63,12 +63,12 @@ ACHTUNG: Diese Doku ist in Arbeit. Bis ca. 22. Mai 2022 sind alle Module und Fun
 ### Module für einfache Grundformen
 - [__AngeledFrame__](ModelBase/AngeledFrame.md): Erzeugt einen um 90° gewinkelten Rahmen.
 - [__Axis__](ModelBase/Axis.md): Erzeugt eine stehende Achse.
-- [__AxisWithSpace__](ModelBase/AxisWithSpace.md):
+- [__AxisWithSpace__](ModelBase/AxisWithSpace.md): Erzeugt eine stehende Achse mit einer Grundplatte.
 - [__Divider__](ModelBase/Divider.md): Erzeugt einen Trenner innerhalb eines Sortierkastens.
 - [__DockableFrame__](ModelBase/DockableFrame.md): Erzeugt einen Rahmen, der an eine Wand angedockt werden kann.
 - [__Frame__](ModelBase/Frame.md): Erzeugt einen Rahmen mit optional einzeln offenen Wänden.
-- [__LeveledAxis__](ModelBase/LeveledAxis.md):
-- [__LeveledAxisWithSpace__](ModelBase/LeveledAxisWithSpace.md):
+- [__LeveledAxis__](ModelBase/LeveledAxis.md): Erzeugt eine stehende Achse mit einer stärkeren Achsbasis.
+- [__LeveledAxisWithSpace__](ModelBase/LeveledAxisWithSpace.md): Erzeugt eine stehende Achse mit einer stärkeren Achsbasis und einer Grundplatte.
 - [__LeveledTube__](ModelBase/LeveledTube.md): Erzeugt eine stehenden hohlen Zylinder mit einer stärkeren Basis.
 - [__Space__](ModelBase/Space.md): Erzeugt eine dünne Fläche als Basis für ein Element.
 - [__Text__](ModelBase/Text.md): Erzeugt einen reliefartigen Text im Boden des Sortierkastens.
