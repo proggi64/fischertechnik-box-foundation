@@ -7,7 +7,7 @@ use <../ModelBase/Complex.scad>
 
 width = 33.5;
 depth = 30;
-height = 6.0;
+height = 9.0;
 
 // getFrameLensSpace()
 // Gets the outer space the lens frame needs.

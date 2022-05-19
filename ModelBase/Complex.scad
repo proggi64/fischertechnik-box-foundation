@@ -391,7 +391,7 @@ module RailsBasePlate(width, depth) {
                 cube([railWidth, getDividerThickness(), railHeight]);
 }
 
-// FrameSpecialFlat(elementSpace, innerHeight)
+// FrameSpecialFlat(elementSpace)
 // Special 15 mm height frame for apertures, mirrors and lenses from the ec building kits.
 // volume = width, depth, and height of the element (aperture, mirror or lens)
 
@@ -412,7 +412,7 @@ module FrameSpecialFlat(volume) {
         TwoFrames();
         
         webDistance = 5.0;
-        translate([getDividerThickness(), getDividerThickness(), volume.z])
+        translate([getDividerThickness(), getDividerThickness(), frameHeight - volume.z])
             cube(innerVolume);
         translate([getDividerThickness() + webDistance, getDividerThickness()])
             cube([innerVolume.x - 2*webDistance, innerVolume.y, innerVolume.z]);        

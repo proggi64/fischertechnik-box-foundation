@@ -8,7 +8,7 @@ use <../ModelBase/Complex.scad>
 
 width = 35.3;
 depth = 30;
-height = 11;
+height = 4;
 
 // getFrameConcaveMirrorSpace()
 // Gets the outer space the concave mirror frame needs.

@@ -7,7 +7,7 @@ use <../ModelBase/Complex.scad>
 
 width = 33.5;
 depth = 30;
-height = 11;
+height = 4;
 
 // getFrameApertureSpace()
 // Gets the outer space the aperture frame needs.
