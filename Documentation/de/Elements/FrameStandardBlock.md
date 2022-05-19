@@ -32,7 +32,7 @@ space = getFrameStandardBlockSpace()
 | rows | Integer | Anzahl der Bausteine untereinander (Y-Richtung). |
 | height | Decimal | Höhe der Wände in mm. |
 
-## Rückgabewert getframeStandardBlockSpace
+## Rückgabewert getFrameStandardBlockSpace
 Äußere Fläche des Rahmens als \[x,y]-Liste.
 
 ## Beispiel
