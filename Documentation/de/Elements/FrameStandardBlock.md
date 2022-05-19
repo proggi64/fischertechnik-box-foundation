@@ -59,3 +59,4 @@ Place(70, 80, getFrameStandardBlockSpace(2,4), rotation=Rotate270)
     FrameStandardBlock(2,4);
 ```
 
+<img width="275" alt="FrameStandardBlock" src="https://user-images.githubusercontent.com/48654609/169412944-762ca0e5-2456-4ee6-9b88-ad4510d34b0f.png">
