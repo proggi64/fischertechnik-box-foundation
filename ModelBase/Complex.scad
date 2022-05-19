@@ -315,7 +315,7 @@ function getDepthPerPlate() = plateThickness + getTolerance() + holderPinDepth;
 // count = Count of building plates. Default 1.
 // Gets the width and depth of the space a building plate holder needs for the given size and count.
 
-function getHolderBuildingPlateSpace(width, count) = [
+function getHolderBuildingPlateSpace(width, count = 1) = [
     width + getTolerance(),
     holderPinDepth + getDepthPerPlate() * count];
 

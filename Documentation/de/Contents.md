@@ -96,15 +96,15 @@ ACHTUNG: Diese Doku ist in Arbeit. Bis 18. Mai 2022 wurden alle Module und Funkt
 - [__getDockableEdgedFrameDepth__](ModelBase/getDockableEdgedFrameDepth.md): Liefert den vertikalen Abstand des angedockten Rahmens für [__DockableEdgedFrame__](ModelBase/DockableEdgedFrame.md).
 - [__getDockableEdgedFrameWidth__](ModelBase/getDockableEdgedFrameWidth.md): Liefert den horizontalen Abstand des angedockten Rahmens für [__DockableEdgedFrame__](ModelBase/DockableEdgedFrame.md).
 - [__getDockableEdgedFrameSpace__](ModelBase/getDockableEdgedFrameSpace.md): Liefert die Fläche für einen mit [__DockableEdgedFrame__](ModelBase/DockableEdgedFrame.md) erzeugten Rahmen.
-- [__getDepthPerPlate__](ModelBase/getDepthPerPlate.md)
+- [__getDepthPerPlate__](ModelBase/getDepthPerPlate.md): Liefert die Tiefe (Dicke) einer Bauplatte für [__HolderBuildingPlate__](HolderBuildingPlate.md).
 - [__getElevatedFramesWithCutoffSpace__](ModelBase/getElevatedFramesWithCutoffSpace.md): Liefert die Fläche des Elements, das mit dem Modul [__ElevatedFramesWithCutoff__](ElevatedFramesWithCutoff.md) erzeugt wird.
 - [__getFrameAxisDepth__](ModelBase/getFrameAxisDepth.md): Liefert die Tiefe der Achshalterungen für [__FrameAxis__](ModelBase/FrameAxis.md).
 - [__getFrameAxisHeight__](ModelBase/getFrameAxisHeight.md): Liefert die Höhe der Achshalterungen für [__FrameAxis__](ModelBase/FrameAxis.md).
 - [__getFrameAxisSpace__](ModelBase/getFrameAxisSpace.md): Liefert die Fläche einer mit [__FrameAxis__](ModelBase/FrameAxis.md) erzeugte Achshalterung.
-- [__getFrameBracketSpace__](ModelBase/getFrameBracketSpace.md)
-- [__getFrameBracketWidth__](ModelBase/getFrameBracketWidth.md)
+- [__getFrameBracketSpace__](ModelBase/getFrameBracketSpace.md): Liefert die Fläche für eine Halterung eines Getriebeaufsatzes.
+- [__getFrameBracketWidth__](ModelBase/getFrameBracketWidth.md): Liefert die Breite für eine Halterung eines Getriebeaufsatzes ohne die Achse/Schnecke.
 - [__getFrameFlatPieceVolume__](ModelBase/getFrameFlatPieceVolume.md): Liefert das Volumen eines mit [__FrameFlatPiece__](Modelbase/FrameFlatPiece.md) erzeugt wird.
-- [__getFrameRackSpace__](ModelBase/getFrameRackSpace.md)
-- [__getHolderBuildingPlateSpace__](ModelBase/getHolderBuildingPlateSpace.md)
-- [__getRackInnerHeight__](ModelBase/getRackInnerHeight.md)
-- [__getRailsBasePlateVolume__](ModelBase/getRailsBasePlateVolume.md)
+- [__getFrameRackSpace__](ModelBase/getFrameRackSpace.md): Liefert die Fläche eines Rahmens für Zahnstangen.
+- [__getHolderBuildingPlateSpace__](ModelBase/getHolderBuildingPlateSpace.md): Liefert die Fläche einer Halterung für Bauplatten.
+- [__getRackInnerHeight__](ModelBase/getRackInnerHeight.md): Liefert die innere Höhe der Halterungen für Zahnstangen.
+- [__getRailsBasePlateVolume__](ModelBase/getRailsBasePlateVolume.md): Liefert das Volumen des Rahmens für Grundplatten.
