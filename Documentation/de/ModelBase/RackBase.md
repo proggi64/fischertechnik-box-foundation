@@ -43,6 +43,8 @@ Place(120, 0)
     RackBase(1, 4);
 ```
 
+<img width="272" alt="RackBase_1" src="https://user-images.githubusercontent.com/48654609/169352208-a797e644-ec48-4b00-9c23-40aa3429913e.png">
+
 ### Links und rechts angedockt
 ```
 use <../../Base/Placement.scad>
@@ -59,6 +61,8 @@ Place(0, 50) {
     RackBase(2, 2, alignX=AlignRight);
 ```
 
+<img width="272" alt="RackBase_2" src="https://user-images.githubusercontent.com/48654609/169352241-5257445e-fb82-473e-95dd-b02fc2099b41.png">
+
 ### Oben und unten angedockt
 ```
 use <../../Base/Placement.scad>
@@ -74,3 +78,5 @@ Place(0, 0) {
 Place(0, 50) {
     RackBase(2, 2, alignY=AlignTop);
 ```
+
+<img width="272" alt="RackBase_3" src="https://user-images.githubusercontent.com/48654609/169352265-4851b575-3b62-494d-93a9-437a37e27f66.png">
