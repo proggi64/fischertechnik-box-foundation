@@ -470,12 +470,13 @@ module RackBase(factor=1, count=1, alignX=NoAlign, alignY=NoAlign) {
     endx = (factor-1) * frameRackWidth;
     endy = (count-1) * frameRackDepth;
     
-    dock = (alignX == AlignLeft || alignX == AlignRight) ? getDividerThickness() : 0;    
+    dockLeft = (alignX == AlignLeft) ? getDividerThickness() : 0;    
+    dockRight = (alignX == AlignRight) ? getDividerThickness() : 0;
     
     for (yLoopOffset = [0:frameRackDepth:endy]) {
         // Inner frame
-        translate([0, yOffset + yLoopOffset, 0])
-            Frame([frameRackWidth * factor + dock, rackInnerDiff, rackInnerHeight],
+        translate([-dockLeft, yOffset + yLoopOffset, 0])
+            Frame([frameRackWidth * factor + (dockLeft + dockRight), rackInnerDiff, rackInnerHeight],
                 openLeft = (alignX == AlignLeft),
                 openRight = (alignX == AlignRight));
         for (xOffset = [0:frameRackWidth:endx]) {
@@ -484,10 +485,20 @@ module RackBase(factor=1, count=1, alignX=NoAlign, alignY=NoAlign) {
         }
     }
     
-    if (alignY == AlignBottom)
-        #LowerWeb();
-    if (alignY == AlignTop)
-        #UpperWeb();
+    if (alignY == AlignBottom) {
+        translate([0, -2*getDividerThickness()]) {
+            UpperWeb();
+            translate([endx, 0])
+                UpperWeb();
+        }
+    }
+    if (alignY == AlignTop) {
+        translate([0, endy + 2*getDividerThickness()]) {
+            LowerWeb();
+            translate([endx, 0])
+               LowerWeb();
+        }
+    }
 }
 
 // FrameRack(factor=1, count=1)

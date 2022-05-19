@@ -24,3 +24,23 @@ Place(160, 0) {
     Place(0, getFrameRackSpace(1, 2).y - 2*getDividerThickness() - getTolerance())
         RackBase(2, 2);
 }
+
+Place(240, 0) {
+    RackBase(2, 2, alignY=AlignBottom);    
+}
+
+Place(320, 0) {
+    RackBase(2, 2, alignY=AlignTop);    
+}
+
+Place(0, 80) {
+    RackBase(2, 2, alignX=NoAlign);    
+}
+
+Place(0, 120) {
+    RackBase(2, 2, alignX=AlignLeft);
+}
+
+Place(0, 160) {
+    RackBase(2, 2, alignX=AlignRight);
+}

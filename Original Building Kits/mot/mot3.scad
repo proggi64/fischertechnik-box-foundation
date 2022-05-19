@@ -14,11 +14,11 @@ include <../../Base/PlacementOptions.scad>
 use <../../Elements/AxisClip10.scad>
 
 module RackFrame() {
-    Place(-getDividerThickness(), 0, 
+    Place(
         elementSpace=getFrameRackSpace(2, 4), 
         rotation=Rotate270, 
         alignX=AlignRight) {
-        RackBase(2, 4, alignX = AlignLeft, alignY = AlignTop);
+        RackBase(2, 4, alignX = AlignLeft, alignY = AlignBottom);
     }
 }
 
@@ -33,7 +33,7 @@ BoxWeb(UpperRight, RightOfCorner, upperWebDistance, webThickness=getDividerThick
 lowerWebDistance = 11;
     
 BoxWeb(LowerLeft, RightOfCorner, lowerWebDistance);
-BoxWeb(UpperRight, LeftOfCorner, 64.8, webThickness=getDividerThickness());
+BoxWeb(UpperRight, LeftOfCorner, 63.4, webThickness=getDividerThickness());
     
 RackFrame();
 }
