@@ -323,12 +323,12 @@ function getHolderBuildingPlateSpace(width, count) = [
 // Holders for Building Plates
 // width = Width of the building plate (90, 75, 60, 45, 30)
 // count = Count of building plates. Default 1.
-// firstGapHigher = true 15 mm high holder at the edge of the box. Default: false.
+// dock = true 15 mm high holder at the edge of the box. Default: false.
 
-module HolderBuildingPlate(width, count = 1, firstGapHigher = false) {
+module HolderBuildingPlate(width, count = 1, dock = false) {
     plateThickness = 2.1;
     pin = 2.6;
-    firstGapHeight = 15;
+    firstHeight = 15;
     pinXOffset = 7;
     
     gapHeight = 10 + getExcess();
@@ -341,7 +341,7 @@ module HolderBuildingPlate(width, count = 1, firstGapHigher = false) {
 
     module HolderPin(high = false) {
         translate([0, high ? -getDividerThickness() : 0, -getExcess()])
-            cube([getDividerThickness(), holderPinDepth + (high ? getDividerThickness() : 0), high ? firstGapHeight : gapHeight]);
+            cube([getDividerThickness(), holderPinDepth + (high ? getDividerThickness() : 0), high ? firstHeight : gapHeight]);
     }
     
     module HolderPins(first = false) {
@@ -351,7 +351,7 @@ module HolderBuildingPlate(width, count = 1, firstGapHigher = false) {
             HolderPin(first);
     }
     
-    HolderPins(firstGapHigher);
+    HolderPins(dock);
     firstYOffset = getDepthPerPlate();
     lastYOffset = firstYOffset + getDepthPerPlate() * (count-1);
     for (yOffset = [firstYOffset:getDepthPerPlate():lastYOffset]) {

@@ -17,4 +17,4 @@ translate([120, 0, 0])
     HolderBuildingPlate(45, 4);
 
 translate([120, 40, 0])
-    HolderBuildingPlate(120, 4, true);
+    HolderBuildingPlate(90, 4, dock=true);

@@ -87,8 +87,8 @@ ACHTUNG: Diese Doku ist in Arbeit. Bis 18. Mai 2022 wurden alle Module und Funkt
 - [__FrameBracket__](ModelBase/FrameBracket.md): Erzeugt einen Rahmen für einen Getriebeaufsatz mit oder ohne Schnecke.
 - [__FrameFlatPiece__](ModelBase/FrameFlatPiece.md): Erzeugt einen Rahmen für Flachstücke.
 - [__FrameRack__](ModelBase/FrameRack.md): Erzeugt einen Rahmen für Zahnstangen.
-- [__FrameSpecialFlat__](ModelBase/FrameSpecialFlat.md):
-- [__HolderBuildingPlate__](ModelBase/HolderBuildingPlate.md):
+- [__FrameSpecialFlat__](ModelBase/FrameSpecialFlat.md): Erzeugt einen Rahmen für spezielle Flachbausteine.
+- [__HolderBuildingPlate__](ModelBase/HolderBuildingPlate.md): 
 - [__RackBase__](ModelBase/RackBase.md):
 - [__RailsBasePlate__](ModelBase/RailsBasePlate.md):
 
