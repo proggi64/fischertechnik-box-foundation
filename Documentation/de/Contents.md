@@ -90,7 +90,7 @@ ACHTUNG: Diese Doku ist in Arbeit. Bis 18. Mai 2022 wurden alle Module und Funkt
 - [__FrameSpecialFlat__](ModelBase/FrameSpecialFlat.md): Erzeugt einen Rahmen für spezielle Flachbausteine.
 - [__HolderBuildingPlate__](ModelBase/HolderBuildingPlate.md): Erzeugt Halter für Bauplatten.
 - [__RackBase__](ModelBase/RackBase.md): Erzeugt den inneren Rahmen für Zahnstangen.
-- [__RailsBasePlate__](ModelBase/RailsBasePlate.md):
+- [__RailsBasePlate__](ModelBase/RailsBasePlate.md): Erzeugt Fläche mit Stegen für die Ablage einer Grundplatte.
 
 ### Funktionen zur Ermittlung von Werten zu komplexen Grundformen
 - [__getDockableEdgedFrameDepth__](ModelBase/getDockableEdgedFrameDepth.md): Liefert den vertikalen Abstand des angedockten Rahmens für [__DockableEdgedFrame__](ModelBase/DockableEdgedFrame.md).

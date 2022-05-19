@@ -2,7 +2,6 @@
 // ModelBase
 // Test RailsBasePlate
 
-use <../../Base/Constants.scad>
 use <../../ModelBase/Complex.scad>
 
 RailsBasePlate(90, 90);
