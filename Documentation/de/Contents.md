@@ -1,11 +1,15 @@
 # Inhalt
 
-ACHTUNG: Diese Doku ist in Arbeit. Bis 18. Mai 2022 wurden alle Module und Funktionen aus Base und ModelBase dokumentiert. Anschließend folgen die schon erstellten Elemente (Elements) sukzessive.
+ACHTUNG: Diese Doku ist in Arbeit. Bis 19. Mai 2022 wurden alle Module und Funktionen aus Base und ModelBase dokumentiert. Anschließend folgen die schon erstellten Elemente (Elements) sukzessive.
 
 ## Allgemeines
 - [Über die Bibliothek](readme.md)
 - [Konstruktionsprinzipien](principles.md)
 - [Glossar](Glossar.md)
+
+## Elemente für Sortierkästen
+
+[Liste nach Fischertechnik-Artikelnummer](PartFinder.md)
 
 ## Basisfunktionen und -module
 
