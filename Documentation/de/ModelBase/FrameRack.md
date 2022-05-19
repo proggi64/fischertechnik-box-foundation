@@ -1,4 +1,4 @@
-# Framerack
+# FrameRack
 
 Erzeugt einen Rahmen für Zahnstangen.
 
