@@ -24,7 +24,7 @@ FrameStandardBlock(
     rows=1, 
     height=10);
 
-space = getframeStandardBlockSpace()
+space = getFrameStandardBlockSpace()
     columns=1, 
     rows=1);
 ```
