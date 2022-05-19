@@ -42,3 +42,4 @@ translate([120, 40, 0])
     HolderBuildingPlate(45, 4);
 ```
 
+<img width="272" alt="HolderBuildingPlate" src="https://user-images.githubusercontent.com/48654609/169342303-c591647a-c933-4e9d-bf1d-ddefe51c1eab.png">
