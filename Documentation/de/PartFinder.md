@@ -1,6 +1,10 @@
 # Teileliste
 
-Hier findet man fertige Elemente, die für Fischertechnikteile bereits entworfen wurden. Die Liste ist nach Gruppen von Artikelnummern gegliedert.
+Hier findet man fertige Elemente, die für Fischertechnikteile bereits entworfen wurden. Die Liste ist nach Gruppen von Artikelnummern gegliedert. Auf den verlinkten Seiten für die Elemente sind alle Artikelnummern der Bausteine zum Element in einem aufklappbaren Bereich aufgeführt.
+
+Alle Elemente besitzen neben dem __module__ auch eine __function__ nach dem Namensscheam __get*ElementName*Space__. Sie liefert die benötigte Fläche für das Element in Form einer \[x,y]-Liste. Zumeist haben diese Funktionen dieselben Parameter wie das __module__. Vielen Modulen für die Platzierung muss diese Fläche als Parameter mitgegeben werden, damit Drehungen und die Verteilung funktionieren.
+
+__module__ und __function__ sind beide auf den verlinkten Seiten dokumentiert. Codebeispiele zeigen die Anwendung.
 
 - [1 bis 29999](Parts_1_to_29999.md)
 - [30000 bis 31499](Parts_30000_to_31499.md)
