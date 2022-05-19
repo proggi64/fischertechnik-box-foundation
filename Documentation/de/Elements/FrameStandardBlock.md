@@ -2,15 +2,12 @@
 
 Einfacher Rahmen für Grundbausteine, die auf der 15x15-Seite ohne Zapfen stehen.
 
-<details><summary>Artikelnummern</summary>
-
 - 31003
 - 31004
 - 31005
 - 32879
 - 32880
 - 32881
-</details>
 
 ## Use
 ```
