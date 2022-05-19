@@ -23,6 +23,10 @@ FrameStandardBlock(
     columns=1, 
     rows=1, 
     height=10);
+
+space = getframeStandardBlockSpace()
+    columns=1, 
+    rows=1);
 ```
 
 | Parameter | Typ | Beschreibung |
@@ -31,7 +35,13 @@ FrameStandardBlock(
 | rows | Integer | Anzahl der Bausteine untereinander (Y-Richtung). |
 | height | Decimal | Höhe der Wände in mm. |
 
+## Rückgabewert getframeStandardBlockSpace
+Äußere Fläche des Rahmens als \[x,y]-Liste.
+
 ## Beispiel
+
+/Test/Elements/TestFrameStandardBlock.scad
+
 ```
 use <../../Base/Placement.scad>
 use <../../Elements/FrameStandardBlock.scad>
