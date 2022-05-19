@@ -1,8 +1,8 @@
 # FrameBracket
 
-Erzeugt einen Rahmen für ein Getriebeaufsatz mit oder ohne Schnecke.
+Erzeugt einen Rahmen für einen Getriebeaufsatz mit oder ohne Schnecke.
 
-Die Getriebeaufsätze für den Standard-6V-Motor können eine einfache kruze Achse oder eine Getriebeschnecke haben. Für die einfache Achse ist der Steg höher, der den Aufsatz stützt.
+Die Getriebeaufsätze für den Standard-6V-Motor können eine einfache kurze Achse oder eine Getriebeschnecke haben. Für die einfache Achse ist der Steg höher, der den Aufsatz stützt.
 
 ## Use
 ```

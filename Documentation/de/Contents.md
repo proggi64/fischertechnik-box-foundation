@@ -84,9 +84,9 @@ ACHTUNG: Diese Doku ist in Arbeit. Bis 18. Mai 2022 wurden alle Module und Funkt
 - [__ElevatedFramesWithCutoff__](ModelBase/ElevatedFramesWithCutoff.md): Erzeugt eine Halterung, die im Normalfall für einzelne Achsen verwendet wird.
 - [__DockableEdgedFrame__](ModelBase/DockableEdgedFrame.md): Erzeugt einen Rahmen für Bauteile, der optional an bis zu zwei Wänden angedockt werden kann.
 - [__FrameAxis__](ModelBase/FrameAxis.md): Erzeugt eine Achshalterung für eine Achse.
-- [__FrameBracket__](ModelBase/FrameBracket.md):
+- [__FrameBracket__](ModelBase/FrameBracket.md): Erzeugt einen Rahmen für einen Getriebeaufsatz mit oder ohne Schnecke.
 - [__FrameFlatPiece__](ModelBase/FrameFlatPiece.md): Erzeugt einen Rahmen für Flachstücke.
-- [__FrameRack__](ModelBase/FrameRack.md):
+- [__FrameRack__](ModelBase/FrameRack.md): Erzeugt einen Rahmen für Zahnstangen.
 - [__FrameSpecialFlat__](ModelBase/FrameSpecialFlat.md):
 - [__HolderBuildingPlate__](ModelBase/HolderBuildingPlate.md):
 - [__RackBase__](ModelBase/RackBase.md):
