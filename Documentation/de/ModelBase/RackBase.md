@@ -1,6 +1,10 @@
-# Rackbase
+# RackBase
 
 Erzeugt den inneren Rahmen für Zahnstangen.
+
+Diese Rahmen können auch inn der 30 und 60 mm Variante kombiniert werden, dass für 30 und 60 mm Zahnstangen zusammengefügt werden, wie in mot2.
+
+Durch Andocken (*alignX* oder *alignY*) werden die Stege jeweils so verlängert, dass sie mit der jeweiligen Wand verschmelzen.
 
 ## Use
 ```
@@ -9,17 +13,19 @@ use <../ModelBase/Complex.scad>
 
 ## Syntax
 ```
-HolderBuildingPlate(
-    width, 
-    count = 1, 
-    dock = false)
+RackBase(
+    factor=1, 
+    count=1, 
+    alignX=NoAlign, 
+    alignY=NoAlign)
 ```
 
 | Parameter | Typ | Beschreibung |
 | ------ | ------ | ------ |
-| width | Decimal | Breite der Bauplatte. Die Halter unterstützen die Breiten 30 bis 90 mm. |
-| count | Integer | Anzahl der hintereinander aufgestellten Bauplatten. |
-| dock | Boolean | __true__, wenn die Halterung an eine Wand oder einen Trenner des Sortierkastens angedockt und verschmolzen werden soll. In diesem Fall ist der Steg 15 mm hoch statt 10 und ragt in die Wand hinein. Das Element muss dann zur Wand so gedreht werden, dass die Verschmelzung an der richtigen Seite erfolgt. |
+| factor | Decimal | 1 für 30 mm Zahnstangen, 2 für 60 mm Zahnstangen. |
+| count | Integer | Anzahl der nebeneinander liegenden Zahnstangen. |
+| alignX | Integer (Enum) | __NoAlign__ wenn der Rahmen nicht mit einer Wand verschmolzen werden soll. __AlignLeft__, wenn die linke Seite (vor einer eventuellen Drehung) an eine Wand gedockt werden soll, und __AlignRight__ für das Andocken rechts. |
+| alignY | Integer (Enum) | __NoAlign__ wenn der Rahmen nicht mit einer Wand verschmolzen werden soll. __AlignBottom__, wenn die untere Seite (vor einer eventuellen Drehung) an eine Wand gedockt werden soll, und __AlignTop__ für das Andocken oben. |
 
 ## Beispiele
 
