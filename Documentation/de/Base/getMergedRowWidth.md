@@ -19,5 +19,5 @@ getMergedRowWidth(
 | Parameter | Type | Beschreibung |
 | ------ | ------ | ------ |
 | spaces| \[\[x,y]\[x,y]...] | Liste von Wertpaaren (Liste mit x- und y-Wert) mit den Flächen der  zu verteilenden Elemente. Hier sollten die jeweiligen __get*ElementName*Space()__-Funktionen angegeben werden, und zwar in der Reihenfolge, die der der Elemente entspricht. |
-| rotations | \[RotateX, RotateX,...] | Gibt für jedes Element an, wie es vor dem Verteilen gedreht werden soll. Mögliche Werte sind __Rotate0__, __Rotate90__, __Rotate180__ und __Rotate270__. |Die Reihenfolge entspricht der der Elemente. |
+| rotations | \[RotateX, RotateX,...] | Gibt für jedes Element an, wie es vor dem Verteilen gedreht werden soll. Mögliche Werte sind __Rotate0__, __Rotate90__, __Rotate180__ und __Rotate270__. Die Reihenfolge entspricht der der Elemente. Die Liste kann ganz weggelassen werden, dann gelten für alle Elemente __NoRotation__. Ist die Liste unvollständig, wird für die restlichen Elemente __NoRotation__ angenommen. |
 | i | Ineteger | Aktueller index. Wird für den rekursiven Aufruf verwendet. |

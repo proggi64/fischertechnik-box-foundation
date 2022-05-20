@@ -19,7 +19,7 @@ getMaxDepth(
 | Parameter | Typ | Beschreibung |
 | ------ | ------ | ------ |
 | spaces | \[\[x,y]\[x,y]...] | Liste der Flächen, die über *distance* verteilt werden sollen. |
-| rotations | \[RotateX, RotateX, ...] | Liste der Rotationen zu jeder Fläche, die bei der Verteilung berücksichtigt werden soll. Die Anzahl der Rotationen muss gleich der Anzahl der Flächen in *spaces* sein. |
+| rotations | \[RotateX, RotateX, ...] | Liste der Rotationen zu jeder Fläche, die bei der Verteilung berücksichtigt werden soll. Die Liste kann ganz weggelassen werden, dann gelten für alle Elemente __NoRotation__. Ist die Liste unvollständig, wird für die restlichen Elemente __NoRotation__ angenommen. |
 | i | Integer | Index, ab welchem die Tiefe ermittelt werden soll (intern für rekursive Aufrufe)
 
 ## Rückgabewert

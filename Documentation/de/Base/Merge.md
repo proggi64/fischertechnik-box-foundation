@@ -18,12 +18,12 @@ Merge(
   {children}
 ```
 
-| Parameter | Beschreibung |
-| ------ | ------ |
-| count | Anzahl der Kopien des child, die aneinander gefügt werden sollen. |
-| space | Fläche, welche das children-Element einnimmt. Hierfür kann die jeweilige __get*ElementName*Space()__-Funktion als Wert übergeben werden. |
-| rotation | Gibt für das Children-Element an, wie es vor dem Verteilen gedreht werden soll. Mögliche Werte sind __Rotate0__, __Rotate90__, __Rotate180__ und __Rotate270__. Die Drehung wird für jedes erzeugte Element angewandt. |
-| dividerThickness | Wandstärke des Children-Elements. Standardwert ist die Standardwandstärke von [__getDividerThickness__](getDividerThickness.md). |
+| Parameter | Typ | Beschreibung |
+| ------ | ------ | ------ |
+| count | Integer | Anzahl der Kopien des child, die aneinander gefügt werden sollen. |
+| space | \[x,y] | Fläche, welche das children-Element einnimmt. Hierfür kann die jeweilige __get*ElementName*Space()__-Funktion als Wert übergeben werden. |
+| rotation | Integer (Enum) | Gibt für das Children-Element an, wie es vor dem Verteilen gedreht werden soll. Mögliche Werte sind __Rotate0__, __Rotate90__, __Rotate180__ und __Rotate270__. Die Drehung wird für jedes erzeugte Element angewandt. Die Liste kann ganz weggelassen werden, dann gelten für alle Elemente __NoRotation__. Ist die Liste unvollständig, wird für die restlichen Elemente __NoRotation__ angenommen. |
+| dividerThickness | Decimal | Wandstärke des Children-Elements. Standardwert ist die Standardwandstärke von [__getDividerThickness__](getDividerThickness.md). |
 
 ## Beispiel
 ```

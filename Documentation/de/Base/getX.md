@@ -22,7 +22,7 @@ getX(
 | Parameter | Typ | Beschreibung |
 | ------ | ------ | ------ |
 | spaces | \[\[x,y]\[x,y]...] | Liste der Flächen, die über *distance* verteilt werden sollen. |
-| rotations | \[RotateX, RotateX, ...] | Liste der Rotationen zu jeder Fläche, die bei der Verteilung berücksichtigt werden soll. Die Anzahl der Rotationen muss gleich der Anzahl der Flächen in *spaces* sein. |
+| rotations | \[RotateX, RotateX, ...] | Liste der Rotationen zu jeder Fläche, die bei der Verteilung berücksichtigt werden soll. Die Reihenfolge entspricht der der Children-Elemente. Die Liste kann ganz weggelassen werden, dann gelten für alle Elemente __NoRotation__. Ist die Liste unvollständig, wird für die restlichen Elemente __NoRotation__ angenommen. |
 | distance | Decimal | Die Breite der Strecke, über welche die Flächen verteilt werden sollen. Ist die Summe der Breiten größer als diese Fläche, sind die Abstände negativ und die Elemente werden ineinander geschoben. |
 | i | Integer | Aktueller Index, zu welchem die X-Position ermittelt werden soll.
 

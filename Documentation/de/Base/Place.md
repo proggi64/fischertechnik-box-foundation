@@ -31,7 +31,7 @@ Place(
 | elementSpace | \[x,y] | Fläche des zu platzierenden Elements. Hier wird normalerweise __get*ElementName*Space()__ verwendet. Ohne Angabe wird er Ursprungspunkt des Elements platziert. |
 | alignX | Integer (Enum) | Horizontale Ausrichtung der Children-Elemente zueinander. Grundlage ist die in *elementSpace* angegebenen Fläche, sowie die in *rotation* angegebene Drehung. __AlignLeft__ richtet am linken Rand von *boxSpace* aus (wie __NoAlign__), __AlignRight__ am rechten Rand, __AlignCenter__ zentriert das Element. |
 | alignY | Integer (Enum) | Vertikale Ausrichtung der Children-Elemente zueinander. Grundlage ist die in *elementSpace* angegebenen Fläche, sowie die in *rotation* angegebene Drehung. __AlignBottom__ richtet am unteren Rand von *boxSpace* aus (wie __NoAlign__), __AlignTop__ am oberen Rand, __AlignCenter__ zentriert das Element. |
-| rotation | Integer (Enum) | Gibt an, wie das Element rotiert werden soll. Mögliche Werte sind die in *PlacementOptions.scad* definierten Konstanten __Rotate0__, __Rotate90__, __Rotate180__ und __Rotate270__. |
+| rotation | Integer (Enum) | Gibt an, wie das Element rotiert werden soll. Mögliche Werte sind die in *PlacementOptions.scad* definierten Konstanten __Rotate0__, __Rotate90__, __Rotate180__ und __Rotate270__. Die Liste kann ganz weggelassen werden, dann gelten für alle Elemente __NoRotation__. Ist die Liste unvollständig, wird für die restlichen Elemente __NoRotation__ angenommen. |
 | boxSpace | \[x,y] | Fläche, auf der die Elemente platziert werden. Standard ist die Fläche des Sortierkastens 190x130. |
 
 ## Beispiele
