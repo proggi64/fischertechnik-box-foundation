@@ -51,3 +51,4 @@ Place(40, 0, elementSpace=getFrameBlockWithPinSpace(8), rotation=Rotate90)
     FrameBlockWithPin(8);
 ```
 
+<img width="270" alt="FrameBlockWithPin" src="https://user-images.githubusercontent.com/48654609/169554820-58efd2f7-9263-49d9-a028-d397bac66cd4.png">
