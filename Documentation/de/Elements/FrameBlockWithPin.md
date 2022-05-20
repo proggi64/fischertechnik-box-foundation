@@ -5,6 +5,7 @@ Einfacher Rahmen für Grundbausteine mit Zapfen nach unten.
 - 31006
 - 31007
 - 32882
+- 37636
 - 38240
 
 Der Rahmen hat am Boden zwei Stege, so dass der Zapfen dazwischen Platz hat.
