@@ -35,12 +35,38 @@ DeployHorizontal(
 translate([60,0]) {
     PlacementBase();
     
-DeployHorizontal(
-    getPlacementBaseSpace().x, 
-    [getCubeSpace(), getCubeSpace()],
-    [Rotate90, Rotate270],
-    alignY=AlignTop) {
-    Cube();
-    Cube();
-    }   
+    DeployHorizontal(
+        getPlacementBaseSpace().x, 
+        [getCubeSpace(), getCubeSpace()],
+        [Rotate90, Rotate270],
+        alignY=AlignTop) {
+        Cube();
+        Cube();
+        }   
+
+    // Default rotation (NoRotation)
+    translate([0,30])
+    DeployHorizontal(
+        getPlacementBaseSpace().x, 
+        [getCubeSpace(), getCubeSpace(), getCubeSpace()],
+        alignY=AlignTop) {
+        Cube();
+        Cube();
+        Cube();
+        }   
+}
+
+translate([120,0]) {
+    PlacementBase();
+    
+    // Default rotation for second and third (NoRotation)
+    DeployHorizontal(
+        getPlacementBaseSpace().x, 
+        [getCubeSpace(), getCubeSpace(), getCubeSpace()],
+        [Rotate90],
+        alignY=AlignTop) {
+        Cube();
+        Cube();
+        Cube();
+        }   
 }

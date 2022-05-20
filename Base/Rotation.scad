@@ -15,7 +15,7 @@ function getRotatedSpace(space, rotation=NoRotation) = [
 // space = the space the children needs as width/depth list [width,depth]
 // rotation = 0 Rotate0 degrees, 1 Rotate90 degrees, 2 Rotate180 degrees, 3 Rotate270 degrees (equivalent to -90)
 
-module RotateFix(space, rotation=Rotate0) {
+module RotateFix(space, rotation=NoRotation) {
     dy = (rotation == Rotate0 || rotation == Rotate270) ? 0 :
         (rotation == Rotate90) ? space.x :
         space.y;

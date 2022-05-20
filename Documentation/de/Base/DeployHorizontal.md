@@ -21,7 +21,7 @@ DeployHorizontal(
 | ------ | ------ | ------ |
 | width | Decimal | Strecke, über die die angegebenen Elemente verteilt werden. Wird hier Null angegeben, werden die Elemente direkt ohne Abstand aneinander gesetzt. |
 | spaces| \[\[x,y],\[x,y],...] | Liste von Wertpaaren (Liste mit x- und y-Wert) mit den Flächen der Children-Elemente. Hier sollten die jeweiligen __get*ElementName*Space()__-Funktionen angegeben werden, und zwar in der Reihenfolge, die der der Children-Elemente entspricht. |
-| rotations | \[RotateX, RotyteX, ...] | Gibt für jedes Children-Element an, wie es vor dem Verteilen gedreht werden soll. Mögliche Werte sind __Rotate0__, __Rotate90__, __Rotate180__ und __Rotate270__. Die Reihenfolge entspricht der der Children-Elemente. |
+| rotations | \[RotateX, RotyteX, ...] | Gibt für jedes Children-Element an, wie es vor dem Verteilen gedreht werden soll. Mögliche Werte sind __Rotate0__, __Rotate90__, __Rotate180__ und __Rotate270__. Die Reihenfolge entspricht der der Children-Elemente. Die Liste kann ganz weggelassen werden, dann gelten für alle Elemente __NoRotation__. ist die Liste unvollständig, wird für die restlichen Elemente __NoRotation__ angenommen. |
 | alignY | Integer (Enum) | Vertikale Ausrichtung der Children-Elemente zueinander. Grundlage sind die in *spaces* angegebenen Flächen, sowie die in *rotations* angegebenen Drehungen der einzelnen Elemente. __AlignBottom__ richtet auf der unteren Linie aus (wie __NoAlign__), __AlignTop__ am höchsten Y-Wert der Elemente, __AlignCenter__ zentriert alle Elemente um das Zentrum des tiefsten Elements. |
 
 ## Beispiele
@@ -106,3 +106,26 @@ DeployHorizontal(
 Die Elemente werden direkt aneinander platziert. Bei __Frame__-Elementen werden die Zwischenwände doppelt so dick wie eine einzelne Wand. Um in solchen Fällen die  Zwischenwände auf die Einzelstärke zu reduzieren, muss stattdessen [__MergeRow__}(MergeRow.md) verwendet werden.
 
 <img width="355" alt="DeployHorizontal_Zero" src="https://user-images.githubusercontent.com/48654609/168445294-81a83274-f977-46a3-b1d0-7d9dd05166fb.png">
+
+## Rotationsliste weglassen
+
+```
+use <../../Base/Deployment.scad>
+use <../../Base/Placement.scad>
+
+include <../../Base/PlacementOptions.scad>
+
+use <../TestHelper.scad>
+
+PlacementBase();
+
+DeployHorizontal(
+    getPlacementBaseSpace().x, 
+    [getCubeSpace(), getCubeSpace(), getCubeSpace()],
+    alignY=AlignTop) {
+    Cube();
+    Cube();
+    Cube();
+}
+```
+

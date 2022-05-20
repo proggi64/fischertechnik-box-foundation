@@ -17,7 +17,7 @@ use <../../Elements/AxisCoupling.scad>
 use <../../Elements/FrameBracketWithAxle80.scad>
 use <../../Elements/FrameBracketCombo.scad>
 use <../../Elements/AxisFlatHub.scad>
-use <../../Elements/CylinderGear.scad>
+use <../../Elements/CylinderGearZ20.scad>
 
 
 color("lightgray") {
@@ -85,7 +85,7 @@ Place(x=95, y=bottomElementOffset)
     AxisCoupling();
 
 Place(
-    x=getCylinderGearSpace().x,
+    x=getCylinderGearZ20Space().x,
     y=37,
     elementSpace=getAxisFlatHubSpace(),
     alignX=AlignRight)
@@ -93,9 +93,9 @@ Place(
 
 Place(
     y=35,
-    elementSpace=getCylinderGearSpace(),
+    elementSpace=getCylinderGearZ20Space(),
     alignX=AlignRight)
-    CylinderGear();
+    CylinderGearZ20();
 
 Place(
     y=25,

@@ -2,6 +2,7 @@
 // Geometry Helpers Deployment
 
 use <Constants.scad>
+use <Helper.scad>
 use <Placement.scad>
 use <Rotation.scad>
 
@@ -15,7 +16,7 @@ include <PlacementOptions.scad>
 
 function getWidthSum(spaces, rotations, i=0) = 
     (i < len(spaces)) ? 
-        getRotatedSpace(spaces[i], rotations[i]).x + getWidthSum(spaces, rotations, i+1) : 
+        getRotatedSpace(spaces[i], getRotation(rotations, i)).x + getWidthSum(spaces, rotations, i+1) : 
         0;
 
 // getDepthSum(spaces, rotations, i=0)
@@ -27,7 +28,7 @@ function getWidthSum(spaces, rotations, i=0) =
 
 function getDepthSum(spaces, rotations, i=0) = 
     (i < len(spaces)) ? 
-        getRotatedSpace(spaces[i], rotations[i]).y + getDepthSum(spaces, rotations, i+1) : 
+        getRotatedSpace(spaces[i], getRotation(rotations, i)).y + getDepthSum(spaces, rotations, i+1) : 
         0;
 
 // getX(spaces, rotations, distance, i)
@@ -41,7 +42,7 @@ function getDepthSum(spaces, rotations, i=0) =
 function getX(spaces, rotations, distance, i) = 
     (i == 0) ? 
         0 :
-        (getRotatedSpace(spaces[i-1], rotations[i-1]).x + distance + getX(spaces, rotations, distance, i-1));
+        (getRotatedSpace(spaces[i-1], getRotation(rotations, i-1)).x + distance + getX(spaces, rotations, distance, i-1));
 
 // getY(spaces, distance, i)
 // Gets the Y-distance of the spaces plus constant distance 
@@ -55,7 +56,7 @@ function getX(spaces, rotations, distance, i) =
 function getY(spaces, rotations, distance, i) = 
     (i == 0) ? 
         0 :
-        (getRotatedSpace(spaces[i-1], rotations[i-1]).y + distance + getY(spaces, rotations, distance, i-1));
+        (getRotatedSpace(spaces[i-1], getRotation(rotations, i-1)).y + distance + getY(spaces, rotations, distance, i-1));
 
 // getMaxDepth(spaces, i=0)
 // Gets the maximum depth of the specified spaces and takes the rotations in count.
@@ -63,7 +64,7 @@ function getY(spaces, rotations, distance, i) =
 // rotations = specify rotations for each space to get its correct depth
 
 function getMaxDepth(spaces, rotations, i=0) =
-    max(getRotatedSpace(spaces[i], rotations[i]).y, (i < len(spaces)-1) ? getMaxDepth(spaces, rotations, i+1) : 0);
+    max(getRotatedSpace(spaces[i], getRotation(rotations, i)).y, (i < len(spaces)-1) ? getMaxDepth(spaces, rotations, i+1) : 0);
 
 // getMaxWidh(spaces, i=0)
 // Gets the maximum width of the specified spaces and takes the rotations in count.
@@ -71,7 +72,7 @@ function getMaxDepth(spaces, rotations, i=0) =
 // rotations = specify rotations for each space to get its correct width
 
 function getMaxWidth(spaces, rotations, i=0) =
-    max(getRotatedSpace(spaces[i], rotations[i]).x, (i < len(spaces)-1) ? getMaxWidth(spaces, rotations, i+1) : 0);
+    max(getRotatedSpace(spaces[i], getRotation(rotations, i)).x, (i < len(spaces)-1) ? getMaxWidth(spaces, rotations, i+1) : 0);
 
 // DeployHorizontal(width, spaces, rotations)
 // Deploys the elements in the specified width with equal distances.
@@ -95,13 +96,13 @@ module DeployHorizontal(width, spaces, rotations, alignY=NoAlign) {
     for (i = [0:1:$children-1]) {
         x = getX(spaces, rotations, distance, i);
         y = (alignY == AlignTop) ?
-            (alignmentY - getRotatedSpace(spaces[i], rotations[i]).y) :
+            (alignmentY - getRotatedSpace(spaces[i], getRotation(rotations, i)).y) :
             ((alignY == AlignCenter) ? 
-            (alignmentY - getRotatedSpace(spaces[i], rotations[i]).y/2) : 
+            (alignmentY - getRotatedSpace(spaces[i], getRotation(rotations, i)).y/2) : 
             0);
             
         translate([x, y])
-            RotateFix(spaces[i], rotations[i])
+            RotateFix(spaces[i], getRotation(rotations, i))
                 children(i);
     }
 }
@@ -127,14 +128,14 @@ module DeployVertical(depth, spaces, rotations, alignX=NoAlign) {
 
     for (i = [0:1:$children-1]) {
         x = (alignX == AlignRight) ?
-            (alignmentX - getRotatedSpace(spaces[i], rotations[i]).x) :
+            (alignmentX - getRotatedSpace(spaces[i], getRotation(rotations, i)).x) :
             ((alignX == AlignCenter) ? 
-            (alignmentX - getRotatedSpace(spaces[i], rotations[i]).x/2) : 
+            (alignmentX - getRotatedSpace(spaces[i], getRotation(rotations, i)).x/2) : 
             0);
         y = getY(spaces, rotations, distance, i);
         
         translate([x, y])
-            RotateFix(spaces[i], rotations[i])
+            RotateFix(spaces[i], getRotation(rotations, i))
                 children(i);
     }
 }
@@ -179,7 +180,7 @@ module DeploySame(space, elementSpace, columns=2, rows=1, rotation=Rotate0) {
 
 function getMergedRowWidth(spaces, rotations, i=0) =
     (i < len(spaces)) ? 
-        getRotatedSpace(spaces[i], rotations[i]).x + getMergedRowWidth(spaces, rotations, i+1) - (i > 0 ? getDividerThickness() : 0) : 
+        getRotatedSpace(spaces[i], getRotation(rotations, i)).x + getMergedRowWidth(spaces, rotations, i+1) - (i > 0 ? getDividerThickness() : 0) : 
         0;
 
 // MergeRow(spaces, rotations, dividerThickness=0.8)
@@ -192,7 +193,7 @@ module MergeRow(spaces, rotations, dividerThickness = getDividerThickness()) {
     for (i = [0:1:$children-1]) {
         x = getX(spaces, rotations, -getDividerThickness(), i);
         translate([x, 0, 0])
-            RotateFix(spaces[i], rotations[i])
+            RotateFix(spaces[i], getRotation(rotations, i))
                 children(i);
     }
 }

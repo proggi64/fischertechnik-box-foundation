@@ -49,8 +49,8 @@ function getBoxWebWidth() = boxWebWidth;
 // getBox190Space()
 // Gets the usable inner space of a Box 190 as an x/y-list
 function getBox190Space() = [
-    box190Width - 2*getBoxWallThickness(), 
-    box190Depth - 2*getBoxWallThickness() ];
+    box190Width - 2*getBoxWallThickness() - topBottomDifference, 
+    box190Depth - 2*getBoxWallThickness() - topBottomDifference ];
 
 // BoxBase(width, depth)
 // Creates an empty stackable Fischertechnik compatible box

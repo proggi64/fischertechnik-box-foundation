@@ -112,50 +112,52 @@ Place(
     y=getStandardEdgeDistance(), 
     elementSpace=[45, 70], 
     alignX = AlignCenter)
-DeployVertical(115, 
-    [getFramePushButtonSpace(), 
-    getFrameBlockWithPinSpace(), 
-    getFrameBlockWithPinSpace(), 
-    getFrameBlockWithPinSpace()])
-{
-    Center([45, getFramePushButtonSpace().y], getFramePushButtonSpace()) {
-        FramePushButton();
-    }
     
-    DeployHorizontal(45, 
-        [
-            getFramePhotoResistor30Space(),
-            getFrameLightCapSpace()
-        ],
-        [
-            Rotate270, 
-            Rotate0
-        ]) {
-        FramePhotoResistor30();
-        FrameLightCap();
-    }
-    
-    DeploySame([45, getFrameBlockWithPinSpace().y],
-            getFrameBlockWithPinSpace(),
-            rotation=Rotate90
-        ) {
-        FrameBlockWithPin();
-    }
+    DeployVertical(115, 
+        [getFramePushButtonSpace(), 
+        getFrameBlockWithPinSpace(), 
+        getFrameBlockWithPinSpace(), 
+        getFrameBlockWithPinSpace()]
+        )
+    {
+        Center([45, getFramePushButtonSpace().y], getFramePushButtonSpace()) {
+            FramePushButton();
+        }
+        
+        DeployHorizontal(45, 
+            [
+                getFramePhotoResistor30Space(),
+                getFrameLightCapSpace()
+            ],
+            [
+                Rotate270, 
+                Rotate0
+            ]) {
+            FramePhotoResistor30();
+            FrameLightCap();
+        }
+        
+        DeploySame([45, getFrameBlockWithPinSpace().y],
+                getFrameBlockWithPinSpace(),
+                rotation=Rotate90
+            ) {
+            FrameBlockWithPin();
+        }
 
-    DeployHorizontal(45, 
-        [
-            getFrameBlockWithPinSpace(),
-            getFrameLightCapSpace()
-        ],
-        [
-            Rotate270, 
-            Rotate0
-        ]) {
-        FrameBlockWithPin();
-        FrameLightCap();
+        DeployHorizontal(45, 
+            [
+                getFrameBlockWithPinSpace(),
+                getFrameLightCapSpace()
+            ],
+            [
+                Rotate270, 
+                Rotate0
+            ]) {
+            FrameBlockWithPin();
+            FrameLightCap();
+        }
     }
-}
-    
+        
 //-----
 // Deploy right elements
 
