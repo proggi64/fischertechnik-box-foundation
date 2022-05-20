@@ -129,3 +129,4 @@ DeployHorizontal(
 }
 ```
 
+<img width="270" alt="DeployHorizontal_DefRot" src="https://user-images.githubusercontent.com/48654609/169541360-f0e25758-f8f5-4a79-aa82-2c8aa6f4901f.png">
