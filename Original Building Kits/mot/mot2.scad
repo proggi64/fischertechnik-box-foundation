@@ -17,24 +17,19 @@ use <../../Elements/AxisClip10.scad>
 use <../../Elements/AxisIdlerGearZ15.scad>
 
 module RackFrames() {
-    Place(0.5, -getDividerThickness()-0.2, elementSpace=getFrameRackSpace(2, 4), rotation=Rotate270, alignY=AlignTop) {
+    Place(0.5, 0, elementSpace=getFrameRackSpace(2, 4), rotation=Rotate270, alignY=AlignTop) {
         RackBase(1, 2);    
         Place(0, getFrameRackSpace(1, 2).y - 2*getDividerThickness() - getTolerance())
-            RackBase(2, 2);
-    }
-    translate([-getDividerThickness(), getBox190Space().y - getDividerThickness() - 15, -getExcess()]) {
-        cube([5, getDividerThickness(), getRackInnerHeight() + getExcess()]);
-        translate([0, -30])
-            cube([5, getDividerThickness(), getRackInnerHeight() + getExcess()]);
+            RackBase(2, 2, alignX=AlignRight, alignY=AlignTop);
     }
 }
 
 module LeftFrames() {
     wallHeight = 13;
     widthA = getFrameRackSpace(1, 2).x + 2*getDividerThickness();
-    depthA = 29.8;
+    depthA = 30 + getDividerThickness();
     
-    wallASpace = [getDividerThickness(), depthA + getDividerThickness(), wallHeight];
+    wallASpace = [getDividerThickness(), depthA, wallHeight];
     wallABSpace = [getFrameRackSpace(1, 2).x + getDividerThickness(), getDividerThickness(), wallHeight];
     wallBSpace = [getDividerThickness(), (getBox190Space().y - depthA) + 2*getDividerThickness(), wallHeight];
     wallCSpace = [getFrameRackSpace(1, 4).y, getDividerThickness(), wallHeight];
@@ -150,7 +145,7 @@ module AxisCombo() {
 
 color("lightgray") {
 Box190();
-
+    
 // Box webs and right wall
 BoxWeb(UpperLeft, LeftOfCorner, webDistance+2, webThickness=getDividerThickness());
 BoxWeb(UpperRight, RightOfCorner, webDistance, webThickness=getDividerThickness());
