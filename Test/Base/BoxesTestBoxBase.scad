@@ -30,3 +30,11 @@ BoxBase(130, 95);
     translate([35, -getBoxWallThickness()-1.5/2, 35])
         #cube([15, 95, 15]);
 }
+
+translate([340, 0]) {
+BoxBase(130, 95, 55);
+}
+
+translate([480, 0]) {
+BoxBase(130, 95, 25);
+}

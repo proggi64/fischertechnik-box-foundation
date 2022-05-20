@@ -57,8 +57,10 @@ function getBox190Space() = [
 // width = Outer width of the box (190, 130, ...)
 // depth = Outer depth of the box (130, 95, ...)
 
-module BoxBase(width, depth) {    
+module BoxBase(width, depth, height=outerHeight) {    
     thinPlate = 0.01;
+
+    innerHeight = height - baseThickness;    
     
     module BodyPlate(width, depth) {
         translate([radius, radius])
@@ -102,9 +104,10 @@ module BoxBase(width, depth) {
         }
     }
     
-    difference() {
+    difference() {        
         Body();
         Cutoff();
+        stackOffset = innerHeight - stackExcess;
         translate([0, 0, stackOffset + baseThickness])
             Body(tolerance=0);
     }
