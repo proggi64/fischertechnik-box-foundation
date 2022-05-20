@@ -1,24 +1,36 @@
 # CylinderTire20
 
-__31017__ Halterung für 1-4 Reifen 20 (neuere Version ohne Zacken innen).
+Halterung für 1-4 Reifen 20 (neuere Version ohne Zacken innen).
+
+- 31017
 
 <img width="364" alt="CylinderTire20" src="https://user-images.githubusercontent.com/48654609/167253313-0449ef90-a537-4bf0-b7a0-9b72d6708f87.png">
 
 ## Use
-<pre><code>use &lt;../Elements/CylinderTire20.scad&gt;</pre></code>
+```
+use <../Elements/CylinderTire20.scad>
+```
 
 ## Syntax
-<pre><code>CylinderTire20(count=3);
-</pre></code>
+```
+CylinderTire20(
+    count=3);
 
-| Parameter | Beschreibung |
-| ------ | ------ |
-| count | Anzahl der Reifen, die auf dem Halter gestapelt werden. Bis drei Reifen verändert die Gesamthöhe nicht, sondern nur die des Absatzes unten am Zylinder. Bei einer Zahl von vier hat der Zylinder keinen Absatz mehr und ist hoch genug für die vier gestapelten Reifen. |
+space = getCylinderTire20Space(
+    count=3);
+```
+
+| Parameter | Typ | Beschreibung |
+| ------ | ------ | ------ |
+| count | Integer | Anzahl der Reifen, die auf dem Halter gestapelt werden. Bis drei Reifen verändert die Gesamthöhe nicht, sondern nur die des Absatzes unten am Zylinder. Bei vier hat der Zylinder keinen Absatz mehr und ist hoch genug für die vier gestapelten Reifen. Höhere zahlen sind nicht sinnvoll, da der Zylinder zu hoch für den Sortierkasten wird. |
+
+## Rückgabewert getCylinderTire20Space
+Grundfläche als \[x,y]-Liste.
 
 ## Beispiele
-<pre><code>Test/Elements/TestCylinderTire20.scad</code></pre>
+Test/Elements/TestCylinderTire20.scad
 
-### Alle möglichen Werte für count
+### Alle vier erlaubten Werte für count
 
 <pre>code>use <../../Base/Placement.scad>
 use <../../Base/Deployment.scad>

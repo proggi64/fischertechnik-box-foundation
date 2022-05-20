@@ -1,12 +1,23 @@
 # CylinderHubWithZ30
 
-__31014__<br/>__36264__ Halterung für Nabe mit Zahrad Z30.
+Halterung für Nabe mit Zahrad Z30.
+
+- 31014
+- 36264
 
 <img width="364" alt="CylinderHubWithZ30" src="https://user-images.githubusercontent.com/48654609/167249931-1b4425a7-d081-47e4-aacb-497402ccec94.png">
 
 ## Use
-<pre><code>use &lt;../Elements/CylinderHubWithZ30.scad&gt;</pre></code>
+```
+use <../Elements/CylinderHubWithZ30.scad>
+```
 
 ## Syntax
-<pre><code>CylinderHubWithZ30();
-</pre></code>
+```
+CylinderHubWithZ30();
+
+space = getCylinderHubWithZ30Space();
+```
+
+## Rückgabewert getCylinderHubWithZ30Space
+Fläche als \[x,y]-Liste. Diese Fläche ist größer als die des fast identischen Moduls [CylinderHub](CylinderHub.md), da hier noch der Umfang des Z30 berücksichtigt wird.

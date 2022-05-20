@@ -8,7 +8,7 @@ width = 180;
 depth = 90;
 
 // getRailsBasePlate180x90Space()
-// Gets the width and depth of the spave the raols base for the base plate 180x90 needs.
+// Gets the width and depth of the space the rails base for the base plate 180x90 needs.
 function getRailsBasePlate180x90Space() = getRailsBasePlateVolume(width, depth);
 
 // RailsBasePlate180x90()
