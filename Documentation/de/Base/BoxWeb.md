@@ -23,7 +23,7 @@ BoxWeb(
 
 | Parameter | Typ | Beschreibung |
 | ------ | ------ | ------ |
-| corner | Integer (Enum) | Ecke, in welcher der Steg platziert werden soll. Die numerischen Werte sind als Konstanten in *PlacementOptions.scad* definiert: __LowerLeft__, __UpperLeft__, __UpperRight__ oder __LowerRight__, |
+| corner | Integer (Enum) | Ecke, in welcher der Steg platziert werden soll. Die numerischen Werte sind als Konstanten in *PlacementOptions.scad* definiert: __LowerLeft__, __UpperLeft__, __UpperRight__ oder __LowerRight__. |
 | side | Integer (Enum) | Seite der Ecke (*corner*) von außen betrachtet, wo der Steg platziert werden soll. Die numerischen Werte sind als Konstanten in *PlacementOptions.scad* definiert: __LeftOfCorner__ oder __RightOfCorner__. Von oben auf die Sortierbox gesehen, ist __LeftOfCorner__ immer im Uhrzeigersinn neben der Ecke. |
 | distance | Decimal | Abstand des Stegs von der Ecke. Es wird immer der Abstand des zur Ecke gewandten Rands des Stegs zum Rand der Wand gerechnet, also der tatsächlich freie Bereich. |
 | boxSpace | \[x,y\] | Fläche, auf der die Stege platziert werden. Standard ist der nutzbare Raum der Box 190 x 130. Für die Box 130 x 95 kann __getBox130Space()__ angegeben werden. Es können beliebige andere Flächen angegeben werden, z.B. um Stege in selbstdefinierten Rahmen ([__Frame__](../ModelBase/Frame.md)) oder an Trennwänden zu generieren. |

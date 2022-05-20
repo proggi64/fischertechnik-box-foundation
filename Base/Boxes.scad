@@ -9,38 +9,113 @@ box190Width = 190;
 box190Depth = 130;
 box130Width = 130;
 box130Depth = 95;
-boxUsageHeight = 33.9;
-boxWallThickness = 2.4;
-boxBaseThickness = 1.0;
+
+// Values are from an original ec3 box
+topBottomDifference = 1.5;
+outerHeight = 40;
+innerHeight = 38.2;
+baseThickness = outerHeight - innerHeight;
+stackExcess = 5.7;
+radius = 3.5;
+wallThickness = 1.5;
+tolerance = 0.2;
+stackOffset = innerHeight - stackExcess;
+
+boxUsageHeight = stackOffset;
+boxWallThickness = wallThickness;
+boxBaseThickness = baseThickness;
 boxWebWidth = 3.0;
 
 // getBoxWallThickness()
 // Gets the wall thickness of a Fischertechnik Box
-
 function getBoxWallThickness() = boxWallThickness;
 
-// Gets the usable height of a fischertechnik box
+// getBoxUsageHeight()
+// Gets the usable height of a Fischertechnik box
 function getBoxUsageHeight() = boxUsageHeight;
 
+// getBoxInnerHeight()
+// Gets the inner height of a Fischertechnik box, including the stack excess
+function getBoxInnerHeight() = innerHeight;
+
+// getBoxBaseThickness()
 // Gets the thickness of the Fischertechnik box base.
 function getBoxBaseThickness() = boxBaseThickness;
 
+// getBoxWebWidth()
 // Gets the width of a box web
 function getBoxWebWidth() = boxWebWidth;
 
+// getBox190Space()
 // Gets the usable inner space of a Box 190 as an x/y-list
 function getBox190Space() = [
     box190Width - 2*getBoxWallThickness(), 
     box190Depth - 2*getBoxWallThickness() ];
 
-// Imports the Fischertechnik empty box 130x190 mm and places it at position 0,0
+// BoxBase(width, depth)
+// Creates an empty stackable Fischertechnik compatible box
+// width = Outer width of the box (190, 130, ...)
+// depth = Outer depth of the box (130, 95, ...)
+
+module BoxBase(width, depth) {    
+    thinPlate = 0.01;
+    
+    module BodyPlate(width, depth) {
+        translate([radius, radius])
+        hull() {
+            w = width-2*radius;
+            d = depth-2*radius;
+            cube([w, d, thinPlate]);
+            cylinder(thinPlate, r=radius, $fn=getFragments());
+            translate([w, 0])
+                cylinder(thinPlate, r=radius, $fn=getFragments());
+            translate([w, d])
+                cylinder(thinPlate, r=radius, $fn=getFragments());
+            translate([0, d])
+                cylinder(thinPlate, r=radius, $fn=getFragments());
+        }
+    }
+    
+    module Body(tolerance=tolerance) {
+        hull() {
+            // Bottom with tolerance to fit into the original boxes when stacked
+            translate([-wallThickness+tolerance, -wallThickness+tolerance, -baseThickness])
+                BodyPlate(width-topBottomDifference-2*tolerance, depth-topBottomDifference-2*tolerance);
+            
+            // Top
+            translate([-wallThickness-topBottomDifference/2, -wallThickness-topBottomDifference/2, innerHeight-thinPlate])
+                BodyPlate(width, depth);
+         }
+    }
+
+    module Cutoff() {
+        hull() {
+            coWidth = width - 2*wallThickness;
+            coDepth = depth - 2*wallThickness;
+            
+            // Bottom
+            BodyPlate(coWidth-topBottomDifference, coDepth-topBottomDifference);
+
+            // Top
+            translate([-topBottomDifference/2, -topBottomDifference/2, innerHeight+thinPlate]) 
+                BodyPlate(coWidth, coDepth);
+        }
+    }
+    
+    difference() {
+        Body();
+        Cutoff();
+        translate([0, 0, stackOffset + baseThickness])
+            Body(tolerance=0);
+    }
+}
+
+// Creates the Fischertechnik empty box 130x190 mm and places it at position 0,0
 // 190x130 are the outer sizes, the inner space is slightly smaller. Use getBox190Space() to get the inner sizes.
-// This module needs the STL file "Fischertechnik Box 130x190.stl" in the library path.
 // The box is positioned that the usable inner space is at the 0,0,0 position. The
 
 module Box190() {
-    translate([-getBoxWallThickness(),-getBoxWallThickness(),-getBoxBaseThickness()])
-        import("Fischertechnik Box 130x190.stl", convexity=3);
+    BoxBase(box190Width, box190Depth);
 }
 
 // Gets the usable inner space of a Box 130 as an x/y-list
@@ -48,14 +123,12 @@ function getBox130Space() = [
     box130Width - 2*getBoxWallThickness(), 
     box130Depth - 2*getBoxWallThickness() ];
 
-// Imports the Fischertechnik empty box 95x130 mm and places it at position 0,0
+// Creates the Fischertechnik empty box 95x130 mm and places it at position 0,0
 // 190x130 are the outer sizes, the inner space is slightly smaller. Use getBox190Space() to get the inner sizes.
-// This module needs the STL file "Fischertechnik Box 95x130.stl" in the library path.
 // The box is positioned that the usable inner space is at the 0,0,0 position. The
 
 module Box130() {
-    translate([-getBoxWallThickness(),-getBoxWallThickness(),-getBoxBaseThickness()])
-        import("Fischertechnik Box 95x130.stl", convexity=3);
+    BoxBase(box130Width, box130Depth);
 }
 
 // Creates a web at the specified box walls
