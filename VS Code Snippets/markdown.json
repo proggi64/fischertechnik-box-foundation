@@ -1,0 +1,66 @@
+{
+	"Link": {
+		"prefix": ["-le"],
+		"body": ["- ${1:number} [${2:name}](Elements/${2:name}.md)"]
+	},
+
+	"Element": {
+		"prefix": ["#el"],
+		"body": [
+			"# ${1:name}",
+			"beschreibung.",
+			"- nnnnn",
+			"",
+			"![${1:name}](../../images/${1:name}.png)",
+			"",
+			"## Use",
+			"```",
+			"use <../Elements/${1:name}.scad>",
+			"```",
+			"",
+			"## Syntax", 
+			"```",
+			"${1:name}();", 
+			"", 
+			"space = get${1:name}Space();", 
+			"```",
+			"",
+			"## Rückgabewert get${1:name}Space",
+			"Fläche als \\[x,y]-Liste"
+		],
+		"description": "Komplettes Element ohne Parameter"
+	},
+
+	"ElementParam": {
+		"prefix": ["#el", "#elp"],
+		"body": [
+			"# ${1:name}",
+			"beschreibung.",
+			"- nnnnn",
+			"",
+			"![${1:name}](../../images/${1:name}.png)",
+			"",
+			"## Use",
+			"```",
+			"use <../Elements/${1:name}.scad>",
+			"```",
+			"",
+			"## Syntax", 
+			"```",
+			"${1:name}(", 
+			"\t${2:parameter});", 
+			"", 
+			"space = get${1:name}Space(",
+			"\t{2:parameter});", 
+			"```",
+			"",
+			"| Parameter | Typ | Beschreibung |",
+			"| ------ | ------ | ------ |",
+			"| ${2:parameter} | typ | beschreibung |",
+			"",
+			"## Rückgabewert get${1:name}Space",
+			"Fläche als \\[x,y]-Liste"
+		],
+		"description": "Komplettes Element mit Parameter"
+	},
+}
