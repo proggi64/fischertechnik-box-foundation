@@ -2,7 +2,7 @@
 Klemmbuchse 10.
 - 31023
 
-![AxisClip10](images/AxisClip10.png)
+![AxisClip10](../../images/AxisClip10.png)
 
 ## Use
 ```
