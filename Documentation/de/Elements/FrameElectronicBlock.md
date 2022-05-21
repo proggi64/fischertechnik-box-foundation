@@ -13,6 +13,7 @@ Elektronikbaustein (Silberling).
 - 36733
 - 36735
 - 36786
+- 37140 (alt, hobbylabor1)
 - 37683
 
 ![FrameElectronicBlock](../../images/FrameElectronicBlock.png)
