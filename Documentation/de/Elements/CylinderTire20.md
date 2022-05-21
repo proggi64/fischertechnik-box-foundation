@@ -1,6 +1,6 @@
 # CylinderTire20
 
-Halterung für 1-4 Reifen 20 (neuere Version ohne Zacken innen).
+1-4 Reifen 20 (neuere Version ohne Zacken innen).
 
 - 31017
 

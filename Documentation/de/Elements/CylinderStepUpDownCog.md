@@ -1,6 +1,6 @@
 # CylinderStepUpDownCog
 
-Halterung für Zwischenrad Z10 (aus mot2).
+Zwischenrad Z10 (aus mot2).
 
 - 31052
 

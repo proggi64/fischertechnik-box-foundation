@@ -1,6 +1,6 @@
 # FrameBlockWithPin
 
-Einfacher Rahmen für Grundbausteine mit Zapfen nach unten.
+Grundbausteine mit Zapfen nach unten.
 
 - 31006
 - 31007

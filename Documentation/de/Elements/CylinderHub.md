@@ -1,6 +1,6 @@
 # CylinderHub
 
-Achse plus Zylinder für Standard-Nabe.
+Nabe.
 
 - 31015
 
@@ -19,4 +19,4 @@ space = getCylinderHubSpace();
 ```
 
 ## Rückgabewert getCylinderHubSpace
-Fläche als \[x,y]-Liste.
+Fläche als \[x,y]-Liste. Wenn auf der Nabe noch ein Bauteil (z.B. Zahnrad Z30) angebracht ist, sollte jeweils das dafür entworfene Element verwendet werden, damit die Fläche richtig dimensioniert ist.

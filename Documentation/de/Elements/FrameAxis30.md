@@ -1,6 +1,6 @@
 # FrameAxis30
 
-Achshalterung für Achse 30.
+Achse 30.
 
 - 31034
 

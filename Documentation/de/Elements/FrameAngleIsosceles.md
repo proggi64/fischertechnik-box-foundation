@@ -1,6 +1,6 @@
 # FrameAngleIsosceles
 
-Rahmen für Winkelstein 30 gleichschenklig.
+Winkelstein 30 gleichschenklig.
 
 - 31011
 

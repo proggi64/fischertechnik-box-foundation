@@ -1,6 +1,6 @@
 # RailsBasePlate180x90
 
-Ablagestege für die Grundplatte 180 x 90 mm.
+Grundplatte 180 x 90 mm.
 
 - 31001
 

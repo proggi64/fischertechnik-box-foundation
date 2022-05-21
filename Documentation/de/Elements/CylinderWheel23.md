@@ -1,6 +1,6 @@
 # CylinderWheel23
 
-Halterung für ein Rad 23 mit Radachse. 
+Rad 23 mit Radachse. 
 
 - 35586
 - 36581

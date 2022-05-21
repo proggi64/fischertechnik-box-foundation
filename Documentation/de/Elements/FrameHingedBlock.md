@@ -1,6 +1,6 @@
 # FrameHingedBlock
 
-Rahmen für gerade liegenden Gelenkstein.
+Gerade liegender Gelenkstein.
 
 - 31008
 - 35831

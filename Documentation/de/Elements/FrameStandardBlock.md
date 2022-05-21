@@ -1,6 +1,6 @@
 # FrameStandardBlock
 
-Einfacher Rahmen für Grundbausteine, die auf der 15x15-Seite ohne Zapfen stehen.
+Grundbausteine, die auf der 15x15-Seite ohne Zapfen stehen.
 
 - 31003
 - 31004

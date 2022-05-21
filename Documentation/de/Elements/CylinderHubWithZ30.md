@@ -1,6 +1,6 @@
 # CylinderHubWithZ30
 
-Halterung für Nabe mit Zahrad Z30.
+Nabe mit Zahrad Z30.
 
 - 31014
 - 36264

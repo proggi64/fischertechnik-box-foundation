@@ -1,6 +1,6 @@
 # FrameAngleEquiliteral
 
-Rahmen für Winkelstein 60 gleichseitig.
+Winkelstein 60 gleichseitig.
 
 - 31010
 
