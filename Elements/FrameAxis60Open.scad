@@ -1,5 +1,5 @@
 // Fischertechnik Box Library
-// Frame for single 60 mm Axis in 55mm distance an one open (mot1)
+// Frame for single 60 mm Axis in 55mm distance and one open (mot1)
 // 31032
 
 use <../Base/Constants.scad>
