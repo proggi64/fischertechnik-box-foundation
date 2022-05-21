@@ -30,7 +30,7 @@ space = getFrameCassetteSpace(
 Fläche als \[x,y]-Liste
 
 ## Beispiel
-Test/Elements/TestFrameCassete.scad
+Test/Elements/TestFrameCassette.scad
 
 ```
 use <../../Base/Placement.scad>
