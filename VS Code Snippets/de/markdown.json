@@ -51,7 +51,7 @@
 			"\t${2:parameter});", 
 			"", 
 			"space = get${1:name}Space(",
-			"\t{2:parameter});", 
+			"\t${2:parameter});", 
 			"```",
 			"",
 			"| Parameter | Typ | Beschreibung |",
