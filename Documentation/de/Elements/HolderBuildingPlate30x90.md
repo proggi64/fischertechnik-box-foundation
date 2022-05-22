@@ -1,6 +1,8 @@
 # HolderBuildingPlate30x90
-beschreibung.
-- nnnnn
+Bauplatte 30x90.
+- 31503
+- 38251
+- 38485
 
 ![HolderBuildingPlate30x90](../../images/HolderBuildingPlate30x90.png)
 
