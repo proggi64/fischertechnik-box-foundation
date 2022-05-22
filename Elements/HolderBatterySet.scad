@@ -1,3 +1,6 @@
+// Fischertechnik Box Library
+// Holder for Battery Set Baby Cells 4.5V
+// 31041
 
 use <../Base/Constants.scad>
 use <../Base/Placement.scad>
@@ -10,7 +13,7 @@ width = getBox190Space().x;
 height = 30;
 depth = 32;
 
-// Gets the space of a hoder for the 70's battery set (180x30x30)
+// Gets the space of a holder for the 70's battery set (180x30x30)
 
 function getHolderBatterySetSpace() = [width, depth + getDividerThickness(), height];
 
@@ -34,7 +37,7 @@ module HolderBatterySet() {
 }
 
 // Cut off for the Box 190 when placing a HolderBattery for the two right connectors
-// Use difference() with the Boy190 and rotate and align top if aligned to the top
+// Use difference() with the Box190 and rotate and align top if aligned to the top
 
 module HolderBatterySetCutoffs() {
     cutOffWidth = 0.8;
@@ -53,4 +56,5 @@ module HolderBatterySetCutoffs() {
 color("lightgray")
 HolderBatterySet();
 // Difference to Box190:
+color("red")
 HolderBatterySetCutoffs();

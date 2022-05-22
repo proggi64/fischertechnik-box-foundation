@@ -1,6 +1,6 @@
 // Fischertechnik Box Library
 // Holder for Building Plate 30x30
-// 38259
+// 38259, 38266, 38259, 146534
 
 use <../ModelBase/Complex.scad>
 
@@ -17,7 +17,7 @@ function getHolderBuildingPlate30x30Space(count = 1) = getHolderBuildingPlateSpa
 // dock = true if the holders are docked to the box wall (default false) 
 
 module HolderBuildingPlate30x30(count = 1, dock = false) {
-    HolderBuildingPlate(width, count, firstGapHigher = dock);
+    HolderBuildingPlate(width, count, dock);
 }
 
 // Test

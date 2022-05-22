@@ -17,6 +17,6 @@ __module__ und __function__ sind beide auf den verlinkten Seiten dokumentiert. C
 - [38000 bis 38999](Parts_38000_to_38999.md)
 - [39000 bis 39999](Parts_39000_to_39999.md)
 - [40000 bis 99999](Parts_40000_to_99999.md)
-- [100000 bis 149999](Parts_10000_to_149999.md)
+- [100000 bis 149999](Parts_100000_to_149999.md)
 - [150000 bis 169999](Parts_150000_to_169999.md)
 - [170000 bis 999999](Parts_170000_to_999999.md)
