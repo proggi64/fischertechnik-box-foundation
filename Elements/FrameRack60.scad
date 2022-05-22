@@ -25,4 +25,4 @@ module FrameRack60(count=1) {
 
 // Test
 color("lightgray")
-FrameRack60(1);
+FrameRack60();

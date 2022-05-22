@@ -59,10 +59,10 @@ DeployHorizontal(
 }
 
 elementWidth = 53 + 2*getDividerThickness();
-rightShift = centeredWidth - elementWidth;
+rightShift = centeredWidth - elementWidth - 5;
 CenterHorizontal(centeredWidth, 13.0, rightShift) {
     DeployHorizontal(
-        53 + 2*getDividerThickness(),
+        58 + 2*getDividerThickness(),
         [getFrameLightTubeSpace(),
          getFrameBlockWithPinSpace()],
         [Rotate180, Rotate90]) {
