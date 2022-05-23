@@ -21,7 +21,7 @@
 | __Placement__ | Fasst alle Platzierungs-Module zusammen, mit denen Elemente platziert und ausgerichtet werden können. |
 | __Rotation__ | Fasst alle Module zusammen, mit denen Element rotiert werden können. Dabei wird jeweils die neue untere rechte Ecke an der urspünglichen Position der alten platziert. Bei rotierten Elemente, die an Rändern ausgerichtet sind, bleibt die Ausrichtung erwartungskonform, als wenn das Element auch urspünglich die Drehung hatte. |
 | __Space__ | Fläche mit x/y-Ausdehnung. In der SCAD-Datei jedes *Elements* ist eine Funktion namens get*ElementName*Space() definiert, welche die Ausdehnung des Elements liefert. Da OpenSCAD eine funktionale Sprache ist und Objekte mit Methoden und Eigenschaften nicht vorgesehen sind, können diese Daten nicht über die 3D-Objekte abgerufen werden, sondern müssen separat als Funktion über Namenskonvention definiert werden. Flächen sind in OpenSCAD Listen aus mindestens zwei Werten \[x,y\]. Viele der Space-Funktionen liefern aber auch gleich den Z-Wert als dritten Wert mit. |
-| __Top__ | Bezeichnet den hinteren Bereich von Elementen o der Boxen, z.B. bei __AlignTop__. |
+| __Top__ | Bezeichnet den hinteren Bereich von Elementen oder Boxen, z.B. bei __AlignTop__. |
 | __Vertikal__ | Alles, was auf der Y-Achse liegt. |
 | __Volume__ | Volumen mit x/y/z-Ausdehnung. Diese werden als Listen in OpenSCAD angegeben \[x,y,z\]. |
 | __Width__ | Strecken auf der X-Achse ("Breite"). |
