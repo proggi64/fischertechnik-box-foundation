@@ -3,6 +3,11 @@
 		"prefix": ["-le"],
 		"body": ["- ${1:number} [${2:name}](Elements/${2:name}.md)"]
 	},
+	
+	"AddLink": {
+		"prefix": [",le"],
+		"body": [", [${2:name}](Elements/${2:name}.md)"]
+	},
 
 	"Element": {
 		"prefix": ["#el"],
