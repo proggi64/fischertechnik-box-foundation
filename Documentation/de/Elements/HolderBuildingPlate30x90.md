@@ -29,6 +29,8 @@ space = getHolderBuildingPlate30x90Space(
 ## Rückgabewert getHolderBuildingPlate30x90Space
 Fläche als \[x,y]-Liste
 
+## Beispiel
+
 ```
 use <../../Elements/HolderBuildingPlate30x90.scad>
 
