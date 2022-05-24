@@ -10,7 +10,7 @@ Gelenkstein oder Federgelenkstein.
 
 ![FrameJointBlock](../../images/FrameJointBlock.png)
 
-Die Gelenksteiern sind aus mehreren Einzelteilen zusammengesetzt. Die Artikelnummern dieser Einzelteile sind oben aufgeführt.
+Die Gelenksteine sind aus mehreren Einzelteilen zusammengesetzt. Die Artikelnummern dieser Einzelteile sind oben aufgeführt.
 
 ## Use
 ```

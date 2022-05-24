@@ -22,7 +22,7 @@ space = getCylinderTire20Space(
 
 | Parameter | Typ | Beschreibung |
 | ------ | ------ | ------ |
-| count | Integer | Anzahl der Reifen, die auf dem Halter gestapelt werden. Bis drei Reifen verändert die Gesamthöhe nicht, sondern nur die des Absatzes unten am Zylinder. Bei vier hat der Zylinder keinen Absatz mehr und ist hoch genug für die vier gestapelten Reifen. Höhere zahlen sind nicht sinnvoll, da der Zylinder zu hoch für den Sortierkasten wird. |
+| count | Integer | Anzahl der Reifen, die auf dem Halter gestapelt werden. Bis drei Reifen verändert die Gesamthöhe nicht, sondern nur die des Absatzes unten am Zylinder. Bei vier hat der Zylinder keinen Absatz mehr und ist hoch genug für die vier gestapelten Reifen. Höhere Zahlen sind nicht sinnvoll, da der Zylinder zu hoch für den Sortierkasten wird. |
 
 ## Rückgabewert getCylinderTire20Space
 Grundfläche als \[x,y]-Liste.
