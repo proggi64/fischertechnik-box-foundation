@@ -22,7 +22,7 @@ DeploySame(
 | ------ | ------ | ------ |
 | space| \[x,y] | Wertpaar (Liste mit x- und y-Wert) mit der Fläche auf der die *columns* und *rows* ds Children-Elements verteilt werden. Wenn keine Abstände zwischen den Elementen erzeugt werden sollen, kann der x- und/oder der y-Wert von *space* 0 sein. |
 | elementSpace | \[x,y] | Fläche, welche das children-Element einnimmt. Hierfür kann die jeweilige __get*ElementName*Space()__-Funktion als Wert übergeben werden. |
-| columns | Integer | Anzahl der Elemente pro Zeile (*rows*). |
+| columns | Integer | Anzahl der Elemente pro Zeile (*rows*). Falls 1, wird das Element in der Zeile zentriert. |
 | rows | Integer | Anzahl der Elemente pro Spalte (*columns*). |
 | rotation | Integer (Enum) | Gibt für das Children-Element an, wie es vor dem Verteilen gedreht werden soll. Mögliche Werte sind __Rotate0__, __Rotate90__, __Rotate180__ und __Rotate270__. Die Drehung wird für jedes erzeugte Element angewandt. |
 

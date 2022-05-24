@@ -4,6 +4,7 @@
 use <Constants.scad>
 use <Helper.scad>
 use <Placement.scad>
+use <Alignment.scad>
 use <Rotation.scad>
 
 include <PlacementOptions.scad>
@@ -145,27 +146,29 @@ module DeployVertical(depth, spaces, rotations, alignX=NoAlign) {
 // equal distances
 // space = The space where the element copies are deployed
 // elementSpace = The space the child needs
-// columns = Count of elements per row
+// columns = Count of elements per row. When 1 then the element is centered. When 0, no element is deployed.
 // rows = Count of rows deployed
 // rotation = The rotation of the child that will be applied
 
 module DeploySame(space, elementSpace, columns=2, rows=1, rotation=Rotate0) {
-    
-    elementWidth = getRotatedSpace(elementSpace, rotation).x;
-    columnDistance = (space.x > 0) ? (space.x - columns * elementWidth) / (columns > 1 ? columns - 1 : 1) : 0;
-    endColumnOffset = (space.x > 0) ? (space.x - elementWidth) : (elementWidth * (columns-1));
-    columnOffsetStep = elementWidth + columnDistance;
-    
-    elementDepth = getRotatedSpace(elementSpace, rotation).y;
-    rowDistance = (space.y > 0) ? (space.y - rows * elementDepth) / (rows > 1 ? rows - 1 : 1) : 0;
-    endRowOffset = (space.y > 0) ? (space.y - elementDepth) : (elementDepth * (rows - 1));
-    rowOffsetStep = elementDepth + rowDistance;
-    
-    for (rowOffset = [0:rowOffsetStep:endRowOffset]) {
-        for (columnOffset = [0:columnOffsetStep:endColumnOffset]) {
-            translate([columnOffset, rowOffset])
-                RotateFix(elementSpace, rotation)
-                    children(0);
+    if (columns > 0) {
+        elementWidth = getRotatedSpace(elementSpace, rotation).x;
+        columnDistance = (space.x > 0) ? (space.x - columns * elementWidth) / (columns > 1 ? columns - 1 : 1) : 0;
+        startColumnOffset = (columns > 1) ? 0 : getAlignedX(elementWidth, space.x, align=AlignCenter);
+        endColumnOffset = (space.x > 0) ? (space.x - elementWidth + getTolerance()) : (elementWidth * (columns-1));
+        columnOffsetStep = elementWidth + columnDistance;
+        
+        elementDepth = getRotatedSpace(elementSpace, rotation).y;
+        rowDistance = (space.y > 0) ? (space.y - rows * elementDepth) / (rows > 1 ? rows - 1 : 1) : 0;
+        endRowOffset = (space.y > 0) ? (space.y - elementDepth) : (elementDepth * (rows - 1));
+        rowOffsetStep = elementDepth + rowDistance;
+        
+        for (rowOffset = [0:rowOffsetStep:endRowOffset]) {
+            for (columnOffset = [startColumnOffset:columnOffsetStep:endColumnOffset]) {
+                translate([columnOffset, rowOffset])
+                    RotateFix(elementSpace, rotation)
+                        children(0);
+            }
         }
     }
 }
