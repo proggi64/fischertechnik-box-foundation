@@ -1,16 +1,16 @@
 // Box 130x95
 // ElectronicBlockBoxBase
 
-use <../Base/Boxes.scad>
-use <../Base/Placement.scad>
-use <../Base/Constants.scad>
-use <../ModelBase/Simple.scad>
-use <../Elements/FrameControlLight.scad>
-use <../Elements/AxisDial.scad>
-use <../Elements/FrameElectronicBlock.scad>
-use <../Elements/FrameElectronicBlockConnector.scad>
+use <../../Base/Boxes.scad>
+use <../../Base/Placement.scad>
+use <../../Base/Constants.scad>
+use <../../ModelBase/Simple.scad>
+use <../../Elements/FrameControlLight.scad>
+use <../../Elements/AxisDial.scad>
+use <../../Elements/FrameElectronicBlock.scad>
+use <../../Elements/FrameElectronicBlockConnector.scad>
 
-include <../Base/PlacementOptions.scad>
+include <../../Base/PlacementOptions.scad>
 
 module ElectronicBlockBoxBase() {
     Box130();
