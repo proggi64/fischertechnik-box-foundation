@@ -123,8 +123,8 @@ module Box190() {
 
 // Gets the usable inner space of a Box 130 as an x/y-list
 function getBox130Space() = [
-    box130Width - 2*getBoxWallThickness(), 
-    box130Depth - 2*getBoxWallThickness() ];
+    box130Width - 2*getBoxWallThickness() - topBottomDifference, 
+    box130Depth - 2*getBoxWallThickness() - topBottomDifference ];
 
 // Creates the Fischertechnik empty box 95x130 mm and places it at position 0,0
 // 190x130 are the outer sizes, the inner space is slightly smaller. Use getBox190Space() to get the inner sizes.
