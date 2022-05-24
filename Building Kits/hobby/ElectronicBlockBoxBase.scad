@@ -1,6 +1,7 @@
 // Box 130x95
 // ElectronicBlockBoxBase
 
+<<<<<<< HEAD:Building Kits/ElectronicBlockBoxBase.scad
 use <../Base/Boxes.scad>
 use <../Base/Placement.scad>
 use <../Base/Deployment.scad>
@@ -10,8 +11,18 @@ use <../Elements/FrameControlLight.scad>
 use <../Elements/AxisDial.scad>
 use <../Elements/FrameElectronicBlock.scad>
 use <../Elements/FrameElectronicBlockConnector.scad>
+=======
+use <../../Base/Boxes.scad>
+use <../../Base/Placement.scad>
+use <../../Base/Constants.scad>
+use <../../ModelBase/Simple.scad>
+use <../../Elements/FrameControlLight.scad>
+use <../../Elements/AxisDial.scad>
+use <../../Elements/FrameElectronicBlock.scad>
+use <../../Elements/FrameElectronicBlockConnector.scad>
+>>>>>>> 09cfeafdbaaea7357f4896b71753d6abe336dbed:Building Kits/hobby/ElectronicBlockBoxBase.scad
 
-include <../Base/PlacementOptions.scad>
+include <../../Base/PlacementOptions.scad>
 
 // Count of connectors
 connectors = 2;
@@ -64,5 +75,9 @@ module ElectronicBlockBoxBase(connectors=2, controlLights=0, dials=0, text="") {
 }
 
 // Test
+<<<<<<< HEAD:Building Kits/ElectronicBlockBoxBase.scad
 color("lightgray")
 ElectronicBlockBoxBase(connectors, controlLights, dials, text);
+=======
+ElectronicBlockBoxBase();
+>>>>>>> 09cfeafdbaaea7357f4896b71753d6abe336dbed:Building Kits/hobby/ElectronicBlockBoxBase.scad
