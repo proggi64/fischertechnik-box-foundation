@@ -1,6 +1,6 @@
 // Fischertechnik Box Library
-// Frame for Cassette
-// 36518
+// Frame for Cassette or Rechargeable Battery Pack
+// 36518, 35537
 
 use <../Base/Constants.scad>
 use <../ModelBase/Simple.scad>

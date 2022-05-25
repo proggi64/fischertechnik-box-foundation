@@ -1,6 +1,7 @@
 # FrameCassette
-Kassette mit oder ohne Klarsichtdeckel.
+Kassette mit oder ohne Klarsichtdeckel oder Akku Pack
 - 36518
+- 35537
 
 ![FrameCassette](../../images/FrameCassette.png)
 

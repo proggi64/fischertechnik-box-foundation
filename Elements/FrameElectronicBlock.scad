@@ -12,17 +12,16 @@ width = 45;
 depth = 75;
 height = 6;
 
-// getFrameCassetteSpace(edges)
 // getFrameElectronicBlockSpace(alignX, alignY)
 // alignX 0=NoAlign 1=AlignLeft 3=AlignCenter 4=AlignRight 
 // alignY 0=AlignNo 2=AlignBottom 3=AlignCenter 5=AlignTop
-// Gets the space the frame for a cassette needs as width and depth(.x and .y as a list). 
+// Gets the space the frame for an electronic block needs as width and depth(.x and .y as a list). 
 
 function getFrameElectronicBlockSpace(alignX=NoAlign, alignY=NoAlign) = 
     getDockableEdgedFrameSpace([width, depth, height], alignX, alignY);
 
 // FrameElectronicBlock(alignX, alignY)
-// Frame for cassette.
+// Frame for electronic block.
 // alignX 0=NoAlign 1=AlignLeft 3=AlignCenter 4=AlignRight 
 // alignY 0=AlignNo 2=AlignBottom 3=AlignCenter 5=AlignTop
 
