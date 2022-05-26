@@ -46,9 +46,8 @@ Place(partsXPosition, partsYPosition) {
         DeploySame(partsSpace, getFrameControlLightSpace())
             FrameControlLight();
 
-    Place(elementSpace=getAxisDialSpace(), alignY=AlignTop, boxSpace=partsSpace)
-        CenterHorizontal(width=getAxisDialSpace().x, space=partsSpace)
-            AxisDial();
+    Place(elementSpace=getAxisDialSpace(), alignY=AlignTop, alignX=AlignCenter, boxSpace=partsSpace)
+        AxisDial();
 }
 
 Place(alignX=AlignRight, alignY=AlignBottom, 
