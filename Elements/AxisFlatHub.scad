@@ -1,6 +1,7 @@
 // Fischertechnik Box Library
 // Axis for flat hub
 // 31015
+// 3D print tested
 
 use <../Base/Constants.scad>
 use <../ModelBase/Simple.scad>

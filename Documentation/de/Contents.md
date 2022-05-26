@@ -5,6 +5,9 @@ ACHTUNG: Diese Doku ist in Arbeit. Bis 19. Mai 2022 wurden alle Module und Funkt
 ## Allgemeines
 - [Über die Bibliothek](readme.md)
 - [Konstruktionsprinzipien](principles.md)
+- [Elemente erst im 3D-Druck testen](PrintTests.md)
+- [Sortierkästen konstruieren](TutorialSortingBoxes.md)
+- [Elemente selbst konstruieren](TutorialElements.md)
 - [Glossar](Glossar.md)
 
 ## Elemente für Sortierkästen

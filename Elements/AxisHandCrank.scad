@@ -21,7 +21,8 @@ function getAxisHandCrankSpace() = [width, depth];
 
 module AxisHandCrank() {
     axisHeight = 11.8;
-    AxisWithSpace(axisHeight, getAxisHandCrankSpace());
+    axisDiameter = 3.7;
+    AxisWithSpace(axisHeight, getAxisHandCrankSpace(), diameter=axisDiameter);
     
     webLength = 10 + getAxisDiameter() / 2;
     webDepth = getDividerThickness();
