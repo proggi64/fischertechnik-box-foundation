@@ -1,0 +1,49 @@
+{
+
+	"3D Print Test": {
+		"prefix": "3dpt",
+		"body": [
+			"// 3D Print Test",
+			"// ${TM_FILENAME_BASE/(^TestPrint*)//gi}",
+		   "",
+		   "use <../TestPrint.scad>",
+		   "use <../../Elements/${TM_FILENAME_BASE/(^TestPrint*)//gi}.scad>",
+		   "",
+		   "TestPrint(get${TM_FILENAME_BASE/(^TestPrint*)//gi}Space())",
+		   "\t${TM_FILENAME_BASE/(^TestPrint*)//gi}();"
+		],
+		"description": "New Box 190 x 130"
+	},
+
+	"New 190 x 130": {
+	 	"prefix": "b190",
+	 	"body": [
+	 		"// Box 190x130",
+	 		"// ${TM_FILENAME_BASE}",
+			"",
+			"use <../Base/Boxes.scad>",
+			"use <../Base/Placement.scad>",
+			"",
+			"include <../Base/PlacementOptions.scad>",
+			"",
+			"Box190();"
+	 	],
+	 	"description": "New Box 190 x 130"
+	 },
+
+	 "New 130 x 95": {
+		"prefix": "b130",
+		"body": [
+			"// Box 130x95",
+			"// ${TM_FILENAME_BASE}",
+		   "",
+		   "use <../Base/Boxes.scad>",
+		   "use <../Base/Placement.scad>",
+		   "",
+		   "include <../Base/PlacementOptions.scad>",
+		   "",
+		   "Box130();"
+		],
+		"description": "New Box 130 x 95"
+	}
+}
