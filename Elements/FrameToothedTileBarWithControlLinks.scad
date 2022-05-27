@@ -59,9 +59,10 @@ module FrameToothedTileBarWithControlLinks() {
         sideXOffset = width - innerFrameDistance;
         translate ([sideXOffset, sideYOffset, 0])
             Frame ([sideWidth, sideDepth, sideHeight]);            
-            
+
+        diameter = getAxisDiameter() - 0.3;
         translate([innerVolume.x/2 + getDividerThickness(), innerFrameDistance + getDividerThickness()*1.5])
-            Axis(axisHeight);
+            Axis(axisHeight, diameter=diameter);
     }
     
     cutOffXOffset = (getFrameToothedTileBarWithControlLinksSpace().x - cutoffWidth) / 2;
