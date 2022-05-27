@@ -20,9 +20,7 @@ function getCylinderAndAxisDiscCamSpace() = [width, depth];
 
 module CylinderAndAxisDiscCam() {
    
-    translate([0, 0, -getExcess()]) {
-        cube([getCylinderAndAxisDiscCamSpace().x, getCylinderAndAxisDiscCamSpace().y, getExcess()]);
-    }
+    Space(getCylinderAndAxisDiscCamSpace());
 
     xOffset = (getCylinderAndAxisDiscCamSpace().y - getCylinderGearZ20Space().x)/2;
     yOffset = (getCylinderAndAxisDiscCamSpace().y - getCylinderGearZ20Space().y)/2;

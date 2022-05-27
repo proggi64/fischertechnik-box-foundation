@@ -1,5 +1,4 @@
 {
-
 	"3D Print Test": {
 		"prefix": "3dpt",
 		"body": [
@@ -11,6 +10,26 @@
 		   "",
 		   "TestPrint(get${TM_FILENAME_BASE/(^TestPrint*)//gi}Space())",
 		   "\t${TM_FILENAME_BASE/(^TestPrint*)//gi}();"
+		],
+		"description": "New Box 190 x 130"
+	},
+
+	"New Elements Test": {
+		"prefix": "tst",
+		"body": [
+			"// Fischertechnik Box Foundation",
+			"// Elements",
+			"// Test ${TM_FILENAME_BASE/(^Test*)//gi}",
+		   "",
+		   "use <../../base/Placement.scad>",
+		   "use <../../Elements/${TM_FILENAME_BASE/(^Test*)//gi}.scad>",
+		   "",
+		   "include <../../Base/PlacementOptions.scad>",
+		   "",
+		   "${TM_FILENAME_BASE/(^Test*)//gi}();",
+		   "",
+		   "Place(get${TM_FILENAME_BASE/(^Test*)//gi}Space().x+15, 0, elementSpace=get${TM_FILENAME_BASE/(^Test*)//gi}Space(), rotation=Rotate90)",
+		   "\t${TM_FILENAME_BASE/(^Test*)//gi}();"
 		],
 		"description": "New Box 190 x 130"
 	},

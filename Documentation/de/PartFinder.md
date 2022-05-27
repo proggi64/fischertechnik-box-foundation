@@ -6,6 +6,8 @@ Alle Elemente besitzen neben dem __module__ auch eine __function__ nach dem Name
 
 __module__ und __function__ sind beide auf den verlinkten Seiten dokumentiert. Codebeispiele zeigen die Anwendung.
 
+Die hier verlinkten Elemente sind Vorschläge. Viele Bausteine, die hier nicht aufgeführt sind, passen ebenfalls in vorhandene Elemente.
+
 - [1 bis 29999](Parts_1_to_29999.md)
 - [30000 bis 31499](Parts_30000_to_31499.md)
 - [32000 bis 34999](Parts_32000_to_34999.md)
