@@ -7,7 +7,7 @@ use <../ModelBase/Simple.scad>
 use <../ModelBase/Complex.scad>
 
 length = 125;
-holderOffset = 20;
+holderOffset = 20.5;
 
 // getFrameCrankedAxisSpace()
 // Gets the space (.x, .y) the holder for the cranked axis needs
