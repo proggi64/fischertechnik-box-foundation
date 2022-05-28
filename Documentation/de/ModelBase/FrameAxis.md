@@ -17,10 +17,12 @@ use <../ModelBase/Complex.scad>
 ```
 FrameAxis(
   length, 
-  cutThrough=false);
+  cutThrough=false,
+  height=getFrameAxisheight());
 ```
 
 | Parameter | Typ | Beschreibung |
-| ------ | ------ |
+| ------ | ------ | ------ |
 | length | Decimal | Länge der Achse. |
 | cutThrough | Boolean | __true__, wenn die Wand am Ende der beiden Halterungen weggelassen werden soll. |
+| height | Decimal | Höhe der Achshalter. Standard ist 15,0. |
