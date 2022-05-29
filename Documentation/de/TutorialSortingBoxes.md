@@ -8,11 +8,11 @@ Im folgenden Tutorial erfährt man
 - Computer
 - [OpenSCAD](https://openscad.org/) - gibt's für alle größeren Betriebssysteme und experimentell auch schon über WebAssembly im Browser
 - [Kenntnisse](https://openscad.org/documentation.html#tutorial) der SCAD-Sprache
-- Download oder Fork auf dem lokalen Computer [dieser Bibliothek](https://github.com/proggi64/fischertechnik-box-foundation)
+- Download oder Fork [dieser Bibliothek](https://github.com/proggi64/fischertechnik-box-foundation) auf dem lokalen Computer
 - 3D-Drucker mit mindestens 20 x 14 cm Druckfläche (oder 3D-Druck-Dienstleister)
 
 ## Erste Schritte: Eine kleine Box für den Elektronik-Grundbaustein
-Ziel des Tutorials ist der Bau eines 130 x 95 kleinen Sortierkastens, in den der Silberling mitsamt Verbindungsstecker, Drehknopf, zwei Kontrollleuchten und einigen Kleinteilen Platz findet. Der Kasten ist nur halb so groß wie ein Standardeinsatz im Fischertechnik-Kasten 1000. Wenn man den stapeln will, hat man daneben noch Platz für einen zweiten.
+Ziel des Tutorials ist der Bau eines 130 x 95 kleinen Sortierkastens, in den der Silberling mitsamt Verbindungsstecker, Drehknopf, zwei Kontrollleuchten und einigen Kleinteilen Platz findet. Der Kasten ist nur halb so groß wie ein Standardeinsatz im Fischertechnik-Kasten 1000. Wenn man den auf einen Sortierkasten 190 x 130 stapelt, hat man daneben noch Platz für einen zweiten.
 
 ![h4 G](../images/h4%20G.png)
 

@@ -26,8 +26,9 @@ function getElevatedFramesWithCutoffSpace(volume) = getFrameOuterVolume([volume.
 // height = height of the holder frame
 // bearingLength = length of the bearing
 // cutThrough = true if no end walls are needed
+// single = true if only the left holder should be created
 
-module ElevatedFramesWithCutoff(volume, depth, height, bearingLength, cutThrough=false) {
+module ElevatedFramesWithCutoff(volume, depth, height, bearingLength, cutThrough=false, single=false) {
     width = volume.x + getTolerance() - (cutThrough ? 2*getDividerThickness() : 0);
     innerFrameWidth = width - 2*bearingLength;
 
@@ -35,8 +36,10 @@ module ElevatedFramesWithCutoff(volume, depth, height, bearingLength, cutThrough
         Frame([width, depth, height], tolerance=0);
         translate([bearingLength, 0, 0])
             Frame([innerFrameWidth, depth, height], tolerance=0);
-    }
+        }
     
+    // single == true? Then cutoff the complete right part
+    cutoffWidth = single ? width : innerFrameWidth;
     cutoffDepth = depth + 4*getDividerThickness();
     cutoffHeight = height + getExcess();
     
@@ -52,7 +55,7 @@ module ElevatedFramesWithCutoff(volume, depth, height, bearingLength, cutThrough
     difference() {
         NestedFrames();
         translate([getDividerThickness() + bearingLength, -getDividerThickness(), 0])
-            cube([innerFrameWidth, cutoffDepth, cutoffHeight]);
+            cube([cutoffWidth, cutoffDepth, cutoffHeight]);
         translate([getDividerThickness(), getDividerThickness() + clamp, zOffset])
             cube([axisCutoffWidth, axisCutoffDepth, axisCutoffHeight]);
         if (cutThrough) {
@@ -79,23 +82,23 @@ function getFrameAxisHeight() = frameAxisHeight;
 
 // getFrameAxisSpace(length)
 // Gets the width and depth of the space a frame axis for the given axis length needs
-// length = Length of axis
+// length = Length of axis (default 30)
 
-function getFrameAxisSpace(length) = [length + getTolerance() + 2 * getDividerThickness(), frameAxisDepth + 2 * getDividerThickness()];
+function getFrameAxisSpace(length=30) = [length + getTolerance() + 2 * getDividerThickness(), frameAxisDepth + 2 * getDividerThickness()];
 
 // FrameAxis(length, xOrientation)
 // Frame for single 4mm axis
-// length = length of the axis
+// length = length of the axis (defaut 30)
 // cutThrough = true when no frame wall should be at the end of the axis holder,
 // default is false
 // height = Height of the axis holders (default ist 14.8)
 
-module FrameAxis(length, cutThrough=false, height=getFrameAxisHeight()) {
+module FrameAxis(length=30, cutThrough=false, height=getFrameAxisHeight(), single=false) {
     bearingLength = 9.4;
     loadDepth = getAxisDiameter();
     loadHeight = getAxisDiameter();
     
-    ElevatedFramesWithCutoff([length, loadDepth, loadHeight], getFrameAxisDepth(), height, bearingLength, cutThrough);
+    ElevatedFramesWithCutoff([length, loadDepth, loadHeight], getFrameAxisDepth(), height, bearingLength, cutThrough, single);
 }
 
 // getDockableEdgedFrameWidth(edgeDistance, alignX=NoAlign)
