@@ -384,6 +384,87 @@ Und das Ergebnis in der Vorschau:
 
 ![Zwei Achshalter](../images/tutElementBothHolders.png)
 
-## Der schräge Steg fehlt noch
+## Nochmal alles drehen
+Der Parameter *count* lässt die Fläche nach oben rechts wachsen. Aktuell ist die Ausrichtung der Halter dafür aber falsch. Eine Drehung des gesamten Konstrukts um 90° heilt das. Dafür brauchen wir erneut einen weiteren Import:
 
+```
+use <../Base/Rotation.scad>
+```
+
+Weil wir über *count* mehrere der Halterungen benötigen, ergibt ein lokales __module__ zum Erzeugen und Drehen der beiden Halterungen Sinn. Das ermöglicht uns später den Aufruf in einer __for__-Schleife. Ein kleiner Umbau erldigt diese Aufgabe:
+
+```
+module FrameAngleAxis(count=1) {
+    Space(getFrameAngleAxisSpace(count));
+    
+    module Holders() {
+        RotateFix(getFrameAngleAxisSpace(), Rotate90) {
+            Place(x=extra)
+                FrameAxis(single=true);
+            
+            spaceWithoutExtra = getFrameOuterVolume([
+                width,
+                depth,
+                getFrameAxisHeight()
+            ]);
+
+            Place(
+                elementSpace=[spaceWithoutExtra.x, getFrameAxisSpace().y], 
+                boxSpace = getFrameAngleAxisSpace(),
+                alignX = AlignRight,
+                rotation = Rotate90)
+                FrameAxis(single=true);
+        }
+    }
+
+    Holders();
+}
+```
+
+Der bisherige Code wurde einfach in das neue lokale __module__ __Holders__ verschoben. Anschließend wird es nur noch aufgerufen. Das mach alles übersichtlicher und änderungsfreundlicher. Module in Modulen sind nur innerhalb des Moduls sichtbar und werden nicht exportiert. Wenn unser Element per __use__ importiert wird, ist __Holders__ dort nicht sichtbar.
+
+Wir drehen das Konstrukt mit dem Modul [__RotateFix__](Base/RotateFix.md). Damit es das richtig machen kann, muss es die Fläche des zu drehenden Objekts kennen (hier __getFrameAngleAxisSpace()__) und um wieviel es gedreht werden soll. *count* spielt hier keine Rolle, weil __Holders__ immer nur für eine einzelne Winkelachse zuständig ist. Das Ergebnis in der Vorschau:
+
+![Zwei Achshalter gedreht](../images/tutElementBothHoldersRotated.png)
+
+Jetzt kann nach oben und rechts angebaut werden.
+
+## Wir wollen Halter für *count* Achsen
+Wir haben jetzt (fast) alles vorbereitet, um auch mehrere Achshalter an den richtigen Stellen zu erzeugen. Zur Erinnerung: Die verwinkelten Halter sollen ineinander nach rechts oben in 45° aneinandergereiht werden.
+
+Der Abstand der halter voneinander soll der Wert von *extra* sein. Wenn wir die Halter über __Holders__ erzeugen, müssen wir bei __translate__ noch die Tiefe des Achshalters selbst addieren ([__getFrameAxisSpace().y__](ModelBase/getFrameAxisSpace.md)). Genau diesen Wert benötigt auch die eigene Funktion __getFrameAngleAxisSpace__ intern zwei Mal. Deswegen ändern wir jetzt noch eine Kleinigkeit, weil ein errechneter Wert ein drittes Mal benötigt wird:
+
+```
+difference = getFrameAxisSpace().y + extra;
+
+function getFrameAngleAxisSpace(count=1) = getFrameOuterVolume([
+    width + extra + (count-1)*difference, 
+    depth + extra + (count-1)*difference, 
+    getFrameAxisHeight()]);
+```
+
+Jetzt kommt unten im Modul __FrameAngleAxis__ die neue Variable *difference* das dritte mal in der schon angekündigten Schleife zum Einsatz:
+
+```
+    for (i = [0:count-1])
+        translate([difference*i, difference*i])
+            Holders();
+```
+
+Zum Testen ändern wir jetzt den Aufruf in der letzten Zeile und übergeben für den Parameter *count* eine 2:
+
+```
+FrameAngleAxis(2);
+```
+
+Sieht schon ganz gut aus (und funktioniert auch mit beliebig höheren Werten):
+
+![Für zwei Achsen](../images/tutElementBothHoldersCount2.png)
+
+## Der schräge Steg fehlt noch
+Ohne eine weitere Stütze kippt die Winkelachse aus den Halterungen. Am Knick brauchen wir jetzt noch einen Steg mit Aussparung. Im 50/2 ist das ein 45° Steg. Den müssen wir jetzt konstruieren.
+
+Das Vorbild im 50/2 ist ein durchgängiger Steg für zwei Winkelachsen. Der beginnt nicht ganz in der linken unteren Ecke und endet kurz nach dem Knick der letzten Achse weiter rechts oben. Würde man lauter einzelne Halter pro Achse konstruieren, müsste man sie zusätzlich bei mehreren Achsen irgendwie über die entstehenden Abstände hinweg verbinden. Es erscheint also sinnvoll, diesen Steg auf Basis des Werts von *count* gleich als ein Objekt zu konstruieren.
+
+Ein weiterer interessanter Aspekt ist der Winkel von 45°. Fast alle Elemente in der Bibliothek kommen mit rechten Winkeln aus. Hier muss also eine Prise mehr Geometrie zum Einsatz kommen.
 
