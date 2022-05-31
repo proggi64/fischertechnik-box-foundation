@@ -15,10 +15,18 @@ depth = 34.5;
 extra = 1.8;
 difference = getFrameAxisSpace().y + extra;
 
+// getFrameAngleAxisSpace(count=1)
+// Gets the space for frame and holders for multiple angle axis
+// count = Count of angle axis
+
 function getFrameAngleAxisSpace(count=1) = getFrameOuterVolume([
     width + extra + (count-1)*difference, 
     depth + extra + (count-1)*difference, 
     getFrameAxisHeight()]);
+
+// FrameAngleAxis(count=1)
+// Frame and holders for multiple angle axis
+// count = Count of angle axis
 
 module FrameAngleAxis(count=1) {
     Space(getFrameAngleAxisSpace(count));
@@ -41,23 +49,41 @@ module FrameAngleAxis(count=1) {
                 rotation = Rotate90)
                 FrameAxis(single=true);
         }
-    }    
+    }
+    
+    module Web() {
+        baseLength = getFrameAxisSpace().y + (count - 1) * difference;
+        webLength = sqrt(baseLength^2 + baseLength^2);
+        
+        webVolume = [webLength - 2*getDividerThickness(), getDividerThickness(), getFrameAxisHeight()];
+        
+        rotate([0,0,45]) {
+            difference() {
+                translate([getDividerThickness(), 0])
+                    Wall(webVolume);
+        
+                webDifference = sqrt(difference^2 + difference^2);
+                singleLength = sqrt(getFrameAxisSpace().y^2 + getFrameAxisSpace().y^2);
+                webCutoffHeight = 3.0;
+                webCutoffWidth = 3.5;
+                cutoffVolume = [webCutoffWidth, getDividerThickness()*2, webCutoffHeight + getExcess()];
+                for (xWebCutoffOffset = [0:webDifference:webLength])
+                    translate([
+                        (singleLength - cutoffVolume.x)/2 + xWebCutoffOffset, 
+                        -getDividerThickness()/2, 
+                        webVolume.z - webCutoffHeight])
+                        cube(cutoffVolume);
+            }
+        }
+    }
 
     for (i = [0:count-1])
         translate([difference*i, difference*i])
             Holders();
         
-    webVolume = [getFrameAxisSpace().y, getDividerThickness(), getFrameAxisHeight()];
-    axisCurveCutoff = 3.0;
-    cutoffVolume = [axisCurveCutoff, getDividerThickness()*2, axisCurveCutoff + getExcess()];
-    /*
-    difference() {
-        Wall(webVolume);
-        translate([(webVolume.x - cutoffVolume.x)/2, -getDividerThickness()/2, webVolume.z - axisCurveCutoff])
-            cube(cutoffVolume);
-    }*/
-    
+    Web();
 }
 
 // Test
-FrameAngleAxis(2);
+color("lightgray")
+FrameAngleAxis();
