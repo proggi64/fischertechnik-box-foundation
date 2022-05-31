@@ -33,7 +33,7 @@ Ziel des Tutorials ist die Konstruktion eines Achshalters für die Winkelachse 3
 - Sie sollten leicht und ohne Stützstruktur mit einem 3D-Drucker druckbar sein
 
 ### Tipps für die Konstruktionsschritte
-- Maße des Bauteils z.B. mit einer Schieblehre ermitteln
+- Maße des Bauteils z.B. mit einer (elektronischen) Schieblehre ermitteln
 - Vorbilder in den "alten" Sortierkästen suchen
 - Hilfsfunktionen für Grundformen im Ordner *ModelBase* kennenlernen 
 - Hilfsfunktionen ür das Platzieren und Ausrichten im Ordner *Base* kennelernen
@@ -62,7 +62,7 @@ Alle SCAD-Dateien verwenden die englischen Bezeichnungen der Bauteile im Namenss
 
 Für die Winkelachse 31035 findet man in der Anleitung des Kastens 50/3 die englische Bezeichnung "Angle Axle". Für Achshalterungen wurde bereits unvorsichtigerweise der Präfix __Frame__ verwendet (siehe z.B. [__FrameAxis50__](Elements/FrameAxis50.md)), so dass sich als Name unserer Elementdatei __FrameAngleAxis.scad__ ergibt. Axis statt Axle, weil auch hier die Entscheidung schon getroffen wurde, *axis* statt das eher britische *axle* zu verwenden.
 
-Der Ablauf beim Anlegen der Datei hängt von verwendeten Werkzeug ab. In OpenSCAD wählt man __Datei__ | __Neu Datei__. In Visual Studio Code sollte man die ganze Bibliothek gleich über einen privaten Fork einbinden, dann kann man im Projektbaum mit der rechten Maustaste auf dem Ordner __Elements__ das Kontextmenü aufrufen und __Neue Datei__ auswählen. Die Datei ist dann automatisch auch als Änderung im Git vermerkt und kann später gepusht werden.
+Der Ablauf beim Anlegen der Datei hängt von verwendeten Werkzeug ab. In OpenSCAD wählt man __Datei__ | __Neu Datei__. In Visual Studio Code sollte man die ganze Bibliothek gleich über einen privaten Fork einbinden, dann kann man im Projektbaum mit der rechten Maustaste auf dem Ordner __Tutorial__ (für echte neue Elemente __Elements__) das Kontextmenü aufrufen und __Neue Datei__ auswählen. Die Datei ist dann automatisch auch als Änderung im Git vermerkt und kann später gepusht werden.
 
 Im Kopf der neu angelegten Datei sollten wir gleich beschreiben, was für ein Element die Datei enthält. Dabei ist folgendes Schema hilfreich:
 
@@ -205,7 +205,7 @@ Das liegt daran, dass mit [__getDividerWidth__](Base/getDividerThickness.md) und
 
 ### Complex.scad liefert Hilfe
 
-Jetzt müssen wir __getFrameAngleAxisSpace__ noch beibringen, den richtigen Wert zurück zuliefern: Wandstärken und Toleranz, sowie die zusätzlichen 1,8 mm müssen zur Bauteilgröße addiert werden.
+Jetzt müssen wir __getFrameAngleAxisSpace__ noch beibringen, den richtigen Wert zurückzuliefern: Wandstärken und Toleranz, sowie die zusätzlichen 1,8 mm müssen zur Bauteilgröße addiert werden.
 
 Für die Fläche ist es unerheblich, dass es sich um eine um 90° geknickte Achse handelt. Wir können also die Fläche mit der Annahme angeben, dass eine 34,5 mm x 34,5 mm große Platte im Rahmen Platz finden muss. Und für diesen Fall gibt's eine vorgefertige Funktion namens [__getFrameOuterVolume__](ModelBase/getFrameOuterVolume.md). Diese Funktion liefert eine Liste aus drei Werten für X-, Y- und Z-Ausdehnung, eben das Volumen. Eingerechnet sind da schon die Wandstärken und die Toleranz.
 
@@ -464,7 +464,243 @@ Sieht schon ganz gut aus (und funktioniert auch mit beliebig höheren Werten):
 ## Der schräge Steg fehlt noch
 Ohne eine weitere Stütze kippt die Winkelachse aus den Halterungen. Am Knick brauchen wir jetzt noch einen Steg mit Aussparung. Im 50/2 ist das ein 45° Steg. Den müssen wir jetzt konstruieren.
 
-Das Vorbild im 50/2 ist ein durchgängiger Steg für zwei Winkelachsen. Der beginnt nicht ganz in der linken unteren Ecke und endet kurz nach dem Knick der letzten Achse weiter rechts oben. Würde man lauter einzelne Halter pro Achse konstruieren, müsste man sie zusätzlich bei mehreren Achsen irgendwie über die entstehenden Abstände hinweg verbinden. Es erscheint also sinnvoll, diesen Steg auf Basis des Werts von *count* gleich als ein Objekt zu konstruieren.
+Das Vorbild im 50/2 ist ein durchgängiger Steg für zwei Winkelachsen. Der beginnt nicht ganz in der linken unteren Ecke und endet kurz nach dem Knick der letzten Achse weiter rechts oben. Würde man lauter einzelne Halter pro Achse konstruieren, müsste man sie zusätzlich bei mehreren Achsen irgendwie über die entstehenden Abstände hinweg verbinden. Es erscheint also sinnvoll, diesen Steg auf Basis des Werts von *count* gleich als ein Objekt zu konstruieren. Das erhöht gerade bei frei stehenden Wänden die Stabilität, was bei gedruckten Kästen ein wichtiger Aspekt ist.
 
-Ein weiterer interessanter Aspekt ist der Winkel von 45°. Fast alle Elemente in der Bibliothek kommen mit rechten Winkeln aus. Hier muss also eine Prise mehr Geometrie zum Einsatz kommen.
+### Konstruktion des Stegs
+Das englische Wort für Steg (im Sinne eines Trennstegs) ist laut Internet *Web*. Dieser Begriff wird in der Bibliothek durchgängig für alle Stege in Sortierkästen und Elementen verwendet. Zuerst lösen wir das Problem, einen Steg der richtigen Länge mit der richtigen Anzahl Aussparungen an den richtigen Stellen zu erzeugen. Dafür bietet sich wieder ein lokales Modul an. Wir nennen es überraschenderweise __Web__.
 
+Direkt unter dem lokalen __module__ __Holders__ legen wir das neue __module__ __Web__ an:
+
+```
+    module Web() {
+        baseLength = getFrameAxisSpace().y + (count - 1) * difference;
+        webLength = sqrt(baseLength^2 + baseLength^2);
+        
+        webVolume = [webLength - 2*getDividerThickness(), getDividerThickness(), getFrameAxisHeight()];
+        
+        rotate([0,0,45]) {
+            translate([getDividerThickness(), 0])
+                Wall(webVolume);
+        }
+    }
+```
+
+*baseLength* ist die Basis zur Berechnung der Länge des Stegs. Die Breite einer Halterung plus die Breite jeder weiteren Halterung und deren zusätzlichen Abstands. Halterungsbreite plus Abstand haben wir zuvor schon in der Variablen *distance* angelegt. Stünde der Steg senkrecht, wäre diese Länge jetzt schon richtig. Aber wir müssen sie um 45° schräg stellen, und dadurch ändert sich die Länge. Wir müssen Herrn Pythagoras um Hilfe bitten:
+
+```
+        baseLength = getFrameAxisSpace().y + (count - 1) * difference;
+        webLength = sqrt(baseLength^2 + baseLength^2);
+```
+
+Für den Steg verwenden wir wieder das Bibliotheksmodul [__Wall__](ModelBase/Wall.md). Das Volumen des Stegs *webVolume* sieht so aus:
+
+```
+        webVolume = [webLength - 2*getDividerThickness(), getDividerThickness(), getFrameAxisHeight()];
+```
+
+Länge, Breite und Höhe: Aber warum die Verkürzung um -2*[__getDividerThickness()](Base/getDividerThickness.md)? Das hat kosmetische Gründe. Im Kasten 50/2 haben die beiden Enden des Stegs eine etwas verkürzte Länge, wohl damit die Ecken der Wand nicht aus der Fläche ragen. Durch diese Verkürzung erreichen wir das. Wir müssen nur noch das Ergebnis um 1 x getDividerThickness() nach rechts verschieben. Das passiert hier vor dem Drehen (das Zeug innerhalb der Klammer wird vor __rotate__ ausgeführt):
+
+```
+        rotate([0,0,45]) {
+            translate([getDividerThickness(), 0])
+                Wall(webVolume);
+        }
+```
+
+Um unser Kunstwerk in der Vorschau zu betrachten, fügen wir noch den Aufruf von __Web__ ein:
+
+```
+    for (i = [0:count-1])
+        translate([difference*i, difference*i])
+            Holders();
+        
+    Web();
+```
+
+Der Aufruf mit *count* = 4 zeigt uns, dass wir nicht ganz falsch liegen:
+
+![Steg ohne Aussparungen](../images/tutElementWebBlank.png)
+
+Die Länge passt, der Winkel passt, die Höhe und die Position passen.
+
+### Am Schluss die Aussparungen
+Der untere Teil des __module__ __Web__ dreht sich um die Aussparungen. *webDifference* errechnet einfach wieder über Pythagoras die 45°-Länge des Abstands *distance*. Den brauchen wir als __step__ in der Schleife.
+
+```
+                webDifference = sqrt(difference^2 + difference^2);
+```
+
+Für die jeweils mittige Platzierung der Aussparung brauchen wir die Länge des Stegs pro Achse. Die erledigt ein letztes Mal Pythagoras und speichert sie in *singleLength*. Die Breite der Aussparung *webCutoffWidth* setzen wir mit gemessenen 3,5 mm an, die Höhe *webCutoffHeight* mit 3 mm. Die Achse ist im Knick der Achse deutlich dünner als 4 mm.
+
+```
+                singleLength = sqrt(getFrameAxisSpace().y^2 + getFrameAxisSpace().y^2);
+                webCutoffHeight = 3.0;
+                webCutoffWidth = 3.5;
+```
+
+Damit können wir jetzt einen Körper definieren, der über __difference__ aus dem Steg als Aussparung herausgeschnitten werden. Das Volumen eines solchen Körpers ist:
+
+```
+                cutoffVolume = [webCutoffWidth, getDividerThickness()*2, webCutoffHeight + getExcess()];
+```
+
+Wir haben für y nicht exakt die Wandstärke genommen, sondern die doppelte. Die verschieben wir beim Ausschneiden um eine halbe Wandstärke nach vorne. Bei der Höhe schlagen wir den kleinen Betrag von [__getExcess__](Base/getExcess.md) drauf, damit oben kein superdünner Rest beim Wegschneiden übrig bleibt. Wenn man die __cube__-Objekte mit # transparent ausgibt, sieht das Ganze bei *count* = 4 so aus:
+
+![Aussparungen](../images/tutElementCutoffs.png)
+
+## Fertig!
+Das ganze Element sieht jetzt so aus:
+
+![Vier Winkelachsen](../images/FrameAngleAxis_4.png)
+
+Der Code ist nicht ganz trivial, aber auch kein Lebenswerk:
+
+```
+// Fischertechnik Box Library
+// Frame for Angle Axis
+// 31035
+
+use <../Base/Constants.scad>
+use <../Base/Placement.scad>
+use <../Base/Rotation.scad>
+use <../ModelBase/Simple.scad>
+use <../ModelBase/Complex.scad>
+
+include <../Base/PlacementOptions.scad>
+
+width = 34.5;
+depth = 34.5;
+extra = 1.8;
+difference = getFrameAxisSpace().y + extra;
+
+function getFrameAngleAxisSpace(count=1) = getFrameOuterVolume([
+    width + extra + (count-1)*difference, 
+    depth + extra + (count-1)*difference, 
+    getFrameAxisHeight()]);
+
+module FrameAngleAxis(count=1) {
+    Space(getFrameAngleAxisSpace(count));
+    
+    module Holders() {
+        RotateFix(getFrameAngleAxisSpace(), Rotate90) {
+            Place(x=extra)
+                FrameAxis(single=true);
+            
+            spaceWithoutExtra = getFrameOuterVolume([
+                width,
+                depth,
+                getFrameAxisHeight()
+            ]);
+
+            Place(
+                elementSpace=[spaceWithoutExtra.x, getFrameAxisSpace().y], 
+                boxSpace = getFrameAngleAxisSpace(),
+                alignX = AlignRight,
+                rotation = Rotate90)
+                FrameAxis(single=true);
+        }
+    }
+    
+    module Web() {
+        baseLength = getFrameAxisSpace().y + (count - 1) * difference;
+        webLength = sqrt(baseLength^2 + baseLength^2);
+        
+        webVolume = [webLength - 2*getDividerThickness(), getDividerThickness(), getFrameAxisHeight()];
+        
+        rotate([0,0,45]) {
+            difference() {
+                translate([getDividerThickness(), 0])
+                    Wall(webVolume);
+        
+                webDifference = sqrt(difference^2 + difference^2);
+                singleLength = sqrt(getFrameAxisSpace().y^2 + getFrameAxisSpace().y^2);
+                webCutoffHeight = 3.0;
+                webCutoffWidth = 3.5;
+                cutoffVolume = [webCutoffWidth, getDividerThickness()*2, webCutoffHeight + getExcess()];
+                for (xWebCutoffOffset = [0:webDifference:webLength])
+                    translate([
+                        (singleLength - cutoffVolume.x)/2 + xWebCutoffOffset, 
+                        -getDividerThickness()/2, 
+                        webVolume.z - webCutoffHeight])
+                        cube(cutoffVolume);
+            }
+        }
+    }
+
+    for (i = [0:count-1])
+        translate([difference*i, difference*i])
+            Holders();
+        
+    Web();
+}
+
+// Test
+color("lightgray")
+FrameAngleAxis();
+```
+
+Als Reminiszenz an die guten alten grauen Tage von Fischertechnik bekommen die Test-Zeilen immer noch ein __color("lightgray")__ vorangestellt.
+
+## Nacharbeiten in der echten Welt
+Wenn man seine ersten echten Elemente erstellt, kommen noch die Themen Tests und Dokumentation dazu. Die folgenden gehen darauf ein, was zu tun ist.
+
+### Tests
+Im Ordner __Test/Elements__ sollte noch ein Testskript für jedes neue Element hinterlegt werden. Dessen Namensschema ist einfach __Test*Elementname*.scad__. In unserem Fall also __TestFrameAngleAxis.scad__.
+
+Für die Generierung dieser Testdatei gibt es im Ordner __VS Code Snippets__ für *Visual Studio Code* vordefinierte Snippets (Datei __scad.json__), die in vielen Fällen automatisch die beiden relevanten Tests generieren. Wenn man eine Leere Datei mit dem richtigen Dateinamen nach dem Schema anlegt, muss man nur noch "tst" in der ersten Zeile eingeben. Dann erscheint schon das Snippet und nach der Auswahl wird dieser Code generiert:
+
+```
+// Fischertechnik Box Foundation
+// Elements
+// Test FrameAngleAxis
+
+use <../../base/Placement.scad>
+use <../../Elements/FrameAngleAxis.scad>
+
+include <../../Base/PlacementOptions.scad>
+
+FrameAngleAxis();
+
+Place(getFrameAngleAxisSpace().x+15, 0, elementSpace=getFrameAngleAxisSpace(), rotation=Rotate90)
+    FrameAngleAxis();
+```
+
+Die Namen des Moduls, der __use__-Dateien und der Funktion erzeugt das Snippet auf Basis des Dateinamens der Test-SCAD-Datei. Wenn man sich nicht vertut, hat man danach schon die erste Version einer lauffähigen Testdatei.
+
+![Generierter Test](../images/TestFrameAngleAxis_1.png)
+
+Ausprobieren sollte man immer, ob sich das Element korrekt drehen lässt, was der generierte Code bereits einmal mit 90° erledigt. Hintergrund: Die Funktion __get*Elementname*Space()__ wird dadurch getestet, weil sie die Grundlage für korrekte Drehungen und Ausrichtungen ist.
+
+In unserem Fall wären noch manuelle Erweiterungen mit *count*-Werten größer 1 sinnvoll:
+
+```
+Place(2*(getFrameAngleAxisSpace().x+15), 0, elementSpace=getFrameAngleAxisSpace(3), rotation=Rotate270)
+    FrameAngleAxis(3);
+```
+
+![Test für 3](../images/TestFrameAngleAxis_3.png)
+
+Läuft...
+
+## Drucktest
+Sinnvoll ist jetzt noch, dass man ein Exemplar auf dem 3D-Drucker testet. Wenn wir uns vermessen haben, passt das Bauteil womöglich nicht ins Element. Das wäre nicht nur peinlich, sondern belastet auch die Umwelt und den Geldbeutel durch Fehldrucke ganzer Kästen.
+
+Zu diesem Zweck gibt es auch ein Visual Studio Snippet in der __scad.json__-Datei. Die SCAD-Datei muss im Ordner __Test/Print__ angelegt werden: __TestPrint*Elementname*.scad__, in unserem Fall __TestPrintFrameAngleAxis.scad__. Mit dem Snippet geht es hier vollautomatisch, einfach "3dpt" eintippen und Return drücken:
+
+```
+// 3D Print Test
+// FrameAngleAxis
+
+use <../TestPrint.scad>
+use <../../Elements/FrameAngleAxis.scad>
+
+TestPrint(getFrameAngleAxisSpace())
+    FrameAngleAxis();
+```
+
+Dieses Skript erzeugt ein mit einerm etwas dickeren, druckbaren Boden unterlegtes Element. Versionen mit Varianten von Parametern muss man manuell angeben. Über den Export eine STL-Datei ist der Test mit dem Drucker sparsamer, als wenn man erst in einem Sortierkasten Fehler bemerkt.
+
+## Dokumentation
+Die meisten Elemente haben ein sehr einfaches Schema für die Hilfeseite. Deswegen gibt es  Visual Studio Code Snippets, die einen Großteil der Arbeit generieren. Das Vorgehen wird [separat beschrieben](HelpHowTo.md). Das ist zu tun:
+- Hilfeseite für den Einsatz des Elements
+- Element in die [__PartFinder__](PartFinder.md)-Dateien aufnehmen
