@@ -1,6 +1,6 @@
 # Inhalt
 
-ACHTUNG: Diese Doku ist in Arbeit. Bis 19. Mai 2022 wurden alle Module und Funktionen aus Base und ModelBase dokumentiert. Anschließend folgen die schon erstellten Elemente (Elements) sukzessive.
+ACHTUNG: Diese Doku ist in Arbeit. Bis 19. Mai 2022 wurden alle Module und Funktionen aus Base und ModelBase dokumentiert. Bis Ende Mai folgten die schon erstellten Elemente (Elements). Die erste Version wird freigegeben, wenn das Tuzorial für das Erstellen von neuen Elementen fertig ist.
 
 ## Allgemeines
 - [Über die Bibliothek](readme.md)
