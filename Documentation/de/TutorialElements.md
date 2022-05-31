@@ -490,6 +490,7 @@ Direkt unter dem lokalen __module__ __Holders__ legen wir das neue __module__ __
 ```
         baseLength = getFrameAxisSpace().y + (count - 1) * difference;
         webLength = sqrt(baseLength^2 + baseLength^2);
+        webOffset = sqrt(getDividerThickness()^2 + getDividerThickness()^2);
 ```
 
 Für den Steg verwenden wir wieder das Bibliotheksmodul [__Wall__](ModelBase/Wall.md). Das Volumen des Stegs *webVolume* sieht so aus:
@@ -498,11 +499,11 @@ Für den Steg verwenden wir wieder das Bibliotheksmodul [__Wall__](ModelBase/Wal
         webVolume = [webLength - 2*getDividerThickness(), getDividerThickness(), getFrameAxisHeight()];
 ```
 
-Länge, Breite und Höhe: Aber warum die Verkürzung um -2*[__getDividerThickness()](Base/getDividerThickness.md)? Das hat kosmetische Gründe. Im Kasten 50/2 haben die beiden Enden des Stegs eine etwas verkürzte Länge, wohl damit die Ecken der Wand nicht aus der Fläche ragen. Durch diese Verkürzung erreichen wir das. Wir müssen nur noch das Ergebnis um 1 x getDividerThickness() nach rechts verschieben. Das passiert hier vor dem Drehen (das Zeug innerhalb der Klammer wird vor __rotate__ ausgeführt):
+Länge, Breite und Höhe: Aber warum die Verkürzung um -2*[__getDividerThickness()](Base/getDividerThickness.md)? Das hat kosmetische Gründe. Im Kasten 50/2 haben die beiden Enden des Stegs eine etwas verkürzte Länge, wohl damit die Ecken der Wand nicht aus der Fläche ragen. Durch diese Verkürzung erreichen wir das. Wir müssen nur noch das Ergebnis um *webOffset* nach rechts verschieben. Das passiert hier vor dem Drehen (das Zeug innerhalb der Klammer wird vor __rotate__ ausgeführt):
 
 ```
         rotate([0,0,45]) {
-            translate([getDividerThickness(), 0])
+            translate([webOffset, 0])
                 Wall(webVolume);
         }
 ```
@@ -619,7 +620,7 @@ module FrameAngleAxis(count=1) {
                 cutoffVolume = [webCutoffWidth, getDividerThickness()*2, webCutoffHeight + getExcess()];
                 for (xWebCutoffOffset = [0:webDifference:webLength])
                     translate([
-                        (singleLength - cutoffVolume.x)/2 + xWebCutoffOffset, 
+                        (singleLength - cutoffVolume.x)/2 + xWebCutoffOffset + (webOffset - getDividerThickness()) , 
                         -getDividerThickness()/2, 
                         webVolume.z - webCutoffHeight])
                         cube(cutoffVolume);

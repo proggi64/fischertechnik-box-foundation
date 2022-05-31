@@ -54,12 +54,13 @@ module FrameAngleAxis(count=1) {
     module Web() {
         baseLength = getFrameAxisSpace().y + (count - 1) * difference;
         webLength = sqrt(baseLength^2 + baseLength^2);
+        webOffset = sqrt(getDividerThickness()^2 + getDividerThickness()^2);
         
         webVolume = [webLength - 2*getDividerThickness(), getDividerThickness(), getFrameAxisHeight()];
         
         rotate([0,0,45]) {
             difference() {
-                translate([getDividerThickness(), 0])
+                translate([webOffset, 0])
                     Wall(webVolume);
         
                 webDifference = sqrt(difference^2 + difference^2);
@@ -69,7 +70,7 @@ module FrameAngleAxis(count=1) {
                 cutoffVolume = [webCutoffWidth, getDividerThickness()*2, webCutoffHeight + getExcess()];
                 for (xWebCutoffOffset = [0:webDifference:webLength])
                     translate([
-                        (singleLength - cutoffVolume.x)/2 + xWebCutoffOffset, 
+                        (singleLength - cutoffVolume.x)/2 + xWebCutoffOffset + (webOffset - getDividerThickness()) , 
                         -getDividerThickness()/2, 
                         webVolume.z - webCutoffHeight])
                         cube(cutoffVolume);
@@ -86,4 +87,4 @@ module FrameAngleAxis(count=1) {
 
 // Test
 color("lightgray")
-FrameAngleAxis();
+FrameAngleAxis(3);
