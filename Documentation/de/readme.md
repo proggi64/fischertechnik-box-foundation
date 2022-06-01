@@ -8,7 +8,7 @@ Die Bibliothek wurde inspiriert durch die Kunstoff-Sortierkästen der Fischertec
 Die Ziele dieser Bibliothek sind es die Konstruktion der Sortierkästen zu vereinfachen und eine Alternative zur CAD-Programmen zu bieten. Dennoch können die Elemente auch in CAD-Programmen verwendet werden, wenn man sie einzeln als STL-Dateien exportiert.
 
 Um die Bibliothek sinnvoll einsetzen zu können, sollte man zumindest die Grundlagen von [OpenSCAD](https://openscad.org/documentation.html) beherrschen:
-- Koordinatensystem auf den X/Y/Z-Achse
+- Koordinatensystem auf den X/Y/Z-Achsen
 - Module und Funktionen
 - Einfache Geometrie
 
