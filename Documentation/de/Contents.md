@@ -1,13 +1,15 @@
 # Inhalt
 
-ACHTUNG: Diese Doku ist in Arbeit. Bis 19. Mai 2022 wurden alle Module und Funktionen aus Base und ModelBase dokumentiert. Bis Ende Mai folgten die schon erstellten Elemente (Elements). Die erste Version wird freigegeben, wenn das Tuzorial für das Erstellen von neuen Elementen fertig ist.
+Dies ist die erste Version vom 1. Juni 2022. Der Grundstock für die Konstruktion von Sortierkästen umfasst schon ca. 100 Elemente der grauen Bausteine, die Ende der 1970er Jahre existierten. Als Beispiele wurden die Kästen [ec1-3](../../Original%20Building%20Kits/ec/) sowie [mot1 und mot2](../../Original%20Building%20Kits/mot/) nachgebaut.
+
+Zwei Tutorials [Sortierkästen konstruieren](TutorialSortingBoxes.md) und [Elemente selbst konstruieren](TutorialElements.md) sollen helfen, eigene Beiträge zu ermöglichen.
 
 ## Allgemeines
 - [Über die Bibliothek](readme.md)
 - [Konstruktionsprinzipien](principles.md)
 - [Elemente erst im 3D-Druck testen](PrintTests.md)
 - [Sortierkästen konstruieren](TutorialSortingBoxes.md)
-- [Elemente selbst konstruieren](TutorialElements.md) - in Arbeit
+- [Elemente selbst konstruieren](TutorialElements.md)
 - [Glossar](Glossar.md)
 
 ## Elemente für Sortierkästen
