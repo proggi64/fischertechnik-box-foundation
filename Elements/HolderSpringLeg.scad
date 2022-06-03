@@ -10,6 +10,11 @@ use <../ModelBase/Complex.scad>
 
 include <../Base/PlacementOptions.scad>
 
+/* [Element Parameters] */
+count = 1;
+dock = false;
+
+/* [Hidden] */
 width = 36;
 depth = 9;
 
@@ -62,4 +67,4 @@ module HolderSpringLeg(count=1, dock=false) {
 
 // Test
 color("lightgray")
-HolderSpringLeg();
+HolderSpringLeg(count, dock);

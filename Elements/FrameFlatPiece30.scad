@@ -5,6 +5,10 @@
 use <../Base/Constants.scad>
 use <../ModelBase/Complex.scad>
 
+/* [Element Parameters] */
+count = 1;
+
+/* [Hidden] */
 size = 30;
 
 // getFrameFlatPiece30Space(count)
@@ -22,5 +26,5 @@ module FrameFlatPiece30(count=1) {
 
 // Tests
 color("lightgray") {
-FrameFlatPiece30();
+FrameFlatPiece30(count);
 }

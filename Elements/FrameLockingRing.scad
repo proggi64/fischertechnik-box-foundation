@@ -5,6 +5,11 @@
 use <../Base/Constants.scad>
 use <../ModelBase/Simple.scad>
 
+/* [Element Parameters] */
+columns = 1;
+rows = 1;
+
+/* [Hidden] */
 width = 20;
 depth = 7.5;
 height = 13;
@@ -28,4 +33,4 @@ module FrameLockingRing(columns=1, rows=1) {
 
 // Tests
 color("lightgray")
-    FrameLockingRing(1);
+    FrameLockingRing(columns, rows);

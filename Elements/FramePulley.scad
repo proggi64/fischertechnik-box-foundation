@@ -4,6 +4,11 @@
 
 use <../ModelBase/Simple.scad>
 
+/* [Element Parameters] */
+columns = 1;
+rows = 1;
+
+/* [Hidden] */
 width = 22.5;
 depth = 7.5;
 height = 13;
@@ -28,5 +33,5 @@ module FramePulley(columns=1, rows=1) {
 
 // Tests
 color("lightgray") {
-    FramePulley();
+    FramePulley(columns, rows);
 }

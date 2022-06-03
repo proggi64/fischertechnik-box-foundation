@@ -5,6 +5,10 @@
 use <../Base/Constants.scad>
 use <../ModelBase/Simple.scad>
 
+/* [Element Parameters] */
+count = 1;
+
+/* [Hidden] */
 width = 15;
 depth = 15;
 height = 9;
@@ -27,4 +31,4 @@ module FrameAngleEquilateral(count=1) {
 
 // Tests
 color ("lightgray")
-FrameAngleEquilateral();
+FrameAngleEquilateral(count);

@@ -5,6 +5,10 @@
 use <../Base/Constants.scad>
 use <../ModelBase/Simple.scad>
 
+/* [Element Parameters] */
+count = 1;
+
+/* [Hidden] */
 width = 45 / 4;
 depth = 15;
 height = 9;
@@ -30,4 +34,4 @@ module FrameAngleIsosceles(count=1) {
 
 // Tests
 color ("lightgray")
-FrameAngleIsosceles();
+FrameAngleIsosceles(count);

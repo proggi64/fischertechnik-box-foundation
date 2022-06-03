@@ -10,6 +10,7 @@ Zwei Tutorials [Sortierkästen konstruieren](TutorialSortingBoxes.md) und [Eleme
 - [Elemente erst im 3D-Druck testen](PrintTests.md)
 - [Sortierkästen konstruieren](TutorialSortingBoxes.md)
 - [Elemente selbst konstruieren](TutorialElements.md)
+- [Elemente für CAD-Software nach STL exportieren](STLExport.md)
 - [Glossar](Glossar.md)
 
 ## Elemente für Sortierkästen

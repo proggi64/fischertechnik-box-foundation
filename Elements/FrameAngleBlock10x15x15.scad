@@ -8,6 +8,10 @@ use <../ModelBase/Simple.scad>
 
 include <../Base/PlacementOptions.scad>
 
+/* [Element Parameters] */
+count = 1;
+
+/* [Hidden] */
 width = 10;
 depth = 17.5;
 
@@ -31,4 +35,4 @@ module FrameAngleBlock10x15x15(count=1) {
 
 // Test
 color("lightgray")
-FrameAngleBlock10x15x15(2);
+FrameAngleBlock10x15x15(count);

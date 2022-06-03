@@ -4,6 +4,11 @@
 
 use <../ModelBase/Simple.scad>
 
+/* [Element Parameters] */
+columns = 1;
+rows = 1;
+
+/* [Hidden] */
 width = 15;
 depth = 15;
 height = 10;
@@ -25,4 +30,4 @@ module FrameStandardBlock(columns=1, rows=1, height=height) {
 
 // Tests
 color("lightgray")
-FrameStandardBlock();
+FrameStandardBlock(columns, rows);

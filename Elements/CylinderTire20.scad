@@ -6,6 +6,10 @@ use <../Base/Constants.scad>
 use <../Base/Placement.scad>
 use <../ModelBase/Simple.scad>
 
+/* [Element Parameters] */
+count = 3;
+
+/* [Hidden] */
 width = 30;
 depth = 30;
 
@@ -41,4 +45,4 @@ module CylinderTire20(count=3) {
 
 // Tests
 color("lightgray")
-CylinderTire20(2);
+CylinderTire20(count);

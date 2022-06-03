@@ -10,6 +10,10 @@ use <../ModelBase/Complex.scad>
 
 include <../Base/PlacementOptions.scad>
 
+/* [Element Parameters] */
+count = 1;
+
+/* [Hidden] */
 width = 34.5;
 depth = 34.5;
 extra = 1.8;
@@ -87,4 +91,4 @@ module FrameAngleAxis(count=1) {
 
 // Test
 color("lightgray")
-FrameAngleAxis(3);
+FrameAngleAxis(count);

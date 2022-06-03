@@ -4,6 +4,11 @@
 
 use <../ModelBase/Simple.scad>
 
+/* [Element Parameters] */
+columns = 1;
+rows = 1;
+
+/* [Hidden] */
 width = 7.5;
 depth = 15;
 height = 10;
@@ -22,4 +27,4 @@ module FrameSmallBlock(columns=1, rows=1) {
 
 // Tests
 color("lightgray")
-FrameSmallBlock();
+FrameSmallBlock(columns, rows);

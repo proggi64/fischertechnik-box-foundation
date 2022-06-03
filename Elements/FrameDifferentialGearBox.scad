@@ -4,7 +4,8 @@
 
 use <../ModelBase/Complex.scad>
 
-length = 110;
+/* [Element Parameters] */
+length = 110;   // [110,120]
 
 // getFrameDifferentialGearboxSpace()
 // Gets the width (.x) and depth (.y) of the differential gearbox frame.
@@ -21,4 +22,4 @@ module FrameDifferentialGearbox(length=length) {
 
 // Test
 color("lightgray")
-FrameDifferentialGearbox();
+FrameDifferentialGearbox(length);

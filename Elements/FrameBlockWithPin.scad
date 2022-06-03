@@ -5,9 +5,13 @@
 use <../Base/Constants.scad>
 use <../ModelBase/Simple.scad>
 
+/* [Element Parameters] */
+count = 1;
+height = 8;
+
+/* [Hidden] */
 width = 15;
 depth = 15;
-height = 8;
 
 // getFrameBlockWithPinSpace()
 // Gets the space the frame block with pin needs as width (.x and .y as a list)
@@ -40,7 +44,5 @@ module FrameBlockWithPin(count = 1, height=height) {
 }
 
 // Test
-count = 2;
-color("lightgray") {
+color("lightgray")
 FrameBlockWithPin(count);
-}

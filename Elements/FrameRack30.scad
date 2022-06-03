@@ -5,6 +5,10 @@
 use <../Base/Constants.scad>
 use <../ModelBase/Complex.scad>
 
+/* [Element Parameters] */
+count = 1;
+
+/* [Hidden] */
 width = 30;
 depth = 15;
 height = 12.8;
@@ -25,4 +29,4 @@ module FrameRack30(count=1) {
 
 // Test
 color("lightgray")
-FrameRack30();
+FrameRack30(count);

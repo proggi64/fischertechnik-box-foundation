@@ -4,6 +4,11 @@
 
 use <../ModelBase/Complex.scad>
 
+/* [Element Parameters] */
+count = 1;
+dock = false;
+
+/* [Hidden] */
 width = 30;
 
 // getHolderBuildingPlate30x30Space(count = 1)
@@ -22,4 +27,4 @@ module HolderBuildingPlate30x30(count = 1, dock = false) {
 
 // Test
 color("lightgray")
-HolderBuildingPlate30x30();
+HolderBuildingPlate30x30(count, dock);

@@ -524,7 +524,7 @@ Der Aufruf mit *count* = 4 zeigt uns, dass wir nicht ganz falsch liegen:
 
 Die Länge passt, der Winkel passt, die Höhe und die Position passen.
 
-### Am Schluss die Aussparungen
+### Noch die Aussparungen
 Der untere Teil des __module__ __Web__ dreht sich um die Aussparungen. *webDifference* errechnet einfach wieder über Pythagoras die 45°-Länge des Abstands *distance*. Den brauchen wir als __step__ in der Schleife.
 
 ```
@@ -549,6 +549,34 @@ Wir haben für y nicht exakt die Wandstärke genommen, sondern die doppelte. Die
 
 ![Aussparungen](../images/tutElementCutoffs.png)
 
+## Unterstützung für CAD-Programme: STL-Export
+Unser Element hat einen Parameter namens *count*. Falls man das Element als STL-Datei in einem CAD-Programm nutzen will, sollte man es nach STL exportieren. Aber ohne ein kleines SCAD-Programm zu schreiben, bekommt man nicht die verschiedenen Varianten, die durch die Werte von *count* entstehen.
+
+Die Lösung ist, dass unsere Element-SCAD-Datei das gleich durch den OpenSCAD-*Customizer* unterstützt. Der ermöglicht es ohne Änderung der SCAD-Datei parameter in einem Fenster einzustellen und die Varianetn live zu erzeugen.
+
+Um genau die Parameter dort anzuzeigen, die wir auch im __module__ definiert haben, schreiben wir sie einfach als Variablen als erstes in die SCAD-Datei:
+
+```
+/* [Element Parameters] */
+count = 1;
+```
+
+Der Kommentar mit dem Text in den eckigen Klammern erzeugt im Customizer eine Registerseite, in welcher unsere Parameter erscheinen. Das sieht dann so aus:
+
+![Customizer](../images/tutCustomizer.png)
+
+Damit die anderen Variablen nicht erscheinen, müssen wir noch einen Kommentar drüber schreiben:
+
+```
+/* [Hidden] */
+width = 34.5;
+depth = 34.5;
+extra = 1.8;
+difference = getFrameAxisSpace().y + extra;
+```
+
+Das war's. Jetzt kann man ohne Codeänderungen alle Varianten des Elements erzeugen, exportieren und später in einem CAD-Programm verwenden.
+
 ## Fertig!
 Das ganze Element sieht jetzt so aus:
 
@@ -569,6 +597,10 @@ use <../ModelBase/Complex.scad>
 
 include <../Base/PlacementOptions.scad>
 
+/* [Element Parameters] */
+count = 1;
+
+/* [Hidden] */
 width = 34.5;
 depth = 34.5;
 extra = 1.8;
@@ -637,7 +669,7 @@ module FrameAngleAxis(count=1) {
 
 // Test
 color("lightgray")
-FrameAngleAxis();
+FrameAngleAxis(count);
 ```
 
 Als Reminiszenz an die guten alten grauen Tage von Fischertechnik bekommen die Test-Zeilen immer noch ein __color("lightgray")__ vorangestellt.
