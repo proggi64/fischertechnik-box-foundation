@@ -4,7 +4,7 @@ Klemmbuchse 10.
 
 ![AxisClip10](../../images/AxisClip10.png)
 
-3D-Druck getestet
+3D-Druck getestet mit 12 und 23 mm Höhe
 
 ## Use
 ```
