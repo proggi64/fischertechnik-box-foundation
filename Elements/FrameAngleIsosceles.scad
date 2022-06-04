@@ -18,9 +18,6 @@ height = 9;
 // count = Count of equilateral angle blocks
 
 function getFrameAngleIsoscelesSpace(count=1) = getFrameOuterVolume([width * count, depth, height]);
-/*[
-    frameGridWidth * count + 2 * getWallThickness() + getTolerance(), 
-    frameGridDepth + 2 * getWallThickness() + getFrameInnerGap()];*/
 
 // FrameAngleIsosceles(count)
 // count = Count of angle blocks in x direction

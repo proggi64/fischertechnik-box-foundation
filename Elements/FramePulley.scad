@@ -1,5 +1,5 @@
 // Fischertechnik Box Library
-// Frame for Pulley
+// Frame for Wheel Pulley
 // 35795
 
 use <../ModelBase/Simple.scad>

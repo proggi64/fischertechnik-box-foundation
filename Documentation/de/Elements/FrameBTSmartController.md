@@ -4,6 +4,8 @@ BT Smart Controller.
 
 ![FrameBTSmartController](../../images/FrameBTSmartController.png)
 
+3D-Druck getestet
+
 ## Use
 ```
 use <../Elements/FrameBTSmartController.scad>

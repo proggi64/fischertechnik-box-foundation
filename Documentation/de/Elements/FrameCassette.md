@@ -5,6 +5,8 @@ Kassette mit oder ohne Klarsichtdeckel oder Akku Pack
 
 ![FrameCassette](../../images/FrameCassette.png)
 
+3D-Druck getestet
+
 ## Use
 ```
 use <../Elements/FrameCassette.scad>
