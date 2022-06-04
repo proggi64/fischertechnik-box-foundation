@@ -13,13 +13,13 @@ use <../ModelBase/Simple.scad>
 ```
 Axis(
   height, 
-  diameter=getAxisDiameter());
+  diameter=getStandAxisDiameter());
 ```
 
 | Parameter | Typ | Beschreibung |
 | ------ | ------ | ------ |
 | height | Decimal | Höhe der Achse. Mehr als 30 mm sind nicht zu empfehlen, da die nutzbare Höhe des Sortierkastens nur etwa 40 mm beträgt und solche Achsen mit zunehmender Höhe leichter abbrechen können. |
-| diameter | Decimal | Durchmesser der Achse. Standardwert ist [__getAxisDiameter__](../Base/getAxisDiameter.md). |
+| diameter | Decimal | Durchmesser der Achse. Standardwert ist [__getStandAxisDiameter__](../Base/getStandAxisDiameter.md). |
 
 ## Beispiel
 

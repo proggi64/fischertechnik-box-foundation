@@ -14,7 +14,7 @@ use <../ModelBase/Simple.scad>
 LeveledAxis(
   height, 
   levelHeight, 
-  diameter=getAxisDiameter(),
+  diameter=getStandAxisDiameter(),
   baseDiameter=getAxisBottomDiameter());
 ```
 
@@ -22,7 +22,7 @@ LeveledAxis(
 | ------ | ------ | ------ |
 | height | Decimal | Höhe der Achse. Mehr als 30 mm sind nicht zu empfehlen, da die nutzbare Höhe des Sortierkastens nur etwa 40 mm beträgt und solche Achsen mit zunehmender Höhe leichter abbrechen können. |
 | levelHeight | Decimal | Höhe der stärkeren Achsbasis. |
-| diameter | Decimal | Durchmesser der Achse. Standardwert ist [__getAxisDiameter__](../Base/getAxisDiameter.md). |
+| diameter | Decimal | Durchmesser der Achse. Standardwert ist [__getStandAxisDiameter__](../Base/getStandAxisDiameter.md). |
 | baseDiameter | Decimal | Durchmesser der Achsbasis. Standardwert ist [__getAxisBottomDiameter__](../Base/getAxisBottomDiameter.md). |
 
 ## Beispiel

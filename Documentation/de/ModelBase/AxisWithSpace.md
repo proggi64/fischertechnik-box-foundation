@@ -14,14 +14,14 @@ use <../ModelBase/Simple.scad>
 AxisWithSpace(
   height, 
   space,
-  diameter=getAxisDiameter());
+  diameter=getStandAxisDiameter());
 ```
 
 | Parameter | Typ | Beschreibung |
 | ------ | ------ | ------ |
 | height | Decimal | Höhe der Achse. Mehr als 30 mm sind nicht zu empfehlen, da die nutzbare Höhe des Sortierkastens nur etwa 40 mm beträgt und solche Achsen mit zunehmender Höhe leichter abbrechen können. |
 | space | \[x,y] | Grundplatte, in deren Zentrum die Achse steht. Sie hat die Höhe von [__getExcess__](../Base/getExcess.md) und wird in den Boden des Sortierkastens versenkt. Der Koordinatenurprung des Elements ist die linke untere Ecke von *space*. |
-| diameter | Decimal | Durchmesser der Achse. Standardwert ist [__getAxisDiameter__](../Base/getAxisDiameter.md). |
+| diameter | Decimal | Durchmesser der Achse. Standardwert ist [__getStandAxisDiameter__](../Base/getStandAxisDiameter.md). |
 
 ## Beispiel
 

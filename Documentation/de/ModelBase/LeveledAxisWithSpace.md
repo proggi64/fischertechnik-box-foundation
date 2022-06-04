@@ -12,7 +12,11 @@ use <../ModelBase/Simple.scad>
 ## Syntax
 ```
 LeveledAxisWithSpace(
-  height, levelHeight, space, diameter=getAxisDiameter(), baseDiameter=getAxisBottomDiameter());
+  height, 
+  levelHeight, 
+  space, 
+  diameter=getStandAxisDiameter(), 
+  baseDiameter=getAxisBottomDiameter());
 ```
 
 | Parameter | Typ | Beschreibung |
@@ -20,7 +24,7 @@ LeveledAxisWithSpace(
 | height | Decimal | Höhe der Achse. Mehr als 30 mm sind nicht zu empfehlen, da die nutzbare Höhe des Sortierkastens nur etwa 40 mm beträgt und solche Achsen mit zunehmender Höhe leichter abbrechen können. |
 | levelHeight | Decimal | Höhe der stärkeren Achsbasis. |
 | space | \[x,y] | Grundplatte, in deren Zentrum die Achse steht. Sie hat die Höhe von [__getExcess__](../Base/getExcess.md) und wird in den Boden des Sortierkastens versenkt. Der Koordinatenurprung des Elements ist die linke untere Ecke von *space*. |
-| diameter | Decimal | Durchmesser der Achse. Standardwert ist [__getAxisDiameter__](../Base/getAxisDiameter.md). |
+| diameter | Decimal | Durchmesser der Achse. Standardwert ist [__getStandAxisDiameter__](../Base/getStandAxisDiameter.md). |
 | baseDiameter | Decimal | Durchmesser der Achsbasis. Standardwert ist [__getAxisBottomDiameter__](../Base/getAxisBottomDiameter.md). |
 
 ## Beispiel

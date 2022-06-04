@@ -53,6 +53,7 @@ Zwei Tutorials [Sortierkästen konstruieren](TutorialSortingBoxes.md) und [Eleme
 ### Funktionen zur Ermittlung von Konstanten
 - [__getAxisBottomDiameter__](Base/getAxisBottomDiameter.md): Liefert den Durchmesser für die Basis einer Achse.
 - [__getAxisDiameter__](Base/getAxisDiameter.md): Liefert den Durchmesser einer Fischertechnik-Achse.
+- [__getAxisTolerance__](Base/getAxisTolerance.md): Liefert den Betrag, der vom Durchmesser einer Fischertechnik-Achse abgezogen wird, wenn Standachsen generiert werden, damit die Fischertechnikteil darauf passen.
 - [__getBox130Space__](Base/getBox130Space.md): Liefert die nutzbare Fläche eines Sortierkastens 130 x 95 mm.
 - [__getBox190Space__](Base/getBox190Space.md): Liefert die nutzbare Fläche eines Sortierkastens 190 x 130 mm.
 - [__getBoxBaseThickness__](Base/getBoxBaseThickness.md): Liefert die Stärke des Bodens eines Sortierkastens.
@@ -65,6 +66,7 @@ Zwei Tutorials [Sortierkästen konstruieren](TutorialSortingBoxes.md) und [Eleme
 - [__getSmallPartsFrameHeight__](Base/getSmallPartsFrameHeight.md): Liefert die Höhe für Rahmen, die für in Sortierkästen Kleinteile vorgesehen sind.
 - [__getStandardEdgeDistance__](Base/getStandardEdgeDistance.md): Liefert den Standard-Abstand für andockbare Rahmen mit Stegen.
 - [__getStandardWebDistance__](Base/getStandardWebDistance.md): Liefert den Abstand eines Stegs zur jeweiligen Ecke eines andockbaren Elements.
+- [__getStandAxisDiameter__](Base/getStandAxisDiameter.md): Liefert den Durchmesser für Standachsen (z.B. für [__Axis__](ModelBase/Axis.md))
 - [__getTolerance__](Base/getTolerance.md): Liefert den Betrag für die Toleranz bei Elementen, damit die Bauteile nach dem Druck in die Elemente passen.
 - [__getTubeWallThickness__](Base/getTubeWallThickness.md): Liefert Stärke der Wände eines Element-Zylinders.
 

@@ -25,14 +25,21 @@ function getTolerance() = tolerance;
 // Fischertechnik specific constants
 axisDiameter = 4;
 axisBottomDiameter = axisDiameter + 1;
+axisTolerance = 0.2;
 standardEdgeDistance = 2.5;
 standardWebDistance = 11.5;
 standardCornerLength = 15;
 tubeWallFactor = 0.8;
 smallPartsFrameHeight = 20;
 
-// Gets axis diameter
+// Gets axis diameter of Fischertechnik axis
 function getAxisDiameter() = axisDiameter;
+
+// Gets axis diameter tolerance (subtracted for element axis)
+function getAxisTolerance() = axisTolerance;
+
+// Gets the axis diameter for standing axis
+function getStandAxisDiameter() = getAxisDiameter() - getAxisTolerance();
 
 // Gets axis bottom diameter for thicker part at the bottom
 function getAxisBottomDiameter() = axisBottomDiameter;

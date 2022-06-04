@@ -237,7 +237,7 @@ module DockableFrame(
 // height = height of the axis
 // diameter = diameter of the axis
 
-module Axis(height, diameter=getAxisDiameter()) {
+module Axis(height, diameter=getStandAxisDiameter()) {
     translate([0, 0, -getExcess()])
         cylinder(height + getExcess(), d = diameter, $fn = getFragments());    
 }
@@ -248,7 +248,7 @@ module Axis(height, diameter=getAxisDiameter()) {
 // space = space (x,y) of the space around the axis
 // diameter = diameter of the axis (default standard axis diameter)
 
-module AxisWithSpace(height, space, diameter=getAxisDiameter()) {
+module AxisWithSpace(height, space, diameter=getStandAxisDiameter()) {
     Space(space);
     Center(space)
         Axis(height, diameter);
@@ -262,7 +262,7 @@ module AxisWithSpace(height, space, diameter=getAxisDiameter()) {
 // diameter = diameter of the upper axis (standard is 4 mm)
 // baseDiameter = diameter of the base axis (standard is 5 mm)
 
-module LeveledAxis(height, levelHeight, diameter=getAxisDiameter(), baseDiameter=getAxisBottomDiameter()) {
+module LeveledAxis(height, levelHeight, diameter=getStandAxisDiameter(), baseDiameter=getAxisBottomDiameter()) {
     Axis(levelHeight, baseDiameter);
     Axis(height, diameter);
 }
@@ -275,7 +275,7 @@ module LeveledAxis(height, levelHeight, diameter=getAxisDiameter(), baseDiameter
 // diameter = diameter of the upper axis (standard is 4 mm)
 // baseDiameter = diameter of the base axis (standard is 5 mm)
 
-module LeveledAxisWithSpace(height, levelHeight, space, diameter=getAxisDiameter(), baseDiameter=getAxisBottomDiameter()) {
+module LeveledAxisWithSpace(height, levelHeight, space, diameter=getStandAxisDiameter(), baseDiameter=getAxisBottomDiameter()) {
     Space(space);
     Center(space)
         LeveledAxis(height, levelHeight, diameter, baseDiameter);
