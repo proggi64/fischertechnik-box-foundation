@@ -21,7 +21,7 @@ function getAxisClip10Space() = [width, depth, height];
 
 // AxisClip10(height, clipHeight)
 // Axis for clip 10 with spring ring (mot2)
-// height = Height of the complete axis
+// height = Height of the complete axis (standard is 23, in mot3 its only 12)
 // clipHeight = Height of the part for the clip (standard is 10, in mot3 its only 7)
 
 module AxisClip10(height=height, clipHeight=clipHeight) {
