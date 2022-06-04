@@ -6,6 +6,8 @@ Winkelstein 10x15x15.
 
 Erzeugt für die angegebene Anzahl Bausteine eine Reihe von Rahmen, die durch Wände voneinander getrennt sind. Die Bauteile werden an der langen Seite hintereinander angeordnet.
 
+3D-Druck getestet
+
 ## Use
 ```
 use <../Elements/FrameAngleBlock10x15x15.scad>

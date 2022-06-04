@@ -9,6 +9,8 @@ Das Rad muss auf die Radachse gesteckt werden. Der Baustein 5 der Radachse wird 
 
 <img width="364" alt="CylinderWheel23" src="https://user-images.githubusercontent.com/48654609/167253578-ec544b4c-da4a-4ee0-8040-be5e8541a996.png">
 
+3D-Druck getestet
+
 ## Use
 ```
 use <../Elements/CylinderWheel23.scad>

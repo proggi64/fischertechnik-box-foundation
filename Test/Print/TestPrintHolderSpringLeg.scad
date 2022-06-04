@@ -4,5 +4,5 @@
 use <../TestPrint.scad>
 use <../../Elements/HolderSpringLeg.scad>
 
-TestPrint(getHolderSpringLegSpace())
+TestPrint(getHolderSpringLegSpace(2))
     HolderSpringLeg(2);
