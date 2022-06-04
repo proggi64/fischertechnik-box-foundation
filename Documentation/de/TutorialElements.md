@@ -737,3 +737,10 @@ Dieses Skript erzeugt ein mit einerm etwas dickeren, druckbaren Boden unterlegte
 Die meisten Elemente haben ein sehr einfaches Schema für die Hilfeseite. Deswegen gibt es  Visual Studio Code Snippets, die einen Großteil der Arbeit generieren. Das Vorgehen wird [separat beschrieben](HelpHowTo.md). Das ist zu tun:
 - Hilfeseite für den Einsatz des Elements
 - Element in die [__PartFinder__](PartFinder.md)-Dateien aufnehmen
+
+## Tipp für Nutzer des Fischertechnik Designers
+Nutzer des [Fischertechnik Designers](http://www.3dprofi.de/de/) können die im Programmverzeichnis gespeicherten STL-Dateien der Fischertechnik-Bauteile auch für die Konstruktion der Elemente einsetzen. Dessen STL-Format konnte ich allerdings nicht direkt in OpenSCAD importieren. Stattdessen habe ich die STL-Dateien erst über den Windows-3D-Viewer nach .3mf exportiert. Das wiederum funktionierte dann in OpenSCAD.
+
+Wenn man ein bisschen herumprobiert, kann man die Teile so platzieren, dass sich die Maße des Elements damit ganz gut überprüfen lassen. In der Abbildung ist das importierte Teil in rot-transparent dargestellt:
+
+![Beispiel Konstruktion](../images/Constructing_CylinderAndAxisSegmentDisc.png)
