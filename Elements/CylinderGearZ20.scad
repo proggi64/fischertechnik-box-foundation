@@ -23,8 +23,8 @@ function getCylinderGearZ20Space() = [width, depth];
 // Standing cylinder for gear wheel Z20
 
 module CylinderGearZ20() {
-    diameter = 19.5;
-    levelDiameter = 21;
+    diameter = getHubRingDiameter();
+    levelDiameter = getHubRingLevelDiameter();
 
     Space(getCylinderGearZ20Space());
         

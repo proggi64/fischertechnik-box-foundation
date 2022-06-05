@@ -63,6 +63,8 @@ Zwei Tutorials [Sortierkästen konstruieren](TutorialSortingBoxes.md) und [Eleme
 - [__getDividerThickness__](Base/getDividerThickness.md): Liefert die Standardbreite einer Trennwand.
 - [__getExcess__](Base/getExcess.md): Liefert den Betrag, um den ein Objekt mit einem verbundenen Objekt verschmilzt.
 - [__getFragments__](Base/getFragments.md): Liefert die Anzahl der Fragmente für cylinder-Objekte ($fn).
+- [__getHubRingDiameter__](Base/getHubRingDiameter.md): Äußerer Durchmesser des Zylinders für Räder.
+- [__getHubRingLevelDiameter__](Base/getHubRingLevelDiameter.md): Äußerer Durchmesser der Zylinderbasis für Räder.
 - [__getSmallPartsFrameHeight__](Base/getSmallPartsFrameHeight.md): Liefert die Höhe für Rahmen, die für in Sortierkästen Kleinteile vorgesehen sind.
 - [__getStandardEdgeDistance__](Base/getStandardEdgeDistance.md): Liefert den Standard-Abstand für andockbare Rahmen mit Stegen.
 - [__getStandardWebDistance__](Base/getStandardWebDistance.md): Liefert den Abstand eines Stegs zur jeweiligen Ecke eines andockbaren Elements.
