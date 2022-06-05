@@ -5,8 +5,8 @@
 use <../Base/Constants.scad>
 use <../ModelBase/Simple.scad>
 
-width = 5.5;
-depth = 5.5;
+width = 5;
+depth = 5;
 height = 12;
 
 // getFrameControlLightSpace()

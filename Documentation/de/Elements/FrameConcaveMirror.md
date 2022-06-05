@@ -4,6 +4,8 @@ Hohlspiegel.
 
 ![FrameConcaveMirror](../../images/FrameConcaveMirror.png)
 
+3D-Druck getestet
+
 ## Use
 ```
 use <../Elements/FrameConcaveMirror.scad>

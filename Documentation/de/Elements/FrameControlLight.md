@@ -4,6 +4,8 @@ Elektronikbaustein Stecklampe 6V.
 
 ![FrameControlLight](../../images/FrameControlLight.png)
 
+3D-Druck getestet
+
 ## Use
 ```
 use <../Elements/FrameControlLight.scad>
