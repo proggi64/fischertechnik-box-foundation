@@ -15,7 +15,7 @@ depth = 12;
 upperDiameter = 3.6;
 
 // getAxisClip10Space()
-// Gets the space of a frame for a clip 10 with spring ring (mot2)
+// Gets the space of a n axis for a clip 10 with spring ring (mot2)
 
 function getAxisClip10Space() = [width, depth, height];
 
