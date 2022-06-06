@@ -22,6 +22,8 @@ Zwei Tutorials [Sortierkästen konstruieren](TutorialSortingBoxes.md) und [Eleme
 ### Module für Grundelemente
 - [__Box130__](Base/Box130.md): Importiert einen leeren Sortierkasten 130 x 95 mm als Basis für eigene Entwürfe.
 - [__Box190__](Base/Box190.md): Importiert einen leeren Sortierkasten 190 x 130 mm als Basis für eigene Entwürfe.
+- [__Box190Inlay__](Base/Box190Inlay.md): Erzeugt eine Grundplatte für Elemente, die in einen Original-Sortierkasten gelegt werden kann.
+- [__Box190InlayWeb__](Base/Box190InlayWeb.md): Erzeugt einen kurzen Steg mit Einrast-Mechanismus für [__Box190Inlay__](Base/Box190Inlay.md).
 - [__BoxWeb__](Base/BoxWeb.md): Erzeugt einen kurzen Steg an der Innenwand einer Sortierbox.
 
 ### Module zur Platzierung von Elementen
