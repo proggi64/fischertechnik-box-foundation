@@ -52,6 +52,29 @@ function getBox190Space() = [
     box190Width - 2*getBoxWallThickness() - topBottomDifference, 
     box190Depth - 2*getBoxWallThickness() - topBottomDifference ];
 
+// RoundedCornerPlate(width, depth, height, radius)
+// Creates a body plate with rounded corners for a box. Used
+// also to create the complete box with the hull module.
+// width = Width of the plate
+// depth = depth of the plate 
+// height = thickness of the plate
+// radius = radius of the rounded corner
+module RoundedCornerPlate(width, depth, height, radius) {
+    translate([radius, radius])
+    hull() {
+        w = width-2*radius;
+        d = depth-2*radius;
+        cube([w, d, height]);
+        cylinder(height, r=radius, $fn=getFragments());
+        translate([w, 0])
+            cylinder(height, r=radius, $fn=getFragments());
+        translate([w, d])
+            cylinder(height, r=radius, $fn=getFragments());
+        translate([0, d])
+            cylinder(height, r=radius, $fn=getFragments());
+    }
+}
+
 // BoxBase(width, depth)
 // Creates an empty stackable Fischertechnik compatible box
 // width = Outer width of the box (190, 130, ...)
@@ -62,31 +85,15 @@ module BoxBase(width, depth, height=outerHeight) {
 
     innerHeight = height - baseThickness;    
     
-    module BodyPlate(width, depth) {
-        translate([radius, radius])
-        hull() {
-            w = width-2*radius;
-            d = depth-2*radius;
-            cube([w, d, thinPlate]);
-            cylinder(thinPlate, r=radius, $fn=getFragments());
-            translate([w, 0])
-                cylinder(thinPlate, r=radius, $fn=getFragments());
-            translate([w, d])
-                cylinder(thinPlate, r=radius, $fn=getFragments());
-            translate([0, d])
-                cylinder(thinPlate, r=radius, $fn=getFragments());
-        }
-    }
-    
     module Body(tolerance=tolerance) {
         hull() {
             // Bottom with tolerance to fit into the original boxes when stacked
             translate([-wallThickness+tolerance, -wallThickness+tolerance, -baseThickness])
-                BodyPlate(width-topBottomDifference-2*tolerance, depth-topBottomDifference-2*tolerance);
+                RoundedCornerPlate(width-topBottomDifference-2*tolerance, depth-topBottomDifference-2*tolerance, thinPlate, radius);
             
             // Top
             translate([-wallThickness-topBottomDifference/2, -wallThickness-topBottomDifference/2, innerHeight-thinPlate])
-                BodyPlate(width, depth);
+                RoundedCornerPlate(width, depth, thinPlate, radius);
          }
     }
 
@@ -96,11 +103,11 @@ module BoxBase(width, depth, height=outerHeight) {
             coDepth = depth - 2*wallThickness;
             
             // Bottom
-            BodyPlate(coWidth-topBottomDifference, coDepth-topBottomDifference);
+            RoundedCornerPlate(coWidth-topBottomDifference, coDepth-topBottomDifference, thinPlate, radius);
 
             // Top
             translate([-topBottomDifference/2, -topBottomDifference/2, innerHeight+thinPlate]) 
-                BodyPlate(coWidth, coDepth);
+                RoundedCornerPlate(coWidth, coDepth, thinPlate, radius);
         }
     }
     
@@ -115,7 +122,7 @@ module BoxBase(width, depth, height=outerHeight) {
 
 // Creates the Fischertechnik empty box 130x190 mm and places it at position 0,0
 // 190x130 are the outer sizes, the inner space is slightly smaller. Use getBox190Space() to get the inner sizes.
-// The box is positioned that the usable inner space is at the 0,0,0 position. The
+// The box is positioned that the usable inner space is at the 0,0,0 position.
 
 module Box190() {
     BoxBase(box190Width, box190Depth);
@@ -128,7 +135,7 @@ function getBox130Space() = [
 
 // Creates the Fischertechnik empty box 95x130 mm and places it at position 0,0
 // 190x130 are the outer sizes, the inner space is slightly smaller. Use getBox190Space() to get the inner sizes.
-// The box is positioned that the usable inner space is at the 0,0,0 position. The
+// The box is positioned that the usable inner space is at the 0,0,0 position.
 
 module Box130() {
     BoxBase(box130Width, box130Depth);
