@@ -4,9 +4,9 @@ Erzeugt eine Bodenplatte für Elemente, die i8n eine vorhandene Box 190 x 130 mm
 
 ![Box190Inlay](../../images/Box190Inlay.png)
 
-__Box190Inlay__ dient als Basisplatte für das Platzieren von Elementen. Dies soll eine Alterntive zum Komplettdruck eines Kastens mit [__Box190__](Box190.md) sein. Wenn solche Kästen vorhanden sind, reicht der Druck der Bodenplatte mit den platzierten Elementen.
+__Box190Inlay__ dient als Basisplatte für das Platzieren von Elementen. Dies soll eine Alternative zum Komplettdruck eines Kastens mit [__Box190__](Box190.md) sein. Wenn solche Kästen vorhanden sind, reicht der Druck der Bodenplatte mit den platzierten Elementen.
 
-Die Bodenplatte kann mithilfe von [Box190InlayWeb](Box190InlayWeb.md) platzierten Stegen in den Kasten eingerastet werden. Die Kästen haben für die Trennwände Ausparungen. Die Stege werden so platziert, dass sie immer in eine der Ausparungen einrasten können. Im Bild oben sind vier solcher Stege platziert worden.
+Die Bodenplatte kann mithilfe von [Box190InlayWeb](Box190InlayWeb.md) erzeugten Stegen in den Kasten eingerastet werden. Die Kästen haben für die Trennwände Ausparungen. Die Stege werden so platziert, dass sie immer in eine der Ausparungen einrasten können. Im Bild oben sind vier solcher Stege zu sehen.
 
 Die Bodenplatten haben abgerundete Ecken, damit sie in die Kästen passen.
 
