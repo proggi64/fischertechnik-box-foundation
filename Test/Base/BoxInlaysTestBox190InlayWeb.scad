@@ -7,7 +7,12 @@ use <../../Base/BoxInlays.scad>
 
 include <../../Base/PlacementOptions.scad>
 
-Box190Inlay();
+difference() {
+//Box190Inlay();
+    translate([1.9, 1.3, -1])
+scale([0.9, 0.9, 1.1])
+    Box190Inlay();
+}
 
 Box190InlayWeb(AlignBottom, 0);
 Box190InlayWeb(AlignBottom, 1);
