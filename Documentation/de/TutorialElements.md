@@ -27,7 +27,7 @@ Ziel des Tutorials ist die Konstruktion eines Achshalters für die Winkelachse 3
 
 ### Was kennzeichnet ein Element?
 - Sie halten ein oder mehrere Bauteile oder Kombinationen davon
-- Sie werden als SCAD-__module__ entworfen
+- Sie werden als SCAD __module__ entworfen
 - Es wird immer eine __function__ mitgeliefert, die den 2D-Flächenbedarf liefert
 - Sie können einfache Parameter verwenden, z.B. Anzahlen oder Informationen für das Andocken an die Seitenwand
 - Sie sollten leicht und ohne Stützstruktur mit einem 3D-Drucker druckbar sein
