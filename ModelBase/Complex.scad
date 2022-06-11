@@ -426,6 +426,7 @@ module FrameSpecialFlat(volume) {
 frameRackWidth = 30;
 frameRackDepth = 16.5;
 frameRackHeight = 12.8;
+frameRackFrameHeight = frameRackHeight + 2;
 
 rackInnerHeight = 10.9;
 rackInnerDiff = 4.0;
@@ -445,8 +446,9 @@ function getFrameRackSpace(factor=1, count=1) = getFrameOuterVolume([frameRackWi
 // count = Count of racks
 // alignX 0=NoAlign, 1=AlignLeft, 4=AlignRight
 // alignY 0=NoAlign, 2=AlignBottom, 5=AlignTop
+// frame = true when frame should be created (2 mm higher than rack); false otherwise
 
-module RackBase(factor=1, count=1, alignX=NoAlign, alignY=NoAlign) {
+module RackBase(factor=1, count=1, alignX=NoAlign, alignY=NoAlign, frame=false) {
     
     yOffset = (frameRackDepth - rackInnerDiff) / 2;
     
@@ -469,6 +471,13 @@ module RackBase(factor=1, count=1, alignX=NoAlign, alignY=NoAlign) {
         UpperWeb();
         LowerWeb();
     }
+
+    module XWall(y = 0) {
+        translate([-dockLeft, y])
+            Wall(xLeftWallVolume);
+        translate([endx + wayXOffset, y])
+            Wall(xRightWallVolume);
+    }
     
     endx = (factor-1) * frameRackWidth;
     endy = (count-1) * frameRackDepth;
@@ -487,6 +496,27 @@ module RackBase(factor=1, count=1, alignX=NoAlign, alignY=NoAlign) {
                 InnerWebs();
         }
     }
+    if (frame) {
+        yWallVolume = [
+            getDividerThickness(),
+            frameRackDepth * count + 2*getDividerThickness() + getTolerance(),
+            frameRackFrameHeight];
+
+        if (alignX != AlignLeft)
+            Wall(yWallVolume);
+        if (alignX != AlignRight)
+            translate([getFrameRackSpace(factor, count).x - getDividerThickness(), 0])
+            Wall(yWallVolume);
+    }
+
+    xLeftWallVolume = [
+        wayXOffset + dockLeft + getDividerThickness(), 
+        getDividerThickness(), 
+        frameRackFrameHeight];
+    xRightWallVolume = [
+        wayXOffset + dockRight + getDividerThickness() + getTolerance(), 
+        getDividerThickness(), 
+        frameRackFrameHeight];
     
     if (alignY == AlignBottom) {
         translate([0, -2*getDividerThickness()]) {
@@ -494,13 +524,18 @@ module RackBase(factor=1, count=1, alignX=NoAlign, alignY=NoAlign) {
             translate([endx, 0])
                 UpperWeb();
         }
+    } else if(frame) {
+        XWall();
     }
+
     if (alignY == AlignTop) {
         translate([0, endy + 2*getDividerThickness()]) {
             LowerWeb();
             translate([endx, 0])
                LowerWeb();
         }
+    } else if (frame) {
+        XWall(frameRackDepth * count + getDividerThickness() + getTolerance());
     }
 }
 
@@ -509,10 +544,9 @@ module RackBase(factor=1, count=1, alignX=NoAlign, alignY=NoAlign) {
 // factor 1 for rack 30, 2 for rack 60
 // count = Count of racks
 
-module FrameRack(factor=1, count=1) {
+module FrameRack(factor=1, count=1, alignX=NoAlign, alignY=NoAlign) {
     // Outer frame
-    Frame([frameRackWidth * factor, frameRackDepth * count, frameRackHeight]);
-    RackBase(factor, count);
+    RackBase(factor, count, alignX, alignY, true);
 }
 
 frameBracketWidth = 27;

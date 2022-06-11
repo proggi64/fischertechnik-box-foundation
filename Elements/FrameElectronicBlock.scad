@@ -9,8 +9,8 @@ use <../ModelBase/Complex.scad>
 include <../Base/PlacementOptions.scad>
 
 /* [Element Parameters] */
-alignX = 0;   // [0:NoAlign, 1:AlignLeft, 3:AlignCenter, 4:AlignRight]
-alignY = 0;   // [0:NoAlign, 2:AlignBottom, 3:AlignCenter, 5:AlignTop]
+alignX = 0;   // [0:NoAlign, 1:AlignLeft, 4:AlignRight]
+alignY = 0;   // [0:NoAlign, 2:AlignBottom, 5:AlignTop]
 
 /* [Hidden] */
 width = 45;
@@ -18,8 +18,8 @@ depth = 75;
 height = 6;
 
 // getFrameElectronicBlockSpace(alignX, alignY)
-// alignX 0=NoAlign 1=AlignLeft 3=AlignCenter 4=AlignRight 
-// alignY 0=AlignNo 2=AlignBottom 3=AlignCenter 5=AlignTop
+// alignX 0=NoAlign 1=AlignLeft 4=AlignRight 
+// alignY 0=AlignNo 2=AlignBottom 5=AlignTop
 // Gets the space the frame for an electronic block needs as width and depth(.x and .y as a list). 
 
 function getFrameElectronicBlockSpace(alignX=NoAlign, alignY=NoAlign) = 
@@ -27,8 +27,8 @@ function getFrameElectronicBlockSpace(alignX=NoAlign, alignY=NoAlign) =
 
 // FrameElectronicBlock(alignX, alignY)
 // Frame for electronic block.
-// alignX 0=NoAlign 1=AlignLeft 3=AlignCenter 4=AlignRight 
-// alignY 0=AlignNo 2=AlignBottom 3=AlignCenter 5=AlignTop
+// alignX 0=NoAlign 1=AlignLeft 4=AlignRight 
+// alignY 0=AlignNo 2=AlignBottom 5=AlignTop
 
 module FrameElectronicBlock(alignX=NoAlign, alignY=NoAlign) {
     DockableEdgedFrame([width, depth, height], alignX, alignY);

@@ -7,7 +7,7 @@ use <../../Base/Constants.scad>
 use <../../ModelBase/Complex.scad>
 
 include <../../Base/PlacementOptions.scad>
-
+/*
 RackBase();
 
 Place(40, 0, getFrameRackSpace(2), rotation=Rotate90)
@@ -26,11 +26,11 @@ Place(160, 0) {
 }
 
 Place(240, 0) {
-    RackBase(2, 2, alignY=AlignBottom);    
+    RackBase(2, 2, alignY=AlignBottom, frame=true);
 }
 
 Place(320, 0) {
-    RackBase(2, 2, alignY=AlignTop);    
+    RackBase(2, 2, alignY=AlignTop, frame=true);    
 }
 
 Place(0, 80) {
@@ -38,9 +38,13 @@ Place(0, 80) {
 }
 
 Place(0, 120) {
-    RackBase(2, 2, alignX=AlignLeft);
+    RackBase(2, 2, alignX=AlignLeft, frame=true);
 }
 
-Place(0, 160) {
-    RackBase(2, 2, alignX=AlignRight);
-}
+Place(0, 160) {*/
+    RackBase(2, 2, alignX=AlignRight, frame=true);
+/*}
+
+Place(0, 200) {
+    RackBase(1, 4, alignX = NoAlign, alignY = NoAlign, frame=true);
+}*/
