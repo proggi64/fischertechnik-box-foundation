@@ -18,7 +18,8 @@ BoxWeb(
   distance, 
   boxSpace=getBox190Space(), 
   webWidth=getBoxWebWidth(), 
-  webThickness=1.0);
+  webThickness=1.0,
+  height=getBoxUsageHeight());
 ```
 
 | Parameter | Typ | Beschreibung |
@@ -29,6 +30,7 @@ BoxWeb(
 | boxSpace | \[x,y\] | Fläche, auf der die Stege platziert werden. Standard ist der nutzbare Raum der Box 190 x 130. Für die Box 130 x 95 kann __getBox130Space()__ angegeben werden. Es können beliebige andere Flächen angegeben werden, z.B. um Stege in selbstdefinierten Rahmen ([__Frame__](../ModelBase/Frame.md)) oder an Trennwänden zu generieren. |
 | webWidth | Decimal | Länge der Oberseite des Stegs. So weit ragt der Steg von der Wand in den Innenraum der Box. Der Standardwert ist in *Constants.scad* als Funktion [__getBoxWebWidth()__](../ModelBase/getBoxWebWidth.md) definiert. |
 | webThickness | Decimal | Stärke des Stegs. Dies entspricht im Standard nicht der normalen Wandstärke der Rahmen und Trenner, sondern ist etwas dünner. Bei mit Trennern verschmolzenen Stegen sollte hier [__getDividerThickness()__](../Base/getDividerThickness.md) als Wert übergeben werden (aus *Constants.scad*). |
+| height | Decimal | Höhe des Stegs. Für manche in eine Wand integrierte Elemente ist eine variable Höhe notwendig, für Kästen mit vom Standard [__getBoxUsageHeight()__](getBoxUsageHeight.md) abweichender Höhe ebenfalls. |
 
 ## Beispiele
 Siehe *Test/Base/BoxesTestBoxWeb.scad*

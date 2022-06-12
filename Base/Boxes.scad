@@ -13,15 +13,13 @@ box130Depth = 95;
 // Values are from an original ec3 box
 topBottomDifference = 1.5;
 outerHeight = 40;
-innerHeight = 38.2;
-baseThickness = outerHeight - innerHeight;
+baseThickness = 1.8;
+innerHeight = outerHeight - baseThickness;
 stackExcess = 5.7;
 radius = 3.5;
 wallThickness = 1.5;
 tolerance = 0.2;
-stackOffset = innerHeight - stackExcess;
 
-boxUsageHeight = stackOffset;
 boxWallThickness = wallThickness;
 boxBaseThickness = baseThickness;
 boxWebWidth = 3.0;
@@ -30,9 +28,10 @@ boxWebWidth = 3.0;
 // Gets the wall thickness of a Fischertechnik Box
 function getBoxWallThickness() = boxWallThickness;
 
-// getBoxUsageHeight()
+// getBoxUsageHeight(height = 38.2)
 // Gets the usable height of a Fischertechnik box
-function getBoxUsageHeight() = boxUsageHeight;
+// height = Outer height of the box from the bottom to the upper edge.
+function getBoxUsageHeight(height = outerHeight) = height - baseThickness - stackExcess;
 
 // getBoxInnerHeight()
 // Gets the inner height of a Fischertechnik box, including the stack excess
@@ -148,8 +147,9 @@ module Box130() {
 // boxSpace = inner width and depth of the box (default: Box 190)
 // webWidth = length of the web (default is 3 mms)
 // webThickness = thickness of the web (default is 1 mm)
+// height = Height of the web (standard is getBoxUsageHeight())
 
-module BoxWeb(corner, side, distance, boxSpace=getBox190Space(), webWidth=getBoxWebWidth(), webThickness=1.0) {
+module BoxWeb(corner, side, distance, boxSpace=getBox190Space(), webWidth=getBoxWebWidth(), webThickness=1.0, height=getBoxUsageHeight()) {
     sink = getBoxWallThickness()/2;
 
     width = (corner % 2 == 0) ? 
@@ -177,5 +177,5 @@ module BoxWeb(corner, side, distance, boxSpace=getBox190Space(), webWidth=getBox
                 (side == RightOfCorner ? distance : -sink)));
     
     translate([xDiff, yDiff, -getExcess()])
-        cube([width, depth, boxUsageHeight + 2*getExcess()]);
+        cube([width, depth, height + 2*getExcess()]);
 }

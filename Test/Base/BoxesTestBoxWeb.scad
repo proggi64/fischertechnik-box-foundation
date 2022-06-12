@@ -75,3 +75,11 @@ translate([200, 0]) {
 
     BoxWeb(UpperLeft, RightOfCorner, 70, webWidth=30, webThickness=5, boxSpace=getBox130Space());
 }
+
+translate([0, 180]) {
+    #BoxBase(135, 95, 45);
+    
+    BoxWeb(UpperLeft, LeftOfCorner, 6, boxSpace=getBox130Space(), height = getBoxUsageHeight(45));
+    BoxWeb(UpperLeft, RightOfCorner, 6, boxSpace=getBox130Space(), height = getBoxUsageHeight(45));
+
+}

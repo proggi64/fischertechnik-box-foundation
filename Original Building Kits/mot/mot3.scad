@@ -40,7 +40,9 @@ color("lightgray") {
 upperWebDistance = 6;
     
 BoxWeb(UpperLeft, LeftOfCorner, upperWebDistance, webThickness=getDividerThickness());
+BoxWeb(UpperLeft, LeftOfCorner, upperWebDistance, webThickness=getDividerThickness(), height = getFrameAxisHeight(), webWidth = 7);
 BoxWeb(UpperRight, RightOfCorner, upperWebDistance, webThickness=getDividerThickness());
+BoxWeb(UpperRight, RightOfCorner, upperWebDistance, webThickness=getDividerThickness(), height = getFrameAxisHeight(), webWidth = 7);
 
 lowerWebDistance = 11;
     

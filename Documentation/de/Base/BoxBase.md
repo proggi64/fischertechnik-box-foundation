@@ -19,9 +19,9 @@ BoxBase(
 
 | Parameter | Typ | Beschreibung |
 | ------ | ------ | ------ |
-| width | Decimal | Breite der Box am oberen Rand. Die Boxen werden konisch nach unten etwas enger und die Wände nehmen auch etwas Plart ein, so dass der innere Platz am Boden um einige Millimeter schmaler ist. *width* sollte den Maßen der Originalboxen berücksichtigen. Ein Sortierkasten für die Box 1000 ist am oberen Rand exakt 190 x 130 mm groß. |
+| width | Decimal | Breite der Box am oberen Rand. Die Boxen werden konisch nach unten etwas enger und die Wände nehmen auch etwas Platz ein, so dass der innere Platz am Boden um einige Millimeter schmaler ist. *width* sollte den Maßen der Originalboxen am oberen Rand entsprechen. Ein Sortierkasten für die Box 1000 ist am oberen Rand exakt 190 x 130 mm groß. |
 | depth | Decimal | Tiefe der Box am oberen Rand. Siehe dazu Anmerkungen zu *width*. |
-| height| Decimal | Alle Sortierkästen von Fischertechnik sind 40 mm hoch (hier Standardwert). Denkbar sind aber auch spezielle Lösungen mit höherer und niedrigerer Box übereinander gestapelt, die wieder zusammen die Box-1000-Normhöhe ergeben. So bekommt man Teil unter, die höher als die ca. 35 mm sind, die in die Boxen noch passen. |
+| height| Decimal | Alle Sortierkästen von Fischertechnik sind 40 mm hoch (hier Standardwert). Denkbar sind aber auch spezielle Lösungen mit höherer und niedrigerer Box übereinander gestapelt, die wieder zusammen die Box-1000-Normhöhe ergeben. So bekommt man Teile unter, die höher als die ca. 35 mm sind, die in die Boxen noch passen. |
 
 ## Beispiele
 Siehe *Test/Base/BoxesTestBoxBase.scad*
