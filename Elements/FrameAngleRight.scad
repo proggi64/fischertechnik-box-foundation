@@ -25,8 +25,7 @@ function getFrameAngleIsoscelesSpace(count=1) = getFrameOuterVolume([width * cou
 // The complete frame has a tolerance of addition 1 mm in each direction.
 
 module FrameAngleRight(count=1) {
-    innerVolume = getFrameInnerVolume([width * count, depth, height]);
-    Frame(innerVolume);
+    Frame([width * count, depth, height]);
 }
 
 // Tests

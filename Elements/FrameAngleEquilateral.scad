@@ -25,8 +25,7 @@ function getFrameAngleEquilateralSpace(count=1) = getFrameOuterVolume([width * c
 // The complete frame has a tolerance of addition 1 mm in each direction.
 
 module FrameAngleEquilateral(count=1) {
-    innerVolume = getFrameInnerVolume([width * count, depth, height]);
-    Frame(innerVolume);
+    Frame([width * count, depth, height]);
 }
 
 // Tests
