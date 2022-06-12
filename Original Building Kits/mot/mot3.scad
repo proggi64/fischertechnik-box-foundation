@@ -102,6 +102,9 @@ angleIsoscelesY = clipsY - getFrameAngleIsoscelesSpace(4).y;
 Place(x = angleIsoscelesX, y = angleIsoscelesY)
     FrameAngleIsosceles(4);
 
+Place(x = angleIsoscelesX + getFrameAngleIsoscelesSpace(4).x/2, y = angleIsoscelesY + 25)
+    Text("mot3");
+
 angleEquilateralX = angleIsoscelesX + getFrameAngleIsoscelesSpace(4).x - getDividerThickness();
 angleEquilateralY = angleIsoscelesY + 8.4;
 Place(x = angleEquilateralX, y = angleEquilateralY)
