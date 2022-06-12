@@ -16,7 +16,7 @@ dock = false;
 
 /* [Hidden] */
 width = 36;
-depth = 9;
+depth = 8.2;
 
 innerWidth = 18.5;
 
