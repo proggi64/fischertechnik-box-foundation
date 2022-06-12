@@ -35,14 +35,46 @@ module RackFrame() {
 }
 
 color("lightgray") {
-#Box190();
+Box190();
 
 upperWebDistance = 6;
+axisHolderDistance = 42.8;
+axisHolderDepth = 14.2;
     
-BoxWeb(UpperLeft, LeftOfCorner, upperWebDistance, webThickness=getDividerThickness());
-BoxWeb(UpperLeft, LeftOfCorner, upperWebDistance, webThickness=getDividerThickness(), height = getFrameAxisHeight(), webWidth = 7);
-BoxWeb(UpperRight, RightOfCorner, upperWebDistance, webThickness=getDividerThickness());
-BoxWeb(UpperRight, RightOfCorner, upperWebDistance, webThickness=getDividerThickness(), height = getFrameAxisHeight(), webWidth = 7);
+BoxWeb(UpperLeft, LeftOfCorner, upperWebDistance);
+BoxWeb(UpperLeft, LeftOfCorner, upperWebDistance, height = getFrameAxisHeight(), webWidth = 7);
+BoxWeb(UpperRight, RightOfCorner, upperWebDistance);
+BoxWeb(UpperRight, RightOfCorner, upperWebDistance, height = getFrameAxisHeight(), webWidth = 7);
+BoxWeb(
+    UpperLeft, 
+    LeftOfCorner, 
+    axisHolderDistance, 
+    webThickness=getDividerThickness(), 
+    height = getFrameAxisHeight() - getAxisDiameter(), 
+    webWidth = axisHolderDepth);
+BoxWeb(
+    UpperRight, 
+    RightOfCorner, 
+    axisHolderDistance, 
+    webThickness=getDividerThickness(), 
+    height = getFrameAxisHeight() - getAxisDiameter(), 
+    webWidth = axisHolderDepth);
+
+axis110EndVolume = [getDividerThickness(), 4 + getDividerThickness(), getFrameAxisHeight()];
+axis110SideVolume = [8 + getDividerThickness(), getDividerThickness(), getFrameAxisHeight()];
+axis110HolderSpace = [8 + getDividerThickness(), 4 + getDividerThickness()];
+axis110X = 35;
+axis110Y = axisHolderDepth - axis110EndVolume.y;
+
+Place(x=axis110X, y=axis110Y, alignX=AlignLeft, alignY=AlignTop, elementSpace=axis110HolderSpace) {
+    Wall(axis110EndVolume);
+    Wall(axis110SideVolume);
+}
+Place(x=axis110X, y=axis110Y, alignX=AlignRight, alignY=AlignTop, elementSpace=axis110HolderSpace) {
+    translate([axis110HolderSpace.x - getDividerThickness(), 0])
+        Wall(axis110EndVolume);
+    Wall(axis110SideVolume);
+}
 
 lowerWebDistance = 11;
     
@@ -55,7 +87,7 @@ Place(x=getComboInnerGearWheelAndIdlerGearZ15Space().x - 6, elementSpace=getCyli
 
 RackFrame();
 
-springLegY = 78;
+springLegY = 75.2;
 Place(y=springLegY, elementSpace= getHolderSpringLegSpace(4), rotation=Rotate90)
     HolderSpringLeg(4, true);
 
@@ -73,7 +105,7 @@ Place(x = angleIsoscelesX, y = angleIsoscelesY)
     FrameAngleIsosceles(4);
 
 angleEquilateralX = angleIsoscelesX + getFrameAngleIsoscelesSpace(4).x - getDividerThickness();
-angleEquilateralY = angleIsoscelesY + 5.6;
+angleEquilateralY = angleIsoscelesY + 8.4;
 Place(x = angleEquilateralX, y = angleEquilateralY)
     FrameAngleEquilateral(2);
 
@@ -102,7 +134,7 @@ Place(clip10UpX + clipsDistance, clip10UpY)
 
 blockXLeft = gearBoxXBase;
 blockXRight = gearBoxXBase + getFrameDifferentialGearboxSpace(110).x - getFrameSingleLayingStandardBlockSpace().x;
-blockY = gearBoxY + getFrameDifferentialGearboxSpace().y + 3.2;
+blockY = gearBoxY + getFrameDifferentialGearboxSpace().y + 3.5;
 Place(x = blockXLeft, y = blockY)
     FrameSingleLayingStandardBlock();
 Place(x = blockXRight, y = blockY)
