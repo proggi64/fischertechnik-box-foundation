@@ -1,7 +1,5 @@
 // OpenSCAD Box mot3
 
-// **** in Arbeit
-
 use <../../Base/Constants.scad>
 use <../../Base/Placement.scad>
 use <../../Base/Deployment.scad>
