@@ -22,7 +22,33 @@ function getInlayBaseSpace(space) = [space.x - getTolerance(), space.y - getTole
 // space = The size of the bottom
 
 module InlayBase(space) {
-    RoundedCornerPlate(space.x - getTolerance(), space.y - getTolerance(), baseThickness, radius);
+    module WebCutoffs() {
+        distance = 7;
+        width = 1.4;
+        depth = 2;
+        thickness = baseThickness * 2;
+        cutoffVolume = [width, depth, thickness];
+
+        translate([0, 0, -baseThickness/2]) {
+            translate([-getExcess(), 0]) {
+                translate([0, distance])
+                    cube(cutoffVolume);
+                translate([0, getInlayBaseSpace(space).y - distance - depth])
+                    cube(cutoffVolume);
+            }
+            translate([getInlayBaseSpace(space).x - width + getExcess(), 0]) {
+                translate([0, distance])
+                    cube(cutoffVolume);
+                translate([0, getInlayBaseSpace(space).y - distance - depth])
+                    cube(cutoffVolume);
+            }
+        }
+    }
+
+    difference() {
+        RoundedCornerPlate(space.x - getTolerance(), space.y - getTolerance(), baseThickness, radius);
+        WebCutoffs();
+    }
 }
 
 halfTolerance = getTolerance()/2;
@@ -32,7 +58,7 @@ halfTolerance = getTolerance()/2;
 // Box190InlayWeb to place webs that hold the inlay in position.
 
 module Box190Inlay() {
-    translate([halfTolerance, halfTolerance, -baseThickness]) {
+    translate([halfTolerance, halfTolerance, -baseThickness]) {            
         InlayBase(getBox190Space());
     }
 }
@@ -50,7 +76,7 @@ module Box190InlayWeb(align, position, inlayWebDepth=inlayWebDepth) {
     inlayWebThickness = 1.3;
     inlayWebHeight = getBoxUsageHeight();    
     
-    inlayWebRecessHeight = 16;
+    inlayWebRecessHeight = 15.6;
     inlayWebRecessDepth = 1.2;
     inlayWebRecessAngle = 7.0;
 

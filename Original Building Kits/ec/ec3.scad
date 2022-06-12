@@ -40,8 +40,9 @@ webDistance = (getBox190Space().x - 61)/2;
 BoxWeb(UpperRight, RightOfCorner, webDistance);
 BoxWeb(UpperLeft, LeftOfCorner, webDistance);
 
-BoxWeb(UpperLeft, RightOfCorner, 8.2, webWidth=15, webThickness=getDividerThickness());
-BoxWeb(UpperRight, LeftOfCorner, 8.2, webWidth=15, webThickness=getDividerThickness());
+upperWebDistance = 8.2 - getDividerThickness();
+BoxWeb(UpperLeft, RightOfCorner, upperWebDistance, webWidth=15, webThickness=getDividerThickness());
+BoxWeb(UpperRight, LeftOfCorner, upperWebDistance, webWidth=15, webThickness=getDividerThickness());
 
 Place(65.5, 62.7)    
     Text("ec 3");

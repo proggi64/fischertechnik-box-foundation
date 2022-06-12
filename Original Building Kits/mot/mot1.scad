@@ -15,7 +15,7 @@ use <../../Elements/FrameAxis60Open.scad>
 use <../../Elements/FrameMotor6V.scad>
 use <../../Elements/AxisCoupling.scad>
 use <../../Elements/FrameBracketWithAxle80.scad>
-use <../../Elements/FrameBracketCombo.scad>
+use <../../Elements/ComboFrameBrackets.scad>
 use <../../Elements/AxisFlatHub.scad>
 use <../../Elements/CylinderGearZ20.scad>
 
@@ -28,11 +28,11 @@ difference() {
 }
 HolderBatterySet();
 
-upperWebDistance = 13;
+upperWebDistance = 11;
 BoxWeb(UpperLeft, RightOfCorner, upperWebDistance + getDividerThickness(), webThickness=getDividerThickness());
 BoxWeb(UpperRight, LeftOfCorner, upperWebDistance + getDividerThickness(), webThickness=getDividerThickness());
 wallVolume = [getBox190Space().x, getDividerThickness(), 15];
-Place(y=upperWebDistance, alignY=AlignTop, elementSpace=wallVolume)
+Place(y=upperWebDistance + getDividerThickness(), alignY=AlignTop, elementSpace=wallVolume)
     Wall([getBox190Space().x, getDividerThickness(), 15]);
     
 CenterHorizontal(0, 20)
@@ -100,8 +100,8 @@ Place(
 Place(
     y=25,
     x=4, 
-    elementSpace=getFrameBracketComboSpace(),
+    elementSpace=getComboFrameBracketsSpace(),
     alignX=AlignRight,
     alignY=AlignTop)
-    FrameBracketCombo();
+    ComboFrameBrackets();
 }

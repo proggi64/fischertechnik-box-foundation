@@ -171,9 +171,9 @@ module BoxWeb(corner, side, distance, boxSpace=getBox190Space(), webWidth=getBox
     yDiff = corner == LowerLeft ? 
                 (side == RightOfCorner ? -sink : distance) :
             (corner == UpperLeft ?
-                (side == RightOfCorner ? boxSpace.y-distance : boxSpace.y-webWidth+sink) :
+                (side == RightOfCorner ? boxSpace.y-distance-webThickness : boxSpace.y-webWidth+sink) :
             (corner == UpperRight ?
-                (side == RightOfCorner ? boxSpace.y-webWidth+sink : boxSpace.y-distance) :
+                (side == RightOfCorner ? boxSpace.y-webWidth+sink : boxSpace.y-distance-webThickness) :
                 (side == RightOfCorner ? distance : -sink)));
     
     translate([xDiff, yDiff, -getExcess()])

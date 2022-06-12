@@ -1,12 +1,19 @@
 // Fischertechnik Box Foundation
-// Box Inlay Web Test
-// Test Box190Inlay
+// BoxeInlays Test
+// 3D Print Test Box190Inlay
 
+use <../../Base/Boxes.scad>
 use <../../Base/BoxInlays.scad>
 
 include <../../Base/PlacementOptions.scad>
 
-Box190Inlay();
+difference() {
+    Box190Inlay();
+    // Inner cutoff to save filament
+    translate([1.9, 1.3, -1])
+        scale([0.9, 0.9, 1.1])
+            Box190Inlay();
+}
 
 Box190InlayWeb(AlignBottom, 0);
 Box190InlayWeb(AlignBottom, 1);
