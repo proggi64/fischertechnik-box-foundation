@@ -7,19 +7,56 @@ include <../../Base/PlacementOptions.scad>
 
 #Box190();
 
-BoxWeb(LowerLeft, LeftOfCorner, 7.5);
-BoxWeb(LowerLeft, RightOfCorner, 7.5);
+BoxWeb(UpperLeft, LeftOfCorner, 0);
+BoxWeb(UpperLeft, RightOfCorner, 0);
 
-BoxWeb(LowerRight, LeftOfCorner, 5);
-BoxWeb(LowerRight, RightOfCorner, 2.5);
+BoxWeb(UpperLeft, LeftOfCorner, 2);
+BoxWeb(UpperLeft, RightOfCorner, 2);
 
-BoxWeb(UpperRight, LeftOfCorner, 10);
-BoxWeb(UpperRight, RightOfCorner, 15);
+BoxWeb(UpperLeft, LeftOfCorner, 4);
+BoxWeb(UpperLeft, RightOfCorner, 4);
 
-BoxWeb(UpperLeft, LeftOfCorner, 20);
-BoxWeb(UpperLeft, RightOfCorner, 25);
+BoxWeb(UpperLeft, LeftOfCorner, 6);
+BoxWeb(UpperLeft, RightOfCorner, 6);
 
-BoxWeb(UpperLeft, RightOfCorner, 70, webWidth=30, webThickness=5);
+
+BoxWeb(LowerLeft, LeftOfCorner, 0);
+BoxWeb(LowerLeft, RightOfCorner, 0);
+
+BoxWeb(LowerLeft, LeftOfCorner, 2);
+BoxWeb(LowerLeft, RightOfCorner, 2);
+
+BoxWeb(LowerLeft, LeftOfCorner, 4);
+BoxWeb(LowerLeft, RightOfCorner, 4);
+
+BoxWeb(LowerLeft, LeftOfCorner, 6);
+BoxWeb(LowerLeft, RightOfCorner, 6);
+
+
+BoxWeb(UpperRight, LeftOfCorner, 0);
+BoxWeb(UpperRight, RightOfCorner, 0);
+
+BoxWeb(UpperRight, LeftOfCorner, 2);
+BoxWeb(UpperRight, RightOfCorner, 2);
+
+BoxWeb(UpperRight, LeftOfCorner, 4);
+BoxWeb(UpperRight, RightOfCorner, 4);
+
+BoxWeb(UpperRight, LeftOfCorner, 6);
+BoxWeb(UpperRight, RightOfCorner, 6);
+
+
+BoxWeb(LowerRight, LeftOfCorner, 0);
+BoxWeb(LowerRight, RightOfCorner, 0);
+
+BoxWeb(LowerRight, LeftOfCorner, 2);
+BoxWeb(LowerRight, RightOfCorner, 2);
+
+BoxWeb(LowerRight, LeftOfCorner, 4);
+BoxWeb(LowerRight, RightOfCorner, 4);
+
+BoxWeb(LowerRight, LeftOfCorner, 6);
+BoxWeb(LowerRight, RightOfCorner, 6);
 
 translate([200, 0]) {
     #Box130();
