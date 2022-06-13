@@ -1,6 +1,6 @@
 // Fischertechnik Box Library
 // Frame for two Strut 30
-// 38537
+// 31764, 36309, 36912, 38537, 38538, 160545
 
 use <../ModelBase/Complex.scad>
 
