@@ -2,8 +2,6 @@
 // Frame for TX/TXT controller
 // 153513, 173067, 500995, 
 
-use <../Base/Constants.scad>
-use <../ModelBase/Simple.scad>
 use <../ModelBase/Complex.scad>
 
 include <../Base/PlacementOptions.scad>
