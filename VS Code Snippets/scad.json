@@ -1,4 +1,46 @@
 {
+	"Element Parameters": {
+		"prefix": "elp",
+		"body" : [
+			"/* [Element Parameters] */"
+		],
+		"description": "Customizer element parameters"
+	},
+
+	"Hidden Parameters": {
+		"prefix": "hp",
+		"body" : [
+			"/* [Hidden] */"
+		],
+		"description": "Customizer hidden parameters"
+	},
+
+	"Count Parameter": {
+		"prefix": "cp",
+		"body" : [
+			"count = 1;"
+		],
+		"description": "Customizer count parameter"
+	},
+
+	"Columns And Rows Parameter": {
+		"prefix": "crp",
+		"body" : [
+			"columns = 1;",
+			"rows = 1;"
+		],
+		"description": "Customizer columns and rows parameter"
+	},
+
+	"Alignment Parameters": {
+		"prefix": "alp",
+		"body" : [
+			"alignX = 0;   // [0:NoAlign, 1:AlignLeft, 3:AlignCenter, 4:AlignRight]",
+			"alignY = 0;   // [0:NoAlign, 2:AlignBottom, 3:AlignCenter, 5:AlignTop]",
+		],
+		"description": "Customizer alignment parameters"
+	},
+
 	"3D Print Test": {
 		"prefix": "3dpt",
 		"body": [
