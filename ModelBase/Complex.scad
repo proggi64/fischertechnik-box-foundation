@@ -27,8 +27,9 @@ function getElevatedFramesWithCutoffSpace(volume) = getFrameOuterVolume([volume.
 // bearingLength = length of the bearing
 // cutThrough = true if no end walls are needed
 // single = true if only the left holder should be created
+// clampThrough = true if the clamp goes through the bottom
 
-module ElevatedFramesWithCutoff(volume, depth, height, bearingLength, cutThrough=false, single=false) {
+module ElevatedFramesWithCutoff(volume, depth, height, bearingLength, cutThrough=false, single=false, clampThrough=false) {
     width = volume.x + getTolerance() - (cutThrough ? 2*getDividerThickness() : 0);
     innerFrameWidth = width - 2*bearingLength;
 
@@ -46,9 +47,11 @@ module ElevatedFramesWithCutoff(volume, depth, height, bearingLength, cutThrough
     axisCutoffWidth = width;
     axisCutoffDepth = volume.y;
     axisCutoffHeight = volume.z + getExcess();
+    axisClampHeight = (clampThrough ? height : axisCutoffHeight) + getExcess();
 
     zOffset = height - volume.z;
     clamp = (depth - volume.y) / 2;
+    zOffsetClamp = clampThrough ? 0 : zOffset;
     
     cutThroughWidth = getDividerThickness() + 2*getExcess();
 
@@ -56,13 +59,14 @@ module ElevatedFramesWithCutoff(volume, depth, height, bearingLength, cutThrough
         NestedFrames();
         translate([getDividerThickness() + bearingLength, -getDividerThickness(), 0])
             cube([cutoffWidth, cutoffDepth, cutoffHeight]);
-        translate([getDividerThickness(), getDividerThickness() + clamp, zOffset])
-            cube([axisCutoffWidth, axisCutoffDepth, axisCutoffHeight]);
+        translate([getDividerThickness(), getDividerThickness() + clamp, zOffsetClamp])
+            cube([axisCutoffWidth, axisCutoffDepth, axisClampHeight]);
         if (cutThrough) {
             translate([-getExcess(), getDividerThickness(), zOffset])
-                cube([cutThroughWidth, depth, axisCutoffHeight]);
-            translate([width + getDividerThickness() - getExcess(), getDividerThickness(), zOffset])
-                cube([cutThroughWidth, depth, axisCutoffHeight]);
+                cube([cutThroughWidth + getExcess(), depth, axisCutoffHeight]);
+            if (!single)
+                translate([width + getDividerThickness() - getExcess(), getDividerThickness(), zOffset])
+                    cube([cutThroughWidth, depth, axisCutoffHeight]);
         }
     }
 }
@@ -99,6 +103,32 @@ module FrameAxis(length=30, cutThrough=false, height=getFrameAxisHeight(), singl
     loadHeight = getAxisDiameter();
     
     ElevatedFramesWithCutoff([length, loadDepth, loadHeight], getFrameAxisDepth(), height, bearingLength, cutThrough, single);
+}
+
+// getAxisMiddleSupportSpace(length=8)
+// Gets the space the AxisMiddleSupport needs.
+// length = length of the element (defaut 8)
+
+function getAxisMiddleSupportSpace(length=8) = [length, getFrameAxisSpace().y];
+
+// AxisMiddleSupport(length=8, height=getFrameAxisHeight())
+// Frame for a middle support of a long axis
+// length = length of the element (defaut 8)
+// height = Height of the axis holder (default ist 14.8)
+
+module AxisMiddleSupport(length=8, height=getFrameAxisHeight()) {
+    bearingLength = length/2;
+    loadDepth = getAxisDiameter();
+    loadHeight = getAxisDiameter();
+
+    ElevatedFramesWithCutoff(
+        [bearingLength*2, loadDepth, loadHeight], 
+        getFrameAxisDepth(), 
+        height, 
+        bearingLength, 
+        cutThrough=true, 
+        single=false, 
+        clampThrough=true);
 }
 
 // getDockableEdgedFrameWidth(edgeDistance, alignX=NoAlign)

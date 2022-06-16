@@ -12,3 +12,6 @@ translate([40, 0])
     
 translate([0, 20])
     ElevatedFramesWithCutoff([40, 20, 15], 20, 20, 10);
+    
+translate([120, 0])
+    ElevatedFramesWithCutoff([9, 4, 4], 5, 10, 4, true, false, true);

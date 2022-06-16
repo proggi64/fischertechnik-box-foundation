@@ -1,6 +1,6 @@
 # getDockableEdgedFrameSpace
 
-Funktion: Liefert die Fläche für einen mit __DockableEdgedFrame__ erzeugten Rahmen. Der Platz für die in die Wand hineinragenden optionalen Stege wird nicht mit eingerechnet.
+Funktion: Liefert die Fläche für einen mit [__DockableEdgedFrame__](DockableEdgedFrame.md) erzeugten Rahmen. Der Platz für die in die Wand hineinragenden optionalen Stege wird nicht mit eingerechnet.
 
 <img width="344" alt="ComplexTestDockableEdgedFrame" src="https://user-images.githubusercontent.com/48654609/168326465-092ff8fa-9027-4002-a818-d70652e15877.png">
 

@@ -28,8 +28,11 @@ ElevatedFramesWithCutoff(
 | height | Decimal | Jeweilige Höhe der beiden Halterungsrahmen. |
 | bearingLenght | Decimal | Jeweilige Länge der beiden Halterungsrahmen. Bei Achsen sollte diese weniger als die Hälfte der Achslänge betragen. |
 | cutThrough | Boolean | __true__, wenn die Wand am Ende der beiden Halterungen weggelassen werden soll. |
+| clampThrough | Boolean | __true__, wenn die komplette Wand am etwas enegeren Einlass der Achse bis zum Boden entfernt werden soll. Das wird intern vom Modul [__AxisMiddleSupport__](AxisMiddleSupport.md) verwendet. |
 
-## Beispiel
+## Beispiele
+
+### Breite und Höhe der Auflage individuell angeben
 ```
 use <../../Base/Constants.scad>
 use <../../ModelBase/Complex.scad>
@@ -38,3 +41,23 @@ ElevatedFramesWithCutoff([40, 20, 15], depth=20, height=20, bearingLength=10);
 ```
 
 <img width="362" alt="ElevatedFramesWithCutoff" src="https://user-images.githubusercontent.com/48654609/168866067-3facb560-2049-47e7-b1d3-e2eeebb05338.png">
+
+### Wand bis zum Boden entfernen
+```
+use <../../Base/Constants.scad>
+use <../../ModelBase/Complex.scad>
+
+ElevatedFramesWithCutoff([9, 4, 4], 5, 10, 4, cutThrough=true, single=true, clampThrough=true);
+```
+
+![Wand bis zum Boden entfernt](../../images/ElevatedFramesWithCutoff_2.png)
+
+### Mittlere Halterung
+```
+use <../../Base/Constants.scad>
+use <../../ModelBase/Complex.scad>
+
+ElevatedFramesWithCutoff([9, 4, 4], 5, 10, 4, cutThrough=true, single=false, clampThrough=true);
+```
+
+![Mittelhalterung](../../images/ElevatedFramesWithCutoff_3.png)
