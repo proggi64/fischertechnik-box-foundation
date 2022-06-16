@@ -97,6 +97,7 @@ Zwei Tutorials [Sortierkästen konstruieren](TutorialSortingBoxes.md) und [Eleme
 - [__getFrameOuterVolume__](ModelBase/getFrameOuterVolume.md): Liefert das äußere Volumen ("bounding box") eines Rahmens.
 
 ### Module für komplexe Grundformen
+- [__AxisMiddleSupport__](ModelBase/AxisMiddleSupport.md): Erzeugt ein Stützelement für Achsen.
 - [__ElevatedFramesWithCutoff__](ModelBase/ElevatedFramesWithCutoff.md): Erzeugt eine Halterung, die im Normalfall für einzelne Achsen verwendet wird.
 - [__DockableEdgedFrame__](ModelBase/DockableEdgedFrame.md): Erzeugt einen Rahmen für Bauteile, der optional an bis zu zwei Wänden angedockt werden kann.
 - [__FrameAxis__](ModelBase/FrameAxis.md): Erzeugt eine Achshalterung für eine Achse.
@@ -109,6 +110,7 @@ Zwei Tutorials [Sortierkästen konstruieren](TutorialSortingBoxes.md) und [Eleme
 - [__RailsBasePlate__](ModelBase/RailsBasePlate.md): Erzeugt Fläche mit Stegen für die Ablage einer Grundplatte.
 
 ### Funktionen zur Ermittlung von Werten zu komplexen Grundformen
+- [__getAxisMiddleSupportSpace__](ModelBase/getFrameAxisMiddleSupportSpace.md): Liefert die Fläche eines mit [__AxisMiddleSupport__](ModelBase/AxisMiddleSupport.md) erzeugten Stützelements.
 - [__getDockableEdgedFrameDepth__](ModelBase/getDockableEdgedFrameDepth.md): Liefert den vertikalen Abstand des angedockten Rahmens für [__DockableEdgedFrame__](ModelBase/DockableEdgedFrame.md).
 - [__getDockableEdgedFrameWidth__](ModelBase/getDockableEdgedFrameWidth.md): Liefert den horizontalen Abstand des angedockten Rahmens für [__DockableEdgedFrame__](ModelBase/DockableEdgedFrame.md).
 - [__getDockableEdgedFrameSpace__](ModelBase/getDockableEdgedFrameSpace.md): Liefert die Fläche für einen mit [__DockableEdgedFrame__](ModelBase/DockableEdgedFrame.md) erzeugten Rahmen.
