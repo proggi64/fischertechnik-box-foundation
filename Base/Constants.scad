@@ -39,6 +39,11 @@ function getStandAxisDiameter() = getAxisDiameter() - getAxisTolerance();
 // Gets axis bottom diameter for thicker part at the bottom
 function getAxisBottomDiameter() = axisBottomDiameter;
 
+pinHeight = 2.5;
+
+// gets the height of a connecting pin
+function getPinHeight() = pinHeight;
+
 standardEdgeDistance = 2.5;
 standardWebDistance = 11.5;
 standardCornerLength = 15;
