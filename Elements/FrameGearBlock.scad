@@ -28,12 +28,8 @@ module FrameGearBlock() {
         cutoffWidth = 6;
         difference() {
             Frame(volume);
-            translate([(getFrameOuterVolume(volume).x - cutoffWidth)/2, 0]) {
-                translate([0, -getExcess()])
-                    cube([cutoffWidth, 2*getDividerThickness(), height + getExcess()]);
-                translate([0, getFrameOuterVolume(volume).y - 1.5*getDividerThickness()])
-                    cube([cutoffWidth, 2*getDividerThickness(), height + getExcess()]);
-            }
+            FrameTopCutoff(volume, cutoffWidth);
+            FrameBottomCutoff(volume, cutoffWidth);
         }
     }
 }
