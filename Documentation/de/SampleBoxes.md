@@ -12,12 +12,12 @@ Gruppen sind z.B. Baukastenreihen wie ec (Elektronik) oder mot (Motoren)
 
 ## Kompletter Kasten oder Inlay
 
-Der Kasten ec1 wurde so modifiziert, dass er als kompletter Kasten oder Inlay für die Box-1000-Kästen generiert werden kann. Die Auswahl erfolgt über den OpenSCAD-Customizer:
+Die Kästen ec1-ec3 wurden so modifiziert, dass sie als komplette Kästen oder Inlays für die Box-1000-Sortierkästen generiert werden können. Die Auswahl erfolgt über den OpenSCAD-Customizer:
 
 ### ec1 als Inlay
 ![ec1Inlay](../images/ec1Inlay.png)
 
-### ec1 komplett!
+### ec1 komplett
 ![ec1](../images/ec1complete.png)
 
 ### Auswahl im Customizer
@@ -73,5 +73,7 @@ yInlayDiff = inlay ?
 Place(xInlayDiff, yInlayDiff)
     FrameElectronicBlock(alignX=inlay ? NoAlign : AlignLeft, alignY=inlay ? NoAlign : AlignBottom);
 ```
+
+Beim ec3 laden Wände genau auf der Höhe der Stege der Sortierboxen des Kastens 1000. Deswegen mussten sie um einen Offset von -1,8 mm nach innen versetzt werden. Auch das muss beachtet werden, wenn man die Kästen für Inlays modifiziert.
 
 In zukünftigen Versionen soll das noch besser unterstützt werden. Zunächst soll aber noch an weiteren Kästen geprüft werden, welche Auswirkungen durch *inlay*-Varianten auftreten können.

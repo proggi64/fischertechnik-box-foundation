@@ -148,10 +148,17 @@ module Box130() {
 // webWidth = length of the web (default is 3 mms)
 // webThickness = thickness of the web (default is 1 mm)
 // height = Height of the web (standard is getBoxUsageHeight())
+// sink = How much of the web is sunk into the wall
 
-module BoxWeb(corner, side, distance, boxSpace=getBox190Space(), webWidth=getBoxWebWidth(), webThickness=1.0, height=getBoxUsageHeight()) {
-    sink = getBoxWallThickness()/2;
-
+module BoxWeb(
+    corner, 
+    side, 
+    distance, 
+    boxSpace=getBox190Space(), 
+    webWidth=getBoxWebWidth(), 
+    webThickness=1.0, 
+    height=getBoxUsageHeight(),
+    sink = getBoxWallThickness()/2) {
     width = (corner % 2 == 0) ? 
             (side == LeftOfCorner ? webWidth : webThickness) :
             (side == LeftOfCorner ? webThickness : webWidth);

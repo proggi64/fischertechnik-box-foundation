@@ -5,6 +5,7 @@ use <../../Base/Alignment.scad>
 use <../../Base/Placement.scad>
 use <../../Base/Deployment.scad>
 use <../../Base/Boxes.scad>
+use <../../Base/BoxInlays.scad>
 use <../../ModelBase/Simple.scad>
 
 include <../../Base/PlacementOptions.scad>
@@ -20,6 +21,10 @@ use <../../Elements/FrameJointBlock.scad>
 use <../../Elements/HolderMirrorBand.scad>
 use <../../Elements/FramePushButton.scad>
 
+/* [Box Parameters] */
+// Complete box (false) or inlay for empty box (true)
+inlay = false;
+
 module TwoPlaneMirrors() {
     FramePlaneMirror();
     translate([getFramePlaneMirrorSpace().x - getDividerThickness(), 0])
@@ -33,16 +38,22 @@ function getTwoPlaneMirrorsSpace() = [
 translate([0,0,0])
 color("lightgray") {
 
-Box190();
-BoxWeb(LowerLeft, RightOfCorner, 7.5);
-BoxWeb(LowerRight, LeftOfCorner, 15.2);
-webDistance = (getBox190Space().x - 61)/2;
-BoxWeb(UpperRight, RightOfCorner, webDistance);
-BoxWeb(UpperLeft, LeftOfCorner, webDistance);
+if (inlay) {
+    Box190Inlay();
+} else {
+    Box190();
+    BoxWeb(LowerLeft, RightOfCorner, 7.5);
+    BoxWeb(LowerRight, LeftOfCorner, 15.2);
+    webDistance = (getBox190Space().x - 61)/2;
+    BoxWeb(UpperRight, RightOfCorner, webDistance);
+    BoxWeb(UpperLeft, LeftOfCorner, webDistance);
+}
 
 upperWebDistance = 8.2 - getDividerThickness();
-BoxWeb(UpperLeft, RightOfCorner, upperWebDistance, webWidth=15, webThickness=getDividerThickness());
-BoxWeb(UpperRight, LeftOfCorner, upperWebDistance, webWidth=15, webThickness=getDividerThickness());
+// -1.8 beacuse of the integrated web of the Box 1000 inner box
+sink = inlay ? -1.8 : getBoxWallThickness();
+BoxWeb(UpperLeft, RightOfCorner, upperWebDistance, webWidth=15, webThickness=getDividerThickness(), sink = sink);
+BoxWeb(UpperRight, LeftOfCorner, upperWebDistance, webWidth=15, webThickness=getDividerThickness(), sink = sink);
 
 Place(65.5, 62.7)    
     Text("ec 3");
@@ -104,7 +115,7 @@ Place(edgeDistance, 7.0, elementSpace=getFrameJointBlockSpace(), alignX=AlignRig
 Place (136, 89)
     FrameElectronicBlockConnector();
 
-Place(elementSpace=getFrameElectronicBlockSpace(AlignRight, AlignBottom), alignX=AlignRight)
-    FrameElectronicBlock(AlignRight, AlignBottom);
-    
+yBlockInlayDiff = inlay ? (getFrameElectronicBlockSpace(alignX=AlignRight, alignY=AlignBottom).y - getFrameElectronicBlockSpace().y) : 0;
+Place(y=yBlockInlayDiff, elementSpace=getFrameElectronicBlockSpace(AlignRight, AlignBottom), alignX=AlignRight)
+    FrameElectronicBlock(alignX=inlay ? NoAlign : AlignRight, alignY=inlay ? NoAlign : AlignBottom);
 }

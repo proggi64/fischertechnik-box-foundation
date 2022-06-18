@@ -5,6 +5,7 @@ use <../../Base/Alignment.scad>
 use <../../Base/Placement.scad>
 use <../../Base/Deployment.scad>
 use <../../Base/Boxes.scad>
+use <../../Base/BoxInlays.scad>
 use <../../ModelBase/Simple.scad>
 
 include <../../Base/PlacementOptions.scad>
@@ -23,15 +24,23 @@ use <../../Elements/FramePluggedCapacitor.scad>
 use <../../Elements/FrameControlLight.scad>
 use <../../Elements/AxisDial.scad>
 
+/* [Box Parameters] */
+// Complete box (false) or inlay for empty box (true)
+inlay = false;
+
 color("lightgray") {
 
 webDistance = 15.2;    
     
-Box190();
-BoxWeb(LowerLeft, LeftOfCorner, webDistance);
-BoxWeb(LowerRight, RightOfCorner, webDistance);
-BoxWeb(UpperRight, LeftOfCorner, webDistance);
-BoxWeb(UpperLeft, RightOfCorner, 5);
+if (inlay) {
+    Box190Inlay();
+} else {
+    Box190();
+    BoxWeb(LowerLeft, LeftOfCorner, webDistance);
+    BoxWeb(LowerRight, RightOfCorner, webDistance);
+    BoxWeb(UpperRight, LeftOfCorner, webDistance);
+    BoxWeb(UpperLeft, RightOfCorner, 5);
+}
 
 Place(33, 34)
     Text("ec 2");
@@ -39,8 +48,11 @@ Place(33, 34)
 //-----
 // Deploy left elements
 
-Place()
-    FrameCassette(AlignLeft, AlignBottom);
+xInlayDiff = inlay ? (getFrameCassetteSpace(alignX=AlignRight, alignY=AlignBottom).x - getFrameCassetteSpace().x) : 0;
+yInlayDiff = inlay ? (getFrameCassetteSpace(alignX=AlignRight, alignY=AlignBottom).y - getFrameCassetteSpace().y) : 0;
+
+Place(xInlayDiff, yInlayDiff)
+    FrameCassette(alignX=inlay ? NoAlign : AlignLeft, alignY=inlay ? NoAlign : AlignBottom);
 
 rowWidth = 60 + 2*getDividerThickness() + getTolerance();    
 yPos1 = getFrameCassetteSpace(AlignLeft, AlignBottom).y + 6.0;
@@ -164,7 +176,7 @@ Place(
 Place(5, webDistance, getFrameLightTubeSpace(), AlignRight, AlignTop, rotation=Rotate180)
     FrameLightTube();
 
-Place(elementSpace=getFrameElectronicBlockSpace(AlignRight, AlignBottom), alignX=AlignRight)
-    FrameElectronicBlock(AlignRight, AlignBottom);
-    
+yBlockInlayDiff = inlay ? (getFrameElectronicBlockSpace(alignX=AlignRight, alignY=AlignBottom).y - getFrameElectronicBlockSpace().y) : 0;
+Place(y=yBlockInlayDiff, elementSpace=getFrameElectronicBlockSpace(AlignRight, AlignBottom), alignX=AlignRight)
+    FrameElectronicBlock(alignX=inlay ? NoAlign : AlignRight, alignY=inlay ? NoAlign : AlignBottom);
 }

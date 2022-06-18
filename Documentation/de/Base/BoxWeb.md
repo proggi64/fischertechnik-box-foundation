@@ -19,7 +19,8 @@ BoxWeb(
   boxSpace=getBox190Space(), 
   webWidth=getBoxWebWidth(), 
   webThickness=1.0,
-  height=getBoxUsageHeight());
+  height=getBoxUsageHeight(),
+  sink=getBoxWallThickness()/2);
 ```
 
 | Parameter | Typ | Beschreibung |
@@ -31,6 +32,7 @@ BoxWeb(
 | webWidth | Decimal | Länge der Oberseite des Stegs. So weit ragt der Steg von der Wand in den Innenraum der Box. Der Standardwert ist in *Constants.scad* als Funktion [__getBoxWebWidth()__](../ModelBase/getBoxWebWidth.md) definiert. |
 | webThickness | Decimal | Stärke des Stegs. Dies entspricht im Standard nicht der normalen Wandstärke der Rahmen und Trenner, sondern ist etwas dünner. Bei mit Trennern verschmolzenen Stegen sollte hier [__getDividerThickness()__](../Base/getDividerThickness.md) als Wert übergeben werden (aus *Constants.scad*). |
 | height | Decimal | Höhe des Stegs. Für manche in eine Wand integrierte Elemente ist eine variable Höhe notwendig, für Kästen mit vom Standard [__getBoxUsageHeight()__](getBoxUsageHeight.md) abweichender Höhe ebenfalls. |
+| sink | Decimal | Um diesen Betrag versinkt der Steg in der Seitenwand. Für die Nutzung als Inlay muss der Wert -0,4 mm sein, damit der Steg mit dem Rand des Inlays abschließt. Falls der Steg auf der Höhe des Steges der Sortierbox der Kästen 1000 liegt, muss man -1,8 mm angeben, damit der Steg nicht im Weg ist und das Inlay in den Kasten passt. |
 
 ## Beispiele
 Siehe *Test/Base/BoxesTestBoxWeb.scad*
