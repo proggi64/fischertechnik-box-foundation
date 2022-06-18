@@ -1,5 +1,5 @@
 # Fischertechnik Sorting Box Construction Foundation For OpenSCAD
-Find the documentation at https://github.com/proggi64/fischertechnik-box-foundation
+Find the documentation at https://proggi64.github.io/fischertechnik-box-foundation/
 
 The foundation library provides a continuously expanding collection of parametric sorting elements, deployment and placement modules, as well as base sorting boxes for the Fischertechnik building blocks system. The results are intended to be printed with 3D printers.
 
