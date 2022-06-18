@@ -4,6 +4,7 @@ use <../../Base/Constants.scad>
 use <../../Base/Placement.scad>
 use <../../Base/Deployment.scad>
 use <../../Base/Boxes.scad>
+use <../../Base/BoxInlays.scad>
 use <../../ModelBase/Simple.scad>
 
 include <../../Base/PlacementOptions.scad>
@@ -17,6 +18,11 @@ use <../../Elements/FramePhotoResistor30.scad>
 use <../../Elements/FrameElectronicBlock.scad>
 use <../../Elements/HolderBulbLamp.scad>
 
+/* [Box Parameters] */
+// Complete box (false) or inlay for empty box (true)
+inlay = false;
+
+/* [Hidden] */
 lightCapGroupSpace = [43, 40];
 
 module LightCapGroup() {
@@ -25,11 +31,15 @@ module LightCapGroup() {
 }
 
 color("lightgray") {
-Box190();
-BoxWeb(LowerLeft, RightOfCorner, 15.2);
-BoxWeb(LowerRight, LeftOfCorner, 15.2);
-BoxWeb(UpperRight, RightOfCorner, 5);
-BoxWeb(UpperLeft, LeftOfCorner, 5);
+if (inlay) {
+    Box190Inlay();
+} else {
+    Box190();
+    BoxWeb(LowerLeft, RightOfCorner, 15.2);
+    BoxWeb(LowerRight, LeftOfCorner, 15.2);
+    BoxWeb(UpperRight, RightOfCorner, 5);
+    BoxWeb(UpperLeft, LeftOfCorner, 5);
+}
 
 CenterHorizontal(0, 90)
     Text("ec 1");
@@ -41,7 +51,7 @@ Place(7.5, 2.5, lightCapGroupSpace, alignX=AlignRight, alignY=AlignTop)
     LightCapGroup();
     
 Place(elementSpace=getFrameCassetteSpace(alignY=AlignTop), alignX=AlignCenter, alignY=AlignTop)
-    FrameCassette(alignY=AlignTop);
+    FrameCassette(alignY=inlay ? NoAlign : AlignTop);
     
 centeredWidth = getFrameCassetteSpace(DockTop).x;
 
@@ -71,11 +81,13 @@ CenterHorizontal(centeredWidth, 13.0, rightShift) {
     }
 }
 
-Place()
-    FrameElectronicBlock(alignX=AlignLeft, alignY=AlignBottom);
+xInlayDiff = inlay ? (getFrameElectronicBlockSpace(alignX=AlignRight, alignY=AlignBottom).x - getFrameElectronicBlockSpace().x) : 0;
+yInlayDiff = inlay ? (getFrameElectronicBlockSpace(alignX=AlignRight, alignY=AlignBottom).y - getFrameElectronicBlockSpace().y) : 0;
+Place(xInlayDiff, yInlayDiff)
+    FrameElectronicBlock(alignX=inlay ? NoAlign : AlignLeft, alignY=inlay ? NoAlign : AlignBottom);
 
-Place(elementSpace=getFrameElectronicBlockSpace(alignX=AlignRight, alignY=AlignBottom), alignX=AlignRight)
-    FrameElectronicBlock(alignX=AlignRight, alignY=AlignBottom);
+Place(y=yInlayDiff, elementSpace=getFrameElectronicBlockSpace(alignX=AlignRight, alignY=AlignBottom), alignX=AlignRight)
+    FrameElectronicBlock(alignX=inlay ? NoAlign : AlignRight, alignY=inlay ? NoAlign : AlignBottom);
 
 twoBulbLampsWidth = getHolderBulbLampSpace().x*2;
 CenterHorizontal(width=twoBulbLampsWidth, y=1.5)

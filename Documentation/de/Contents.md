@@ -11,6 +11,7 @@ Zwei Tutorials [Sortierkästen konstruieren](TutorialSortingBoxes.md) und [Eleme
 - [Sortierkästen konstruieren](TutorialSortingBoxes.md)
 - [Elemente selbst konstruieren](TutorialElements.md)
 - [Elemente für CAD-Software nach STL exportieren](STLExport.md)
+- [Beispielkästen und -Inlays](SampleBoxes.md)
 - [Glossar](Glossar.md)
 
 ## Elemente für Sortierkästen
