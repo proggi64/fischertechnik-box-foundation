@@ -165,6 +165,26 @@ module FrameBottomCutoff(volume, width, offset=0, tolerance=getTolerance()) {
     }
 }
 
+// FrameLeftCutoff(volume, width, offset=0, tolerance=getTolerance())
+// Creates a cube that should be used to cut off a left part of the wall of a frame.
+
+module FrameLeftCutoff(volume, width, offset=0, tolerance=getTolerance()) {
+    translate([0, (getFrameOuterVolume(volume, tolerance).y - width) / 2]) {
+        translate([-getExcess(), offset])
+            cube([width, 2*getDividerThickness(), volume.z + getExcess()]);
+    }
+}
+
+// FrameRightCutoff(volume, width, offset=0, tolerance=getTolerance())
+// Creates a cube that should be used to cut off a right part of the wall of a frame.
+
+module FrameRightCutoff(volume, width, offset=0, tolerance=getTolerance()) {
+    translate([0, (getFrameOuterVolume(volume, tolerance).y - width) / 2]) {
+        translate([getFrameOuterVolume(volume, tolerance).x - 1.5*getDividerThickness(), offset])
+            cube([2*getDividerThickness(), width, volume.z + getExcess()]);
+    }
+}
+
 // getAngledFrameOuterVolume(width1, depth1, width2, depth2, height, tolerance=getTolerance())
 // width1 = Width of the first arm (X direction)
 // depth1 = Depth of the first arm. Should be less or equal width1.

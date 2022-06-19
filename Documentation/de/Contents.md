@@ -84,6 +84,10 @@ Zwei Tutorials [Sortierkästen konstruieren](TutorialSortingBoxes.md) und [Eleme
 - [__Divider__](ModelBase/Divider.md): Erzeugt einen Trenner innerhalb eines Sortierkastens.
 - [__DockableFrame__](ModelBase/DockableFrame.md): Erzeugt einen Rahmen, der an eine Wand angedockt werden kann.
 - [__Frame__](ModelBase/Frame.md): Erzeugt einen Rahmen mit optional einzeln offenen Wänden.
+- [__FrameBottomCutoff__](Modelbase/FrameBottomCutoff.md): Mit __difference__ in [__Frame__](ModelBase/Frame.md) einen Ausschnitt in die vordere Wand schneiden.
+- [__FrameLeftCutoff__](Modelbase/FrameLefttCutoff.md): Mit __difference__ in [__Frame__](ModelBase/Frame.md) einen Ausschnitt in die linke Wand schneiden.
+- [__FrameRightCutoff__](Modelbase/FrameRightCutoff.md): Mit __difference__ in [__Frame__](ModelBase/Frame.md) einen Ausschnitt in die rechte Wand schneiden.
+- [__FrameTopCutoff__](Modelbase/FrameTopCutoff.md): Mit __difference__ in [__Frame__](ModelBase/Frame.md) einen Ausschnitt in die hintere Wand schneiden.
 - [__LeveledAxis__](ModelBase/LeveledAxis.md): Erzeugt eine stehende Achse mit einer stärkeren Achsbasis.
 - [__LeveledAxisWithSpace__](ModelBase/LeveledAxisWithSpace.md): Erzeugt eine stehende Achse mit einer stärkeren Achsbasis und einer Grundplatte.
 - [__LeveledTube__](ModelBase/LeveledTube.md): Erzeugt eine stehenden hohlen Zylinder mit einer stärkeren Basis.
