@@ -28,7 +28,7 @@ module FrameBlockWithPin(count = 1, height=height) {
     volume = [width*count, depth, height];
     Frame(volume);
  
-    railHeight = 2.7;
+    railHeight = getPinHeight() + getPinTolerance();
     railDistance = 9;
     FrameRails(volume, railDistance, railHeight);
 }
