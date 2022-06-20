@@ -69,7 +69,7 @@ Zwei Tutorials [Sortierkästen konstruieren](TutorialSortingBoxes.md) und [Eleme
 - [__getHubRingDiameter__](Base/getHubRingDiameter.md): Äußerer Durchmesser des Zylinders für Räder.
 - [__getHubRingLevelDiameter__](Base/getHubRingLevelDiameter.md): Äußerer Durchmesser der Zylinderbasis für Räder.
 - [__getPinHeight__](Base/getPinHeight.md): Länge eines Baustein-Verbindungszapfens.
-- [__getPinTolerance__](Base/getPinTolerance.md): Wird zur Länge eines Baustien-Verbindungszapfens addiert, wenn Platz in Elementen dafür erzeugt wird.
+- [__getPinTolerance__](Base/getPinTolerance.md): Wird zur Länge eines Baustein-Verbindungszapfens addiert, wenn Platz in Elementen dafür erzeugt wird.
 - [__getSmallPartsFrameHeight__](Base/getSmallPartsFrameHeight.md): Liefert die Höhe für Rahmen, die für in Sortierkästen Kleinteile vorgesehen sind.
 - [__getStandardEdgeDistance__](Base/getStandardEdgeDistance.md): Liefert den Standard-Abstand für andockbare Rahmen mit Stegen.
 - [__getStandardWebDistance__](Base/getStandardWebDistance.md): Liefert den Abstand eines Stegs zur jeweiligen Ecke eines andockbaren Elements.
