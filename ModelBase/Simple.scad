@@ -147,6 +147,13 @@ module Frame(volume, tolerance=getTolerance(), openLeft=false, openRight=false, 
 
 // FrameTopCutoff(volume, width, offset=0, tolerance=getTolerance())
 // Creates a cube that should be used to cut off a top part of the wall of a frame.
+// volume = [width, depth, height] Inner volume (without tolerance)
+//   width = Inner width in mm
+//   depth = Inner depth in mm
+//   height = Height of the walls in mm
+// width = Width of the cutoff
+// offset = Offset from the center
+// tolerance = additional space for the building block (default is reasonable)
 
 module FrameTopCutoff(volume, width, offset=0, tolerance=getTolerance()) {
     translate([(getFrameOuterVolume(volume, tolerance).x - width)/2, 0]) {
@@ -157,6 +164,13 @@ module FrameTopCutoff(volume, width, offset=0, tolerance=getTolerance()) {
 
 // FrameBottomCutoff(volume, width, offset=0, tolerance=getTolerance())
 // Creates a cube that should be used to cut off a bottom part of the wall of a frame.
+// volume = [width, depth, height] Inner volume (without tolerance)
+//   width = Inner width in mm
+//   depth = Inner depth in mm
+//   height = Height of the walls in mm
+// width = Width of the cutoff
+// offset = Offset from the center
+// tolerance = additional space for the building block (default is reasonable)
 
 module FrameBottomCutoff(volume, width, offset=0, tolerance=getTolerance()) {
     translate([(getFrameOuterVolume(volume, tolerance).x - width)/2, 0]) {
@@ -167,6 +181,13 @@ module FrameBottomCutoff(volume, width, offset=0, tolerance=getTolerance()) {
 
 // FrameLeftCutoff(volume, width, offset=0, tolerance=getTolerance())
 // Creates a cube that should be used to cut off a left part of the wall of a frame.
+// volume = [width, depth, height] Inner volume (without tolerance)
+//   width = Inner width in mm
+//   depth = Inner depth in mm
+//   height = Height of the walls in mm
+// width = Width of the cutoff
+// offset = Offset from the center
+// tolerance = additional space for the building block (default is reasonable)
 
 module FrameLeftCutoff(volume, width, offset=0, tolerance=getTolerance()) {
     translate([0, (getFrameOuterVolume(volume, tolerance).y - width) / 2]) {
@@ -177,12 +198,53 @@ module FrameLeftCutoff(volume, width, offset=0, tolerance=getTolerance()) {
 
 // FrameRightCutoff(volume, width, offset=0, tolerance=getTolerance())
 // Creates a cube that should be used to cut off a right part of the wall of a frame.
+// volume = [width, depth, height] Inner volume (without tolerance)
+//   width = Inner width in mm
+//   depth = Inner depth in mm
+//   height = Height of the walls in mm
+// width = Width of the cutoff
+// offset = Offset from the center
+// tolerance = additional space for the building block (default is reasonable)
 
 module FrameRightCutoff(volume, width, offset=0, tolerance=getTolerance()) {
     translate([0, (getFrameOuterVolume(volume, tolerance).y - width) / 2]) {
         translate([getFrameOuterVolume(volume, tolerance).x - 1.5*getDividerThickness(), offset])
             cube([2*getDividerThickness(), width, volume.z + getExcess()]);
     }
+}
+
+// FrameRails(volume, distance, height, direction=LeftRight)
+// Creates two rails in a frame
+// volume = [width, depth, height] Inner volume (without tolerance)
+//   width = Inner width in mm
+//   depth = Inner depth in mm
+//   height = Height of the walls in mm
+// distance = Inner distance between the two rails
+// height = Height of the rails
+// direction = LeftRight or TopDown
+// tolerance = additional space for the building block (default is reasonable)
+
+module FrameRails(volume, distance, height, direction=LeftRight, tolerance=getTolerance()) {
+    outerSpace = getFrameOuterVolume(volume, tolerance);
+    width = direction ? outerSpace.x : outerSpace.y;
+    
+    module Rails() {
+        railVolume = [
+            direction ? width : getDividerThickness(), 
+            direction ? getDividerThickness() : width, 
+            height];
+        Wall(railVolume);
+        translate([
+            direction ? 0 : distance + getDividerThickness(), 
+            direction ? distance + getDividerThickness() : 0])
+            Wall(railVolume);
+    }
+    railsDepth = distance + 2*getDividerThickness();
+    depth = direction ? outerSpace.y : outerSpace.x;
+    x = direction ? 0 : (depth - railsDepth) / 2;
+    y = direction ? (depth - railsDepth) / 2 : 0;
+    translate([x, y])
+        Rails();
 }
 
 // getAngledFrameOuterVolume(width1, depth1, width2, depth2, height, tolerance=getTolerance())

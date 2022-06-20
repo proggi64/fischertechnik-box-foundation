@@ -86,6 +86,7 @@ Zwei Tutorials [Sortierkästen konstruieren](TutorialSortingBoxes.md) und [Eleme
 - [__Frame__](ModelBase/Frame.md): Erzeugt einen Rahmen mit optional einzeln offenen Wänden.
 - [__FrameBottomCutoff__](Modelbase/FrameBottomCutoff.md): Mit __difference__ in [__Frame__](ModelBase/Frame.md) einen Ausschnitt in die vordere Wand schneiden.
 - [__FrameLeftCutoff__](Modelbase/FrameLefttCutoff.md): Mit __difference__ in [__Frame__](ModelBase/Frame.md) einen Ausschnitt in die linke Wand schneiden.
+- [__FrameRails__](ModelBase/FrameRails.md): Erzeugt zwei parallele Stege am Boden eines mit [__Frame__](ModelBase/Frame.md) erzugten Rahmens.
 - [__FrameRightCutoff__](Modelbase/FrameRightCutoff.md): Mit __difference__ in [__Frame__](ModelBase/Frame.md) einen Ausschnitt in die rechte Wand schneiden.
 - [__FrameTopCutoff__](Modelbase/FrameTopCutoff.md): Mit __difference__ in [__Frame__](ModelBase/Frame.md) einen Ausschnitt in die hintere Wand schneiden.
 - [__LeveledAxis__](ModelBase/LeveledAxis.md): Erzeugt eine stehende Achse mit einer stärkeren Achsbasis.

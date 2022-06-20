@@ -36,3 +36,7 @@ LowerRight = 3;
 // Web position relative to corner
 LeftOfCorner = 0;
 RightOfCorner = 1;
+
+// Rails direction
+LeftRight = true;
+TopDown = false;

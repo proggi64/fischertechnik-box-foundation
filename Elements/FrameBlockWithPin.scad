@@ -25,22 +25,12 @@ function getFrameBlockWithPinSpace(count = 1) = getFrameOuterVolume([width * cou
 // height = Height of the frame (default is 8)
 
 module FrameBlockWithPin(count = 1, height=height) {
-    railWidth = getFrameBlockWithPinSpace(count).x;
+    volume = [width*count, depth, height];
+    Frame(volume);
+ 
     railHeight = 2.7;
     railDistance = 9;
-    
-    module Rails() {
-        Wall([railWidth, getDividerThickness(), railHeight]);
-        translate([0, railDistance + getDividerThickness()])
-            Wall([railWidth, getDividerThickness(), railHeight]);
-    }
-
-    Frame([width*count, depth, height]);
-
-    railsDepth = railDistance + 2*getDividerThickness();
-
-    translate([0, (getFrameBlockWithPinSpace(count).y - railsDepth) / 2]) 
-        Rails();
+    FrameRails(volume, railDistance, railHeight);
 }
 
 // Test
