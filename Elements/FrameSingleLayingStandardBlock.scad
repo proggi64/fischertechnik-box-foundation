@@ -4,6 +4,7 @@
 
 use <../ModelBase/Simple.scad>
 
+/* [Hidden] */
 width = 32.5;
 depth = 15;
 height = 8;

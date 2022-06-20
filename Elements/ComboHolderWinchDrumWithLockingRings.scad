@@ -6,6 +6,7 @@ use <../ModelBase/Simple.scad>
 use <HolderWinchDrum.scad>
 use <FrameLockingRing.scad>
 
+/* [Hidden] */
 distance = 24.4;
 
 // getComboHolderWinchDrumWithLockingRingsSpace()

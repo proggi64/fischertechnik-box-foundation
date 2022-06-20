@@ -11,6 +11,7 @@ use <FrameBracketWithoutWorm.scad>
 
 include <../Base/PlacementOptions.scad>
 
+/* [Hidden] */
 outerDepth = 31.5;
 
 // getComboFrameBracketsSpace()

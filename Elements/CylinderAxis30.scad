@@ -7,6 +7,7 @@ use <../Base/Placement.scad>
 use <../ModelBase/Simple.scad>
 use <../ModelBase/Complex.scad>
 
+/* [Hidden] */
 width = 12;
 depth = 12;
 height = 6;

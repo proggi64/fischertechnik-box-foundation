@@ -5,6 +5,7 @@
 use <../Base/Constants.scad>
 use <../ModelBase/Simple.scad>
 
+/* [Hidden] */
 space = 20;
 
 // getAxisCogWheelSpace()

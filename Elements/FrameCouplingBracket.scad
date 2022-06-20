@@ -6,6 +6,7 @@ use <../Base/Constants.scad>
 use <../ModelBase/Simple.scad>
 use <../ModelBase/Complex.scad>
 
+/* [Hidden] */
 width = 9.15 - getTolerance();
 depth = 30;
 height = 10;

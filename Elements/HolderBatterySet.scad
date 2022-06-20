@@ -9,6 +9,7 @@ use <../ModelBase/Simple.scad>
 
 include <../Base/PlacementOptions.scad>
 
+/* [Hidden] */
 width = getBox190Space().x;
 height = 30;
 depth = 32;

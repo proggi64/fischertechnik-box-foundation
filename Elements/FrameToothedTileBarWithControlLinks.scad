@@ -8,6 +8,7 @@ use <../ModelBase/Simple.scad>
 
 include <../Base/PlacementOptions.scad> 
 
+/* [Hidden] */
 width = 64;
 depth = 33;
 height = 15;

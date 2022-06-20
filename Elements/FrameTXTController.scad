@@ -6,6 +6,7 @@ use <../ModelBase/Complex.scad>
 
 include <../Base/PlacementOptions.scad>
 
+/* [Hidden] */
 width = 90;
 depth = 90;
 height = 6;

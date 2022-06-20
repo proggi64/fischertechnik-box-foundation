@@ -8,6 +8,7 @@ use <../ModelBase/Simple.scad>
 
 use <CylinderHub.scad>
 
+/* [Hidden] */
 width = 50;
 depth = 50;
 

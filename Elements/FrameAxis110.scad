@@ -4,6 +4,7 @@
 
 use <../ModelBase/Complex.scad>
 
+/* [Hidden] */
 length = 110;
 
 // getFrameAxis110Space()

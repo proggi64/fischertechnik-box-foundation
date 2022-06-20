@@ -6,6 +6,7 @@ use <../Base/Constants.scad>
 use <../ModelBase/Simple.scad>
 use <../ModelBase/Complex.scad>
 
+/* [Hidden] */
 length = 125;
 holderOffset = 20.5;
 

@@ -4,6 +4,7 @@
 
 use <../ModelBase/Complex.scad>
 
+/* [Hidden] */
 width = 45;
 depth = 8.2;
 height = 14.8;

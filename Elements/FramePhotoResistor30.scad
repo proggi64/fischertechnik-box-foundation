@@ -6,6 +6,7 @@ use <../Base/Constants.scad>
 use <../ModelBase/Simple.scad>
 use <FrameBlockWithPin.scad>
 
+/* [Hidden] */
 width = 15;
 depth = 15;
 height = 15;

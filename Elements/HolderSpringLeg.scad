@@ -17,7 +17,6 @@ dock = false;
 /* [Hidden] */
 width = 36;
 depth = 8.2;
-
 innerWidth = 18.5;
 
 // getHolderSpringLegSpace(count=1)

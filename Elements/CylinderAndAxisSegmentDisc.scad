@@ -9,6 +9,7 @@ use <../ModelBase/Complex.scad>
 
 use <CylinderGearZ20.scad>
 
+/* [Hidden] */
 width = 52;
 depth = 52;
 
