@@ -26,6 +26,7 @@ The library modules are divided in these groups:
 Contains the base functionality of the library:
 - Alignment.scad
 - Boxes.scad
+- BoxInlays.scad
 - Constants.scad
 - Deployment.scad
 - Placement.scad
