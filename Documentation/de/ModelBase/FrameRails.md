@@ -13,14 +13,16 @@ FrameRails(
   volume,
   distance,
   height,
+  direction=Horizontal, 
   tolerance=getTolerance());
 ```
 
 | Parameter | Typ | Beschreibung |
 | ------ | ------ | ------ |
-| volume | \[x,y,z] | Länge x Breite x Höhe des Inneraums. Auf Länge und Breite wird noch der Wert von *tolerance* für das tatsächliche innere Volumen gerechnet. |
+| volume | \[x,y,z] | Länge x Breite x Höhe des Innenraums. Auf Länge und Breite wird noch der Wert von *tolerance* für das tatsächliche innere Volumen gerechnet. |
 | distance | Decimal | Abstand der Stege, gerechnet von den beiden inneren Rändern. |
 | height | Decimal | Höhe der Stege. |
+| direction | Boolean | Richtung der Stege: __Vertical__ (__true__) oder __Horizontal__ (__false__) |
 | tolerance | Decimal | Toleranzwert, der zu Länge und Breite gerechnet wird, damit in das gedruckte Element das Bauteil hineinpasst. Standard ist [__getTolerance()__](../Base/getTolerance.md). |
 
 ## Beispiel
@@ -39,7 +41,7 @@ FrameRails(volume, distance, height);
 translate([40, 0]) {
     biggerVolume = [60, 30, 15];
     Frame(biggerVolume);
-    FrameRails(biggerVolume, distance + 30, height, TopDown);
+    FrameRails(biggerVolume, distance + 30, height, Vertical);
 }
 ```
 

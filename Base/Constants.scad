@@ -40,9 +40,13 @@ function getStandAxisDiameter() = getAxisDiameter() - getAxisTolerance();
 function getAxisBottomDiameter() = axisBottomDiameter;
 
 pinHeight = 2.5;
+pinTolerance = 0.2;
 
 // gets the height of a connecting pin
 function getPinHeight() = pinHeight;
+
+// gets the connecting pin height tolerance
+function getPinTolerance() = pinTolerance;
 
 standardEdgeDistance = 2.5;
 standardWebDistance = 11.5;

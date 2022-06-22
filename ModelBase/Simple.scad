@@ -157,7 +157,7 @@ module Frame(volume, tolerance=getTolerance(), openLeft=false, openRight=false, 
 
 module FrameTopCutoff(volume, width, offset=0, tolerance=getTolerance()) {
     translate([(getFrameOuterVolume(volume, tolerance).x - width)/2, 0]) {
-        translate([offset, getFrameOuterVolume(volume).y - 1.5*getDividerThickness()])
+        translate([offset, getFrameOuterVolume(volume, tolerance).y - 1.5*getDividerThickness()])
             cube([width, 2*getDividerThickness(), volume.z + getExcess()]);
     }
 }
@@ -221,10 +221,10 @@ module FrameRightCutoff(volume, width, offset=0, tolerance=getTolerance()) {
 //   height = Height of the walls in mm
 // distance = Inner distance between the two rails
 // height = Height of the rails
-// direction = LeftRight or TopDown
+// direction = Horizontal or Vertical
 // tolerance = additional space for the building block (default is reasonable)
 
-module FrameRails(volume, distance, height, direction=LeftRight, tolerance=getTolerance()) {
+module FrameRails(volume, distance, height, direction=Horizontal, tolerance=getTolerance()) {
     outerSpace = getFrameOuterVolume(volume, tolerance);
     width = direction ? outerSpace.x : outerSpace.y;
     

@@ -38,5 +38,5 @@ LeftOfCorner = 0;
 RightOfCorner = 1;
 
 // Rails direction
-LeftRight = true;
-TopDown = false;
+Horizontal = true;
+Vertical = false;

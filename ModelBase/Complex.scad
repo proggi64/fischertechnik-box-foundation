@@ -612,3 +612,56 @@ module FrameBracket(webVolume) {
         alignY = AlignCenter)
         Wall(webVolume);
 }
+
+gearRackDepth = 17;
+gearRackHeight = 13;
+gearRackConnectAxisLength = 7.6;
+gearRackBaseWidth = 30;
+
+// getFrameGearRack30Space()
+// Gets the space of a frame for the gear rack 30 for mini-motor lifting gear
+
+function getGearRackSpace(width=gearRackBaseWidth, dock=false) = [
+    width + gearRackConnectAxisLength + getTolerance() + (dock ? 1 : 2) * getDividerThickness(), 
+    gearRackDepth, 
+    gearRackHeight];
+
+// Frame for a gear rack for mini-motor lifting gear
+// width = base width of the gear rack (30 or 60)
+// dock = true if the left side can be docked to the box wall
+
+module GearRack(width=gearRackBaseWidth, dock=false) {
+    Space(getGearRackSpace(width, dock));
+    
+    innerFrameDepth = 11;
+    frameHeight = 15;
+    volume = [width + gearRackConnectAxisLength + getTolerance(), innerFrameDepth, frameHeight];
+
+    module RackFrame() {
+        baseRailDistance = 10.8;
+        railHeight = 7.5;
+        sideHeight = 13;
+
+        dockXOffset = dock ? -getDividerThickness() : 0;
+        
+        translate([dockXOffset, 0]) {
+            difference() {
+                Frame(volume, tolerance=0, openLeft = dock);
+                cutoffWidth=getFrameOuterVolume(volume, tolerance=0).x - (dock ? 0.9 : 2)*getDividerThickness();
+                dockXRailOffset = dock ? -(1.1*getDividerThickness())/2 : 0;
+                translate([dockXRailOffset, 0, sideHeight]) {
+                    FrameTopCutoff(volume, width=cutoffWidth, tolerance=0);
+                    FrameBottomCutoff(volume, width=cutoffWidth, tolerance=0);
+                }
+            }
+            FrameRails(volume, 
+                distance = baseRailDistance + (width - gearRackBaseWidth), 
+                height=railHeight, 
+                direction=Vertical, 
+                tolerance = 0);
+        }
+    }
+
+    CenterVertical(getFrameOuterVolume(volume, tolerance=0).y, space=getGearRackSpace(width))
+        RackFrame();
+}

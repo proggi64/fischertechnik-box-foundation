@@ -12,7 +12,7 @@ use <../ModelBase/Simple.scad>
 FrameRightCutoff(
   volume,
   width,
-  offset,
+  offset=0,
   tolerance=getTolerance());
 ```
 
