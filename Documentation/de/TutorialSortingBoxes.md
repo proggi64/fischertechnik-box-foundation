@@ -267,6 +267,8 @@ Zum Schluss noch die Achse für den Drehregler, wieder innerhalb desselben Block
 
 Die Ausrichtung oben in der Fläche erledigt wieder [__Place__](Base/Place.md) mit dem Parameterwerten *alignY*=__AlignTop__ und *alignX*=__AlignCenter__.
 
+![BoxSilberling](../images/ElectronicBlockBoxBase.png)
+
 ## Ausblick
 Das Beispiel mit dem Silberling ist eine vereinfachte Variante der flexibler einsetzbaren SCAD-Datei *BuildingKits/hobby/ElectronicBlockBoxBase.scad*. Bei diesem Modul kann die Anzahl der Spezialelemente jeweils als Parameter übergeben werden, so dass Kästen für Silberlinge mit 0 bis 2 Drehknöpfen oder Kontrollleuchten nur durch Parameter erzeugt werden können. Das Modul unterstützt dabei auch den Customizer von OpenSCAD, um diese Parameter dynamisch in der Oberfläche zu setzen.
 
