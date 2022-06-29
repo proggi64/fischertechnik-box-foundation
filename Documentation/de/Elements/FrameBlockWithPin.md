@@ -5,8 +5,13 @@ Grundbausteine mit Zapfen nach unten.
 - 31006
 - 31007
 - 32882
+- 36298
+- 36304
+- 36922
+- 36950
 - 37636
 - 38240
+- 139645
 
 Der Rahmen hat am Boden zwei Stege, so dass der Zapfen dazwischen Platz hat.
 

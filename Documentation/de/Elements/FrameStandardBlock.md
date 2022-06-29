@@ -15,9 +15,8 @@ Grundbausteine und Winkelträger, die auf der 15x15-Seite ohne Zapfen stehen.
 - 36301
 - 36920
 - 36922
-- 36950
+- 127471
 - 127472
-- 139645
 
 Es können Anzahlen in x- und y-Richtung angegeben werden, die nebeneinander in denselben Rahmen gestellt werden.
 
