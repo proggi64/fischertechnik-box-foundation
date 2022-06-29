@@ -1,6 +1,6 @@
 # FrameStandardBlock
 
-Grundbausteine, die auf der 15x15-Seite ohne Zapfen stehen.
+Grundbausteine und Winkelträger, die auf der 15x15-Seite ohne Zapfen stehen.
 
 - 31003
 - 31004
@@ -9,6 +9,19 @@ Grundbausteine, die auf der 15x15-Seite ohne Zapfen stehen.
 - 32879
 - 32880
 - 32881
+- 35053
+- 36299
+- 36300
+- 36301
+- 36920
+- 36922
+- 36950
+- 127472
+- 139645
+
+Es können Anzahlen in x- und y-Richtung angegeben werden, die nebeneinander in denselben Rahmen gestellt werden.
+
+![FrameStandardBlock](../../images/FrameStandardBlock.png)
 
 ## Use
 ```
