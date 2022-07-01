@@ -18,17 +18,18 @@ ElevatedFramesWithCutoff(
   depth,
   height, 
   bearingLength, 
-  cutThrough=false);
+  cutThrough=false,
+  clampThrough=false);
 ```
 
 | Parameter | Typ | Beschreibung |
 | ------ | ------ | ------ |
-| volume | \[x,y,z] | Volumen des Bauelements, welches in dem Rahmen passen soll. Für eine Achse ist die die Achslänge als X-Wert, und der Durchmesser für Tiefe und Höhe. |
+| volume | \[x,y,z] | Volumen des Bauelements, welches in dem Rahmen passen soll. Für eine Achse ist dies die Achslänge als X-Wert, und der Durchmesser für Tiefe und Höhe. |
 | depth | Decimal | Jeweilige Tiefe der beiden Halterungsrahmen. Der Ausschnitt wird dann mittig in der notwendigen Breite für *volume.y* gesetzt. *depth* gibt also an, wie viel noch neben dem Ausschnitt an Wandlänge stehen bleibt und sollte ein wenig mehr als den Achsdurchmesser betragen. |
 | height | Decimal | Jeweilige Höhe der beiden Halterungsrahmen. |
-| bearingLenght | Decimal | Jeweilige Länge der beiden Halterungsrahmen. Bei Achsen sollte diese weniger als die Hälfte der Achslänge betragen. |
+| bearingLength | Decimal | Jeweilige Länge der beiden Halterungsrahmen. Bei Achsen sollte diese weniger als die Hälfte der Achslänge betragen. |
 | cutThrough | Boolean | __true__, wenn die Wand am Ende der beiden Halterungen weggelassen werden soll. |
-| clampThrough | Boolean | __true__, wenn die komplette Wand am etwas enegeren Einlass der Achse bis zum Boden entfernt werden soll. Das wird intern vom Modul [__AxisMiddleSupport__](AxisMiddleSupport.md) verwendet. |
+| clampThrough | Boolean | __true__, wenn die komplette Wand am etwas engeren Einlass der Achse bis zum Boden entfernt werden soll. Das wird intern vom Modul [__AxisMiddleSupport__](AxisMiddleSupport.md) verwendet. |
 
 ## Beispiele
 
