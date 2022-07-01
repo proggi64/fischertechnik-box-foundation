@@ -15,9 +15,9 @@ sideHeight = 6;
 // Gets the space the locking winch drum with holder needs
 
 function getComboLockingWinchDrumAndHolderSpace() = [
-    getFrameOuterSpace(volume).x,
+    getFrameOuterVolume(volume).x,
     outerDepth,
-    getFrameOuterSpace(volume).z ];
+    getFrameOuterVolume(volume).z ];
 
 // ComboLockingWinchDrumAndHolder()
 // Locking winch drum with holder
