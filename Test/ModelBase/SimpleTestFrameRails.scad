@@ -16,5 +16,5 @@ FrameRails(volume, distance, height);
 translate([40, 0]) {
     biggerVolume = [60, 30, 15];
     Frame(biggerVolume);
-    FrameRails(biggerVolume, distance + 30, height, TopDown);
+    FrameRails(biggerVolume, distance + 30, height, Vertical);
 }
