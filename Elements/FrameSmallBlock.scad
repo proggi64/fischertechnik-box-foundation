@@ -1,6 +1,6 @@
 // Fischertechnik Box Library
 // Frame for small blocks 5 or 7.5 mm
-// 37237 and 37238
+// 37237, 37238, 37468
 
 use <../ModelBase/Simple.scad>
 
