@@ -26,6 +26,7 @@ function getTolerance() = tolerance;
 axisDiameter = 4;
 axisBottomDiameter = axisDiameter + 1;
 axisTolerance = 0.2;
+axisLockingLength = 8;
 
 // Gets axis diameter of Fischertechnik axis
 function getAxisDiameter() = axisDiameter;
@@ -38,6 +39,9 @@ function getStandAxisDiameter() = getAxisDiameter() - getAxisTolerance();
 
 // Gets axis bottom diameter for thicker part at the bottom
 function getAxisBottomDiameter() = axisBottomDiameter;
+
+// Gets the lengthh of the locking part of a locking axis
+function getAxisLockingLength() = axisLockingLength;
 
 pinHeight = 2.5;
 pinTolerance = 0.2;

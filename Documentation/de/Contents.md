@@ -56,6 +56,7 @@ Zwei Tutorials [Sortierkästen konstruieren](TutorialSortingBoxes.md) und [Eleme
 ### Funktionen zur Ermittlung von Konstanten
 - [__getAxisBottomDiameter__](Base/getAxisBottomDiameter.md): Liefert den Durchmesser für die Basis einer Achse.
 - [__getAxisDiameter__](Base/getAxisDiameter.md): Liefert den Durchmesser einer Fischertechnik-Achse.
+- [__getAxisLockingLength__](Base/getAxisLockingLength.md):Liefert die Länge des Rastbereichs einer Rastachse.
 - [__getAxisTolerance__](Base/getAxisTolerance.md): Liefert den Betrag, der vom Durchmesser einer Fischertechnik-Achse abgezogen wird, wenn Standachsen generiert werden, damit die Fischertechnikteil darauf passen.
 - [__getBox130Space__](Base/getBox130Space.md): Liefert die nutzbare Fläche eines Sortierkastens 130 x 95 mm.
 - [__getBox190Space__](Base/getBox190Space.md): Liefert die nutzbare Fläche eines Sortierkastens 190 x 130 mm.
@@ -94,6 +95,7 @@ Zwei Tutorials [Sortierkästen konstruieren](TutorialSortingBoxes.md) und [Eleme
 - [__LeveledAxis__](ModelBase/LeveledAxis.md): Erzeugt eine stehende Achse mit einer stärkeren Achsbasis.
 - [__LeveledAxisWithSpace__](ModelBase/LeveledAxisWithSpace.md): Erzeugt eine stehende Achse mit einer stärkeren Achsbasis und einer Grundplatte.
 - [__LeveledTube__](ModelBase/LeveledTube.md): Erzeugt eine stehenden hohlen Zylinder mit einer stärkeren Basis.
+- [__LockingAxis__](ModelBase/LockingAxis.md): Erzeugt eine stehende Achse für Rastachsenkupplungen.
 - [__Space__](ModelBase/Space.md): Erzeugt eine dünne Fläche als Basis für ein Element.
 - [__Text__](ModelBase/Text.md): Erzeugt einen reliefartigen Text im Boden des Sortierkastens.
 - [__Tube__](ModelBase/Tube.md): Erzeugt eine stehenden hohlen Zylinder.

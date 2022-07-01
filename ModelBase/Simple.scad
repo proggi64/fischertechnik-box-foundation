@@ -383,6 +383,23 @@ module LeveledAxisWithSpace(height, levelHeight, space, diameter=getStandAxisDia
         LeveledAxis(height, levelHeight, diameter, baseDiameter);
 }
 
+// LockingAxis()
+// Standing axis for locking axis connectors
+
+module LockingAxis() {
+    flatThickness = 2.4;
+    cutoffVolume = [getAxisDiameter()+1, getAxisDiameter(), getAxisLockingLength() + 1];
+    difference() {
+        Axis(getAxisLockingLength());
+        translate([-cutoffVolume.x/2, 0]) {
+            translate([0, flatThickness/2])
+                cube(cutoffVolume);
+            translate([0, -cutoffVolume.y - flatThickness/2])
+                cube(cutoffVolume);
+        }
+    }
+}
+
 // Text(text, xAlign=AlignCenter, yAlign=AlignCenter)
 // Writes an elevated text to the bottom of the box
 // text = the text to write
