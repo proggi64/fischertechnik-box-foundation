@@ -8,7 +8,7 @@ use <../ModelBase/Simple.scad>
 /* [Hidden] */
 width = 45;
 depth = 30;
-height = 10;
+height = 6;
 volume = [width, depth, height];
 extraVolume = [width, depth - getDividerThickness() + getPinHeight(), height];
 
