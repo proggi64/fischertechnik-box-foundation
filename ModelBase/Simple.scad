@@ -192,7 +192,7 @@ module FrameBottomCutoff(volume, width, offset=0, tolerance=getTolerance()) {
 module FrameLeftCutoff(volume, width, offset=0, tolerance=getTolerance()) {
     translate([0, (getFrameOuterVolume(volume, tolerance).y - width) / 2]) {
         translate([-getExcess(), offset])
-            cube([width, 2*getDividerThickness(), volume.z + getExcess()]);
+            cube([2*getDividerThickness(), width, volume.z + getExcess()]);
     }
 }
 
