@@ -1,6 +1,6 @@
 # Inhalt
 
-Dies ist die erste Version vom 1. Juni 2022. Der Grundstock für die Konstruktion von Sortierkästen umfasst schon ca. 100 Elemente der grauen Bausteine, die Ende der 1970er Jahre existierten. Bis Anfang Juli kamen noch mehr alss 35 neue Elemente hinzu. Als Beispiele wurden die Kästen [ec1-3](../../Original%20Building%20Kits/ec/) sowie [mot1 bis mot3](../../Original%20Building%20Kits/mot/) nachgebaut. Unter [Motor Set XS](../Building%20Kits/PLUS/) findet man ein Beispiel für einen kompletten Eigenentwurf. Für die hobby-Elektroníkbausteine ("Silberlinge") sind druckbare Kästen im Verzeichnis [hobby](../Building%20Kits/hobby/) als SCAD- und STL-Dateien hinterlegt.
+Dies ist die erste Version vom 1. Juni 2022. Der Grundstock für die Konstruktion von Sortierkästen umfasst schon ca. 100 Elemente der grauen Bausteine, die Ende der 1970er Jahre existierten. Bis Anfang Juli kamen noch mehr als 35 neue Elemente hinzu. Als Beispiele wurden die Kästen [ec1-3](../../Original%20Building%20Kits/ec/) sowie [mot1 bis mot3](../../Original%20Building%20Kits/mot/) nachgebaut. Unter [Motor Set XS](../Building%20Kits/PLUS/) findet man ein Beispiel für einen kompletten Eigenentwurf. Für die hobby-Elektronikbausteine ("Silberlinge") sind druckbare Kästen im Verzeichnis [hobby](../Building%20Kits/hobby/) als SCAD- und STL-Dateien hinterlegt.
 
 Zwei Tutorials [Sortierkästen konstruieren](TutorialSortingBoxes.md) und [Elemente selbst konstruieren](TutorialElements.md) sollen helfen, eigene Beiträge zu ermöglichen.
 
