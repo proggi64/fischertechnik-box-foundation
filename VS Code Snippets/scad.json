@@ -1,4 +1,14 @@
 {
+	"Gray Test": {
+		"prefix": "gray",
+		"body" : [
+			"// Test",
+			"color(\"lightgray\")",
+			"${TM_FILENAME_BASE}();"
+		],
+		"description": "Test single element in element module"
+	},
+
 	"Element Parameters": {
 		"prefix": "elp",
 		"body" : [
