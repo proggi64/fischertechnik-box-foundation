@@ -51,9 +51,9 @@ module Tube(height, innerDiameter=0, outerDiameter=0) {
         innerDiameter = (innerDiameter != 0.0) ? innerDiameter : (outerDiameter-2*getTubeWallThickness());
         outerDiameter = (outerDiameter != 0.0) ? outerDiameter : (innerDiameter+2*getTubeWallThickness());
         
-        cylinder(h = heightOfTube, d = outerDiameter, $fn = getFragments());
-        translate([0, 0, getExcess()])
-            cylinder(h = heightOfTube, d = innerDiameter, $fn = getFragments());
+        translate([0, 0, -getExcess()])
+            cylinder(h = heightOfTube, d = outerDiameter, $fn = getFragments());
+        cylinder(h = heightOfTube, d = innerDiameter, $fn = getFragments());
     }        
 }
 
@@ -398,6 +398,25 @@ module LockingAxis() {
                 cube(cutoffVolume);
         }
     }
+}
+
+// LockingAxis()
+// Standing tube for locking axis
+// height = Height of the tube. use a minimum of getAxisLockingLength().
+
+module LockingTube(height=12) {
+    difference() {
+        heightOfTube = height + getExcess();
+        innerDiameter = getAxisDiameter();
+        outerDiameter = innerDiameter+2*getTubeWallThickness();
+        
+        translate([0, 0, -getExcess()])
+            cylinder(h = heightOfTube, d = outerDiameter, $fn = getFragments());
+        translate([0, 0, getAxisLockingLength()])
+            cylinder(h = heightOfTube, d = innerDiameter, $fn = getFragments());        
+        scale([1.05, 1.05, 1.05])
+            LockingAxis();
+    }        
 }
 
 // Text(text, xAlign=AlignCenter, yAlign=AlignCenter)

@@ -10,7 +10,7 @@ use <../ModelBase/Complex.scad>
 /* [Hidden] */
 width = 15;
 depth = 15;
-height = 10;
+height = 12;
 
 // getCylinderLockingGearZ28Space()
 // Gets the space the cylinder for a 30 mm axis needs
@@ -25,7 +25,7 @@ module CylinderLockingGearZ28() {
     Space(getCylinderLockingGearZ28Space());
     
     Center(getCylinderLockingGearZ28Space())
-        Tube(height, innerDiameter=getFrameAxisDepth());
+        LockingTube(height);
 }
 
 // Tests

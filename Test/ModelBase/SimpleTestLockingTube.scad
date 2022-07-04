@@ -1,13 +1,13 @@
 // Fischertechnik Box Foundation
 // ModelBase
-// Test Locking Axis
+// Test Locking Tube
 
 use <../../Base/Placement.scad>
 use <../../ModelBase/Simple.scad>
 
 include <../../Base/PlacementOptions.scad>
 
-LockingAxis();
+LockingTube();
 
 Place(10, rotation=Rotate90)
-    LockingAxis();
+    LockingTube();
