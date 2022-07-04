@@ -10,9 +10,9 @@ include <../Base/PlacementOptions.scad>
 ## Syntax
 ```
 DeployVertical(
-  depth, 
-  spaces, 
-  rotations,
+  depth=0, 
+  spaces=[], 
+  rotations=[NoRotation],
   alignX=NoAlign)
   {children}
 ```
@@ -20,7 +20,7 @@ DeployVertical(
 | Parameter | Typ | Beschreibung |
 | ------ | ------ | ------ |
 | depth | Decimal | Strecke, über die die angegebenen Elemente vertikal verteilt werden. Wird hier Null angegeben, werden die Elemente direkt ohne Abstand aneinander gesetzt. |
-| spaces| \[\[x,y],\[x,y],...] | Liste von Wertpaaren (Liste mit x- und y-Wert) mit den Flächen der Children-Elemente. Hier sollten die jeweiligen __get*ElementName*Space()__-Funktionen angegeben werden, und zwar in der Reihenfolge, die der der Children-Elemente entspricht. |
+| spaces| \[\[x,y],\[x,y],...] | Liste von Wertpaaren (Liste mit x- und y-Wert) mit den Flächen der Children-Elemente. Hier sollten die jeweiligen __get*ElementName*Space()__-Funktionen angegeben werden, und zwar in der Reihenfolge, die der der Children-Elemente entspricht. Standard ist eine leere Liste, damit *depth* weggelassen werden kann. Die Liste darf aber nicht leer sein. |
 | rotations | \[RotateX, RotateX, ...] |Gibt für jedes Children-Element an, wie es vor dem Vertielne gedreht werden soll. Mögliche Werte sind __Rotate0__, __Rotate90__, __Rotate180__ und __Rotate270__. Die Reihenfolge entspricht der der Children-Elemente. Die Liste kann ganz weggelassen werden, dann gelten für alle Elemente __NoRotation__. Ist die Liste unvollständig, wird für die restlichen Elemente __NoRotation__ angenommen. |
 | alignX | Integer (Enum) | Horizontale Ausrichtung der Children-Elemente zueinander. Grundlage sind die in *spaces* angegebenen Flächen, sowie die in *rotations* angegebenen Drehungen der einzelnen Elemente. __AlignLeft__ richtet auf der linken Linie aus (wie __NoAlign__), __AlignRight__ am höchsten X-Wert der Elemente, __AlignCenter__ zentriert alle Elemente um das Zentrum des breitesten Elements. |
 

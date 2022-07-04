@@ -12,7 +12,7 @@ include <../Base/PlacementOptions.scad>
 ```
 MergeRow(
   spaces, 
-  rotations, 
+  rotations=[NoRotation], 
   dividerThickness = getDividerThickness())
   {children}
 ```

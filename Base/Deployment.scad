@@ -84,7 +84,7 @@ function getMaxWidth(spaces, rotations, i=0) =
 // alignY = NoAlign, AlignBottom (all elements on the same baseline), AlignCenter (all elements at the center
 // of the deepest element), AlignTop (all elements at the top of the deepest element)
 
-module DeployHorizontal(width, spaces, rotations, alignY=NoAlign) {
+module DeployHorizontal(width=0, spaces=[], rotations=[NoRotation], alignY=NoAlign) {
     distance = (width == 0) ? 0 : (width - getWidthSum(spaces, rotations)) / (len(spaces)-1);
     
     alignmentY = 
@@ -117,7 +117,7 @@ module DeployHorizontal(width, spaces, rotations, alignY=NoAlign) {
 // alignX = NoAlign, AlignLeft, AlignCenter (all elements at the center
 // of the widest element), AlignRight (all elements at the right edge of the widest element)
 
-module DeployVertical(depth, spaces, rotations, alignX=NoAlign) {
+module DeployVertical(depth=0, spaces=[], rotations=[NoRotation], alignX=NoAlign) {
     distance = (depth == 0) ? 0 : (depth - getDepthSum(spaces, rotations)) / (len(spaces)-1);
 
     alignmentX = 
@@ -192,7 +192,7 @@ function getMergedRowWidth(spaces, rotations, i=0) =
 // rotations = specify rotations for each space to get its correct width
 // dividerThickness = Thickness of all dividers of the elements (default is 0.8)
 
-module MergeRow(spaces, rotations, dividerThickness = getDividerThickness()) {
+module MergeRow(spaces, rotations=[NoRotation], dividerThickness = getDividerThickness()) {
     for (i = [0:1:$children-1]) {
         x = getX(spaces, rotations, -getDividerThickness(), i);
         translate([x, 0, 0])
@@ -207,7 +207,7 @@ module MergeRow(spaces, rotations, dividerThickness = getDividerThickness()) {
 // rotation = rotation of the child to get the correct width
 // dividerThickness = Thickness of all dividers of the element (default is 0.8)
 
-module Merge(count, space, rotation, dividerThickness = getDividerThickness()) {
+module Merge(count, space, rotation=NoRotation, dividerThickness = getDividerThickness()) {
     x = getRotatedSpace(space, rotation).x - getDividerThickness();
     for (offset = [0:x:(count-1)*x]) {
         echo(offset);

@@ -15,8 +15,7 @@ translate([0, 60])
 
 DeployVertical(
     getPlacementBaseSpace().y*2, 
-    [getCubeSpace(), getCubeSpace(), getCubeSpace()],
-    [Rotate0, Rotate0, Rotate0]) {
+    [getCubeSpace(), getCubeSpace(), getCubeSpace()]) {
     Cube();
     Cube();
     Cube();
@@ -51,9 +50,8 @@ translate([60, 0]) {
 
     translate([30, 0, 0])
     DeployVertical(
-        0, 
-        [getCubeSpace(), getCubeSpace(), getCubeSpace(), getCubeSpace()],
-        [Rotate0, Rotate90, Rotate180, Rotate270],
+        spaces=[getCubeSpace(), getCubeSpace(), getCubeSpace(), getCubeSpace()],
+        rotations=[Rotate0, Rotate90, Rotate180, Rotate270],
         alignX=AlignCenter) {
         Cube();
         Cube();

@@ -13,7 +13,7 @@ include <../Base/PlacementOptions.scad>
 Merge(
   count,
   space, 
-  rotation, 
+  rotation=NoRotation, 
   dividerThickness = getDividerThickness())
   {children}
 ```

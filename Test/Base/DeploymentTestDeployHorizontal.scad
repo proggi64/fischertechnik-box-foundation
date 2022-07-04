@@ -70,3 +70,16 @@ translate([120,0]) {
         Cube();
         }   
 }
+
+translate([180,0]) {
+    PlacementBase();
+    
+    // Default rotation for second and third (NoRotation)
+    DeployHorizontal(
+        getPlacementBaseSpace().x, 
+        [getCubeSpace(), getCubeSpace(), getCubeSpace()]) {
+        Cube();
+        Cube();
+        Cube();
+        }   
+}
