@@ -1,6 +1,7 @@
 # FrameBuildingPlate5x15x30
-Bauplatte 5x15x30.
+Bauplatte 5x15x30 mit einer oder drei Nuten.
 - 32330
+- 38428
 
 Mit *count* kann die Anzahl der baulplatten angegeben werden.
 
