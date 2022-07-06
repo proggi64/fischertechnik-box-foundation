@@ -236,10 +236,10 @@ function getCutoffOffset(length, count, index, tolerance=getTolerance()) =
 // count = Count of cutoffs
 // cutoffWidth = Width of each cutoff
 
-module FrameTopCutoffs(volume, count, cutoffWidth) {
+module FrameTopCutoffs(volume, count, cutoffWidth, tolerance=getTolerance()) {
     length = volume.x / count;
     for (index = [0:count-1]) {
-        FrameTopCutoff(volume, cutoffWidth, getCutoffOffset(length, count, index));
+        FrameTopCutoff(volume, cutoffWidth, getCutoffOffset(length, count, index, tolerance), tolerance);
     }
 }
 
@@ -253,10 +253,10 @@ module FrameTopCutoffs(volume, count, cutoffWidth) {
 // count = Count of cutoffs
 // cutoffWidth = Width of each cutoff
 
-module FrameBottomCutoffs(volume, count, cutoffWidth) {
+module FrameBottomCutoffs(volume, count, cutoffWidth, tolerance=getTolerance()) {
     length = volume.x / count;
     for (index = [0:count-1]) {
-        FrameBottomCutoff(volume, cutoffWidth, getCutoffOffset(length, count, index));
+        FrameBottomCutoff(volume, cutoffWidth, getCutoffOffset(length, count, index, tolerance), tolerance);
     }
 }
 
@@ -270,10 +270,10 @@ module FrameBottomCutoffs(volume, count, cutoffWidth) {
 // count = Count of cutoffs
 // cutoffWidth = Width of each cutoff
 
-module FrameLeftCutoffs(volume, count, cutoffWidth) {
+module FrameLeftCutoffs(volume, count, cutoffWidth, tolerance=getTolerance()) {
     length = volume.y / count;
     for (index = [0:count-1]) {
-        FrameLeftCutoff(volume, cutoffWidth, getCutoffOffset(length, count, index));
+        FrameLeftCutoff(volume, cutoffWidth, getCutoffOffset(length, count, index, tolerance), tolerance);
     }
 }
 
@@ -287,10 +287,10 @@ module FrameLeftCutoffs(volume, count, cutoffWidth) {
 // count = Count of cutoffs
 // cutoffWidth = Width of each cutoff
 
-module FrameRightCutoffs(volume, count, cutoffWidth) {
+module FrameRightCutoffs(volume, count, cutoffWidth, tolerance=getTolerance()) {
     length = volume.y / count;
     for (index = [0:count-1]) {
-        FrameRightCutoff(volume, cutoffWidth, getCutoffOffset(length, count, index));
+        FrameRightCutoff(volume, cutoffWidth, getCutoffOffset(length, count, index, tolerance), tolerance);
     }
 }
 
