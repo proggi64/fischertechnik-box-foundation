@@ -213,6 +213,87 @@ module FrameRightCutoff(volume, width, offset=0, tolerance=getTolerance()) {
     }
 }
 
+// getCutoffOffset(length, count, index, tolerance=getTolerance())
+// Gets the cutoff offset for FrameXCutoff with the given index for
+// multiple cutoffs,
+// length = Length of the wall (without tolerance)
+// count = Count of cutoffs
+// index = Zero-based index of the cutoff to get the offset for
+// tolerance = Tolerance of the complete inner space
+
+function getCutoffOffset(length, count, index, tolerance=getTolerance()) = 
+    -((((count % 2) == 0) ? (length / 2) : 0) +      // half length when even, 0.0 when odd
+    ((round(count/2) - (index+1)) * length)) *
+    (1+(tolerance/(length + tolerance))/2);
+
+// FrameTopCutoffs(volume, count, cutoffWidth)
+// Creates count cubes that should be used to cut off top parts of the wall of a frame
+// with equal distances.
+// volume = [width, depth, height] Inner volume (without tolerance)
+//   width = Inner width in mm
+//   depth = Inner depth in mm
+//   height = Height of the walls in mm
+// count = Count of cutoffs
+// cutoffWidth = Width of each cutoff
+
+module FrameTopCutoffs(volume, count, cutoffWidth) {
+    length = volume.x / count;
+    for (index = [0:count-1]) {
+        FrameTopCutoff(volume, cutoffWidth, getCutoffOffset(length, count, index));
+    }
+}
+
+// FrameBottomCutoffs(volume, count, cutoffWidth)
+// Creates count cubes that should be used to cut off top parts of the wall of a frame
+// with equal distances.
+// volume = [width, depth, height] Inner volume (without tolerance)
+//   width = Inner width in mm
+//   depth = Inner depth in mm
+//   height = Height of the walls in mm
+// count = Count of cutoffs
+// cutoffWidth = Width of each cutoff
+
+module FrameBottomCutoffs(volume, count, cutoffWidth) {
+    length = volume.x / count;
+    for (index = [0:count-1]) {
+        FrameBottomCutoff(volume, cutoffWidth, getCutoffOffset(length, count, index));
+    }
+}
+
+// FrameLeftCutoffs(volume, count, cutoffWidth)
+// Creates count cubes that should be used to cut off top parts of the wall of a frame
+// with equal distances.
+// volume = [width, depth, height] Inner volume (without tolerance)
+//   width = Inner width in mm
+//   depth = Inner depth in mm
+//   height = Height of the walls in mm
+// count = Count of cutoffs
+// cutoffWidth = Width of each cutoff
+
+module FrameLeftCutoffs(volume, count, cutoffWidth) {
+    length = volume.y / count;
+    for (index = [0:count-1]) {
+        FrameLeftCutoff(volume, cutoffWidth, getCutoffOffset(length, count, index));
+    }
+}
+
+// FrameRightCutoffs(volume, count, cutoffWidth)
+// Creates count cubes that should be used to cut off top parts of the wall of a frame
+// with equal distances.
+// volume = [width, depth, height] Inner volume (without tolerance)
+//   width = Inner width in mm
+//   depth = Inner depth in mm
+//   height = Height of the walls in mm
+// count = Count of cutoffs
+// cutoffWidth = Width of each cutoff
+
+module FrameRightCutoffs(volume, count, cutoffWidth) {
+    length = volume.y / count;
+    for (index = [0:count-1]) {
+        FrameRightCutoff(volume, cutoffWidth, getCutoffOffset(length, count, index));
+    }
+}
+
 // FrameRails(volume, distance, height, direction=LeftRight)
 // Creates two rails in a frame
 // volume = [width, depth, height] Inner volume (without tolerance)
