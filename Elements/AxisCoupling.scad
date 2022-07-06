@@ -1,6 +1,6 @@
 // Fischertechnik Box Library
-// Axis for Coupling
-// 31024, 31047
+// Axis for Coupling or Tube 15
+// 31024, 31047, 31983
 
 use <../Base/Constants.scad>
 use <../ModelBase/Simple.scad>
@@ -14,7 +14,7 @@ space = 10;
 function getAxisCouplingSpace() = [space, space];
 
 // AxisCoupling()
-// Standing axis for an 8 mm coupling 31024
+// Standing axis for an 8 mm coupling 31024, 31047, or tube 15 31983
 
 module AxisCoupling() {
     axisHeight = 11.8;
