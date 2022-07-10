@@ -15,20 +15,22 @@ use <../../Elements/FrameTransistorBlock.scad>
 use <../../Elements/FrameUFormGearbox.scad>
 use <../../Elements/FrameMiniMotor.scad>
 use <../../Elements/FrameBlockWithPin.scad>
+use <../../Elements/CylinderLockingGearZ28.scad>
 
 include <../../Base/PlacementOptions.scad>
 
 Box190();
-Place(147, 15)
+Place(147, 20)
+    Text("PROFI");
+Place(147, 12)
     Text("Electronics 1/3");
 
 cableBoxInnerVolume = [25, 90, 30];
-translate([-getDividerThickness(), -getDividerThickness()])
-    Frame(cableBoxInnerVolume, openLeft=true, openBottom=true);
+DockableFrame(cableBoxInnerVolume, wallLeft=false, wallBottom=false);
 
 cableBoxOuterVolume = getFrameOuterVolume(cableBoxInnerVolume);
 distFirstPushButton = 5;
-xRightCableBox = cableBoxOuterVolume.x - getDividerThickness();
+xRightCableBox = cableBoxOuterVolume.x;
 xPushButton1 = xRightCableBox + distFirstPushButton;
 yPushButton = 7.5;
 distPushButton = 5;
@@ -63,11 +65,14 @@ Place(
     AxisLockingGear10();
 
 Place(
-    x=-getDividerThickness()-0.14,
-    y=-getDividerThickness()-0.14,
+    x = xGear2 + (getAxisLockingGear10Space().x - getCylinderLockingGearZ28Space().x)/2,
+    y = yGear + getAxisLockingGear10Space().y + 2)
+    CylinderLockingGearZ28();
+
+Place(
     elementSpace=getFrame9VBatterySetSpace(),
     alignX=AlignRight)
-    Frame9VBatterySet();
+    Frame9VBatterySet(alignX=AlignRight, alignY=AlignBottom);
 
 distYTransistors = 7.5;
 yTransistors = yPushButton + getFrameMiniPushButtonSpace().x + distYTransistors;
