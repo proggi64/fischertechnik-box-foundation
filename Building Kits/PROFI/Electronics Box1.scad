@@ -16,6 +16,7 @@ use <../../Elements/FrameUFormGearbox.scad>
 use <../../Elements/FrameMiniMotor.scad>
 use <../../Elements/FrameBlockWithPin.scad>
 use <../../Elements/CylinderLockingGearZ28.scad>
+use <../../Elements/FrameElectronicsController.scad>
 
 include <../../Base/PlacementOptions.scad>
 
@@ -132,3 +133,6 @@ Place(xFirstLight, ySecondLight)
         FrameBlockWithPin(2);
         FrameBlockWithPin(2);
         }
+
+Place(alignX=AlignRight, alignY=AlignTop, elementSpace=getFrameElectronicsControllerSpace())
+    FrameElectronicsController(alignX=AlignRight, alignY=AlignTop);
