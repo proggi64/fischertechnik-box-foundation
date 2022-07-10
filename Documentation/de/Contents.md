@@ -81,11 +81,12 @@ Zwei Tutorials [Sortierkästen konstruieren](TutorialSortingBoxes.md) und [Eleme
 ## Funktionen und Module für das Konstruieren von Elementen
 
 ### Module für einfache Grundformen
+- [__AlignedFrame__](Modelbase/AlignedFrame.md): Erzeugt einen Rahmen, der an bis zu zwei Wände gleichzeitig angedockt werden kann.
 - [__AngeledFrame__](ModelBase/AngeledFrame.md): Erzeugt einen um 90° gewinkelten Rahmen.
 - [__Axis__](ModelBase/Axis.md): Erzeugt eine stehende Achse.
 - [__AxisWithSpace__](ModelBase/AxisWithSpace.md): Erzeugt eine stehende Achse mit einer Grundplatte.
 - [__Divider__](ModelBase/Divider.md): Erzeugt einen Trenner innerhalb eines Sortierkastens.
-- [__DockableFrame__](ModelBase/DockableFrame.md): Erzeugt einen Rahmen, der an eine Wand angedockt werden kann.
+- [__DockableFrame__](ModelBase/DockableFrame.md): Erzeugt einen Rahmen, der an Wände angedockt werden kann.
 - [__Frame__](ModelBase/Frame.md): Erzeugt einen Rahmen mit optional einzeln offenen Wänden.
 - [__FrameBottomCutoff__](Modelbase/FrameBottomCutoff.md): Mit __difference__ in [__Frame__](ModelBase/Frame.md) einen Ausschnitt in die vordere Wand schneiden.
 - [__FrameLeftCutoff__](Modelbase/FrameLefttCutoff.md): Mit __difference__ in [__Frame__](ModelBase/Frame.md) einen Ausschnitt in die linke Wand schneiden.
