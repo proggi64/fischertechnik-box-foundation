@@ -366,8 +366,8 @@ module AngledFrame(width1, depth1, width2, depth2, height, tolerance=getToleranc
     }
 }
 
-// Dockable frame for small parts
 // DockableFrame(volume, wallLeft=true, wallTop=true, wallRight=true, wallBottom=true, tolerance=default)
+// Dockable frame where walls can be omitted
 // volume = [width, depth, height] Inner volume (without tolerance)
 // width = Inner width in mm
 // depth = Inner depth in mm
@@ -378,7 +378,7 @@ module AngledFrame(width1, depth1, width2, depth2, height, tolerance=getToleranc
 // length of the corresponding walls are added to be sunk into
 // the walls of the surrounding box.
 // tolerance = additional space for the building block (default is reasonable)
-// wallExcess = Excess taht is integrated into the wall where the frame will be docked. When zero,
+// wallExcess = Excess that is integrated into the wall where the frame will be docked. When zero,
 // the frame is just an open frame.
 
 module DockableFrame(
@@ -413,6 +413,27 @@ module DockableFrame(
             translate([-sinkExtLeft, 0, 0])
                 cube([outerVolume.x + sinkExtLeft + sinkExtRight, getDividerThickness(), outerVolume.z]);
     }  
+}
+
+// AlignedFrame(volume, alignX=NoAlign, alignY=NoAlign)
+// Dockable frame for edges with alignment parameters
+// alignX 0=NoAlign 1=AlignLeft 4=AlignRight 
+// alignY 0=AlignNo 2=AlignBottom 5=AlignTop
+// tolerance = additional space for the building block (default is reasonable)
+// wallExcess = Excess that is integrated into the wall where the frame will be docked. When zero,
+// the frame is just an open frame.
+
+module AlignedFrame(
+    volume,
+    alignX=NoAlign,
+    alignY=NoAlign,
+    tolerance=getTolerance(),
+    wallExcess=getDividerThickness()) {
+    wallLeft = alignX!=AlignLeft;
+    wallTop = alignY!=AlignTop;
+    wallRight = alignX!=AlignRight;
+    wallBottom = alignY!=AlignBottom;
+    DockableFrame(volume, wallLeft, wallTop, wallRight, wallBottom, tolerance, wallExcess);
 }
 
 // Axis(height, diameter=4)

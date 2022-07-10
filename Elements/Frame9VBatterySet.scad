@@ -4,6 +4,12 @@
 
 use <../ModelBase/Simple.scad>
 
+include <../Base/PlacementOptions.scad>
+
+/* [Element Parameters] */
+alignX = 0;   // [0:NoAlign, 1:AlignLeft, 4:AlignRight]
+alignY = 0;   // [0:NoAlign, 2:AlignBottom, 5:AlignTop]
+
 /* [Hidden] */
 width = 75;
 depth = 30;
@@ -15,11 +21,13 @@ volume = [width, depth, height];
 
 function getFrame9VBatterySetSpace() = getFrameOuterVolume(volume);
 
-// Frame9VBatterySet()
+// Frame9VBatterySet(alignX, alignY)
 // Frame for 9V block battery set with switch
+// alignX 0=NoAlign 1=AlignLeft 4=AlignRight 
+// alignY 0=AlignNo 2=AlignBottom 5=AlignTop
 
-module Frame9VBatterySet() {
-    Frame(volume);
+module Frame9VBatterySet(alignX=NoAlign, alignY=NoAlign) {
+    AlignedFrame(volume, alignX, alignY);
 }
 
 // Tests
