@@ -11,10 +11,16 @@ use <../Elements/FrameAngle15.scad>
 
 ## Syntax
 ```
-FrameAngle15();
+FrameAngle15(
+    count=1);
 
-space = getFrameAngle15Space();
+space = getFrameAngle15Space(
+    count=1);
 ```
+
+| Parameter | Typ | Beschreibung |
+| ------ | ------ | ------ |
+| count | Integer | Anzahl der Bausteine nebeneinander (X-Richtung). |
 
 ## Rückgabewert getFrameAngle15Space
 Fläche als \[x,y]-Liste
