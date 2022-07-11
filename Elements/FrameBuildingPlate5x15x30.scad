@@ -16,7 +16,7 @@ height = 8;
 // getFrameBuildingPlate5x15x30Space(count=1)
 // Gets the space of a frame for count building plates
 
-function getFrameSmallBlockSpace(count=1) = getFrameOuterVolume([width, depth * count, height]);
+function getFrameBuildingPlate5x15x30Space(count=1) = getFrameOuterVolume([width, depth * count, height]);
 
 // FrameBuildingPlate5x15x30(count=1)
 // Frame for count building plates 5x15x30

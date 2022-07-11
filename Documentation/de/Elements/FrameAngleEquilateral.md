@@ -1,4 +1,4 @@
-# FrameAngleEquiliteral
+# FrameAngleEquilateral
 
 Winkelstein 60 gleichseitig.
 
@@ -6,15 +6,15 @@ Winkelstein 60 gleichseitig.
 
 ## Use
 ```
-use <../Elements/FrameAngleEquiliteral.scad>
+use <../Elements/FrameAngleEquilateral.scad>
 ```
 
 ## Syntax
 ```
-FrameAngleEquiliteral(
+FrameAngleEquilateral(
     count=1);
 
-space = getFrameAngleEquiliteralSpace()
+space = getFrameAngleEquilateralSpace()
     count=1);
 ```
 
@@ -22,5 +22,5 @@ space = getFrameAngleEquiliteralSpace()
 | ------ | ------ | ------ |
 | count | Integer | Anzahl der Bausteine nebeneinander (X-Richtung). |
 
-## Rückgabewert getFrameAngleEquiliteralSpace
+## Rückgabewert getFrameAngleEquilateralSpace
 Äußere Fläche des Rahmens als \[x,y]-Liste.

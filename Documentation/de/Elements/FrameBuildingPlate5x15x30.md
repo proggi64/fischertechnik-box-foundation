@@ -3,7 +3,7 @@ Bauplatte 5x15x30 mit einer oder drei Nuten.
 - 32330
 - 38428
 
-Mit *count* kann die Anzahl der baulplatten angegeben werden.
+Mit *count* kann die Anzahl der Bauplatten angegeben werden.
 
 ![FrameBuildingPlate5x15x30](../../images/FrameBuildingPlate5x15x30.png)
 
@@ -19,12 +19,11 @@ FrameBuildingPlate5x15x30(
 
 space = getFrameBuildingPlate5x15x30Space(
     count=1);
-    count=1);
 ```
 
 | Parameter | Typ | Beschreibung |
 | ------ | ------ | ------ |
-| count | Integer | Anzahl der Bauplatten, die im Rahmen nebeneinander latz haben sollen. |
+| count | Integer | Anzahl der Bauplatten, die im Rahmen nebeneinander Platz haben sollen. |
 
 ## Rückgabewert getFrameBuildingPlate5x15x30Space
 Fläche als \[x,y]-Liste
