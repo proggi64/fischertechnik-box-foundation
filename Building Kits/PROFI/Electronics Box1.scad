@@ -26,6 +26,7 @@ Place(147, 20)
 Place(147, 12)
     Text("Electronics 1/3");
 
+// Cables 30x 31336, 22x 31337, Transistors 2x 152860, 1x 36437, 1x 35443
 cableBoxInnerVolume = [25, 90, 30];
 DockableFrame(cableBoxInnerVolume, wallLeft=false, wallBottom=false);
 
@@ -36,6 +37,7 @@ xPushButton1 = xRightCableBox + distFirstPushButton;
 yPushButton = 7.5;
 distPushButton = 5;
 
+// 2x 37783
 Place(
     x=xPushButton1, 
     y=yPushButton, 
@@ -51,6 +53,7 @@ Place(
     rotation=Rotate270)
     FrameMiniPushButton();
 
+// 2x 35945
 distGear = 3;
 distGears = 4;
 xGear1 = xPushButton2 + getFrameMiniPushButtonSpace().y + distGear;
@@ -65,16 +68,19 @@ Place(
     y=yGear)
     AxisLockingGear10();
 
+// 1x 31082
 Place(
     x = xGear2 + (getAxisLockingGear10Space().x - getCylinderLockingGearZ28Space().x)/2,
     y = yGear + getAxisLockingGear10Space().y + 2)
     CylinderLockingGearZ28();
 
+// 1x 135719
 Place(
     elementSpace=getFrame9VBatterySetSpace(),
     alignX=AlignRight)
     Frame9VBatterySet(alignX=AlignRight, alignY=AlignBottom);
 
+// 2x 152059, 152218
 distYTransistors = 7.5;
 yTransistors = yPushButton + getFrameMiniPushButtonSpace().x + distYTransistors;
 Place(
@@ -93,6 +99,7 @@ Place(
     rotation=Rotate90)
     FrameTransistorBlock();
 
+// 1x 31078
 xGearbox = xTransistor2 + getFrameTransistorBlockSpace().y + 10;
 yGearbox = yTransistors + (getFrameTransistorBlockSpace().x - getFrameUFormGearboxSpace().y)/2;
 Place(
@@ -100,6 +107,7 @@ Place(
     y=yGearbox)
     FrameUFormGearbox();
 
+// 1x 137096
 yMotor = yTransistors + (getFrameTransistorBlockSpace().x - getFrameMiniMotorSpace().y)/2;
 Place(
     x=5,
@@ -108,6 +116,7 @@ Place(
     alignX=AlignRight)
     FrameMiniMotor();
 
+// 5x 38216, 2x 152200, 1x 152222
 firstLightXDist = 6;
 xFirstLight = xRightCableBox - getFrameBlockWithPinSpace().x;
 yFirstLight = cableBoxOuterVolume.y - getDividerThickness() + firstLightXDist;
@@ -122,6 +131,7 @@ Place(xFirstLight, yFirstLight)
         FrameBlockWithPin(2);
         }
 
+// 2x 38216, 2x 152219
 yLightDist = 6;
 ySecondLight = yFirstLight - yLightDist - getFrameBlockWithPinSpace().y;
 
@@ -134,5 +144,6 @@ Place(xFirstLight, ySecondLight)
         FrameBlockWithPin(2);
         }
 
+// 1x 152063
 Place(alignX=AlignRight, alignY=AlignTop, elementSpace=getFrameElectronicsControllerSpace())
     FrameElectronicsController(alignX=AlignRight, alignY=AlignTop);

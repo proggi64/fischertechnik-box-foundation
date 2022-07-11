@@ -19,7 +19,8 @@ ElevatedFramesWithCutoff(
   height, 
   bearingLength, 
   cutThrough=false,
-  clampThrough=false);
+  clampThrough=false,
+  single=false);
 ```
 
 | Parameter | Typ | Beschreibung |
@@ -30,6 +31,7 @@ ElevatedFramesWithCutoff(
 | bearingLength | Decimal | Jeweilige Länge der beiden Halterungsrahmen. Bei Achsen sollte diese weniger als die Hälfte der Achslänge betragen. |
 | cutThrough | Boolean | __true__, wenn die Wand am Ende der beiden Halterungen weggelassen werden soll. |
 | clampThrough | Boolean | __true__, wenn die komplette Wand am etwas engeren Einlass der Achse bis zum Boden entfernt werden soll. Das wird intern vom Modul [__AxisMiddleSupport__](AxisMiddleSupport.md) verwendet. |
+| single | Boolean | __true__, wenn nur ein Halter für die linke Seite erzeugt werden soll. |
 
 ## Beispiele
 

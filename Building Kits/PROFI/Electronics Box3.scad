@@ -4,9 +4,10 @@
 
 use <../../Base/Constants.scad>
 use <../../Base/Placement.scad>
-use <../../Base/Deployment.scad>
+use <../../Base/Rotation.scad>
 use <../../Base/Boxes.scad>
 use <../../ModelBase/Simple.scad>
+use <../../ModelBase/Complex.scad>
 
 use <../../Elements/HolderBuildingPlate30x90.scad>
 use <../../Elements/FrameBlockWithPin.scad>
@@ -14,7 +15,6 @@ use <../../Elements/FrameStandardBlock.scad>
 use <../../Elements/FrameBlock15x30x5.scad>
 use <../../Elements/FrameBuildingPlate5x15x30.scad>
 use <../../Elements/FrameAngle15.scad>
-use <../../Elements/AxisCoupling.scad>
 use <../../Elements/FrameAngleEquilateral.scad> // 1x
 
 include <../../Base/PlacementOptions.scad>
@@ -47,7 +47,7 @@ yBlock1Dist = 2;
 xBlock2 = getHolderBuildingPlate30x90Space(3).x + xBlock1Dist;
 yBlock2 = yBlock1Dist;
 Place(xBlock2, yBlock2)
-    #FrameBlock15x30x5(5);
+    FrameBlock15x30x5(5);
 
 xAngle2 = webDistance + getFrameAngleEquilateralSpace().x;
 Place(xAngle2, yBlock2+5, alignX=AlignRight)
@@ -107,14 +107,45 @@ Place(x=xPins1, y=yPins, alignX=AlignRight, alignY=AlignTop, rotation=Rotate90, 
 // 2x 32330
 outerPlateSpace = getFrameBuildingPlate5x15x30Space(2);
 xPlates = xMerge4 + outerSingle15Volume.x - outerPlateSpace.y;
-yPlates = outerSingle15Volume.y + 2;
+yPlates = outerSingle15Volume.y + 6;
 Place(x=xPlates, y=yPlates, alignY=AlignTop, rotation=Rotate90, elementSpace=outerPlateSpace)
     FrameBuildingPlate5x15x30(2);
 
-// 2x 31983
-couplingSpace = getAxisCouplingSpace();
-xCoupling = xPlates + 2;
-Place(x=xCoupling, y=60)
-    AxisCoupling();
-Place(x=xCoupling, y=60 - couplingSpace.y - 2)
-    AxisCoupling();
+// 3x 36912, 1x 38543
+strut30Width = 38.9;
+strutDepth = 2.9;
+bearingLength = 8.8;
+strut30LoadHeight = 24.0;
+strut30Volume = [strut30Width, strutDepth, strut30LoadHeight];
+
+module FrameThreeStrut30(volume) {
+    height = 24.0;
+    ElevatedFramesWithCutoff(strut30Volume, strutDepth, height, bearingLength, single=true);
+}
+
+strut90Width = 98.9;
+strut90LoadHeight = 8.0;
+strut90Volume = [strut90Width, strutDepth, strut90LoadHeight];
+
+module FrameSingleStrut90(volume=strut90Volume) {
+    height = 32.0;
+    ElevatedFramesWithCutoff(volume, strutDepth, height, bearingLength, single=true);
+}
+
+module FrameStrutsEnd() {
+    loadHeight = 32.0;
+    volume = [strut90Volume.x, strut90Volume.y, loadHeight];
+    FrameSingleStrut90(volume);
+}
+
+yStruts = yBlock1 + getFrameBlockWithPinSpace(4).y + 6;
+Place(x = xBlock1, y = yStruts)
+{
+    FrameSingleStrut90();
+
+    translate([getFrameOuterVolume(strut90Volume).x - getFrameOuterVolume(strut30Volume).x, 0])
+        FrameThreeStrut30(strut30Volume);
+    
+    RotateFix(space=getFrameOuterVolume(strut90Volume, tolerance=0), rotation=Rotate180)
+        FrameStrutsEnd();
+}
