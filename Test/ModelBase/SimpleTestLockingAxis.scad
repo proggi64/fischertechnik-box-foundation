@@ -7,7 +7,9 @@ use <../../ModelBase/Simple.scad>
 
 include <../../Base/PlacementOptions.scad>
 
-LockingAxis();
+height = 8;
+
+LockingAxis(height);
 
 Place(10, rotation=Rotate90)
-    LockingAxis();
+    LockingAxis(height);

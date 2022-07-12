@@ -491,14 +491,15 @@ module LeveledAxisWithSpace(height, levelHeight, space, diameter=getStandAxisDia
         LeveledAxis(height, levelHeight, diameter, baseDiameter);
 }
 
-// LockingAxis()
+// LockingAxis(height = getAxisLockingLength())
 // Standing axis for locking axis connectors
+// height = Height of the axis
 
-module LockingAxis() {
+module LockingAxis(height = getAxisLockingLength()) {
     flatThickness = 2.4;
-    cutoffVolume = [getAxisDiameter()+1, getAxisDiameter(), getAxisLockingLength() + 1];
+    cutoffVolume = [getAxisDiameter()+1, getAxisDiameter(), height + 1];
     difference() {
-        Axis(getAxisLockingLength());
+        Axis(height);
         translate([-cutoffVolume.x/2, 0]) {
             translate([0, flatThickness/2])
                 cube(cutoffVolume);

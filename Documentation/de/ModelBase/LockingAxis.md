@@ -11,8 +11,14 @@ use <../ModelBase/Simple.scad>
 
 ## Syntax
 ```
-LockingAxis();
+LockingAxis(
+    height = getAxisLockingLength());
 ```
+
+| Parameter | Typ | Beschreibung |
+| ------ | ------ | ------ |
+| height | Decimal | Höhe der Achse. Mehr als 30 mm sind nicht zu empfehlen, da die nutzbare Höhe des Sortierkastens nur etwa 40 mm beträgt und solche Achsen mit zunehmender Höhe leichter abbrechen können. Standard ist die Höhe des Rastbereichs einer Rastachse. |
+
 
 ## Beispiel
 
