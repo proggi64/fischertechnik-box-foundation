@@ -107,3 +107,14 @@ function getStrutEndRadius() = strutAddLength / 2;
 
 // gets the the depth of a strut
 function getStrutDepth() = strutDepth;
+
+// Propeller
+
+propellerAxisDiameter = 7.0;
+propellerAxisTolerance = 0.2;
+
+// gets the propeller axis outer diameter
+function getPropellerAxisDiameter() = propellerAxisDiameter;
+
+// gets the propeller axis printing tolerance
+function getPropellerAxisTolerance() = propellerAxisTolerance;

@@ -11,7 +11,7 @@ use <../Base/Constants.scad>
 
 ## Syntax
 ```
-getHubRingDiameter();
+getHubRingLevelDiameter();
 ```
 
 ## Rückgabewert
