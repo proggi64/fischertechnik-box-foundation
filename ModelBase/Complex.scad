@@ -339,9 +339,9 @@ module FrameFlatPiece(count, size) {
 }
 
 plateThickness = 2.1;
-holderPinDepth = 4;
+holderStudDepth = 4;
 
-function getDepthPerPlate() = plateThickness + getTolerance() + holderPinDepth;
+function getDepthPerPlate() = plateThickness + getTolerance() + holderStudDepth;
 
 // getHolderBuildingPlateSpace(width, count)
 // width = Width of the building plate (90, 75, 60, 45, 30)
@@ -350,7 +350,7 @@ function getDepthPerPlate() = plateThickness + getTolerance() + holderPinDepth;
 
 function getHolderBuildingPlateSpace(width, count = 1) = [
     width + getTolerance(),
-    holderPinDepth + getDepthPerPlate() * count];
+    holderStudDepth + getDepthPerPlate() * count];
 
 // HolderBuildingPlate(width, count, firstGapHigher)
 // Holders for Building Plates
@@ -360,36 +360,36 @@ function getHolderBuildingPlateSpace(width, count = 1) = [
 
 module HolderBuildingPlate(width, count = 1, dock = false) {
     plateThickness = 2.1;
-    pin = 2.6;
+    stud = getStudHeight() + getStudTolerance();
     firstHeight = 15;
-    pinXOffset = 7;
+    studXOffset = 7;
     
     gapHeight = 10 + getExcess();
     spaceWidth = width + getTolerance();
-    spaceDepth = holderPinDepth + getDepthPerPlate() * count;
-    pinXRightOffset = spaceWidth - getDividerThickness() - pinXOffset;
+    spaceDepth = holderStudDepth + getDepthPerPlate() * count;
+    studXRightOffset = spaceWidth - getDividerThickness() - studXOffset;
     
     // Space
     Space([spaceWidth, spaceDepth]);
 
-    module HolderPin(high = false) {
+    module HolderStud(high = false) {
         translate([0, high ? -getDividerThickness() : 0, -getExcess()])
-            cube([getDividerThickness(), holderPinDepth + (high ? getDividerThickness() : 0), high ? firstHeight : gapHeight]);
+            cube([getDividerThickness(), holderStudDepth + (high ? getDividerThickness() : 0), high ? firstHeight : gapHeight]);
     }
     
-    module HolderPins(first = false) {
-        translate([pinXOffset, 0, 0])
-            HolderPin(first);
-        translate([pinXRightOffset, 0, 0])
-            HolderPin(first);
+    module HolderStuds(first = false) {
+        translate([studXOffset, 0, 0])
+            HolderStud(first);
+        translate([studXRightOffset, 0, 0])
+            HolderStud(first);
     }
     
-    HolderPins(dock);
+    HolderStuds(dock);
     firstYOffset = getDepthPerPlate();
     lastYOffset = firstYOffset + getDepthPerPlate() * (count-1);
     for (yOffset = [firstYOffset:getDepthPerPlate():lastYOffset]) {
         translate([0, yOffset, 0])
-            HolderPins();
+            HolderStuds();
     }
 }
 

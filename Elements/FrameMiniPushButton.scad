@@ -18,7 +18,7 @@ height = 15;
 
 function getFrameMiniPushButtonSpace() = getFrameOuterVolume([
     width, 
-    depth + getPinHeight() - getDividerThickness(), 
+    depth + getStudHeight() - getDividerThickness(), 
     height]);
 
 // FrameMiniPushButton()

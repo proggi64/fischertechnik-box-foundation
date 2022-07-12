@@ -12,7 +12,7 @@ include <../../Base/PlacementOptions.scad>
 
 use <../../Elements/FrameLightCap.scad>
 use <../../Elements/FrameLightTube.scad>
-use <../../Elements/FrameBlockWithPin.scad>
+use <../../Elements/FrameBlockWithStud.scad>
 use <../../Elements/FrameCassette.scad>
 use <../../Elements/FrameElectronicBlockConnector.scad>
 use <../../Elements/FramePhotoResistor30.scad>
@@ -61,7 +61,7 @@ Place(getStandardEdgeDistance(), yPos1)
     DeployHorizontal(rowWidth, 
             [
                 getFrameLightCapSpace(),
-                getFrameBlockWithPinSpace(),
+                getFrameBlockWithStudSpace(),
                 getFrameStandardBlockSpace()
             ],
             [
@@ -70,7 +70,7 @@ Place(getStandardEdgeDistance(), yPos1)
                 Rotate0
             ]) {
         FrameLightCap();
-        FrameBlockWithPin();
+        FrameBlockWithStud();
         FrameStandardBlock(height=8);
     }
 
@@ -127,9 +127,9 @@ Place(
     
     DeployVertical(115, 
         [getFramePushButtonSpace(), 
-        getFrameBlockWithPinSpace(), 
-        getFrameBlockWithPinSpace(), 
-        getFrameBlockWithPinSpace()]
+        getFrameBlockWithStudSpace(), 
+        getFrameBlockWithStudSpace(), 
+        getFrameBlockWithStudSpace()]
         )
     {
         Center([45, getFramePushButtonSpace().y], getFramePushButtonSpace()) {
@@ -149,23 +149,23 @@ Place(
             FrameLightCap();
         }
         
-        DeploySame([45, getFrameBlockWithPinSpace().y],
-                getFrameBlockWithPinSpace(),
+        DeploySame([45, getFrameBlockWithStudSpace().y],
+                getFrameBlockWithStudSpace(),
                 rotation=Rotate90
             ) {
-            FrameBlockWithPin();
+            FrameBlockWithStud();
         }
 
         DeployHorizontal(45, 
             [
-                getFrameBlockWithPinSpace(),
+                getFrameBlockWithStudSpace(),
                 getFrameLightCapSpace()
             ],
             [
                 Rotate270, 
                 Rotate0
             ]) {
-            FrameBlockWithPin();
+            FrameBlockWithStud();
             FrameLightCap();
         }
     }

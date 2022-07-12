@@ -11,7 +11,7 @@ include <../../Base/PlacementOptions.scad>
 
 use <../../Elements/FrameLightCap.scad>
 use <../../Elements/FrameLightTube.scad>
-use <../../Elements/FrameBlockWithPin.scad>
+use <../../Elements/FrameBlockWithStud.scad>
 use <../../Elements/FrameCassette.scad>
 use <../../Elements/FrameElectronicBlockConnector.scad>
 use <../../Elements/FramePhotoResistor30.scad>
@@ -58,13 +58,13 @@ centeredWidth = getFrameCassetteSpace(DockTop).x;
 Place(y=36, elementSpace=getFrameCassetteSpace(DockTop), alignX=AlignCenter) {
 DeployHorizontal(
     centeredWidth,
-    [getFrameBlockWithPinSpace(),
+    [getFrameBlockWithStudSpace(),
      getFramePhotoResistor30Space(),
-     getFrameBlockWithPinSpace()],
+     getFrameBlockWithStudSpace()],
     [Rotate90, Rotate270, Rotate90]) {
-        FrameBlockWithPin();
+        FrameBlockWithStud();
         FramePhotoResistor30();
-        FrameBlockWithPin();
+        FrameBlockWithStud();
     }
 }
 
@@ -74,10 +74,10 @@ CenterHorizontal(centeredWidth, 13.0, rightShift) {
     DeployHorizontal(
         58 + 2*getDividerThickness(),
         [getFrameLightTubeSpace(),
-         getFrameBlockWithPinSpace()],
+         getFrameBlockWithStudSpace()],
         [Rotate180, Rotate90]) {
             FrameLightTube();
-            FrameBlockWithPin();
+            FrameBlockWithStud();
     }
 }
 

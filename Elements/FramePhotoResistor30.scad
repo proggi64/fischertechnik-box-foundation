@@ -4,7 +4,7 @@
 
 use <../Base/Constants.scad>
 use <../ModelBase/Simple.scad>
-use <FrameBlockWithPin.scad>
+use <FrameBlockWithStud.scad>
 
 /* [Hidden] */
 width = 15;
@@ -23,7 +23,7 @@ module FramePhotoResistor30() {
     gapWidth = 6;
     
     difference() {
-        FrameBlockWithPin(height=height);
+        FrameBlockWithStud(height=height);
         translate([-getDividerThickness()/2,(getFramePhotoResistor30Space().y-gapWidth)/2])
             cube([getDividerThickness()*2, gapWidth, height + 1]);
     }

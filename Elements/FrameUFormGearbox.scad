@@ -12,28 +12,27 @@ include <../Base/PlacementOptions.scad>
 width = 30;
 depth = 15;
 height = 6;
-pinDepth = 3.5;
 gearDepth = 3;
 
 volume = [width, depth, height];
 
 // getFrameUFormGearboxSpace()
-// Gets the space for a U form gearbox including the pin and gear extension
+// Gets the space for a U form gearbox including the stud and gear extension
 
-function getFrameUFormGearboxSpace() = getFrameOuterVolume([width + pinDepth, depth + gearDepth, height]);
+function getFrameUFormGearboxSpace() = getFrameOuterVolume([width + getStudHeight(), depth + gearDepth, height]);
 
 // FrameUFormGearbox()
 // Frame for U form gearbox
 
 module FrameUFormGearbox() {
     Space(getFrameUFormGearboxSpace());
-    translate([pinDepth, 0]) {
+    translate([getStudHeight(), 0]) {
         difference() {
             Frame([width, depth, height]);
-            pinCutoff = 6;            
-            translate([-getDividerThickness()/2, (getFrameOuterVolume(volume).y - pinCutoff)/2])
-                cube([2*getDividerThickness(), pinCutoff, height + getExcess()]);
-            gearCutoff = pinCutoff + width/2 + 2;
+            studCutoff = 6;            
+            translate([-getDividerThickness()/2, (getFrameOuterVolume(volume).y - studCutoff)/2])
+                cube([2*getDividerThickness(), studCutoff, height + getExcess()]);
+            gearCutoff = studCutoff + width/2 + 2;
             translate([(getFrameOuterVolume(volume).x - gearCutoff)/2, getFrameOuterVolume(volume).y - 1.5*getDividerThickness(), ])
                 cube([gearCutoff, 2*getDividerThickness(), height + getExcess()]);
         }

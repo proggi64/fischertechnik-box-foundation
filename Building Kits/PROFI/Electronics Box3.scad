@@ -10,7 +10,7 @@ use <../../ModelBase/Simple.scad>
 use <../../ModelBase/Complex.scad>
 
 use <../../Elements/HolderBuildingPlate30x90.scad>
-use <../../Elements/FrameBlockWithPin.scad>
+use <../../Elements/FrameBlockWithStud.scad>
 use <../../Elements/FrameStandardBlock.scad>
 use <../../Elements/FrameBlock15x30x5.scad>
 use <../../Elements/FrameBuildingPlate5x15x30.scad>
@@ -57,10 +57,10 @@ Place(xAngle2, yBlock2+5, alignX=AlignRight)
 xBlock1 = xBlock1Dist;
 yBlock1 = getHolderBuildingPlate30x90Space(3).y + yBlock1Dist;
 Place(xBlock1, yBlock1)
-    FrameBlockWithPin(4);
+    FrameBlockWithStud(4);
 
 // 7x 31981
-xAngle = xBlock1 + getFrameBlockWithPinSpace(4).x + 2*xBlock1Dist;
+xAngle = xBlock1 + getFrameBlockWithStudSpace(4).x + 2*xBlock1Dist;
 yAngle = yBlock1;
 Place(xAngle, yAngle)
     FrameAngle15(7);
@@ -93,16 +93,16 @@ Place(x=xMerge4, alignY=AlignTop, elementSpace=outerSingle15Volume)
     AlignedFrame(single15Volume, alignY=AlignTop);
 
 // 11x 32064
-sixBlocksSpace = getFrameBlockWithPinSpace(6);
-xPins2 = webDistance;
-Place(x=xPins2, y=yPins, alignX=AlignRight, alignY=AlignTop, rotation=Rotate90, elementSpace=sixBlocksSpace)
-    FrameBlockWithPin(6);
+sixBlocksSpace = getFrameBlockWithStudSpace(6);
+xStuds2 = webDistance;
+Place(x=xStuds2, y=yStuds, alignX=AlignRight, alignY=AlignTop, rotation=Rotate90, elementSpace=sixBlocksSpace)
+    FrameBlockWithStud(6);
 
-fiveBlocksSpace = getFrameBlockWithPinSpace(5);
-xPins1 = xPins2 + sixBlocksSpace.y - getDividerThickness();
-yPins=-getDividerThickness();
-Place(x=xPins1, y=yPins, alignX=AlignRight, alignY=AlignTop, rotation=Rotate90, elementSpace=fiveBlocksSpace)
-    FrameBlockWithPin(5);
+fiveBlocksSpace = getFrameBlockWithStudSpace(5);
+xStuds1 = xStuds2 + sixBlocksSpace.y - getDividerThickness();
+yStuds=-getDividerThickness();
+Place(x=xStuds1, y=yStuds, alignX=AlignRight, alignY=AlignTop, rotation=Rotate90, elementSpace=fiveBlocksSpace)
+    FrameBlockWithStud(5);
 
 // 2x 32330
 outerPlateSpace = getFrameBuildingPlate5x15x30Space(2);
@@ -138,7 +138,7 @@ module FrameStrutsEnd() {
     FrameSingleStrut90(volume);
 }
 
-yStruts = yBlock1 + getFrameBlockWithPinSpace(4).y + 6;
+yStruts = yBlock1 + getFrameBlockWithStudSpace(4).y + 6;
 Place(x = xBlock1, y = yStruts)
 {
     FrameSingleStrut90();

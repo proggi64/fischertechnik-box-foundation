@@ -27,7 +27,7 @@ module FrameTransistorBlock() {
         FrameBottomCutoff(volume, cutoffWidth);
     }
  
-    railHeight = getPinHeight() + getPinTolerance();
+    railHeight = getStudHeight() + getStudTolerance();
     railDistance = 9;
     FrameRails(volume, railDistance, railHeight);
 }

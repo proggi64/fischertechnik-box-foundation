@@ -38,10 +38,10 @@ module FrameElectronicsController(alignX=NoAlign, alignY=NoAlign) {
         AlignedFrame(blockVolume, 
             alignX!=AlignRight ? alignX : NoAlign, 
             alignY!=AlignTop ? alignY : NoAlign);
-        translate([0, 0, getPinHeight()])
+        translate([0, 0, getStudHeight()])
             FrameRightCutoff(blockVolume, 15);
     }
-    FrameRails(blockVolume, 15, getPinHeight());
+    FrameRails(blockVolume, 15, getStudHeight());
 }
 
 // Test

@@ -15,8 +15,8 @@ height = 10;
 
 function getFrameLightCapSpace() = getFrameOuterVolume([width, depth, height]);
 
-// FrameBlockWithPin(count)
-// Frame for count standing building blocks with pin down
+// FrameLightCap()
+// Frame for old light cap
 
 module FrameLightCap() {    
     webThickness = 0.6;

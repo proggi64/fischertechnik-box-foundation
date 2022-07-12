@@ -14,7 +14,7 @@ height = 6;
 // getFrameGearBlockSpace()
 // Gets the space of a frame for a gear block (mini-mot 1)
 
-function getFrameGearBlockSpace() = getFrameOuterVolume([width, depth + getPinHeight() - getDividerThickness(), height]);
+function getFrameGearBlockSpace() = getFrameOuterVolume([width, depth + getStudHeight() - getDividerThickness(), height]);
 
 // FrameGearBlock()
 // frame for a gear block (mini-mot 1)

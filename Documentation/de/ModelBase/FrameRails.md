@@ -12,7 +12,7 @@ use <../ModelBase/Simple.scad>
 FrameRails(
   volume,
   distance,
-  height=getPinHeight(),
+  height=getStudHeight(),
   direction=Horizontal, 
   tolerance=getTolerance());
 ```

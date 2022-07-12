@@ -10,7 +10,7 @@ width = 45;
 depth = 30;
 height = 6;
 volume = [width, depth, height];
-extraVolume = [width, depth - getDividerThickness() + getPinHeight(), height];
+extraVolume = [width, depth - getDividerThickness() + getStudHeight(), height];
 
 // getFrameSensor45x30Space()
 // Gets the space a sensor with 45x30x15 mm needs

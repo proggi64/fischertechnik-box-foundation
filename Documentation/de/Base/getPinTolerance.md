@@ -1,4 +1,4 @@
-# getPinTolerance
+# getStudTolerance
 
 Funktion: Liefert die zusätzliche Toleranz, wenn Abstände für Baustein-Verbindingszapfen erzeugt werden.
 
@@ -9,7 +9,7 @@ use <../Base/Deployment.scad>
 
 ## Syntax
 ```
-getPinTolerance();
+getStudTolerance();
 ```
 
 ## Rückgabewert

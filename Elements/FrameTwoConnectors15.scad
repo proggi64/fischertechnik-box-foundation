@@ -10,7 +10,7 @@ depth = 6.4;
 height = 10;
 
 // getFrameTwoConnectors30Space()
-// Gets the space needed for the frame for two struts.
+// Gets the space needed for the frame for two connectors 15.
 function getFrameTwoConnectors15Space() = getFrameOuterVolume([width, depth, height]);
 
 // FrameTwoConnectors15()

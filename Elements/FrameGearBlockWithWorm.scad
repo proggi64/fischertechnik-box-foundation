@@ -10,7 +10,7 @@ use <../ModelBase/Simple.scad>
 width = 46;
 depth = 15;
 height = 8;
-offset = getPinHeight() - getDividerThickness();
+offset = getStudHeight() - getDividerThickness();
 
 // getFrameGearBlockWithWormSpace()
 // Gets the space of a frame for a gear block (mini-mot 1)

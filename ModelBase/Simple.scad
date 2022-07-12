@@ -305,7 +305,13 @@ module FrameRightCutoffs(volume, count, cutoffWidth, tolerance=getTolerance()) {
 // direction = Horizontal or Vertical
 // tolerance = additional space for the building block (default is reasonable)
 
-module FrameRails(volume, distance, height=getPinHeight(), direction=Horizontal, tolerance=getTolerance()) {
+module FrameRails(
+    volume, 
+    distance, 
+    height=getStudHeight() + getStudTolerance(), 
+    direction=Horizontal, 
+    tolerance=getTolerance()) {
+        
     outerSpace = getFrameOuterVolume(volume, tolerance);
     width = direction ? outerSpace.x : outerSpace.y;
     

@@ -33,7 +33,7 @@ module FrameTrailSensor() {
     railWidth = 15;
     module FrameSensor() {
         Frame(sensorVolume);
-        FrameRails(sensorVolume, 15, getPinHeight());
+        FrameRails(sensorVolume, 15, getStudHeight());
     }
 
     difference() {

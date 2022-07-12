@@ -14,7 +14,7 @@ use <../../Elements/Frame9VBatterySet.scad>
 use <../../Elements/FrameTransistorBlock.scad>
 use <../../Elements/FrameUFormGearbox.scad>
 use <../../Elements/FrameMiniMotor.scad>
-use <../../Elements/FrameBlockWithPin.scad>
+use <../../Elements/FrameBlockWithStud.scad>
 use <../../Elements/CylinderLockingGearZ28.scad>
 use <../../Elements/FrameElectronicsController.scad>
 
@@ -118,30 +118,30 @@ Place(
 
 // 5x 38216, 2x 152200, 1x 152222
 firstLightXDist = 6;
-xFirstLight = xRightCableBox - getFrameBlockWithPinSpace().x;
+xFirstLight = xRightCableBox - getFrameBlockWithStudSpace().x;
 yFirstLight = cableBoxOuterVolume.y - getDividerThickness() + firstLightXDist;
 lightSpaceWidth = 95;
 
 Place(xFirstLight, yFirstLight)
     DeployHorizontal(
         lightSpaceWidth,
-        [getFrameBlockWithPinSpace(), getFrameBlockWithPinSpace(2), getFrameBlockWithPinSpace(2)]) {
-        FrameBlockWithPin();
-        FrameBlockWithPin(2);
-        FrameBlockWithPin(2);
+        [getFrameBlockWithStudSpace(), getFrameBlockWithStudSpace(2), getFrameBlockWithStudSpace(2)]) {
+        FrameBlockWithStud();
+        FrameBlockWithStud(2);
+        FrameBlockWithStud(2);
         }
 
 // 2x 38216, 2x 152219
 yLightDist = 6;
-ySecondLight = yFirstLight - yLightDist - getFrameBlockWithPinSpace().y;
+ySecondLight = yFirstLight - yLightDist - getFrameBlockWithStudSpace().y;
 
 Place(xFirstLight, ySecondLight)
     DeployHorizontal(
         lightSpaceWidth,
-        [getFrameBlockWithPinSpace(), getFrameBlockWithPinSpace(2), getFrameBlockWithPinSpace(2)]) {
-        Space(getFrameBlockWithPinSpace()); // Dummy!
-        FrameBlockWithPin(2);
-        FrameBlockWithPin(2);
+        [getFrameBlockWithStudSpace(), getFrameBlockWithStudSpace(2), getFrameBlockWithStudSpace(2)]) {
+        Space(getFrameBlockWithStudSpace()); // Dummy!
+        FrameBlockWithStud(2);
+        FrameBlockWithStud(2);
         }
 
 // 1x 152063

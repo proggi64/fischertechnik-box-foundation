@@ -24,11 +24,11 @@ module HolderCompleteBucket() {
     railWidth = 46.8;
     railHeight = 13.5;
     railDistance = 35.7;
-    outerPinFrameLength = 10.25;
-    innerPinFrameLength = outerPinFrameLength - 3*getDividerThickness();
-    innerPinFrameDepth = 4.3;
-    outerPinFrameDepth = innerPinFrameDepth + 2*getDividerThickness();
-    pinFrameHeight = 2.9;
+    outerStudFrameLength = 10.25;
+    innerStudFrameLength = outerStudFrameLength - 3*getDividerThickness();
+    innerStudFrameDepth = 4.3;
+    outerStudFrameDepth = innerStudFrameDepth + 2*getDividerThickness();
+    StudFrameHeight = 2.9;
     
     Space(getHolderCompleteBucketSpace());
 
@@ -43,16 +43,16 @@ module HolderCompleteBucket() {
             Wall([railWidth, getDividerThickness(), railHeight]);
     }
     
-    midYOffset = (getHolderCompleteBucketSpace().y - outerPinFrameDepth) / 2;
+    midYOffset = (getHolderCompleteBucketSpace().y - outerStudFrameDepth) / 2;
     
-    railXOffset1 = railXOffset - outerPinFrameLength;
+    railXOffset1 = railXOffset - outerStudFrameLength;
     translate([railXOffset1, midYOffset, 0])
-        DockableFrame([innerPinFrameLength, innerPinFrameDepth, pinFrameHeight], wallRight=false, tolerance=0);
+        DockableFrame([innerStudFrameLength, innerStudFrameDepth, StudFrameHeight], wallRight=false, tolerance=0);
     
-    railXOffset2 = outerPinFrameLength + railXOffset + railWidth;
+    railXOffset2 = outerStudFrameLength + railXOffset + railWidth;
     translate([railXOffset2, midYOffset, 0])
         mirror([1,0,0])
-            DockableFrame([innerPinFrameLength, innerPinFrameDepth, pinFrameHeight], wallRight=false, tolerance=0);
+            DockableFrame([innerStudFrameLength, innerStudFrameDepth, StudFrameHeight], wallRight=false, tolerance=0);
 }
 
 // Test

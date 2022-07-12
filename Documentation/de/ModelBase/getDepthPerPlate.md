@@ -15,4 +15,4 @@ getDepthPerPlate();
 ```
 
 ## Rückgabewert
-Tiefe einer Bauplatte inklusive Toleranz und Pinlänge.
+Tiefe einer Bauplatte inklusive Toleranz und Studlänge.

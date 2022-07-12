@@ -1,5 +1,5 @@
 // Fischertechnik Box Library
-// Frame for block 15x30x5 with pin
+// Frame for block 15x30x5 with one stud
 // 35049
 
 use <../ModelBase/Simple.scad>
@@ -14,12 +14,12 @@ depth = 15;
 height = 15;
 
 // getFrameBlock15x30x5Space(columns=1, rows=1)
-// Gets the space of a frame for columns x rows 15x30x5 blocks
+// Gets the space of a frame for columns x rows 15x30x5 blocks with stud
 
 function getFrameBlock15x30x5Space(columns=1, rows=1) = getFrameOuterVolume([width * columns, depth * rows, height]);
 
 // FrameBlock15x30x5(columns=1, rows=1)
-// frame for columns x rows small parts (7.5 or 5)
+// frame  for columns x rows 15x30x5 blocks with stud
 
 module FrameBlock15x30x5(columns=1, rows=1) {
     Frame([width * columns, depth * rows, height]);

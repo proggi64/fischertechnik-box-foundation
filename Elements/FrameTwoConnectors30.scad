@@ -10,7 +10,7 @@ depth = 8.2;
 height = 14.8;
 
 // getFrameTwoConnectors30Space()
-// Gets the space needed for the frame for two struts.
+// Gets the space needed for the frame for two connectors 30.
 function getFrameTwoConnectors30Space() = getElevatedFramesWithCutoffSpace([width, depth, height]);
 
 // FrameTwoConnectors30()

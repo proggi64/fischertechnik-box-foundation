@@ -43,14 +43,18 @@ function getAxisBottomDiameter() = axisBottomDiameter;
 // Gets the lengthh of the locking part of a locking axis
 function getAxisLockingLength() = axisLockingLength;
 
-pinHeight = 2.5;
-pinTolerance = 0.2;
+// Studs
 
-// gets the height of a connecting pin
-function getPinHeight() = pinHeight;
+studHeight = 2.5;
+studTolerance = 0.2;
 
-// gets the connecting pin height tolerance
-function getPinTolerance() = pinTolerance;
+// gets the height of a connecting stud
+function getStudHeight() = studHeight;
+
+// gets the connecting stud height tolerance
+function getStudTolerance() = studTolerance;
+
+// Dockable Frame with Edge
 
 standardEdgeDistance = 2.5;
 standardWebDistance = 11.5;
@@ -65,15 +69,21 @@ function getStandardWebDistance() = standardWebDistance;
 // gets the standard length of the corner walls of a dockable frame
 function getStandardCornerLength() = standardCornerLength;
 
+// Tubes
+
 tubeWallFactor = 0.8;
 
 // gets the wall thickness of a tube.
 function getTubeWallThickness() = tubeWallFactor * getDividerThickness();
 
+// Small Parts and Divider Frame
+
 smallPartsFrameHeight = 20;
 
 // gets the frame height for docked small parts boxes.
 function getSmallPartsFrameHeight() = smallPartsFrameHeight;
+
+// Hubs
 
 hubRingDiameter = 19.5;
 hubRingLevelDiameter = 21;
@@ -83,3 +93,17 @@ function getHubRingDiameter() = hubRingDiameter;
 
 // gets the diameter of a hub tube with a thicker diameter
 function getHubRingLevelDiameter() = hubRingLevelDiameter;
+
+// Struts
+
+strutAddLength = 9.0;
+strutDepth = 8.0;
+
+// gets the full length of a strut
+function getFullStrutLength(length) = length + strutAddLength;
+
+// gets the radius of the end of a strut
+function getStrutEndRadius() = strutAddLength / 2;
+
+// gets the the depth of a strut
+function getStrutDepth() = strutDepth;

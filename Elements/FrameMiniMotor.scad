@@ -12,15 +12,14 @@ include <../Base/PlacementOptions.scad>
 width = 30;
 depth = 20;
 height = 6;
-pinDepth = 3.5;
 wormDepth = 12;
 
 volume = [width, depth, height];
 
 // getFrameMiniMotorSpace()
-// Gets the space for a mini motor including the pin and the worm
+// Gets the space for a mini motor including the stud and the worm
 
-function getFrameMiniMotorSpace() = getFrameOuterVolume([width + pinDepth + wormDepth, depth, height]);
+function getFrameMiniMotorSpace() = getFrameOuterVolume([width + getStudHeight() + wormDepth, depth, height]);
 
 // FrameMiniMotor()
 // Frame for mini motor
@@ -34,7 +33,9 @@ module FrameMiniMotor() {
             cutoffVolume = [2*getDividerThickness(), cutoff, height + getExcess()];
             translate([-getDividerThickness()/2, (getFrameOuterVolume(volume).y - cutoff)/2])
                 cube(cutoffVolume);
-            translate([getFrameOuterVolume(volume).x - getDividerThickness() - getDividerThickness()/2, (getFrameOuterVolume(volume).y - cutoff)/2])
+            translate([
+                getFrameOuterVolume(volume).x - getDividerThickness() - getDividerThickness()/2, 
+                (getFrameOuterVolume(volume).y - cutoff)/2])
                 cube(cutoffVolume);
         }
     }
