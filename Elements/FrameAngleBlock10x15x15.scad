@@ -23,7 +23,7 @@ depthSingle = depth + getStudHeight();
 // single = true, when each block is separated by a wall
 
 function getFrameAngleBlock10x15x15Space(count=1, single=false) = [
-    (width + getTolerance())*count + (single ? (count+1) : 2)*getDividerThickness(),
+    (single ? ((width + getTolerance())*count) : (width*count + getTolerance())) + (single ? (count+1) : 2)*getDividerThickness(),
     (single ? depthSingle : depth) + getTolerance() + 2*getDividerThickness()];
 
 // FrameAngleBlock10x15x15(count=1, single=false)

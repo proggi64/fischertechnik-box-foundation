@@ -19,14 +19,14 @@ height = 7.5;
 function getFrameReedRelayHolderSpace(count=1) = getFrameOuterVolume([width * count, depth, height]);
 
 // ReedRelayHolder()
-// Frame for a sreed relay holder.
+// Frame for a reed relay holder.
 
-module ReedRelayHolder(count=1) {
+module FrameReedRelayHolder(count=1) {
     volume = [width * count, depth, height];
     Frame(volume);
-    FrameRails(volume, 7.5);
+    FrameRails(volume);
 }
 
 // Tests
 color("lightgray")
-ReedRelayHolder(count);
+FrameReedRelayHolder(count);
