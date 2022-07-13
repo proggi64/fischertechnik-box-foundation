@@ -20,6 +20,9 @@ use <../../Elements/FrameAngleEquilateral.scad> // 1x
 include <../../Base/PlacementOptions.scad>
 
 Box190();
+Place(x=170, y=130/2)
+    rotate([0, 0, 90])
+        Text("PROFI Electronics 3/3");
 
 // 3x 36293
 webDistance = 30 + getTolerance();

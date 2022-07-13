@@ -47,12 +47,16 @@ function getAxisLockingLength() = axisLockingLength;
 
 studHeight = 2.5;
 studTolerance = 0.2;
+studRailDistance = 9;   // as in ft 50
 
 // gets the height of a connecting stud
 function getStudHeight() = studHeight;
 
 // gets the connecting stud height tolerance
 function getStudTolerance() = studTolerance;
+
+// gets the default rail distance for studs
+function getStudRailDistance() = studRailDistance;
 
 // Dockable Frame with Edge
 

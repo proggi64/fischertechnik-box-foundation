@@ -11,8 +11,8 @@ use <../ModelBase/Simple.scad>
 ```
 FrameRails(
   volume,
-  distance,
-  height=getStudHeight(),
+  distance=getStudRailDistance(),
+  height=getStudHeight() + getStudTolerance(),
   direction=Horizontal, 
   tolerance=getTolerance());
 ```
@@ -20,8 +20,8 @@ FrameRails(
 | Parameter | Typ | Beschreibung |
 | ------ | ------ | ------ |
 | volume | \[x,y,z] | Länge x Breite x Höhe des Innenraums. Auf Länge und Breite wird noch der Wert von *tolerance* für das tatsächliche innere Volumen gerechnet. |
-| distance | Decimal | Abstand der Stege, gerechnet von den beiden inneren Rändern. |
-| height | Decimal | Höhe der Stege. |
+| distance | Decimal | Abstand der Stege, gerechnet von den beiden inneren Rändern. Standard ist [__getStudRailDistance__](getStudRailDistance.md), damit Zapfen dazwischen passen.|
+| height | Decimal | Höhe der Stege. Standard ist [__getStudHeight__](getStudHeight.md) plus [__getStudTolerance__](getStudTolerance.md). |
 | direction | Boolean | Richtung der Stege: __Vertical__ (__true__) oder __Horizontal__ (__false__) |
 | tolerance | Decimal | Toleranzwert, der zu Länge und Breite gerechnet wird, damit in das gedruckte Element das Bauteil hineinpasst. Standard ist [__getTolerance()__](../Base/getTolerance.md). |
 

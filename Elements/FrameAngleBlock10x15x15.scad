@@ -10,29 +10,40 @@ include <../Base/PlacementOptions.scad>
 
 /* [Element Parameters] */
 count = 1;
+single = false;
 
 /* [Hidden] */
 width = 10;
-depth = 17.5;
+depth = 15;
+depthSingle = depth + getStudHeight();
 
-// getFrameAngleBlock10x15x15Space
+// getFrameAngleBlock10x15x15Space(count=1, single=false)
 // Gets the space the count of frame angle blocks needs as width and depth (.x and .y as a list)
+// count = Count of blocks
+// single = true, when each block is separated by a wall
 
-function getFrameAngleBlock10x15x15Space(count=1) = [
-    (width + getTolerance())*count + (count+1)*getDividerThickness(),
-    depth + getTolerance() + 2*getDividerThickness()];
+function getFrameAngleBlock10x15x15Space(count=1, single=false) = [
+    (width + getTolerance())*count + (single ? (count+1) : 2)*getDividerThickness(),
+    (single ? depthSingle : depth) + getTolerance() + 2*getDividerThickness()];
 
-// FrameAngleBlock10x15x15()
+// FrameAngleBlock10x15x15(count=1, single=false)
 // Frame for angle block 10x15x15
-// 38423
+// count = Count of blocks
+// single = true, when each block is separated by a wall
 
-module FrameAngleBlock10x15x15(count=1) {
+module FrameAngleBlock10x15x15(count=1, single=false) {
     height = 10;
 
-    Merge(count, getFrameOuterVolume([width, depth, height]), NoRotation)
-        Frame([width, depth, height]);
+    if (single) {
+        Merge(count, getFrameOuterVolume([width, depthSingle, height]), NoRotation)
+            Frame([width, depthSingle, height]);
+    } else {
+        volume = [width * count, depth, height];
+        Frame(volume);
+        FrameRails(volume);
+    }
 }
 
 // Test
 color("lightgray")
-FrameAngleBlock10x15x15(count);
+FrameAngleBlock10x15x15(count, single);

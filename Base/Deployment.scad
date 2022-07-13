@@ -210,7 +210,6 @@ module MergeRow(spaces, rotations=[NoRotation], dividerThickness = getDividerThi
 module Merge(count, space, rotation=NoRotation, dividerThickness = getDividerThickness()) {
     x = getRotatedSpace(space, rotation).x - getDividerThickness();
     for (offset = [0:x:(count-1)*x]) {
-        echo(offset);
         translate([offset, 0, 0])
             RotateFix(space, rotation)
                 children(0);

@@ -307,7 +307,7 @@ module FrameRightCutoffs(volume, count, cutoffWidth, tolerance=getTolerance()) {
 
 module FrameRails(
     volume, 
-    distance, 
+    distance=getStudRailDistance(), 
     height=getStudHeight() + getStudTolerance(), 
     direction=Horizontal, 
     tolerance=getTolerance()) {

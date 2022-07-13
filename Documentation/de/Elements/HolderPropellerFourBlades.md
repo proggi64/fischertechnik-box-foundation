@@ -2,7 +2,7 @@
 Propeller mit vier Blättern.
 - 36337
 
-Der propeller wird in X-Ausrichtung auf die Achse gesteckt. Der Steg hält die Position des Propellers in X-Ausrichtung.
+Der Propeller wird in X-Ausrichtung auf die Achse gesteckt. Der Steg hält die Position des Propellers in X-Ausrichtung.
 
 ![HolderPropellerFourBlades](../../images/HolderPropellerFourBlades.png)
 

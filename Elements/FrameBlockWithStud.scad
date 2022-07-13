@@ -28,9 +28,7 @@ module FrameBlockWithStud(count = 1, height=height) {
     volume = [width*count, depth, height];
     Frame(volume);
  
-    railHeight = getStudHeight() + getStudTolerance();
-    railDistance = 9;
-    FrameRails(volume, railDistance, railHeight);
+    FrameRails(volume);
 }
 
 // Test
