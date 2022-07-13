@@ -67,14 +67,20 @@ Zwei Tutorials [Sortierkästen konstruieren](TutorialSortingBoxes.md) und [Eleme
 - [__getDividerThickness__](Base/getDividerThickness.md): Liefert die Standardbreite einer Trennwand.
 - [__getExcess__](Base/getExcess.md): Liefert den Betrag, um den ein Objekt mit einem verbundenen Objekt verschmilzt.
 - [__getFragments__](Base/getFragments.md): Liefert die Anzahl der Fragmente für cylinder-Objekte ($fn).
+- [__getFullStrutLength__](Base/getFullStrutLength.md): Liefert die Gesamtlänge einer Strebe auf Basis ihrer Nominallänge.
 - [__getHubRingDiameter__](Base/getHubRingDiameter.md): Äußerer Durchmesser des Zylinders für Räder.
 - [__getHubRingLevelDiameter__](Base/getHubRingLevelDiameter.md): Äußerer Durchmesser der Zylinderbasis für Räder.
+- [__getPropellerAxisDiameter__](Base/getPropellerAxisDiameter.md): Liefert den Durchmesser der Propellerachse.
+- [__getPropellerAxisTolerance__](Base/getPropellerAxisTolerance.md): Wird beim Durchmesser der Propellerachse als Druck-Toleranz verwendet.
 - [__getStudHeight__](Base/getStudHeight.md): Länge eines Baustein-Verbindungszapfens.
+- [__getStudRailDistance__](Base/getStudRailDistance.md): Abstand zweier Stege, damit Zapfen dazwischen passen.
 - [__getStudTolerance__](Base/getStudTolerance.md): Wird zur Länge eines Baustein-Verbindungszapfens addiert, wenn Platz in Elementen dafür erzeugt wird.
 - [__getSmallPartsFrameHeight__](Base/getSmallPartsFrameHeight.md): Liefert die Höhe für Rahmen, die für in Sortierkästen Kleinteile vorgesehen sind.
 - [__getStandardEdgeDistance__](Base/getStandardEdgeDistance.md): Liefert den Standard-Abstand für andockbare Rahmen mit Stegen.
 - [__getStandardWebDistance__](Base/getStandardWebDistance.md): Liefert den Abstand eines Stegs zur jeweiligen Ecke eines andockbaren Elements.
 - [__getStandAxisDiameter__](Base/getStandAxisDiameter.md): Liefert den Durchmesser für Standachsen (z.B. für [__Axis__](ModelBase/Axis.md))
+- [__getStrutDepth__](Base/getStrutDepth.md): Liefert die Stärke einer Strebe.
+- [__getStrutEndRadius__](Base/getStrutEndRadius.md): Liefert den Radius vom Mittelpunkt des Schraublochs zum äußeren Ende einer Strebe.
 - [__getTolerance__](Base/getTolerance.md): Liefert den Betrag für die Toleranz bei Elementen, damit die Bauteile nach dem Druck in die Elemente passen.
 - [__getTubeWallThickness__](Base/getTubeWallThickness.md): Liefert Stärke der Wände eines Element-Zylinders.
 
