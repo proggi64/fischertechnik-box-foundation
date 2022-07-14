@@ -4,9 +4,15 @@ Es gibt zwei Arten von Beispielkästen, die sukzessive erweitert werden:
 - Nachgebaute Originalkästen
 - Neue Entwürfe
 
+## Neu entworfene Sortierkästen für aktuelle oder historische Fischertechnikkästen
+
+Verzeichnis: Building Kits/*group*
+
+Im Juli 2022 gibt es hier die Gruppen *hobby*, *PLUS* und *PROFI*.
+
 ## Nachgebaute Originalkästen
 
-Verzeichnis: BuildingKits/*group*
+Verzeichnis: Original Building Kits/*group*
 
 Gruppen sind z.B. Baukastenreihen wie ec (Elektronik) oder mot (Motoren)
 
@@ -74,6 +80,6 @@ Place(xInlayDiff, yInlayDiff)
     FrameElectronicBlock(alignX=inlay ? NoAlign : AlignLeft, alignY=inlay ? NoAlign : AlignBottom);
 ```
 
-Beim ec3 laden Wände genau auf der Höhe der Stege der Sortierboxen des Kastens 1000. Deswegen mussten sie um einen Offset von -1,8 mm nach innen versetzt werden. Auch das muss beachtet werden, wenn man die Kästen für Inlays modifiziert.
+Beim ec3 liegen Wände genau auf der Höhe der Stege der Sortierboxen des Kastens 1000. Deswegen mussten sie um einen Offset von -1,8 mm nach innen versetzt werden. Auch das muss beachtet werden, wenn man die Kästen für Inlays modifiziert.
 
 In zukünftigen Versionen soll das noch besser unterstützt werden. Zunächst soll aber noch an weiteren Kästen geprüft werden, welche Auswirkungen durch *inlay*-Varianten auftreten können.
