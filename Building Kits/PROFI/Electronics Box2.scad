@@ -30,6 +30,8 @@ use <../../Elements/AxisLockingAxisCoupling.scad>
 include <../../Base/PlacementOptions.scad>
 
 Box190();
+Place(x=ySmallBlock + 22, y = ySmallBlock + 10)
+Text("Electronics 2/3");
 
 // 2x 31053
 Place(rotation=Rotate90, elementSpace=getFrameRack60Space(2))
