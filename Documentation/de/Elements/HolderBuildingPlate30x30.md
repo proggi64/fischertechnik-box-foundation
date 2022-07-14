@@ -1,9 +1,15 @@
 # HolderBuildingPlate30x30
-Bauplatte 30x39.
+Bauplatte 30x30 oder 15x30 mit Zapfen oder Clips.
 - 31501
-- 38266
+- 31510
+- 36918
+- 38241
 - 38259
+- 38266
+- 38267
+- 38268
 - 146534
+- 156511
 
 ![HolderBuildingPlate30x30](../../images/HolderBuildingPlate30x30.png)
 

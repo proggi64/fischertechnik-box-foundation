@@ -1,13 +1,19 @@
 # HolderBuildingPlate30x45
-Bauplatte 30x45.
+Bauplatte 30x45 oder 15x45 mit Zapfen oder Clips.
 - 31502
+- 31511
+- 36508
 - 38237
 - 38238
+- 38242
+- 38243
 - 38248
+- 38261
 - 38269
+- 163041
 - 163042
 
-![HolderBuildingPlate45x30](../../images/HolderBuildingPlate30x45.png)
+![HolderBuildingPlate30x45](../../images/HolderBuildingPlate30x45.png)
 
 ## Use
 ```
@@ -39,4 +45,4 @@ use <../../Elements/HolderBuildingPlate30x45.scad>
 HolderBuildingPlate30x45(4, true);
 ```
 
-![HolderBuildingPlate30x30](../../images/HolderBuildingPlate30x45_1.png)
+![HolderBuildingPlate30x45](../../images/HolderBuildingPlate30x45_1.png)
