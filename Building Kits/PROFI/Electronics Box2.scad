@@ -4,9 +4,11 @@
 
 use <../../Base/Constants.scad>
 use <../../Base/Placement.scad>
+use <../../Base/Rotation.scad>
 use <../../Base/Deployment.scad>
 use <../../Base/Boxes.scad>
 use <../../ModelBase/Simple.scad>
+use <../../ModelBase/Complex.scad>
 
 use <../../Elements/FrameRack60.scad>   // 2x
 use <../../Elements/CylinderHub.scad>   // 1x
@@ -21,6 +23,9 @@ use <../../Elements/AxisLockingPulley12.scad>   // 1x
 use <../../Elements/FrameAngleBlock10x15x15.scad>   // 8x
 use <../../Elements/AxisCoupling.scad>  // 2x
 use <../../Elements/FrameReedRelayHolder.scad>  // 8x
+use <../../Elements/HolderBuildingPlate30x45.scad>  // 4x
+use <../../Elements/HolderBuildingPlate30x30.scad>  // 3x
+use <../../Elements/AxisLockingAxisCoupling.scad>   
 
 include <../../Base/PlacementOptions.scad>
 
@@ -106,12 +111,83 @@ Place(
     elementSpace=getFrameOuterVolume(twoBlocksVolume))
     AlignedFrame(twoBlocksVolume, alignX=AlignRight);
 
-// 1x 31918  Winkelstein mit Nuten
-// 2x 32850  Riegelstein 15x15x15
-// 1x 35063  Rastachse 30
-// 1x 35066  Rastachse 90
-// 1x 35073  Rastkupplung
-// 3x 38241  Bauplatte 15x30
 // 4x 38242  Bauplatte 15x45
+Place(x=xSmallBlock1, alignY=AlignTop, rotation=Rotate180, elementSpace=getHolderBuildingPlate30x45Space(4))
+    HolderBuildingPlate30x45(4, dock=true);
+
+// 3x 38241  Bauplatte 15x30
+xPlates = xSmallBlock1 + getHolderBuildingPlate30x45Space(4).x + 1;
+Place(x=xPlates, alignY=AlignTop, rotation=Rotate180, elementSpace=getHolderBuildingPlate30x30Space(3))
+    HolderBuildingPlate30x30(3, dock=true);
+
+// 3x 36912, 1x 38543 Rastachsen
+lockingAxis30Width = 30.0 + getAxisTolerance();
+lockingAxisDepth = getAxisDiameter();
+bearingLength = 8.8;
+lockingAxis30LoadHeight = 3 * getAxisDiameter();
+lockingAxis30Volume = [lockingAxis30Width, lockingAxisDepth, lockingAxis30LoadHeight];
+
+module FrameThreeLockingAxis30(volume) {
+    height = 20.0;
+    ElevatedFramesWithCutoff(lockingAxis30Volume, lockingAxisDepth, height, bearingLength, single=true);
+}
+
+lockingAxis90Width = 90.0 + getAxisTolerance();
+lockingAxis90LoadHeight = getAxisDiameter();
+lockingAxis90Volume = [lockingAxis90Width, lockingAxisDepth, lockingAxis90LoadHeight];
+
+module FrameSingleLockingAxis90(volume=lockingAxis90Volume) {
+    height = 24.0;
+    ElevatedFramesWithCutoff(volume, lockingAxisDepth, height, bearingLength, single=true);
+}
+
+module FrameLockingAxisEnd() {
+    loadHeight = lockingAxis30LoadHeight + lockingAxis90LoadHeight;
+    volume = [lockingAxis90Volume.x, lockingAxis90Volume.y, loadHeight];
+    FrameSingleLockingAxis90(volume);
+}
+
+xLockingAxis = xPlates;
+yLockingAxis = yAngleBlock + getFrameReedRelayHolderSpace(8).y + 1.5*getDividerThickness();
+Place(x = xLockingAxis, y = yLockingAxis)
+{
+    FrameSingleLockingAxis90();
+
+    translate([getFrameOuterVolume(lockingAxis90Volume).x - getFrameOuterVolume(lockingAxis30Volume).x, 0])
+        FrameThreeLockingAxis30(lockingAxis30Volume);
+    
+    RotateFix(space=getFrameOuterVolume(lockingAxis90Volume, tolerance=0), rotation=Rotate180)
+        FrameLockingAxisEnd();
+}
+
+// 1x 31918  Winkelstein mit Nuten
+xAngleBlock = xPlates + getHolderBuildingPlate30x30Space(3).x + 1;
+angleBlockVolume = [15, 15, 6];
+Place(x=xAngleBlock, alignY = AlignTop, elementSpace=getFrameOuterVolume(angleBlockVolume))
+    AlignedFrame(angleBlockVolume, alignY=AlignTop);
+
+// 2x 32850  Riegelstein 15x15x15
+xLockingBlock = xAngleBlock + getFrameStandardBlockSpace().x - getDividerThickness();
+lockingBlockVolume = [30, 15, 8];
+Place(x=xLockingBlock, alignY = AlignTop, elementSpace=getFrameOuterVolume(lockingBlockVolume))
+    AlignedFrame(lockingBlockVolume, alignY=AlignTop);
+
+// 1x 35073  Rastkupplung
+Place(x=6, y=5, alignX=AlignRight, alignY=AlignTop, elementSpace=getAxisLockingAxisCouplingSpace())
+    AxisLockingAxisCoupling();
+
 // 3x 38413  Achse 30
 // 1x 38414  Achse 40
+xAxis = xLockingAxis + 50;
+yAxis = yLockingAxis + getFrameOuterVolume(lockingAxis90Volume).y - 2*getDividerThickness();
+axis40Volume = [40, getAxisDiameter(), getAxisDiameter()];
+Place(x = xAxis, y = yAxis)
+{
+    FrameSingleLockingAxis90(axis40Volume);
+
+    translate([getFrameOuterVolume(axis40Volume).x - getFrameOuterVolume(lockingAxis30Volume).x, 0])
+        FrameThreeLockingAxis30(lockingAxis30Volume);
+    
+    RotateFix(space=getFrameOuterVolume(axis40Volume, tolerance=0), rotation=Rotate180)
+        FrameLockingAxisEnd();
+}

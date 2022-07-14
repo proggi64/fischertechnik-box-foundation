@@ -24,7 +24,7 @@ Place(x=170, y=130/2)
     rotate([0, 0, 90])
         Text("PROFI Electronics 3/3");
 
-// 3x 36293
+// 3x 36293, longer Cables with 31336, 31337, 152948, 152949
 webDistance = 30 + getTolerance();
 webWidth = 15;
 BoxWeb(
