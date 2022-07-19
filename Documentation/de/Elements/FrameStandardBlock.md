@@ -22,6 +22,8 @@ Es können Anzahlen in x- und y-Richtung angegeben werden, die nebeneinander in 
 
 ![FrameStandardBlock](../../images/FrameStandardBlock.png)
 
+3D-Druck getestet
+
 ## Use
 ```
 use <../Elements/FrameStandardBlock.scad>

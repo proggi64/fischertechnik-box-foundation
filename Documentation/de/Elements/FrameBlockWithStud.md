@@ -17,6 +17,8 @@ Bausteine mit Zapfen nach unten.
 
 Der Rahmen hat am Boden zwei Stege, so dass der Zapfen dazwischen Platz hat.
 
+3D-Druck getestet
+
 ## Use
 ```
 use <../Elements/FrameBlockWithStud.scad>
