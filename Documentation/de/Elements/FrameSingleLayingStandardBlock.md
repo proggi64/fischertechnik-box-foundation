@@ -7,6 +7,8 @@ Ligender Standardbaustein 30 (mit Bohrung).
 
 In mot3 sind die beiden Bausteine 30 mit Bohrung liegend in Rahmen gelagert. Die Rahmen berücksichtigen den Zapfen.
 
+3D-Druck getestet
+
 ## Use
 ```
 use <../Elements/FrameSingleLayingStandardBlock.scad>

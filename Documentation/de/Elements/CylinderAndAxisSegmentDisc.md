@@ -4,6 +4,8 @@ Segmentscheibe.
 
 ![CylinderAndAxisSegmentDisc](../../images/CylinderAndAxisSegmentDisc.png)
 
+3D-Druck getestet
+
 ## Use
 ```
 use <../Elements/CylinderAndAxisSegmentDisc.scad>
