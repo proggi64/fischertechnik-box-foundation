@@ -7,6 +7,8 @@ Kardangelenk mit zwei Spannzangen.
 
 Das Element ist vorgesehen für eine Kardangelenk, das mit zwei Spannzangen (35113) montiert ist.
 
+3D-Druck getestet.
+
 ## Use
 ```
 use <../Elements/FrameUniversalJointCardan.scad>
