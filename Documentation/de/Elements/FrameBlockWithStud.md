@@ -1,10 +1,16 @@
 # FrameBlockWithStud
 
-Bausteine mit Zapfen nach unten.
+Bausteine mit Zapfen nach unten und Rastleuchtkappen.
 
 - 31006
 - 31007
 - 32882
+- 35077
+- 35078
+- 35079
+- 35084
+- 35085
+- 35086
 - 36298
 - 36304
 - 36922
@@ -15,7 +21,7 @@ Bausteine mit Zapfen nach unten.
 
 ![FrameBlockWithStud](../../images/FrameBlockWithStud.png)
 
-Der Rahmen hat am Boden zwei Stege, so dass der Zapfen dazwischen Platz hat.
+Der Rahmen hat am Boden zwei Stege, so dass der Zapfen dazwischen Platz hat. Rastleuchtkappen passen in allen Ausrichtungen auf die Stege.
 
 3D-Druck getestet
 
