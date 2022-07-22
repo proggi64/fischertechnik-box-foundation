@@ -4,6 +4,8 @@ Kurbelwelle.
 
 ![FrameCrankedAxis](../../images/FrameCrankedAxis.png)
 
+3D-Druck getestet.
+
 ## Use
 ```
 use <../Elements/FrameCrankedAxis.scad>
