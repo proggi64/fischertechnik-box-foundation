@@ -4,21 +4,26 @@
 
 use <../ModelBase/Complex.scad>
 
+/* [Element Parameters] */
+count = 1;
+
 /* [Hidden] */
 length = 125;
 
-// getFrameAxis125Space()
+// getFrameAxis125Space(count=1)
 // Gets the width (.x) and depth (.y) of the axis frame.
+// count = Count of axis
 
-function getFrameAxis125Space() = getFrameAxisSpace(length);
+function getFrameAxis125Space(count=1) = getFrameAxisSpace(length, count);
 
-// FrameAxis125()
+// FrameAxis125(count=1)
 // Axis holder for a single 125 mm axis.
+// count = Count of axis
 
-module FrameAxis125() {
-    FrameAxis(length);
+module FrameAxis125(count=1) {
+    FrameAxis(length, count);
 }
 
 // Test
 color("lightgray")
-FrameAxis125();
+FrameAxis125(count);

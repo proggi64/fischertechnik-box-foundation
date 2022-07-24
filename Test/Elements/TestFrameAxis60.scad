@@ -7,7 +7,9 @@ use <../../Elements/FrameAxis60.scad>
 
 include <../../Base/PlacementOptions.scad>
 
-FrameAxis60();
+count=1;
 
-Place(70, 0, elementSpace=getFrameAxis60Space(), rotation=Rotate90)
-    FrameAxis60();
+FrameAxis60(count);
+
+Place(70, 0, elementSpace=getFrameAxis60Space(count), rotation=Rotate90)
+    FrameAxis60(count);

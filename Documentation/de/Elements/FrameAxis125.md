@@ -11,10 +11,14 @@ use <../Elements/FrameAxis125.scad>
 
 ## Syntax
 ```
-FrameAxis125();
+FrameAxis125(count=1);
 
-space = getFrameAxis125Space();
+space = getFrameAxis125Space(count=1);
 ```
+
+| Parameter | Typ | Beschreibung |
+| ------ | ------ | ------ |
+| count | Integer | Anzahl der Achsen. |
 
 ## Rückgabewert getFrameAxis125Space
 Fläche als \[x,y]-Liste

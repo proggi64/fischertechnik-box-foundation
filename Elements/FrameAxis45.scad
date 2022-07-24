@@ -1,6 +1,6 @@
 // Fischertechnik Box Library
-// Frame for single 40 mm Axis (also with Z28)
-// 31064
+// Frame for single 45 mm Locking Axis
+// 35064
 
 use <../ModelBase/Complex.scad>
 
@@ -8,22 +8,22 @@ use <../ModelBase/Complex.scad>
 count = 1;
 
 /* [Hidden] */
-length = 40;
+length = 45;
 
-// getFrameAxis40Space(count=1)
+// getFrameAxis45Space(count=1)
 // Gets the width (.x) and depth (.y) of the axis frame.
 // count = Count of axis
 
-function getFrameAxis40Space(count=1) = getFrameAxisSpace(length, count);
+function getFrameAxis45Space(count=1) = getFrameAxisSpace(length, count);
 
-// FrameAxis40(count=1)
+// FrameAxis45(count=1)
 // Axis holder for a single 50 mm axis.
 // count = Count of axis
 
-module FrameAxis40(count=1) {
+module FrameAxis45(count=1) {
     FrameAxis(length, count);
 }
 
 // Test
 color("lightgray")
-FrameAxis40(count);
+FrameAxis45(count);

@@ -79,28 +79,37 @@ frameAxisHeight = 15.0;
 
 function getFrameAxisDepth() = frameAxisDepth;
 
-// getFrameAxisHeight()
-// Gets the height of an axis holder (see FrameAxis)
+// getFrameAxisHeight(count=1)
+// count = Count of axis (should not be more than 8)
+// Gets the default height of an axis holder (see FrameAxis)
 
-function getFrameAxisHeight() = frameAxisHeight;
+function getFrameAxisHeight(count=1) = (count > 2) ? frameAxisHeight + (count-2) * getAxisDiameter() : frameAxisHeight;
 
-// getFrameAxisSpace(length)
+// getFrameAxisSpace(length, count=1)
 // Gets the width and depth of the space a frame axis for the given axis length needs
 // length = Length of axis (default 30)
+// count = Count of axis
 
-function getFrameAxisSpace(length=30) = [length + getTolerance() + 2 * getDividerThickness(), frameAxisDepth + 2 * getDividerThickness()];
+function getFrameAxisSpace(length=30, count=1) = [
+    length + getTolerance() + 2 * getDividerThickness(), 
+    frameAxisDepth + 2 * getDividerThickness(),
+    getFrameAxisHeight(count)
+    ];
 
 // FrameAxis(length, xOrientation)
 // Frame for single 4mm axis
 // length = length of the axis (defaut 30)
+// count = Count of axis (should not be more than 8)
 // cutThrough = true when no frame wall should be at the end of the axis holder,
 // default is false
-// height = Height of the axis holders (default ist 14.8)
+// height = Height of the axis holders (default ist 14.8) - when count is greater than 3
+// this height is automatically increased bei (count-2) * getAxisDiameter()
 
-module FrameAxis(length=30, cutThrough=false, height=getFrameAxisHeight(), single=false) {
+module FrameAxis(length=30, count=1, cutThrough=false, height=getFrameAxisHeight(), single=false) {
     bearingLength = 9.4;
     loadDepth = getAxisDiameter();
-    loadHeight = getAxisDiameter();
+    loadHeight = count * getAxisDiameter();
+    height =  (count > 2) ? height + (count-2) * getAxisDiameter() : height;
     
     ElevatedFramesWithCutoff([length, loadDepth, loadHeight], getFrameAxisDepth(), height, bearingLength, cutThrough, single);
 }
