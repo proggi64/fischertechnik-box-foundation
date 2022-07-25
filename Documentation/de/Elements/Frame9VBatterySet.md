@@ -4,6 +4,8 @@ Batteriekasten für 9V-Block mit Polwendeschalter (wie im Motor Set XS).
 
 ![Frame9VBatterySet](../../images/Frame9VBatterySet.png)
 
+3D-Druck getestet.
+
 ## Use
 ```
 use <../Elements/Frame9VBatterySet.scad>

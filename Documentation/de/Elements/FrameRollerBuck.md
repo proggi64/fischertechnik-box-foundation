@@ -4,6 +4,8 @@ Rollenbock.
 
 ![FrameRollerBuck](../../images/FrameRollerBuck.png)
 
+3D-Druck getestet.
+
 ## Use
 ```
 use <../Elements/FrameRollerBuck.scad>

@@ -4,6 +4,8 @@ Achse 60 mit Zahnrad Z 28 für Minimotor-Getriebe..
 
 ![FrameAxis60WithGearwheelZ28](../../images/FrameAxis60WithGearwheelZ28.png)
 
+3D-Druck getestet.
+
 ## Use
 ```
 use <../Elements/FrameAxis60WithGearwheelZ28.scad>

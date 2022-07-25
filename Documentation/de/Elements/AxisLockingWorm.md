@@ -4,6 +4,8 @@ Rastschnecke (stehend).
 
 ![AxisLockingWorm](../../images/AxisLockingWorm.png)
 
+3D-Druck getestet
+
 ## Use
 ```
 use <../Elements/AxisLockingWorm.scad>

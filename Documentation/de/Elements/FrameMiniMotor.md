@@ -5,6 +5,8 @@ Mini-Motor 6V oder XS-Motor 9V.
 
 ![FrameMiniMotor](../../images/FrameMiniMotor.png)
 
+3D-Druck getestet.
+
 ## Use
 ```
 use <../Elements/FrameMiniMotor.scad>

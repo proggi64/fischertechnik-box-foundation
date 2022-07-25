@@ -4,6 +4,8 @@ Rastzahnrad 10 (stehend).
 
 ![AxisLockingGear10](../../images/AxisLockingGear10.png)
 
+3D-Druck getestet.
+
 ## Use
 ```
 use <../Elements/AxisLockingGear10.scad>

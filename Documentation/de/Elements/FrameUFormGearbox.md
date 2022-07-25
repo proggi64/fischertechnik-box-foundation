@@ -5,6 +5,8 @@ U-Getriebe für Minimotor.
 
 ![FrameUFormGearbox](../../images/FrameUFormGearbox.png)
 
+3D-Druck getestet.
+
 ## Use
 ```
 use <../Elements/FrameUFormGearbox.scad>

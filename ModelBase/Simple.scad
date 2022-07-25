@@ -509,21 +509,21 @@ module LockingAxis(height = getAxisLockingLength()) {
     }
 }
 
-// LockingAxis()
+// LockingTube(height=12)
 // Standing tube for locking axis
 // height = Height of the tube. use a minimum of getAxisLockingLength().
 
 module LockingTube(height=12) {
     difference() {
         heightOfTube = height + getExcess();
-        innerDiameter = getAxisDiameter();
+        innerDiameter = getAxisDiameter() + getAxisTolerance();
         outerDiameter = innerDiameter+2*getTubeWallThickness();
         
         translate([0, 0, -getExcess()])
             cylinder(h = heightOfTube, d = outerDiameter, $fn = getFragments());
         translate([0, 0, getAxisLockingLength()])
             cylinder(h = heightOfTube, d = innerDiameter, $fn = getFragments());        
-        scale([1.05, 1.05, 1.05])
+        scale([1.105, 1.105, 1.05])
             LockingAxis();
     }        
 }

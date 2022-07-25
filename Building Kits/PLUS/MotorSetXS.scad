@@ -38,7 +38,7 @@ Place(column2, 2, alignY=AlignTop, elementSpace=getFrameAxis60WithGearwheelZ28Sp
 
 Divider(15, align=AlignRight, boxSpace=boxSpace);
 
-Place(column2, 2)
+Place(column2, 10)
     CylinderLockingGearZ28();
 
 column3 = column2 + getFrameAxis60WithGearwheelZ28Space().y + 4;

@@ -5,6 +5,8 @@ Rastseilwinde 30 montiert mit Halterung.
 
 ![ComboLockingWinchDrumAndHolder](../../images/ComboLockingWinchDrumAndHolder.png)
 
+3D-Druck getestet.
+
 ## Use
 ```
 use <../Elements/ComboLockingWinchDrumAndHolder.scad>
