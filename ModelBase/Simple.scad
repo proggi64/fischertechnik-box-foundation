@@ -516,14 +516,14 @@ module LockingAxis(height = getAxisLockingLength()) {
 module LockingTube(height=12) {
     difference() {
         heightOfTube = height + getExcess();
-        innerDiameter = getAxisDiameter() + getAxisTolerance();
+        innerDiameter = getAxisDiameter() + getAxisTolerance() * 2;
         outerDiameter = innerDiameter+2*getTubeWallThickness();
         
         translate([0, 0, -getExcess()])
             cylinder(h = heightOfTube, d = outerDiameter, $fn = getFragments());
         translate([0, 0, getAxisLockingLength()])
             cylinder(h = heightOfTube, d = innerDiameter, $fn = getFragments());        
-        scale([1.105, 1.105, 1.05])
+        scale([1.15, 1.15, 1.05])
             LockingAxis();
     }        
 }

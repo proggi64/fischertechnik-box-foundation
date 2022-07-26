@@ -14,7 +14,7 @@ length = 180;
 // Gets the width (.x) and depth (.y) of the axis frame.
 // count = Count of axis
 
-function getFrameAxis180Space(count) = getFrameAxisSpace(length, count);
+function getFrameAxis180Space(count=1) = getFrameAxisSpace(length, count);
 
 // FrameAxis180(count=1)
 // Axis holder for a single 90 mm axis.
