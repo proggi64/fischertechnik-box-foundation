@@ -9,17 +9,18 @@ use <../ModelBase/Simple.scad>
 width = 5;
 depth = 5;
 height = 12;
+tolerance = 0.4;
 
 // getFrameControlLightSpace()
 // Gets the space the frame for a control light needs as width and depth (.x and .y as a list)
 
-function getFrameControlLightSpace() = getFrameOuterVolume([width, depth, height], tolerance=0);
+function getFrameControlLightSpace() = getFrameOuterVolume([width, depth, height], tolerance=tolerance);
 
 // FrameControlLight()
 // The walls of the frame are 12 mm high. 
 
 module FrameControlLight() {
-    Frame([width, depth, height], tolerance=0);
+    Frame([width, depth, height], tolerance=tolerance);
 }
 
 // Tests

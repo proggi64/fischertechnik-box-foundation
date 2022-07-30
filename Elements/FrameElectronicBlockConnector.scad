@@ -9,7 +9,7 @@ use <../ModelBase/Simple.scad>
 width = 18.5;
 depth = 3.3;
 height = 5;
-tolerance = 0.4;
+tolerance = 0.8;
 
 // getFrameElectronicBlockConnectorSpace()
 // Gets the space the frame for electronic block conector needs as width and depth (.x and .y as a list)
