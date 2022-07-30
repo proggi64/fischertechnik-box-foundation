@@ -8,7 +8,7 @@ use <ElectronicBlockBoxBase.scad>
 connectors = 1;
 dials=1;
 controlLights=2;
-text="h4 FF";
+text="h4 MF";
 
 color("lightgray")
 ElectronicBlockBoxBase(connectors, controlLights, dials, text);
