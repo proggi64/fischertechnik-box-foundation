@@ -6,7 +6,7 @@ Zwei Tutorials [Sortierkästen konstruieren](TutorialSortingBoxes.md) und [Eleme
 
 ## Allgemeines
 - [Über die Bibliothek](readme.md)
-- [Konstruktionsprinzipien](principles.md)
+- [Konstruktionsprinzipien](Principles.md)
 - [Elemente erst im 3D-Druck testen](PrintTests.md)
 - [Sortierkästen konstruieren](TutorialSortingBoxes.md)
 - [Elemente selbst konstruieren](TutorialElements.md)
