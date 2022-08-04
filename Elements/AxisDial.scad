@@ -18,7 +18,7 @@ function getAxisDialSpace() = [space, space];
 
 module AxisDial() {
     height = 7.8;
-    axisDiameter = 3;
+    axisDiameter = 2.6;
     AxisWithSpace(height, getAxisDialSpace(), diameter=axisDiameter);
 }
 
