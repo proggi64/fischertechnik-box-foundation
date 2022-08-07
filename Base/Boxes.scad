@@ -5,19 +5,19 @@ use <Constants.scad>
 
 include <PlacementOptions.scad>
 
-box190Width = 190;
-box190Depth = 130;
-box130Width = 130;
-box130Depth = 95;
+box190Width = 190.6;
+box190Depth = 130.6;
+box130Width = 130.6;
+box130Depth = 95.6;
 
-// Values are from an original ec3 box
-topBottomDifference = 1.5;
+// Values are from an original Box 1000 sorting box
+topBottomDifference = 1.7;
 outerHeight = 40;
-baseThickness = 1.8;
+baseThickness = 1.4;
 innerHeight = outerHeight - baseThickness;
 stackExcess = 5.7;
-radius = 3.5;
-wallThickness = 1.5;
+radius = 2.5;
+wallThickness = 1.4;
 tolerance = 0.2;
 
 boxWallThickness = wallThickness;
@@ -92,7 +92,7 @@ module BoxBase(width, depth, height=outerHeight) {
             
             // Top
             translate([-wallThickness-topBottomDifference/2, -wallThickness-topBottomDifference/2, innerHeight-thinPlate])
-                RoundedCornerPlate(width, depth, thinPlate, radius);
+                RoundedCornerPlate(width, depth, thinPlate, radius);                
          }
     }
 

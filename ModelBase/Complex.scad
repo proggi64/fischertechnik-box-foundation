@@ -45,12 +45,12 @@ module ElevatedFramesWithCutoff(volume, depth, height, bearingLength, cutThrough
     cutoffHeight = height + getExcess();
     
     axisCutoffWidth = width;
-    axisCutoffDepth = volume.y;
+    axisCutoffDepth = volume.y + 0.2;
     axisCutoffHeight = volume.z + getExcess();
     axisClampHeight = (clampThrough ? height : axisCutoffHeight) + getExcess();
 
     zOffset = height - volume.z;
-    clamp = (depth - volume.y) / 2;
+    clamp = (depth - axisCutoffDepth) / 2;
     zOffsetClamp = clampThrough ? 0 : zOffset;
     
     cutThroughWidth = getDividerThickness() + 2*getExcess();
@@ -71,7 +71,7 @@ module ElevatedFramesWithCutoff(volume, depth, height, bearingLength, cutThrough
     }
 }
 
-frameAxisDepth = 4.4;
+frameAxisDepth = getAxisDiameter() * 1.1;
 frameAxisHeight = 15.0;
 
 // getFrameAxisDepth()
@@ -362,6 +362,7 @@ function getHolderBuildingPlateSpace(width, count = 1) = [
     holderStudDepth + getDepthPerPlate() * count];
 
 // HolderBuildingPlate(width, count, firstGapHigher)
+// HolderBuildingPlate(width, count, firstGapHigher)
 // Holders for Building Plates
 // width = Width of the building plate (90, 75, 60, 45, 30)
 // count = Count of building plates. Default 1.
@@ -371,15 +372,15 @@ module HolderBuildingPlate(width, count = 1, dock = false) {
     plateThickness = 2.1;
     stud = getStudHeight() + getStudTolerance();
     firstHeight = 15;
-    studXOffset = 7;
+    studXLeftOffset = width>30 ? (15 - getDividerThickness()/2) : ((15 - 4)/2 - getDividerThickness() - getTolerance());
     
     gapHeight = 10 + getExcess();
-    spaceWidth = width + getTolerance();
+    spaceWidth = width;
     spaceDepth = holderStudDepth + getDepthPerPlate() * count;
-    studXRightOffset = spaceWidth - getDividerThickness() - studXOffset;
-    
+    studXRightOffset = spaceWidth - getDividerThickness() - studXLeftOffset;
+
     // Space
-    Space([spaceWidth, spaceDepth]);
+    Space([spaceWidth + getTolerance(), spaceDepth]);
 
     module HolderStud(high = false) {
         translate([0, high ? -getDividerThickness() : 0, -getExcess()])
@@ -387,9 +388,9 @@ module HolderBuildingPlate(width, count = 1, dock = false) {
     }
     
     module HolderStuds(first = false) {
-        translate([studXOffset, 0, 0])
+        translate([studXLeftOffset + getTolerance()/2, 0, 0])
             HolderStud(first);
-        translate([studXRightOffset, 0, 0])
+        translate([studXRightOffset + getTolerance()/2, 0, 0])
             HolderStud(first);
     }
     

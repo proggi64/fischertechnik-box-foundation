@@ -50,6 +50,10 @@ Enthält Elemente für spezifische Fischertechnik-Bauteile, einige von ihnen par
 ## Test
 Enthält Testdateien für alle Module, die Funktionalität und Elemente demonstrieren. Im Unterverzeichnis __PrintTest__ befinden sich außerdem für den 3D-Druck vorbereitete SCAD-Dateien für den Testdruck jedes Elements.
 
+![Testdruck für Element](../images/TestPrint.png)
+
+*Testdruck eines Elements vermeidet große Fehldrucke*
+
 ## Original Building Kits
 Enthält Beispiele von nachgebauten Original-Sortierkästen aus den 1970er Jahren zur Demonstration, wie Kästen konstruiert werden können. Beispielweise sind die drei Elektronikkästen ec1 bis ec3 im Unterverzeichnis ec enthalten.
 
