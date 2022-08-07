@@ -52,7 +52,6 @@ Place(x=xHub, y=yHub)
     CylinderHub();
 
 // 1x 36337, 1x 37681, 2x 31983, 1x 136775
-
 xProp = xZ30 + getCylinderHubWithZ30Space().x;
 Place(x = xProp) {
     HolderPropellerFourBlades();
@@ -71,8 +70,6 @@ Place(x = xProp) {
         getHolderPropellerFourBladesSpace().y - getAxisCouplingSpace().y - 2])
         AxisCoupling();
 }
-
- AxisCoupling();
 
 // 2x 31597 3x 31848 16x 31982 2x 36323 1x 36981 7x 37679
 smallPartsFrameVolume = [30, 30, 20];
