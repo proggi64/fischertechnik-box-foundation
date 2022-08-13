@@ -73,6 +73,7 @@ module ElevatedFramesWithCutoff(volume, depth, height, bearingLength, cutThrough
 
 frameAxisDepth = getAxisDiameter() * 1.1;
 frameAxisHeight = 15.0;
+frameAxisLengthTolerance = 0.4;
 
 // getFrameAxisDepth()
 // Gets the depth of an axis holder (inner depth without the walls, see FrameAxis)
@@ -91,7 +92,7 @@ function getFrameAxisHeight(count=1) = (count > 2) ? frameAxisHeight + (count-2)
 // count = Count of axis
 
 function getFrameAxisSpace(length=30, count=1) = [
-    length + getTolerance() + 2 * getDividerThickness(), 
+    length + getTolerance() + frameAxisLengthTolerance + 2 * getDividerThickness(), 
     frameAxisDepth + 2 * getDividerThickness(),
     getFrameAxisHeight(count)
     ];
@@ -111,7 +112,7 @@ module FrameAxis(length=30, count=1, cutThrough=false, height=getFrameAxisHeight
     loadHeight = count * getAxisDiameter();
     height =  (count > 2) ? height + (count-2) * getAxisDiameter() : height;
     
-    ElevatedFramesWithCutoff([length, loadDepth, loadHeight], getFrameAxisDepth(), height, bearingLength, cutThrough, single);
+    ElevatedFramesWithCutoff([length + frameAxisLengthTolerance, loadDepth, loadHeight], getFrameAxisDepth(), height, bearingLength, cutThrough, single);
 }
 
 // getAxisMiddleSupportSpace(length=8)
