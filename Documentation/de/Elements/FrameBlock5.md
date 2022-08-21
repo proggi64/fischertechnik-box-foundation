@@ -7,6 +7,8 @@ Baustein 5 mit einem Zapfen.
 
 Die Abbildung zeigt ein Beispiel für 3 Bausteine 5. Es werden ab einer Zahl größer 1 automatisch Trenner eingefügt, damit die Steine nicht kippen.
 
+3D-Druck getestet.
+
 ## Use
 ```
 use <../Elements/FrameBlock5.scad>

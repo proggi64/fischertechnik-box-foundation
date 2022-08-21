@@ -16,7 +16,8 @@ use <../../Elements/AxisLockingAxisCoupling.scad>   // 1x
 use <../../Elements/CylinderHubWithZ30.scad>    // 1x
 use <../../Elements/HolderPropellerFourBlades.scad>    // 1x
 use <../../Elements/AxisPropellerTip.scad>  // 1x
-use <../../Elements/FrameSmallBlock.scad>  // 11x, 8x
+use <../../Elements/FrameBlock5.scad>   // 11x
+use <../../Elements/FrameSmallBlock.scad>  // 8x
 use <../../Elements/FrameStandardBlock.scad>  // 2x
 use <../../Elements/FrameBuildingPlate5x15x30.scad> // 6x
 use <../../Elements/AxisLockingPulley12.scad>   // 1x
@@ -102,7 +103,7 @@ Place(alignX=AlignRight, elementSpace=getFrameOuterVolume(block5x15x30Volume))
 ySmallBlock = getHolderPropellerFourBladesSpace().y;
 xSmallBlock1 = getFrameRack60Space(2).y - getDividerThickness();
 Place(x=xSmallBlock1, y=ySmallBlock)
-    FrameSmallBlock(11);
+    FrameBlock5(11);
 
 // 8x 37468 Baustein 7,5
 xSmallBlock2 = xSmallBlock1 + getFrameSmallBlockSpace(11).x - getDividerThickness();
