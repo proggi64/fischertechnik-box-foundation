@@ -102,15 +102,23 @@ function getHubRingLevelDiameter() = hubRingLevelDiameter;
 
 strutAddLength = 9.0;
 strutDepth = 8.0;
+strutThickness = 2.8;
+strutOuterTolerance = 0.6;
 
-// gets the full length of a strut
+// gets the full length of a strut (nominal length plus 2x radius at the ends)
 function getFullStrutLength(length) = length + strutAddLength;
 
 // gets the radius of the end of a strut
 function getStrutEndRadius() = strutAddLength / 2;
 
-// gets the the depth of a strut
+// gets the the depth (width) of a strut
 function getStrutDepth() = strutDepth;
+
+// gets the the thickness of a strut
+function getStrutThickness() = strutThickness;
+
+// gets the tolerance added to the strut sizes for strut holders
+function getStrutOuterTolerance() = strutOuterTolerance;
 
 // Propeller
 

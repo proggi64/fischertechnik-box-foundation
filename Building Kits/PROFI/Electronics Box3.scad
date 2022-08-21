@@ -115,24 +115,24 @@ Place(x=xPlates, y=yPlates, alignY=AlignTop, rotation=Rotate90, elementSpace=out
     FrameBuildingPlate5x15x30(2);
 
 // 3x 36912, 1x 38543
-strut30Width = 38.9;
-strutDepth = 2.9;
+strut30Width = getFullStrutLength(30) + getStrutOuterTolerance();
 bearingLength = 8.8;
 strut30LoadHeight = 24.0;
-strut30Volume = [strut30Width, strutDepth, strut30LoadHeight];
+strutOuterThickness = getStrutThickness() + getStrutOuterTolerance();
+strut30Volume = [strut30Width, strutOuterThickness, strut30LoadHeight];
 
 module FrameThreeStrut30(volume) {
     height = 24.0;
-    ElevatedFramesWithCutoff(strut30Volume, strutDepth, height, bearingLength, single=true);
+    ElevatedFramesWithCutoff(strut30Volume, strutOuterThickness, height, bearingLength, single=true);
 }
 
-strut90Width = 98.9;
+strut90Width = getFullStrutLength(90) + getStrutOuterTolerance();
 strut90LoadHeight = 8.0;
-strut90Volume = [strut90Width, strutDepth, strut90LoadHeight];
+strut90Volume = [strut90Width, strutOuterThickness, strut90LoadHeight];
 
 module FrameSingleStrut90(volume=strut90Volume) {
     height = 32.0;
-    ElevatedFramesWithCutoff(volume, strutDepth, height, bearingLength, single=true);
+    ElevatedFramesWithCutoff(volume, strutOuterThickness, height, bearingLength, single=true);
 }
 
 module FrameStrutsEnd() {
