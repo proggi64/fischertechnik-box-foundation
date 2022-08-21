@@ -13,11 +13,11 @@ box130Depth = 95.6;
 // Values are from an original Box 1000 sorting box
 topBottomDifference = 1.7;
 outerHeight = 40;
-baseThickness = 1.4;
+baseThickness = 1.2;
 innerHeight = outerHeight - baseThickness;
 stackExcess = 5.7;
 radius = 2.5;
-wallThickness = 1.4;
+wallThickness = 1.2;
 tolerance = 0.2;
 
 boxWallThickness = wallThickness;

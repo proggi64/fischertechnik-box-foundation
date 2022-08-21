@@ -1,6 +1,6 @@
 # getStrutDepth
 
-Funktion: Liefert die Stärke einer Strebe.
+Funktion: Liefert die Breite einer Strebe.
 
 ## Use
 ```
@@ -13,4 +13,4 @@ getStrutDepth();
 ```
 
 ## Rückgabewert
-Stärke einer Strebe (8 mm).
+Breite einer Strebe (8 mm).

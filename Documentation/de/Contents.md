@@ -80,7 +80,10 @@ Zwei Tutorials [Sortierkästen konstruieren](TutorialSortingBoxes.md) und [Eleme
 - [__getStandardWebDistance__](Base/getStandardWebDistance.md): Liefert den Abstand eines Stegs zur jeweiligen Ecke eines andockbaren Elements.
 - [__getStandAxisDiameter__](Base/getStandAxisDiameter.md): Liefert den Durchmesser für Standachsen (z.B. für [__Axis__](ModelBase/Axis.md))
 - [__getStrutDepth__](Base/getStrutDepth.md): Liefert die Stärke einer Strebe.
-- [__getStrutEndRadius__](Base/getStrutEndRadius.md): Liefert den Radius vom Mittelpunkt des Schraublochs zum äußeren Ende einer Strebe.
+- [__getStrutEndRadius__](Base/getStrutEndRadius.md): Liefert den Radius vom Mittelpunkt des Schraublochs zum 
+äußeren Ende einer Strebe.
+- [__getStrutThickness__](Base/getStrutThickness.md): Liefert den Dicke einer Strebe.
+- [__getStrutTolerance__](Base/getStrutTolerance.md): Liefert den Toleranzwert für Strebenhalterungen.
 - [__getTolerance__](Base/getTolerance.md): Liefert den Betrag für die Toleranz bei Elementen, damit die Bauteile nach dem Druck in die Elemente passen.
 - [__getTubeWallThickness__](Base/getTubeWallThickness.md): Liefert Stärke der Wände eines Element-Zylinders.
 
