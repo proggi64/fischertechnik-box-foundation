@@ -17,7 +17,7 @@ baseThickness = 1.2;
 innerHeight = outerHeight - baseThickness;
 stackExcess = 5.7;
 radius = 2.5;
-wallThickness = 1.2;
+wallThickness = 1.4;
 tolerance = 0.2;
 
 boxWallThickness = wallThickness;
