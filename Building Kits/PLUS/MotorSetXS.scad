@@ -5,6 +5,7 @@
 use <../../Base/Boxes.scad>
 use <../../Base/Constants.scad>
 use <../../Base/Placement.scad>
+use <../../Base/Rotation.scad>
 use <../../Base/Deployment.scad>
 
 use <../../ModelBase/Simple.scad>
@@ -78,9 +79,12 @@ Place(column4, 2, alignY=AlignTop, elementSpace=centerSpace, boxSpace=boxSpace, 
 Place(column4-3, 30)
     AxisLockingWorm();
 
-// 35945 Locking Gear 10
-Place(column4, 10.6)
+// 35945 2x Locking Gear 10
+Place(column4, 12)
     AxisLockingGear10();
+Place(column4, -5)
+    RotateFix(getAxisLockingGear10Space(), Rotate90)
+        AxisLockingGear10();
 }
 
 // Additional space for some elements
