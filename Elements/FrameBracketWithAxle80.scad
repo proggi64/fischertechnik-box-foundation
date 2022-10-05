@@ -26,7 +26,7 @@ function getFrameBracketWithAxle80Space() = completeSpace;
 module FrameBracketWithAxle80() {
     Space(completeSpace);
     translate([5, 0])
-        FrameAxis(length, true);
+        FrameAxis(length, cutThrough=true);
 }
 
 // Test
