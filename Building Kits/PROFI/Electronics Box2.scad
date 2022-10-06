@@ -79,14 +79,13 @@ Place(x = xProp) {
 
 // 3x 38413 K-Achsen 30
 axis30Space = [12, 29];
-Place(x = xProp + getHolderPropellerFourBladesSpace().x, y = 26)
+Place(x = xProp + getHolderPropellerFourBladesSpace().x, y = 24)
     DeploySame(space=axis30Space, elementSpace=getCylinderAxis30Space(), columns=1, rows=3)
         CylinderAxis30();
 
-// 3x 36912 Rastachsen 30
+// 1x 36912 Rastachse 30
 lockingAxis30Space = [10, 22];
-Place(x = xProp + getHolderPropellerFourBladesSpace().x + 1, y = 2)
-    DeploySame(space=lockingAxis30Space, elementSpace=getCylinderLockingAxis30Space(), columns=1, rows=3)
+Place(x = xProp + getHolderPropellerFourBladesSpace().x + 1, y = 6)
         CylinderLockingAxis30();
 
 // 2x 31597 3x 31848 16x 31982 2x 36323 1x 36981 7x 37679 Kleinteile
@@ -142,15 +141,9 @@ Place(x=xPlates, alignY=AlignTop, rotation=Rotate180, elementSpace=getHolderBuil
 xLockingAxis = xPlates;
 yLockingAxis = yAngleBlock + getFrameReedRelayHolderSpace(8).y + 1.5*getDividerThickness();
 Place(x = xLockingAxis, y = yLockingAxis)
-{
     FrameAxis90();
-}
 
-// 1x 31918  Winkelstein mit Nuten
 xAngleBlock = xPlates + getHolderBuildingPlate30x30Space(3).x + 1;
-angleBlockVolume = [15, 15, 6];
-Place(x=xAngleBlock, alignY = AlignTop, elementSpace=getFrameOuterVolume(angleBlockVolume))
-    AlignedFrame(angleBlockVolume, alignY=AlignTop);
 
 // 2x 32850  Riegelstein 15x15x15
 xLockingBlock = xAngleBlock + getFrameStandardBlockSpace().x - getDividerThickness();

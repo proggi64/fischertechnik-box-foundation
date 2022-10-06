@@ -52,6 +52,7 @@ yBlock2 = yBlock1Dist;
 Place(xBlock2, yBlock2)
     FrameBlock15x30x5(5);
 
+// 1x 31918  Winkelstein mit Nuten
 xAngle2 = webDistance + getFrameAngleEquilateralSpace().x;
 Place(xAngle2, yBlock2+5, alignX=AlignRight)
     FrameAngleEquilateral();
